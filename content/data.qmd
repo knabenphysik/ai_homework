@@ -1,0 +1,254 @@
+# About Data
+
+Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform *`basic data exploration`* to study the basic characteristics of a dataset.
+
+By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called *`data exploration`* or *`exploratory data analysis (EDA)`*.
+
+The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is ***good or not***.
+
+Once we have ***good data***, we can training our machine learning model and get ***accurate*** results.
+
+Common type of dataset is:
+
+-   tabular/numerical data
+-   categorical data (image, voice, videos)
+-   time series
+-   text
+
+A goodness of dataset:
+
+-   quality
+-   quantity
+-   variability
+
+![common python libraries package for ML](image/ml_lib.png){#fig-ml-lib}
+![cloud service for ML ](image/ml_cloud.png){#fig-ml-cloud}
+
+## Tabular Data
+
+-   scatter plot $\Longrightarrow$ two variables are plotted along two axes.
+-   pairplot $\Longrightarrow$ pairwise relationships between variables within a dataset
+
+The closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.
+
+If a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: **positive** or **negative**, **strong** or **weak**.
+
+![correlation plot](image/corre.png){#fig-corre}
+
+So, in statistical terms we use correlation to denote association between two quantitative variables.
+
+### Example 1
+
+Imagine you have tabular [data](https://www.kaggle.com/competitions/titanic/data) as below.
+
+```{python}
+#| label: tbl-dummy-data
+#| tbl-cap: "Dummy Dataset"
+#| echo: false
+
+import pandas as pd
+
+data1 = pd.read_csv("data/dummy1.csv")
+data1.head()
+```
+
+Dataset in @tbl-dummy-data have 7 columns $\Longrightarrow$ 7 features
+
+Question : From @fig-corre, what is the best way to describe or visualize the data given to us? Answer: Let's do pair-plot (combination of scatter plot)
+
+```{python}
+#| label: fig-pair-plot
+#| fig-cap: "pair plot"
+#| echo: false
+#| fig-width: 5
+#| fig-height: 4
+#| column: screen
+
+import matplotlib.pyplot as plt
+import mplhep as hep
+import seaborn as sns
+hep.style.use("CMS")
+plt.rcParams['savefig.facecolor'] = "0.8"
+plt.rcParams.update({'font.size': 7})
+
+import warnings
+warnings.filterwarnings('ignore')
+colors = iter(['xkcd:red purple', 'xkcd:pale teal', 'xkcd:warm purple',
+       'xkcd:light forest green', 'xkcd:blue with a hint of purple',
+       'xkcd:light peach', 'xkcd:dusky purple', 'xkcd:pale mauve',
+       'xkcd:bright sky blue', 'xkcd:baby poop green', 'xkcd:brownish',
+       'xkcd:moss green', 'xkcd:deep blue', 'xkcd:melon',
+       'xkcd:faded green', 'xkcd:cyan', 'xkcd:brown green',
+       'xkcd:purple blue', 'xkcd:baby shit green', 'xkcd:greyish blue'])
+
+def my_scatter(x,y, **kwargs):
+    kwargs['color'] = next(colors)
+    plt.scatter(x,y, **kwargs)
+
+def my_hist(x, **kwargs):
+    kwargs['color'] = next(colors)
+    plt.hist(x, **kwargs)
+
+g = sns.PairGrid(data1, corner=True)
+g.map_diag(my_hist)
+g.map_offdiag(my_scatter)
+```
+
+What can we say about @fig-pair-plot ?
+
+```{python}
+#| label: fig-big-pair-plot
+#| fig-cap: "big pair plot"
+#| echo: false
+#| fig-width: 5
+#| fig-height: 4
+#| column: screen-inset-shaded
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import mplhep as hep
+import seaborn as sns
+hep.style.use("CMS")
+plt.rcParams['savefig.facecolor'] = "0.8"
+plt.rcParams.update({'font.size': 7})
+
+import warnings
+warnings.filterwarnings('ignore')
+
+data2 = pd.read_csv("data/dummy2.csv", usecols=lambda x: x != 'feature_A')
+sns.pairplot(data2, corner=True);
+```
+
+### Example 2
+
+```{python}
+#| label: tbl-big-dummy-data
+#| tbl-cap: "Dummy Big Dataset"
+#| echo: false
+
+data2.head()
+```
+
+But if we have many features like @tbl-big-dummy-data and want to plot pair-plot like @fig-big-pair-plot, seem to overwhelming and confuse isn't?
+
+Solution? Use correlation heatmap $\Longrightarrow$ easier to see based on correlation value/coefficient, r (recall our @fig-corre).r value is the degree of association.
+
+```{python}
+#| label: tbl-correlation
+#| tbl-cap: correlation guide
+#| echo: false
+
+from IPython.display import Markdown
+from tabulate import tabulate
+table = [["r < 0.3", "None or very weak"],
+         ["0.3 < r <0.5", "Weak"],
+         ["0.5 < r < 0.7", "Moderate"],
+         ["r > 0.7", "Strong"]]
+Markdown(tabulate(
+  table, 
+  headers=["Correlation Value (r)", "Strength of Relationship"]
+))
+```
+
+Now, based on @tbl-correlation, let change our @fig-big-pair-plot to correlation heatmap
+
+```{python}
+#| label: fig-big-correlation-plot
+#| fig-cap: "correlation plot for big data"
+#| echo: false
+
+data2 = data2.replace(['rain'],['0'])
+data2 = data2.replace(['Rain, Partially cloudy'],['0'])
+data2 = data2.replace(['Partially cloudy'],['1'])
+data2 = data2.replace(['Rain, Overcast'],['2'])
+data2 = data2.replace(['Overcast'],['3'])
+data2 = data2.replace(['partly-cloudy-night'],['4'])
+data2 = data2.replace(['cloudy'],['5'])
+data2 = data2.replace(['Rain'],['6'])
+data2 = data2.replace(['Clear'],['7'])
+data2 = data2.replace(['partly-cloudy-day'],['8'])
+data2 = data2.replace(['clear-night'],['9'])
+data2 = data2.replace(['clear-day'],['10'])
+
+corr = data2.corr(method='spearman')
+
+f,ax = plt.subplots(figsize=(9,6))
+sns.heatmap(corr, annot = True, fmt='.2g',cmap= 'coolwarm', ax=ax)
+# plt.subplot(1, 2, 1)
+ax.set_title ('Correlation Matrix for big data', fontdict = {'fontsize':10}, pad = 10);
+plt.show()
+```
+
+```{python}
+#| label: fig-small-correlation-plot
+#| fig-cap: "correlation plot for @fig-pair-plot"
+#| echo: false
+
+corr_ = data1.corr(method='spearman')
+
+f,ax = plt.subplots(figsize=(9,6))
+sns.heatmap(corr_, annot = True, fmt='.2g',cmap= 'coolwarm', ax=ax)
+# plt.subplot(1, 2, 1)
+ax.set_title ('Correlation Matrix for small data', fontdict = {'fontsize':10}, pad = 10);
+plt.show()
+```
+
+## Categorical Data
+
+### Example 1
+
+Imagine you have mnist image [data](https://www.kaggle.com/competitions/digit-recognizer/data) below.
+
+```{python}
+#| label: fig-mnist
+#| fig-cap: "sample images of mnist dataset"
+#| echo: false
+
+from sklearn import datasets
+from matplotlib import pyplot as plt
+
+digits = datasets.load_digits()
+
+fig, ax = plt.subplots(8, 8, figsize=(6,6))
+for i, axi in enumerate(ax.flat):
+    axi.imshow(digits.images[i], cmap='binary')
+    axi.set(xticks=[], yticks=[])
+plt.show()
+```
+
+Now, since our data now is images and not tabular. We can use simple ***histogram plot*** like @fig-mnist-count to view each ***class*** of MNIST dataset.
+
+-   We can observe that data distribution `almost` the same (almost balanced) for each class
+
+```{python}
+#| label: fig-mnist-count
+#| fig-cap: "images distribution of mnist dataset"
+#| column: screen-inset-shaded
+#| echo: false
+
+from sklearn.datasets import fetch_openml
+from matplotlib import pyplot as plt
+import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
+
+numberMNIST = fetch_openml('mnist_784',return_X_y=False)
+dataset = numberMNIST.data     
+labels = numberMNIST.target    
+
+X_train, X_test, Y_train, Y_test = dataset[:60000], dataset[60000:], labels[:60000], labels[60000:]
+
+unique, counts = np.unique(Y_train, return_counts=True)
+plt.figure(figsize=(5,4))
+plt.bar(unique, counts);
+plt.xticks(unique);
+plt.xlabel("Label");
+plt.ylabel("Quantity");
+plt.title("Labels in MNIST 784 dataset");
+```
+
+## Appendix
+
+We want our machine model to generalize as good as possible in order to evade overfitting, and thus many models assume the data to be ***normally distributed*** due to the [central limit theorem](https://theanalyticsgeek.com/central-limit-theorem/)
+
+See [here](https://www.kaggle.com/code/allunia/titanic-dive-through-feature-scaling-and-outliers) on example to normalize data.

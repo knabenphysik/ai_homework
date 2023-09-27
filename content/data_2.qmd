@@ -1,0 +1,139 @@
+# Data and sampling
+
+First we must differentiate between __data at hand__ - which is the data that is available to us as modeller, and __data not in hand__, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to "estimator errors" and "estimator bias" that we discuss before.
+
+Second, we have to be cognizant of the sample size of the data at hand. We always prefer __large amount__ of data, but how large is large, and how big is big? This is a problem of __sufficiency__, because even though the data may be large, but contains insufficient __entropy__, will render the data to be small, despite the large size in bytes. Size and entropy matters because Law of Large Numbers hypothesis rely heavily on it. If the size is not too large and yet have high enough entropy, the hypothesis is tested with high power (low $\beta$, Type II error); and yet large size with low entropy will reduce Type I error (Low $\alpha$, increase True Negative).
+
+Third, we must take note of problems within the data itself, namely the "true process" of data generations. This is at best is unknown - but is assumed to follow stable process which are Gaussian, ergodic, and stationary in nature. This is far from true in many real applications. If we go back to earlier discussions, this is included under the "pure errors" part of the estimation process. The key assumption that we made is that __residual errors__ ("pure errors","white noise") follows an IID process (Independent and Identically Distributed). This is a strong assumption which to most modellers, they just assumed that it holds all the time. We know from practice that this IID assumption fails and fail miserably at time.
+
+__Data transformation__
+
+Many times in ML we have to pre-process the data by "normalizing", such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that.
+
+__Data augmentation__
+
+Data augmentation is used when we want to add "organized entropy" into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the "meaninful aspects" of the data. That's why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.
+
+__Data de-noising__
+
+Opposite to augmentation is "de-noising", where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.
+
+__Data pre-processing__
+
+Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.
+
+### Methods of data transformation
+
+1. Scaling
+
+Scaling and centering (if needed) is the most basic method. Why its needed (beside computing reasons)? To enable interpretations of the model to be easier, because most of the cases we are dealing with probabilities, which is a number in [0,1]. Furthermore, this will standardied numbers of various scales into same unique scale.
+
+2. Log transformation
+
+Logarithmic function acts both as dampener and smoother. However, log has one major problem: log(0) is undefined. So we must deal with numbers which are strictly positive, such as (0,1]. Log transformation is generally very useful, especially for highly skewed data.
+
+3. Vectorization
+
+Vectorization is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a "look-up table". Vectorizing does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its vectorize representations. An example of this hashing algorithms, which converts any non-fixed size elements onto unique fixed size space. Tokenization is another used method for vectorization in NLP.
+
+4. Binning and encoding
+
+Binning is used when we want to convert continous variables to categorical variables. There are few methods used:
+
+a) Equal width binning - what is normally used in general
+b) Frequence width binning - grouped by largest frequencies instead of equal width
+c) Entropy based binning - retaining the largest amount of information regarding the ranks of the data by discretizing into a uniform distribution.
+
+Encoding is the opposite of binning, where we convert categorical variables to continous variables. There are a few methods used:
+
+a) Label encoding
+b) Binary encoding
+c) Ordinal encoding
+d) One hot encoding
+e) Frequency encoding
+f) Target mean encoding
+
+5. Power transformer
+
+Power transformation is used to transform non-Gaussian type distribution (such as many outliers or highly skewed) to have more of Gaussian type distribution; there are two popular methods used:
+
+   - Box-Cox transformation - values must be strictly positive
+   - Yeo-Johnson transformer - values can be negative
+   
+6. Missing values imputation
+
+There are a number of methods:
+
+a) mean, median, etc., basic statistical method
+b) k-NN
+c) MLP
+d) Self-organization Map (SOM)
+
+7. Dimensionality reduction
+
+The more complex part of data pre-processing is __dimensionality reduction__. This is a non-trivial process. Mathematically, this is a "map-reduce" process; where anywhere possible, set of variables are mapped together into a variable which becomes a representative of the set, and this is performed over various possible distinct sets, and the final output will be represented by these representative variables, which will be supplied to the model.
+
+8. Changing data types
+
+From integer to factor, factor to integer, numerical to categorical, ordinal to categorical, etc.
+
+9. Multilabels hierarchical data
+
+Another approach is called "Multi hierarchical labels" 
+
+### Sampling and validation
+
+Sometimes this is called "Model Tuning" to overcome "over-fitting".
+
+The steps are:
+
+1. Start with a randomized sample - fit the model - predict on hold out sample
+2. Resample and repeat step 1
+3. Profile all the sample and resample into a performance profile
+4. Decide the final tuning parameters
+5. Refit the model using the entire dataset
+
+Managing data splitting to accomodate for:
+
+1. Pre-processing the predictor data (Xs)
+2. Estimating model parameters (MSE etc)
+3. Select predictors  (subset of Xs)
+4. Evaluate model performance
+5. Fine tuning using ROC curves etc.
+
+Resampling techniques:
+
+1. General cross validation: set the training versus validation set, and finally testing set.
+2. k-fold cross validation: partition the data to k equal size. Model is fit using all except first subset (first fold), return the first subset to the data and hold out second set, repeat, and so on.
+3. Repeated CV : apply method 1 but keep randomizing the sets.
+4. Bootstrap : sampling data with replacement by dividing into "in the bag" and "out of bag" samples.
+
+
+## Predictive modelling
+
+### Types of learning
+
+1. Association, that is $Pr(Y|X)$
+2. Classification, that is $if(x_1 > a)$ and $if(x_2 < b)$ then ..
+3. Pattern recognition
+   - Pixel based (image and video)
+   - word based (NLP)
+   - frequency based (sound, etc.)
+4. Knowledge extraction
+   - emergent structures
+   - extreme observations (outlier) detection
+5. Reinforcement learning
+   - Game theoretic
+   - Probabilistic learning
+6. Network or Graph theory based learning
+   - Driven by network/graph theory
+   - Emergent
+   - Scaling
+
+### Interpretability vs flexibility
+
+It is important to know the objective; this will determine which is more important in choosing models and methods
+
+Classically in statistics - this is called the "degrees of freedom" of any statistical tests and estimators.
+
+Trade-offs between interpretability and flexibility is a major issue.

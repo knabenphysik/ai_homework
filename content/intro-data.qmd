@@ -1,0 +1,5 @@
+# Basic
+
+Since Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.
+
+![ML Lifecycle](image/ml_cycle.png){#fig-ml-cycle}

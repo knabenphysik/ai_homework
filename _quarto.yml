@@ -1,0 +1,63 @@
+project: 
+  type: website
+
+website: 
+  page-navigation: true
+  title: "My Hitchhiker Guide to AI" 
+  site-url: "https://knabenphysik.github.io/ai_note" 
+  repo-url: "https://github.com/knabenphysik/ai_note"
+  repo-actions: [edit, source, issue]
+  favicon: images/favicon.ico
+  
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "Draft,&copy; CC-1.0"
+  
+  sidebar:
+    background: "#D9E3E4"
+    logo: "https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png"
+    favicon: images/favicon.ico
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://knabenphysik.github.io/ai_note
+        text: "Open Data Science"
+      - icon: github
+        href: https://github.com/knabenphysik/ai_note
+        text: "AI Note"
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: content/intro-data.qmd
+        text: Basic
+      - href: content/data.qmd
+        text: About Data
+      - href: content/learning_1.qmd
+        text: About Learning I
+      - href: content/learning_2.qmd
+        text: About Learning II
+      - href: content/learning_3.qmd
+        text: About Learning III
+      - href: content/data_2.qmd.qmd
+        text: Data & Sampling
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss] 
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+
+filters:
+  - include-files.lua
+  - quarto
+
+  

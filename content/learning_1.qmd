@@ -1,0 +1,100 @@
+# About Learning I
+
+## Big Picture
+
+To automatically discover regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into different categories.
+
+## The "problem setting" of statistical learning.
+
+The basic setting of statistical learning is: given a **problem statement**, we want to find **prediction model** which **estimate** has **best fit** in providing **solutions** to the problem, using **data at hand** (in sample data) which has the **Lowest Variance and Lowest Bias** when applied to the data at hand as well as to the **data not in hand** (unseen data).
+
+## Statistical Modelling
+
+From a statistical learning point-of-view:
+
+$$
+Y = f(\bf{X}) + \epsilon
+$$ where ${X}$ is ***input*** variable:
+
+$$
+X = (X_1,X_2,...,X_p)
+$$ and $\epsilon$ is ***noise***.
+
+The task is to get prediction/estimation of:
+
+$$
+\hat{Y} = \hat{f}(\bf{X}) + \hat{\epsilon}
+$$ The task is then relegated to *error estimator*, by defining **Loss function**:
+
+$$ 
+Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
+$$
+
+![Visualize learning model](image/basic_model.png){#fig-learning-model}
+
+A loss function, also known as a cost function, is a method used to estimate the discrepancies between the actual and predicted values in a machine learning model. It provides a measure of how well the model is performing.
+
+noise in data refers to unwanted modifications introduced to a source signal during the capture, storage, transmission, or processing of its information.
+
+## Problem statement
+
+Recall our "problem statement". This problem statement must be made in **probability statement(s)**, i.e. hypothesis statement(s).
+
+Given a data, can we test whether the hypothesis is : TRUE or FALSE.
+
+e.g. Given an image cheque whose size is 1264x616 pixel, is image standard charted cheque or not?
+
+e.g. Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?
+
+All these statements are **probability statements**, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.
+
+e.g. The probability of a image cheque whose size is 1264x616 pixel is image standard charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%
+
+## **How to Learn ?**
+
+![Image data representation in vector](image/image_rep.png){#fig-img-rep}
+
+Imagine you have a set of data. In order to have ***good estimated*** model, we have to split data at hand into:
+
+-   Training set: This is the largest part in terms of the size of the dataset.
+
+-   Validation set: model training process is not a one-time process (highly iterative process). We have to train multiple models by trying different combinations of parameters (complexity). Then, we evaluate the performance of each model on the validation set.
+
+-   Test set: this is use ***after the training*** to evaluate performance of the model via *un-seen* data
+
+![generic learning process](image/learning.png){#fig-learn}
+
+------------------------------------------------------------------------
+
+-   What do we want? $\Longrightarrow$ To make *predictions* on *unseen data* $\Longrightarrow$ We want a *model* that **generalizes** well $\Longrightarrow$ generalizes to unseen data
+-   How we will do this? $\Longrightarrow$ controlling the **complexity** of the model (learning parameter)
+-   How do we know if our model generalizes? $\Longrightarrow$ evaluating on **test** data.
+
+![training loss plot](image/example_loss_plot.png){#fig-loss-plot}
+
+![reference plot](image/1_2BvEinjHM4SXt2ge0MOi4w.png){#fig-ref-plot}
+
+![good plot](image/perfect_loss_plot.png){#fig-good-plot}
+
+> Learning is **NOT** memorization! The ability to produce correct outputs on previously unseen inputs is called **generalization**
+
+## References:
+
+1.  Vijay Kotu and Bala Deshpande, [*Data Science Concepts and Practice, 2nd Ed.*](https://pyimagesearch.com/deep-learning-computer-vision-python-book/), Elsevier Inc, 2019.
+
+2.  Bishop, C. M., [*Pattern Recognition and Machine Learning*](https://www.amazon.com/gp/product/0387310738/), Springer, 2006
+
+3.  Wan Hasni, *MD Labs Data Science Lecture Series*, Techna-X, 2020
+
+4.  Scott Fortmann-Roe, [Understanding the Bias-Variance Tradeoff](https://scott.fortmann-roe.com/docs/BiasVariance.html), 2012
+
+5.  [Machine Learning for Intelligent Systems: Bias-Variance Tradeoff](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html)
+
+6.  [ML 101: Bias and Variance](https://machinelearning101.readthedocs.io/en/latest/_pages/03_bias_variance.html)
+
+7.  [Bias and Variance in Machine Learning](https://www.javatpoint.com/bias-and-variance-in-machine-learning)
+
+### Question?
+
+1.  What is learning? What does it mean for a computer to learn?
+2.  The big question of Learning Theory (and practice): how to get good generalization with a limited number of examples?
