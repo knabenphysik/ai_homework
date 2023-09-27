@@ -31,13 +31,13 @@ Some notable examples:
 -   Bloomberg ([NLP sentiment analysis](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
 
 ```{r ai-mana, echo=FALSE , fig.align = 'center', out.width = "90%", fig.cap = " Figure 1: Different type of analytics"}
-knitr::include_graphics("image/ai_task.png")
+knitr::include_graphics("content/image/ai_task.png")
 ```
 
 ## AI vs ML vs DL
 
 ```{r compare-ai, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 2: AI vs ML vs DL"}
-knitr::include_graphics("image/AI-Circle.png")
+knitr::include_graphics("content/image/AI-Circle.png")
 ```
 
 Deep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).
@@ -62,7 +62,7 @@ What data scientist do is the same as Machine Learning engineer except machine l
 ## AI use cases, cross domain
 
 ```{r gpu-domain, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 3: domain area of deep learning"}
-knitr::include_graphics("image/cross_domain.png")
+knitr::include_graphics("content/image/cross_domain.png")
 ```
 
 Question and homework for the course can be found using the QR code.
