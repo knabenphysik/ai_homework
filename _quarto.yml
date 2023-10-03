@@ -43,7 +43,7 @@ website:
         text: About Learning II
       - href: content/learning_3.qmd
         text: About Learning III
-      - href: content/data_2.qmd.qmd
+      - href: content/data_2.qmd
         text: Data & Sampling
 
 format:

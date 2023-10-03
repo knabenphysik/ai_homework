@@ -8,6 +8,22 @@ To automatically discover regularities in data through the use of computer algor
 
 The basic setting of statistical learning is: given a **problem statement**, we want to find **prediction model** which **estimate** has **best fit** in providing **solutions** to the problem, using **data at hand** (in sample data) which has the **Lowest Variance and Lowest Bias** when applied to the data at hand as well as to the **data not in hand** (unseen data).
 
+## Problem statement
+
+Problem statement must be made in **probability statement(s)**.
+
+Given a data, can we test whether our statement is : TRUE or FALSE.
+
+e.g. Given an image cheque whose size is 1264x616 pixel, is image Standard Charted cheque or not?
+
+e.g. Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?
+
+e.g. Given 4 to 5 parameter of atmospheric reading in Petaling Jaya, what is the chance of raining the next 3 hours?
+
+All these statements are **probability statements**, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.
+
+e.g. The probability of a image cheque whose size is 1264x616 pixel is image Standard Charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%. The probability of raining in Petaling Jaya for the coming 3 hours is 63.5%.
+
 ## Statistical Modelling
 
 From a statistical learning point-of-view:
@@ -36,23 +52,22 @@ A loss function, also known as a cost function, is a method used to estimate the
 
 noise in data refers to unwanted modifications introduced to a source signal during the capture, storage, transmission, or processing of its information.
 
-## Problem statement
-
-Recall our "problem statement". This problem statement must be made in **probability statement(s)**, i.e. hypothesis statement(s).
-
-Given a data, can we test whether the hypothesis is : TRUE or FALSE.
-
-e.g. Given an image cheque whose size is 1264x616 pixel, is image standard charted cheque or not?
-
-e.g. Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?
-
-All these statements are **probability statements**, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.
-
-e.g. The probability of a image cheque whose size is 1264x616 pixel is image standard charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%
-
 ## **How to Learn ?**
 
-![Image data representation in vector](image/image_rep.png){#fig-img-rep}
+### Data representation
+
+![Example 1:Image data representation in vector](image/image_rep.png){#fig-img-rep}
+
+
+Before learning, data at hand must be representing in vector (e.g. Figure 2 & Figure 3)
+
+![Example 2:Image data representation in vector](image/image_rep_2.png){#fig-img-rep-2}
+
+But wait, how about textual data ?
+
+![Example 3:Text data representation in vector](image/text_rep.png){#fig-text-rep}
+
+### The "learning"
 
 Imagine you have a set of data. In order to have ***good estimated*** model, we have to split data at hand into:
 
@@ -77,6 +92,26 @@ Imagine you have a set of data. In order to have ***good estimated*** model, we 
 ![good plot](image/perfect_loss_plot.png){#fig-good-plot}
 
 > Learning is **NOT** memorization! The ability to produce correct outputs on previously unseen inputs is called **generalization**
+
+
+## How much data?
+
+To **"learn"** and achieve **good generalization**, how much data do we need?
+
+![Effect of training data size on accuracy on medical images](image/medical_plot2.png){#fig-img-cla}
+
+@fig-img-cla showed the effect of training data size on [medical classification](https://arxiv.org/pdf/1511.06348.pdf) problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.
+
+![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
+
+In contrast, @fig-multi-cla showed the effect of training data size on [cifar-10 images](https://ieeexplore.ieee.org/abstract/document/8599448) problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
+
+![Effect of categories and instances size for YoloV5](image/yolov5.png){#fig-yolov5}
+
+And for @fig-yolov5 is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.
+
+> "To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
+
 
 ## References:
 
