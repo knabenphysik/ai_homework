@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/data_2.qmd.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../content/data_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data &amp; Sampling</span></a>
   </div>
 </li>
@@ -164,9 +164,14 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture">Big Picture</a></li>
   <li><a href="#the-problem-setting-of-statistical-learning." id="toc-the-problem-setting-of-statistical-learning." class="nav-link" data-scroll-target="#the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</a></li>
-  <li><a href="#statistical-modelling" id="toc-statistical-modelling" class="nav-link" data-scroll-target="#statistical-modelling">Statistical Modelling</a></li>
   <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem statement</a></li>
-  <li><a href="#how-to-learn" id="toc-how-to-learn" class="nav-link" data-scroll-target="#how-to-learn"><strong>How to Learn ?</strong></a></li>
+  <li><a href="#statistical-modelling" id="toc-statistical-modelling" class="nav-link" data-scroll-target="#statistical-modelling">Statistical Modelling</a></li>
+  <li><a href="#how-to-learn" id="toc-how-to-learn" class="nav-link" data-scroll-target="#how-to-learn"><strong>How to Learn ?</strong></a>
+  <ul class="collapse">
+  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data representation</a></li>
+  <li><a href="#the-learning" id="toc-the-learning" class="nav-link" data-scroll-target="#the-learning">The “learning”</a></li>
+  </ul></li>
+  <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How much data?</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References:</a>
   <ul class="collapse">
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question?</a></li>
@@ -189,6 +194,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-problem-setting-of-statistical-learning." class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</h2>
 <p>The basic setting of statistical learning is: given a <strong>problem statement</strong>, we want to find <strong>prediction model</strong> which <strong>estimate</strong> has <strong>best fit</strong> in providing <strong>solutions</strong> to the problem, using <strong>data at hand</strong> (in sample data) which has the <strong>Lowest Variance and Lowest Bias</strong> when applied to the data at hand as well as to the <strong>data not in hand</strong> (unseen data).</p>
+</section>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">Problem statement</h2>
+<p>Problem statement must be made in <strong>probability statement(s)</strong>.</p>
+<p>Given a data, can we test whether our statement is : TRUE or FALSE.</p>
+<p>e.g.&nbsp;Given an image cheque whose size is 1264x616 pixel, is image Standard Charted cheque or not?</p>
+<p>e.g.&nbsp;Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?</p>
+<p>e.g.&nbsp;Given 4 to 5 parameter of atmospheric reading in Petaling Jaya, what is the chance of raining the next 3 hours?</p>
+<p>All these statements are <strong>probability statements</strong>, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.</p>
+<p>e.g.&nbsp;The probability of a image cheque whose size is 1264x616 pixel is image Standard Charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%. The probability of raining in Petaling Jaya for the coming 3 hours is 63.5%.</p>
 </section>
 <section id="statistical-modelling" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-modelling">Statistical Modelling</h2>
@@ -215,23 +230,33 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <p>A loss function, also known as a cost function, is a method used to estimate the discrepancies between the actual and predicted values in a machine learning model. It provides a measure of how well the model is performing.</p>
 <p>noise in data refers to unwanted modifications introduced to a source signal during the capture, storage, transmission, or processing of its information.</p>
 </section>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem statement</h2>
-<p>Recall our “problem statement”. This problem statement must be made in <strong>probability statement(s)</strong>, i.e.&nbsp;hypothesis statement(s).</p>
-<p>Given a data, can we test whether the hypothesis is : TRUE or FALSE.</p>
-<p>e.g.&nbsp;Given an image cheque whose size is 1264x616 pixel, is image standard charted cheque or not?</p>
-<p>e.g.&nbsp;Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?</p>
-<p>All these statements are <strong>probability statements</strong>, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.</p>
-<p>e.g.&nbsp;The probability of a image cheque whose size is 1264x616 pixel is image standard charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%</p>
-</section>
 <section id="how-to-learn" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-learn"><strong>How to Learn ?</strong></h2>
+<section id="data-representation" class="level3">
+<h3 class="anchored" data-anchor-id="data-representation">Data representation</h3>
 <div id="fig-img-rep" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/image_rep.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Image data representation in vector</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;2: Example 1:Image data representation in vector</figcaption>
 </figure>
 </div>
+<p>Before learning, data at hand must be representing in vector (e.g.&nbsp;Figure 2 &amp; Figure 3)</p>
+<div id="fig-img-rep-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/image_rep_2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Example 2:Image data representation in vector</figcaption>
+</figure>
+</div>
+<p>But wait, how about textual data ?</p>
+<div id="fig-text-rep" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/text_rep.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Example 3:Text data representation in vector</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-learning" class="level3">
+<h3 class="anchored" data-anchor-id="the-learning">The “learning”</h3>
 <p>Imagine you have a set of data. In order to have <strong><em>good estimated</em></strong> model, we have to split data at hand into:</p>
 <ul>
 <li><p>Training set: This is the largest part in terms of the size of the dataset.</p></li>
@@ -241,7 +266,7 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <div id="fig-learn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/learning.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: generic learning process</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;5: generic learning process</figcaption>
 </figure>
 </div>
 <hr>
@@ -253,23 +278,52 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <div id="fig-loss-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/example_loss_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: training loss plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6: training loss plot</figcaption>
 </figure>
 </div>
 <div id="fig-ref-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/1_2BvEinjHM4SXt2ge0MOi4w.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: reference plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;7: reference plot</figcaption>
 </figure>
 </div>
 <div id="fig-good-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/perfect_loss_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: good plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;8: good plot</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
 <p>Learning is <strong>NOT</strong> memorization! The ability to produce correct outputs on previously unseen inputs is called <strong>generalization</strong></p>
+</blockquote>
+</section>
+</section>
+<section id="how-much-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-much-data">How much data?</h2>
+<p>To <strong>“learn”</strong> and achieve <strong>good generalization</strong>, how much data do we need?</p>
+<div id="fig-img-cla" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/medical_plot2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;9: Effect of training data size on accuracy on medical images</figcaption>
+</figure>
+</div>
+<p><a href="#fig-img-cla">Figure&nbsp;9</a> showed the effect of training data size on <a href="https://arxiv.org/pdf/1511.06348.pdf">medical classification</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.</p>
+<div id="fig-multi-cla" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/cifar10_plot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;10: Effect of training data size on accuracy on cifar-10 images</figcaption>
+</figure>
+</div>
+<p>In contrast, <a href="#fig-multi-cla">Figure&nbsp;10</a> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 images</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
+<div id="fig-yolov5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/yolov5.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11: Effect of categories and instances size for YoloV5</figcaption>
+</figure>
+</div>
+<p>And for <a href="#fig-yolov5">Figure&nbsp;11</a> is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.</p>
+<blockquote class="blockquote">
+<p>“To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case.” — Maksym Tatariants</p>
 </blockquote>
 </section>
 <section id="references" class="level2">
