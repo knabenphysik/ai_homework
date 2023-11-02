@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -29,7 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/data_2.html" rel="next">
 <link href="../content/learning_2.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -144,12 +143,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About Learning III</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/data_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data &amp; Sampling</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -162,11 +155,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#about-learning-iii" id="toc-about-learning-iii" class="nav-link active" data-scroll-target="#about-learning-iii">About Learning III</a>
   <ul class="collapse">
-  <li><a href="#common-metrics" id="toc-common-metrics" class="nav-link" data-scroll-target="#common-metrics">Common metrics</a></li>
-  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion matrix</a></li>
-  <li><a href="#roc" id="toc-roc" class="nav-link" data-scroll-target="#roc">ROC</a>
+  <li><a href="#common-metrics" id="toc-common-metrics" class="nav-link" data-scroll-target="#common-metrics">Common metrics</a>
   <ul class="collapse">
-  <li><a href="#how-the-auc-roc-curve-works" id="toc-how-the-auc-roc-curve-works" class="nav-link" data-scroll-target="#how-the-auc-roc-curve-works">How the AUC-ROC curve works</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References:</a></li>
   </ul></li>
   </ul></li>
@@ -189,77 +179,31 @@ ul.task-list li input[type="checkbox"] {
 <p>Also recall that our “learning” output answer will always be in terms of probability.</p>
 <section id="common-metrics" class="level2">
 <h2 class="anchored" data-anchor-id="common-metrics">Common metrics</h2>
-<p><strong>Precision</strong>: proportion of the positive class predictions that were actually correct</p>
+<p>Here are the essential metrics:</p>
+<ul>
+<li><p><strong>True Positives (TP)</strong> is an outcome where the model correctly predicts the positive class.</p></li>
+<li><p><strong>True Negatives (TN)</strong> is an outcome where the model correctly predicts the negative class</p></li>
+<li><p><strong>False Positives (FP)</strong> is an outcome where the model incorrectly predicts the positive class.</p></li>
+<li><p><strong>False Negatives (FN)</strong> is an outcome where the model incorrectly predicts the negative class.</p></li>
+</ul>
+<div id="fig-common-metrics" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/metrics_common.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: common general metric</figcaption>
+</figure>
+</div>
+<p><strong>Precision</strong>: This metric shows how often your model is <strong>correct</strong> when predicting the <strong>target class</strong>.</p>
 <p><span class="math display">\[
 Precision = \frac{TP}{TP + FP}
-\]</span> <strong>Recall</strong>: quantifies the number of positive class predictions made out of all positive examples in the dataset.(proportion of actual positive class samples that were identified by the model)</p>
+\]</span> <strong>Recall</strong>: metric that shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)</p>
 <p><span class="math display">\[
 Recall = \frac{TP}{TP + FN}
-\]</span> Here are the essential definitions following above:</p>
-<ul>
-<li><p><strong>True Positives (TP)</strong> are the number of positive class samples correctly classified by a model.</p></li>
-<li><p><strong>True Negatives (TN)</strong> are the number of negative class samples correctly classified by a model.</p></li>
-<li><p><strong>False Positives (FP)</strong> are the number of negative class samples that were predicted (incorrectly) to be of the positive class by the model.</p></li>
-<li><p><strong>False Negatives (FN)</strong> are the number of positive class samples that were predicted (incorrectly) to be of the negative class by the model.</p></li>
-</ul>
-<p><strong>F1 Score</strong>: harmonic mean of precision and recall, providing a balanced metric for situations where both precision and recall are important. It helps avoid favoring models that perform well in only one of these metrics.</p>
-<p><span class="math display">\[
-F1 Score = \frac{2 * (Precision * Recall)} {Precision + Recall}
-\]</span></p>
-</section>
-<section id="confusion-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="confusion-matrix">Confusion matrix</h2>
-<p>For classification case, confusion matrix table used to evaluate the performance of a classification model by comparing its predictions to the actual ground truth labels. It provides a summary of the model’s true positive (TP), true negative (TN), false positive (FP), and false negative (FN) predictions for each class in a multi-class classification problem or for the positive class in a binary classification problem.</p>
-<div id="fig-con-mat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/con_mat.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: confusion matrix</figcaption>
-</figure>
-</div>
-<p><strong>Goal</strong>:We want to optimize the diagonal elements (i.e.&nbsp;minimize errors of both types)</p>
-</section>
-<section id="roc" class="level2">
-<h2 class="anchored" data-anchor-id="roc">ROC</h2>
-<p>An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds.</p>
-<section id="how-the-auc-roc-curve-works" class="level3">
-<h3 class="anchored" data-anchor-id="how-the-auc-roc-curve-works">How the AUC-ROC curve works</h3>
-<p>First of all, lets briefly talk about how a model make predict, in the binary case, it will predict 0 or 1, which the model will generate the probability of each classes. In Binary case, it will have P(x=0) and P(x=1), at most of the case the threshold will be 0.5, which either P(x=0) or P(x=1) &gt;0.5, then the model will make the prediction on the one larger than the threshold.</p>
-<p>True Positive Rate (TPR) is a synonym for recall and is therefore defined as follows:</p>
-<p><span class="math display">\[
-TPR = \frac{TP}{TP+FN}
-\]</span> False Positive Rate (FPR) is defined as follows:</p>
-<p><span class="math display">\[
-FPR = \frac{FP}{FP+TN}
 \]</span></p>
 <ul>
-<li><p>The curve illustrates how well a model distinguishes between positive and negative instances across different thresholds.</p></li>
-<li><p>AUC represents the overall performance of the model: higher AUC indicates better discrimination between classes.</p></li>
+<li>High precision and high recall mean that your model is performing well.</li>
+<li>Low precision means that your model will predict some false positives</li>
+<li>Low recall means that your model will predict some false negatives</li>
 </ul>
-<hr>
-<ul>
-<li><p>ROC analysis is a fundamental tool for evaluating the performance of classification models. It helps us to understand how well our model can distinguish between two classes, for example, given an image, is it “myvi” or “iriz”?</p></li>
-<li><p>ROC stands for Receiver Operating Characteristic. It’s a graphical representation that shows the diagnostic ability of a binary classifier as its discrimination threshold is varied. Basically, it helps us to visualize the trade-off between sensitivity and specificity.</p></li>
-<li><p>When you have a test that is supposed to distinguish between ‘myvi’ and ‘iriz’, the test doesn’t give a simple ‘yes’ or ‘no’, but a score (e.g., 0.7). We then have to decide which scores should be classified as ‘myvi’ and which as ‘iriz’.</p></li>
-<li><p>In the ROC curve, the true positive rate (sensitivity) is plotted on the Y-axis, and the false positive rate (1-specificity) is plotted on the X-axis. Sensitivity is the ability of a test to correctly identify those with the disease (true positive rate), whereas specificity is the ability of the test to correctly identify those without the disease (true negative rate).</p></li>
-<li><p>The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings. The threshold is a cut-off value above which we classify the output as the positive class, and below which we classify it as the negative class.</p></li>
-<li><p>A perfect test would result in a point at the top left corner of the ROC space (100% sensitivity, 0% 1-specificity), meaning it correctly identifies all the positive cases and none of the negative ones. A test with no discrimination ability would result in a 45-degree diagonal line from the bottom left to the top right.</p></li>
-<li><p>The area under the ROC curve (AUC) is a single number that summarizes the overall performance of the diagnostic test. An AUC of 1.0 represents a perfect test, while an AUC of 0.5 represents a worthless test. It essentially quantifies the overall ability of the test to discriminate between positive and negative cases.</p></li>
-<li><p>Choosing an optimal cutoff point is crucial. It is the point that balances sensitivity and specificity in a way that makes sense for the particular clinical situation. A high cutoff point may result in fewer false positives but more false negatives, and vice versa.</p></li>
-<li><p>However, ROC analysis has limitations.</p></li>
-<li></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-roc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="learning_3_files/figure-html/fig-roc-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: ROC (Receiver Operating Characteristic) Curve</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>We want to get models to move from the “neutral” position (where Type I and II errors are the same), to where to ROC1 or even better to ROC2. Since ROC curves is a curve (and may not look as nice as above), the way to compare between two procedures is to compare AUC1 vs AUC2. Area under the ROC curves 1 and 2.</p>
-</section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References:</h3>
 <ol type="1">
@@ -629,9 +573,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/data_2.html" class="pagination-link">
-        <span class="nav-page-text">Data &amp; Sampling</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
