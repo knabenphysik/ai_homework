@@ -1,20 +1,9 @@
+---
+bibliography: references.bib
+csl: nature.csl
+---
+
 # Overview {.unnumbered}
-
-## Introduction to AI,ML,DL
-
-Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called "statistical data analysis" or "applied statistics". "Data Scientist" means a professional who uses scientific methods to liberate and create meaning from raw data. "Statistics" means the practice or science of collecting and analyzing numerical data in large quantities. There are no real difference between the two, except that "Data Scientists" prowes in large scale data or Big Data and fast computing. Otherwise, they are the same, if "statisticians" plowe their trade in the same manner. Today, there are no difference between the two. [^index-1]
-
-[^index-1]: @Donoho17
-
-The disciplines of Data Science requires knowledge and skills in the following:
-
-1.  Data Gathering, Preparation, and Exploration
-2.  Computing with Data
-3.  Data Modeling
-4.  Data Visualization and Presentation
-5.  Science about Data Science
-
-## AI Overview
 
 AI is everywhere!
 
@@ -30,14 +19,31 @@ Some notable examples:
 -   NVIDIA DLSS ([Deep learning supersampling](https://www.nvidia.com/en-my/geforce/technologies/dlss/))
 -   Bloomberg ([NLP sentiment analysis](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
 
-```{r ai-mana, echo=FALSE , fig.align = 'center', out.width = "90%", fig.cap = " Figure 1: Different type of analytics"}
-knitr::include_graphics("content/image/ai_task.png")
+```{r ai-mana, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 1: General goal of AI[@Gugel]"}
+knitr::include_graphics("content/image/useful_ai.webp")
 ```
 
-## AI vs ML vs DL
 
-```{r compare-ai, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 2: AI vs ML vs DL"}
-knitr::include_graphics("content/image/AI-Circle.png")
+## Artificial intelligence, Machine learning and Deep learning
+
+Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called "statistical data analysis" or "applied statistics". 
+
+"Data Scientist" means a professional who uses scientific methods to liberate and create meaning from raw data.
+
+"Statistics" means the practice or science of collecting and analyzing numerical data in large quantities. 
+
+There are no real difference between the two, except that "Data Scientists" prowes in large scale data or Big Data and fast computing. Otherwise, they are the same. 
+
+Today, there are no difference between the two.[@Donoho]
+
+
+```{r venna, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 2: Everything everywhere all at once[@Ryan]"}
+knitr::include_graphics("content/image/venn_diagram.jpeg")
+```
+
+
+```{r relationship, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 3: Artificial intelligence, machine learning, and data science.[@KOTU20191]"}
+knitr::include_graphics("content/image/relationship.jpg")
 ```
 
 Deep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).
@@ -50,23 +56,36 @@ Artificial Neural Networks (ANNs) are a class of machine learning algorithms tha
 
 Deep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.
 
+
 ## Data Scientist vs Machine Learning Engineer
 
-What data scientist do is the same as Machine Learning engineer except machine learning engineer will implement any machine learning model in production environment using suitable tools like restful API, SDK or lately via serverless model.
-
-| Data Scientist                                                                                                                                                              | ML/AI Engineer                                                                                         |
-|---------------------------------------------|---------------------------|
-| Data science is the description, prediction, and causal inference from structure & unstructure data. <br> This domain helps individuals and enterprise make better decision | enabling software to become highly accurate in predicting outcome (accomplishing task)                 |
-| does statistical analysis, data story telling <br> compare multiple ML model to help business to achieve growth                                                             | Make ML model in prod environment (MVP) <br> build programs that identify patterns based on input data |
-
-## AI use cases, cross domain
-
-```{r gpu-domain, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 3: domain area of deep learning"}
-knitr::include_graphics("content/image/cross_domain.png")
+```{r gpu-domain, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 4: domain area of deep learning[@Prabhu]"}
+knitr::include_graphics("content/image/ml_ops.png")
 ```
 
-Question and homework for the course can be found using the QR code.
+MLOps is the process of automating and productionalizing machine learning applications and workflows.
 
-```{=html}
-<a href="www.qr-code-generator.com/" border="0" style="cursor:default" rel="nofollow"><img src="https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2Fknabenphysik%2Fai_note&chs=180x180&choe=UTF-8&chld=L|2" class="center"></a>
+
+## Reality: ML in production
+
+```{r tec-dep, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 6:  Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.[@NIPS2015_86df7dcf]"}
+knitr::include_graphics("content/image/technical_debt.png")
+```
+
+Machine learning in production is very complicated!
+
+## Reality: Big Data, Fast Compute
+
+```{r gpu-bigdata, echo=FALSE , fig.align = 'center', out.width = "60%", fig.cap = " Figure 7: Data and computational trend"}
+knitr::include_graphics("content/image/gpu_big_data.png")
+```
+
+In modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware. 
+
+```{r gpu-bigdata-trend, echo=FALSE , fig.align = 'center', out.width = "70%", fig.cap = " Figure 8: Data Processing Evolution [@nvidia]"}
+knitr::include_graphics("content/image/data_processing_trend.png")
+```
+
+```{r gpu--trend, echo=FALSE , fig.align = 'center', out.width = "70%", fig.cap = " Figure 9: NVIDIA GPU FP32 Cores evolution [@nextplatform]"}
+knitr::include_graphics("content/image/gpu_benchmark.png")
 ```

@@ -1,5 +1,57 @@
-# Basic
+# Machine Learning Life-Cycle
 
 Since Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.
 
-![ML Lifecycle](image/ml_cycle.png){#fig-ml-cycle}
+![ML Lifecycle [@alex]](image/ml_cycle.png){#fig-ml-cycle}
+
+
+# Data source as vector 
+
+It is natural that we should seek to design and build machines that can recognize patterns. Consider an example in @fig-vectorize. Suppose that we want to have a automate the process of detection whether the image is either "roti canai" or "chapati". How do we do this?
+
+![Typical information flow from data source to ML modelling](image/feature_extract.png){#fig-vectorize}
+
+For an image, we need to get suitable "feature" from the source image and "teach" our system about the feature.
+
+$$
+\begin{equation*}
+\textbf{x}= 
+\begin{bmatrix}
+1 \\
+4 \\
+5 \\
+6
+\end{bmatrix}
+\end{equation*}
+$$
+$$
+\begin{equation*}
+\textbf{y}= 
+\begin{bmatrix}
+.3 \\
+-7
+\end{bmatrix}
+\end{equation*}
+$$
+$$
+\begin{equation*}
+\textbf{z}= 
+\begin{bmatrix}
+1 & 4 & 5 & 6
+\end{bmatrix}
+\end{equation*}
+$$
+
+$\textbf{x}$ is a 4D column vector, $\textbf{y}$ is a 2D column vector, and $\textbf{z}$ is a 4D row vector.
+
+Linear algebra convention is to assume that vectors are in column orientation unless otherwise specified. Row vectors are written as $\mathbf{w}^T$. The $\mathbf{}^T$ indicates the _transpose operation_.
+
+![1 image(2D) to 1D](image/thanos_vector.png){#fig-thanos}
+
+Let's consider a face like in @fig-thanos be a two-dimensional $N$ by $N$ array of intensity values. This image may also be considered as a vector of dimension $N^{2}$, so that a typical image of size _**256**_ by _**256**_ becomes a vector of dimension _**65,536**_, or, equivalently, a point in 65,536-dimensional space.
+
+
+
+![Time series to 1D](image/A-time-series-is-set-up-as-input-vector-of-a-machine-learning-algorithm-without.png){#fig-timeseries}
+
+@fig-timeseries on the hand show example of how time series data becomes a vector of 1D.

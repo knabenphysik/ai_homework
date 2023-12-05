@@ -8,21 +8,96 @@ The whole idea is to get better understanding of the dataset at hand. We want to
 
 Once we have ***good data***, we can training our machine learning model and get ***accurate*** results.
 
+
+## Data barier to widespread AI adoption
+
+1. small datasets
+2. Long tail problem (customization) [@andrewGTC]
+
+![the need of customization of specific AI projects](image/long_tail.png){#fig-longtail}
+
+
+
+
+## Data-Centric AI
+
+Currently, the majority of AI applications are _**model-centric**_, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng [@andrew], more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.
+
+In _**model-centric**_ approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data.
+
+## Goodness of dataset:
+
+What makes a good dataset?
+
+
+-   quality (representative and high-quality of inputs data)
+-   quantity (consistent and accurate labels on target data/ground truth)
+-   variability (reflect post deployment changes)
+
+_**data cleaning**_ is no longer merely a "pre-processing" step, but an iterative ML process!
+
+## Dataset Source Type
+
 Common type of dataset is:
 
--   tabular/numerical data
 -   categorical data (image, voice, videos)
+-   tabular/numerical data
 -   time series
 -   text
 
-A goodness of dataset:
+## Categorical Data
+### Example 1
 
--   quality
--   quantity
--   variability
+Imagine you have mnist image [data](https://www.kaggle.com/competitions/digit-recognizer/data) below.
 
-![common python libraries package for ML](image/ml_lib.png){#fig-ml-lib}
-![cloud service for ML ](image/ml_cloud.png){#fig-ml-cloud}
+```{python}
+#| label: fig-mnist
+#| fig-cap: "sample images of mnist dataset"
+#| echo: false
+
+from sklearn import datasets
+from matplotlib import pyplot as plt
+
+digits = datasets.load_digits()
+
+fig, ax = plt.subplots(8, 8, figsize=(6,6))
+for i, axi in enumerate(ax.flat):
+    axi.imshow(digits.images[i], cmap='binary')
+    axi.set(xticks=[], yticks=[])
+plt.show()
+```
+
+Now, since our data now is images and not tabular. We can use simple ***histogram plot*** like @fig-mnist-count to view each ***class*** of MNIST dataset.
+
+-   We can observe that data distribution `almost` the same (almost balanced) for each class
+
+```{python}
+#| label: fig-mnist-count
+#| fig-cap: "images distribution of mnist dataset"
+#| column: screen-inset-shaded
+#| echo: false
+
+from sklearn.datasets import fetch_openml
+from matplotlib import pyplot as plt
+import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
+
+numberMNIST = fetch_openml('mnist_784',return_X_y=False)
+dataset = numberMNIST.data     
+labels = numberMNIST.target    
+
+X_train, X_test, Y_train, Y_test = dataset[:60000], dataset[60000:], labels[:60000], labels[60000:]
+
+unique, counts = np.unique(Y_train, return_counts=True)
+plt.figure(figsize=(5,4))
+plt.bar(unique, counts);
+plt.xticks(unique);
+plt.xlabel("Label");
+plt.ylabel("Quantity");
+plt.title("Labels in MNIST 784 dataset");
+```
+
 
 ## Tabular Data
 
@@ -193,62 +268,26 @@ ax.set_title ('Correlation Matrix for small data', fontdict = {'fontsize':10}, p
 plt.show()
 ```
 
-## Categorical Data
-
+## Time Series Data
 ### Example 1
 
-Imagine you have mnist image [data](https://www.kaggle.com/competitions/digit-recognizer/data) below.
+Imagine you have time-series [data](https://www.kaggle.com/datasets/muthuj7/weather-dataset/data) as below.
 
 ```{python}
-#| label: fig-mnist
-#| fig-cap: "sample images of mnist dataset"
+#| label: tbl-weather-data
+#| tbl-cap: "Weather Dataset"
 #| echo: false
 
-from sklearn import datasets
-from matplotlib import pyplot as plt
-
-digits = datasets.load_digits()
-
-fig, ax = plt.subplots(8, 8, figsize=(6,6))
-for i, axi in enumerate(ax.flat):
-    axi.imshow(digits.images[i], cmap='binary')
-    axi.set(xticks=[], yticks=[])
-plt.show()
+cuaca = pd.read_csv("data/weatherHistory.csv")
+df_new_num = cuaca.drop(['Formatted Date','Summary','Precip Type' ], axis=1)
+df_new_num.head()
 ```
 
-Now, since our data now is images and not tabular. We can use simple ***histogram plot*** like @fig-mnist-count to view each ***class*** of MNIST dataset.
-
--   We can observe that data distribution `almost` the same (almost balanced) for each class
 
 ```{python}
-#| label: fig-mnist-count
-#| fig-cap: "images distribution of mnist dataset"
-#| column: screen-inset-shaded
+#| label: fig-weather-correlation-plot
+#| fig-cap: "pair-plot for @tbl-weather-data"
 #| echo: false
 
-from sklearn.datasets import fetch_openml
-from matplotlib import pyplot as plt
-import numpy as np
-import warnings
-warnings.filterwarnings('ignore')
-
-numberMNIST = fetch_openml('mnist_784',return_X_y=False)
-dataset = numberMNIST.data     
-labels = numberMNIST.target    
-
-X_train, X_test, Y_train, Y_test = dataset[:60000], dataset[60000:], labels[:60000], labels[60000:]
-
-unique, counts = np.unique(Y_train, return_counts=True)
-plt.figure(figsize=(5,4))
-plt.bar(unique, counts);
-plt.xticks(unique);
-plt.xlabel("Label");
-plt.ylabel("Quantity");
-plt.title("Labels in MNIST 784 dataset");
+sns.pairplot(cuaca, hue='Precip Type',palette='GnBu')
 ```
-
-## Appendix
-
-We want our machine model to generalize as good as possible in order to evade overfitting, and thus many models assume the data to be ***normally distributed*** due to the [central limit theorem](https://theanalyticsgeek.com/central-limit-theorem/)
-
-See [here](https://www.kaggle.com/code/allunia/titanic-dive-through-feature-scaling-and-outliers) on example to normalize data.

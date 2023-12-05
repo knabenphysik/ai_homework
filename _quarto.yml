@@ -10,8 +10,8 @@ website:
   favicon: images/favicon.ico
   
   page-footer:
-    right: "This page is built with [Quarto](https://quarto.org/)."
-    left: "Draft,&copy; CC-1.0"
+    right: "Built with [Quarto](https://quarto.org/)."
+    left: "Draft,&copy; [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
   
   sidebar:
     background: "#D9E3E4"
@@ -60,4 +60,6 @@ filters:
   - include-files.lua
   - quarto
 
+bibliography: references.bib 
+csl: nature.csl
   
