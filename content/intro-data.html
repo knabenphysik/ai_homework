@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,6 +83,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -152,7 +173,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic" id="toc-basic" class="nav-link active" data-scroll-target="#basic">Basic</a></li>
+  <li><a href="#machine-learning-life-cycle" id="toc-machine-learning-life-cycle" class="nav-link active" data-scroll-target="#machine-learning-life-cycle">Machine Learning Life-Cycle</a></li>
+  <li><a href="#data-source-as-vector" id="toc-data-source-as-vector" class="nav-link" data-scroll-target="#data-source-as-vector">Data source as vector</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/intro-data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/intro-data.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -161,20 +183,78 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="basic" class="level1">
-<h1>Basic</h1>
+<section id="machine-learning-life-cycle" class="level1">
+<h1>Machine Learning Life-Cycle</h1>
 <p>Since Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.</p>
 <div id="fig-ml-cycle" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/ml_cycle.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: ML Lifecycle</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: ML Lifecycle<span class="citation" data-cites="alex"><sup><a href="#ref-alex" role="doc-biblioref">1</a></sup></span></figcaption>
 </figure>
 </div>
+</section>
+<section id="data-source-as-vector" class="level1">
+<h1>Data source as vector</h1>
+<p>It is natural that we should seek to design and build machines that can recognize patterns. Consider an example in <a href="#fig-vectorize">Figure&nbsp;2</a>. Suppose that we want to have a automate the process of detection whether the image is either “roti canai” or “chapati”. How do we do this?</p>
+<div id="fig-vectorize" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/feature_extract.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Typical information flow from data source to ML modelling</figcaption>
+</figure>
+</div>
+<p>For an image, we need to get suitable “feature” from the source image and “teach” our system about the feature.</p>
+<p><span class="math display">\[
+\begin{equation*}
+\textbf{x}=
+\begin{bmatrix}
+1 \\
+4 \\
+5 \\
+6
+\end{bmatrix}
+\end{equation*}
+\]</span> <span class="math display">\[
+\begin{equation*}
+\textbf{y}=
+\begin{bmatrix}
+.3 \\
+-7
+\end{bmatrix}
+\end{equation*}
+\]</span> <span class="math display">\[
+\begin{equation*}
+\textbf{z}=
+\begin{bmatrix}
+1 &amp; 4 &amp; 5 &amp; 6
+\end{bmatrix}
+\end{equation*}
+\]</span></p>
+<p><span class="math inline">\(\textbf{x}\)</span> is a 4D column vector, <span class="math inline">\(\textbf{y}\)</span> is a 2D column vector, and <span class="math inline">\(\textbf{z}\)</span> is a 4D row vector.</p>
+<p>Linear algebra convention is to assume that vectors are in column orientation unless otherwise specified. Row vectors are written as <span class="math inline">\(\mathbf{w}^T\)</span>. The <span class="math inline">\(\mathbf{}^T\)</span> indicates the <em>transpose operation</em>.</p>
+<div id="fig-thanos" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/thanos_vector.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: 1 image(2D) to 1D</figcaption>
+</figure>
+</div>
+<p>Let’s consider a face like in <a href="#fig-thanos">Figure&nbsp;3</a> be a two-dimensional <span class="math inline">\(N\)</span> by <span class="math inline">\(N\)</span> array of intensity values. This image may also be considered as a vector of dimension <span class="math inline">\(N^{2}\)</span>, so that a typical image of size <em><strong>256</strong></em> by <em><strong>256</strong></em> becomes a vector of dimension <em><strong>65,536</strong></em>, or, equivalently, a point in 65,536-dimensional space.</p>
+<div id="fig-timeseries" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/A-time-series-is-set-up-as-input-vector-of-a-machine-learning-algorithm-without.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Time series to 1D</figcaption>
+</figure>
+</div>
+<p><a href="#fig-timeseries">Figure&nbsp;4</a> on the hand show example of how time series data becomes a vector of 1D.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-alex" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Watson, A. <a href="https://gretel.ai/blog/synthetic-data-and-the-data-centric-machine-learning-life-cycle">Synthetic data and the data-centric machine learning life cycle</a>. (2022).</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -538,11 +618,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Draft,© CC-1.0</div>   
+    <div class="nav-footer-left">Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
 

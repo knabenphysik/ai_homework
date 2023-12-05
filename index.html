@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -153,11 +172,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-  <li><a href="#introduction-to-aimldl" id="toc-introduction-to-aimldl" class="nav-link" data-scroll-target="#introduction-to-aimldl">Introduction to AI,ML,DL</a></li>
-  <li><a href="#ai-overview" id="toc-ai-overview" class="nav-link" data-scroll-target="#ai-overview">AI Overview</a></li>
-  <li><a href="#ai-vs-ml-vs-dl" id="toc-ai-vs-ml-vs-dl" class="nav-link" data-scroll-target="#ai-vs-ml-vs-dl">AI vs ML vs DL</a></li>
+  <li><a href="#artificial-intelligence-machine-learning-and-deep-learning" id="toc-artificial-intelligence-machine-learning-and-deep-learning" class="nav-link" data-scroll-target="#artificial-intelligence-machine-learning-and-deep-learning">Artificial intelligence, Machine learning and Deep learning</a></li>
   <li><a href="#data-scientist-vs-machine-learning-engineer" id="toc-data-scientist-vs-machine-learning-engineer" class="nav-link" data-scroll-target="#data-scientist-vs-machine-learning-engineer">Data Scientist vs Machine Learning Engineer</a></li>
-  <li><a href="#ai-use-cases-cross-domain" id="toc-ai-use-cases-cross-domain" class="nav-link" data-scroll-target="#ai-use-cases-cross-domain">AI use cases, cross domain</a></li>
+  <li><a href="#reality-ml-in-production" id="toc-reality-ml-in-production" class="nav-link" data-scroll-target="#reality-ml-in-production">Reality: ML in production</a></li>
+  <li><a href="#reality-big-data-fast-compute" id="toc-reality-big-data-fast-compute" class="nav-link" data-scroll-target="#reality-big-data-fast-compute">Reality: Big Data, Fast Compute</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -169,20 +187,6 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1 unnumbered">
 <h1 class="unnumbered">Overview</h1>
-<section id="introduction-to-aimldl" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-aimldl">Introduction to AI,ML,DL</h2>
-<p>Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”. “Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data. “Statistics” means the practice or science of collecting and analyzing numerical data in large quantities. There are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same, if “statisticians” plowe their trade in the same manner. Today, there are no difference between the two. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>The disciplines of Data Science requires knowledge and skills in the following:</p>
-<ol type="1">
-<li>Data Gathering, Preparation, and Exploration</li>
-<li>Computing with Data</li>
-<li>Data Modeling</li>
-<li>Data Visualization and Presentation</li>
-<li>Science about Data Science</li>
-</ol>
-</section>
-<section id="ai-overview" class="level2">
-<h2 class="anchored" data-anchor-id="ai-overview">AI Overview</h2>
 <p>AI is everywhere!</p>
 <p>Some notable examples:</p>
 <ul>
@@ -200,21 +204,35 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/ai_task.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption class="figure-caption">Figure 1: Different type of analytics</figcaption>
+<p><img src="content/image/useful_ai.webp" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 1: General goal of AI<span class="citation" data-cites="Gugel"><sup><a href="#ref-Gugel" role="doc-biblioref">1</a></sup></span></figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="ai-vs-ml-vs-dl" class="level2">
-<h2 class="anchored" data-anchor-id="ai-vs-ml-vs-dl">AI vs ML vs DL</h2>
+<section id="artificial-intelligence-machine-learning-and-deep-learning" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-intelligence-machine-learning-and-deep-learning">Artificial intelligence, Machine learning and Deep learning</h2>
+<p>Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.</p>
+<p>“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.</p>
+<p>“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.</p>
+<p>There are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.</p>
+<p>Today, there are no difference between the two.<span class="citation" data-cites="Donoho"><sup><a href="#ref-Donoho" role="doc-biblioref">2</a></sup></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/AI-Circle.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 2: AI vs ML vs DL</figcaption>
+<p><img src="content/image/venn_diagram.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 2: Everything everywhere all at once<span class="citation" data-cites="Ryan"><sup><a href="#ref-Ryan" role="doc-biblioref">3</a></sup></span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="content/image/relationship.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 3: Artificial intelligence, machine learning, and data science.<span class="citation" data-cites="KOTU20191"><sup><a href="#ref-KOTU20191" role="doc-biblioref">4</a></sup></span></figcaption>
 </figure>
 </div>
 </div>
@@ -227,56 +245,97 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-scientist-vs-machine-learning-engineer" class="level2">
 <h2 class="anchored" data-anchor-id="data-scientist-vs-machine-learning-engineer">Data Scientist vs Machine Learning Engineer</h2>
-<p>What data scientist do is the same as Machine Learning engineer except machine learning engineer will implement any machine learning model in production environment using suitable tools like restful API, SDK or lately via serverless model.</p>
-<table class="table">
-<colgroup>
-<col style="width: 62%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Data Scientist</th>
-<th>ML/AI Engineer</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Data science is the description, prediction, and causal inference from structure &amp; unstructure data. <br> This domain helps individuals and enterprise make better decision</td>
-<td>enabling software to become highly accurate in predicting outcome (accomplishing task)</td>
-</tr>
-<tr class="even">
-<td>does statistical analysis, data story telling <br> compare multiple ML model to help business to achieve growth</td>
-<td>Make ML model in prod environment (MVP) <br> build programs that identify patterns based on input data</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="ai-use-cases-cross-domain" class="level2">
-<h2 class="anchored" data-anchor-id="ai-use-cases-cross-domain">AI use cases, cross domain</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/cross_domain.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 3: domain area of deep learning</figcaption>
+<p><img src="content/image/ml_ops.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 4: domain area of deep learning<span class="citation" data-cites="Prabhu"><sup><a href="#ref-Prabhu" role="doc-biblioref">5</a></sup></span></figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Question and homework for the course can be found using the QR code.</p>
-<a href="www.qr-code-generator.com/" border="0" style="cursor:default" rel="nofollow"><img src="https://chart.googleapis.com/chart?cht=qr&amp;chl=https%3A%2F%2Fgithub.com%2Fknabenphysik%2Fai_note&amp;chs=180x180&amp;choe=UTF-8&amp;chld=L|2" class="center"></a>
+<p>MLOps is the process of automating and productionalizing machine learning applications and workflows.</p>
+</section>
+<section id="reality-ml-in-production" class="level2">
+<h2 class="anchored" data-anchor-id="reality-ml-in-production">Reality: ML in production</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="content/image/technical_debt.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.<span class="citation" data-cites="NIPS2015_86df7dcf"><sup><a href="#ref-NIPS2015_86df7dcf" role="doc-biblioref">6</a></sup></span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Machine learning in production is very complicated!</p>
+</section>
+<section id="reality-big-data-fast-compute" class="level2">
+<h2 class="anchored" data-anchor-id="reality-big-data-fast-compute">Reality: Big Data, Fast Compute</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="content/image/gpu_big_data.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption class="figure-caption">Figure 7: Data and computational trend</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="content/image/data_processing_trend.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure 8: Data Processing Evolution<span class="citation" data-cites="nvidia"><sup><a href="#ref-nvidia" role="doc-biblioref">7</a></sup></span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="content/image/gpu_benchmark.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure 9: NVIDIA GPU FP32 Cores evolution<span class="citation" data-cites="nextplatform"><sup><a href="#ref-nextplatform" role="doc-biblioref">8</a></sup></span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+
 
 
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p><span class="citation" data-cites="Donoho17">@Donoho17</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-Gugel" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Google. <a href="https://www.youtube.com/watch?v=QpBTM0GO6xI&amp;list=TLGGCy91ScdjTPYwNTEyMjAyMw">Google i/o 2023</a>. (2023).</div>
+</div>
+<div id="ref-Donoho" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Donoho, D. <a href="https://doi.org/10.1080/10618600.2017.1384734">50 years of data science</a>. <em>Journal of Computational and Graphical Statistics</em> <strong>26</strong>, 745–766 (2017).</div>
+</div>
+<div id="ref-Ryan" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Urbanowicz, R. <a href="https://twitter.com/DocUrbs/status/1007375834347376642?lang=en">Proposed field/term venn diagram</a>. (2018).</div>
+</div>
+<div id="ref-KOTU20191" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Kotu, V. &amp; Deshpande, B. <a href="https://www.sciencedirect.com/science/article/pii/B9780128147610000010">Chapter 1 - introduction</a>. in <em>Data science (second edition)</em> (eds. Kotu, V. &amp; Deshpande, B.) (Morgan Kaufmann, 2019).</div>
+</div>
+<div id="ref-Prabhu" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Prabhu. <a href="https://medium.com/aimonks/the-rise-of-mlops-managing-machine-learning-at-scale-e31ea4a0039f">The rise of MLOps: Managing machine learning at scale</a>. (2023).</div>
+</div>
+<div id="ref-NIPS2015_86df7dcf" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Sculley, D. <em>et al.</em> <a href="https://proceedings.neurips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf">Hidden technical debt in machine learning systems</a>. in <em>Advances in neural information processing systems</em> (eds. Cortes, C., Lawrence, N., Lee, D., Sugiyama, M. &amp; Garnett, R.) vol. 28 (Curran Associates, Inc., 2015).</div>
+</div>
+<div id="ref-nvidia" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">NVIDIA. <a href="https://www.nvidia.com/en-us/deep-learning-ai/software/rapids/">GPU accelerated data science with RAPIDS</a>.</div>
+</div>
+<div id="ref-nextplatform" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Morgan, T. P. <a href="https://www.nextplatform.com/2022/03/31/deep-dive-into-nvidias-hopper-gpu-architecture/">Deep dive into nvidia’s <span>“hopper”</span> GPU architecture</a>. (2022).</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -637,11 +696,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Draft,© CC-1.0</div>   
+    <div class="nav-footer-left">Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
 

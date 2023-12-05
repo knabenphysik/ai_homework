@@ -4,49 +4,35 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”. “Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data. “Statistics” means the practice or science of collecting and analyzing numerical data in large quantities. There are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same, if “statisticians” plowe their trade in the same manner. Today, there are no difference between the two. 1\nThe disciplines of Data Science requires knowledge and skills in the following:\n\nData Gathering, Preparation, and Exploration\nComputing with Data\nData Modeling\nData Visualization and Presentation\nScience about Data Science\n\n\n\n\nAI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: Different type of analytics\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: AI vs ML vs DL\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.\n\n\n\nWhat data scientist do is the same as Machine Learning engineer except machine learning engineer will implement any machine learning model in production environment using suitable tools like restful API, SDK or lately via serverless model.\n\n\n\n\n\n\n\nData Scientist\nML/AI Engineer\n\n\n\n\nData science is the description, prediction, and causal inference from structure & unstructure data.  This domain helps individuals and enterprise make better decision\nenabling software to become highly accurate in predicting outcome (accomplishing task)\n\n\ndoes statistical analysis, data story telling  compare multiple ML model to help business to achieve growth\nMake ML model in prod environment (MVP)  build programs that identify patterns based on input data\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: domain area of deep learning\n\n\n\n\nQuestion and homework for the course can be found using the QR code."
+    "text": "AI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: General goal of AI1\n\n\n\n\n\n\nData science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.\n\n\n\n\n\n\n\n\nFigure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\n\n\n\n\n\n\n\n\nFigure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated!\n\n\n\n\n\n\n\n\nFigure 7: Data and computational trend\n\n\n\n\nIn modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.\n\n\n\n\n\nFigure 8: Data Processing Evolution7\n\n\n\n\n\n\n\n\n\nFigure 9: NVIDIA GPU FP32 Cores evolution8"
   },
   {
-    "objectID": "index.html#introduction-to-aimldl",
-    "href": "index.html#introduction-to-aimldl",
+    "objectID": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
+    "href": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
     "title": "Overview",
     "section": "",
-    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”. “Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data. “Statistics” means the practice or science of collecting and analyzing numerical data in large quantities. There are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same, if “statisticians” plowe their trade in the same manner. Today, there are no difference between the two. 1\nThe disciplines of Data Science requires knowledge and skills in the following:\n\nData Gathering, Preparation, and Exploration\nComputing with Data\nData Modeling\nData Visualization and Presentation\nScience about Data Science"
-  },
-  {
-    "objectID": "index.html#ai-overview",
-    "href": "index.html#ai-overview",
-    "title": "Overview",
-    "section": "",
-    "text": "AI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: Different type of analytics"
-  },
-  {
-    "objectID": "index.html#ai-vs-ml-vs-dl",
-    "href": "index.html#ai-vs-ml-vs-dl",
-    "title": "Overview",
-    "section": "",
-    "text": "Figure 2: AI vs ML vs DL\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data."
+    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data."
   },
   {
     "objectID": "index.html#data-scientist-vs-machine-learning-engineer",
     "href": "index.html#data-scientist-vs-machine-learning-engineer",
     "title": "Overview",
     "section": "",
-    "text": "What data scientist do is the same as Machine Learning engineer except machine learning engineer will implement any machine learning model in production environment using suitable tools like restful API, SDK or lately via serverless model.\n\n\n\n\n\n\n\nData Scientist\nML/AI Engineer\n\n\n\n\nData science is the description, prediction, and causal inference from structure & unstructure data.  This domain helps individuals and enterprise make better decision\nenabling software to become highly accurate in predicting outcome (accomplishing task)\n\n\ndoes statistical analysis, data story telling  compare multiple ML model to help business to achieve growth\nMake ML model in prod environment (MVP)  build programs that identify patterns based on input data"
+    "text": "Figure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows."
   },
   {
-    "objectID": "index.html#ai-use-cases-cross-domain",
-    "href": "index.html#ai-use-cases-cross-domain",
+    "objectID": "index.html#reality-ml-in-production",
+    "href": "index.html#reality-ml-in-production",
     "title": "Overview",
     "section": "",
-    "text": "Figure 3: domain area of deep learning\n\n\n\n\nQuestion and homework for the course can be found using the QR code."
+    "text": "Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated!"
   },
   {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
+    "objectID": "index.html#reality-big-data-fast-compute",
+    "href": "index.html#reality-big-data-fast-compute",
     "title": "Overview",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n@Donoho17↩︎"
+    "section": "",
+    "text": "Figure 7: Data and computational trend\n\n\n\n\nIn modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.\n\n\n\n\n\nFigure 8: Data Processing Evolution7\n\n\n\n\n\n\n\n\n\nFigure 9: NVIDIA GPU FP32 Cores evolution8"
   },
   {
     "objectID": "content/learning_2.html",
@@ -77,46 +63,11 @@
     "text": "Base on our earlier objective:\n\n\n\nFigure 5: Training trade-off\n\n\n\n\n\nVijay Kotu and Bala Deshpande, Data Science Concepts and Practice, 2nd Ed., Elsevier Inc, 2019.\nBishop, C. M., Pattern Recognition and Machine Learning, Springer, 2006\nWan Hasni, MD Labs Data Science Lecture Series, Techna-X, 2020\nScott Fortmann-Roe, Understanding the Bias-Variance Tradeoff, 2012\nMachine Learning for Intelligent Systems: Bias-Variance Tradeoff\nML 101: Bias and Variance\nBias and Variance in Machine Learning"
   },
   {
-    "objectID": "content/intro.html",
-    "href": "content/intro.html",
-    "title": "Introduction",
+    "objectID": "content/intro-data_2.html",
+    "href": "content/intro-data_2.html",
+    "title": "Data & Sampling",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.\n\n1 + 1\n\n2"
-  },
-  {
-    "objectID": "content/intro-data.html",
-    "href": "content/intro-data.html",
-    "title": "Basic",
-    "section": "",
-    "text": "Basic\nSince Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.\n\n\n\nFigure 1: ML Lifecycle"
-  },
-  {
-    "objectID": "content/data.html",
-    "href": "content/data.html",
-    "title": "About Data",
-    "section": "",
-    "text": "Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform basic data exploration to study the basic characteristics of a dataset.\nBy studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called data exploration or exploratory data analysis (EDA).\nThe whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is good or not.\nOnce we have good data, we can training our machine learning model and get accurate results.\nCommon type of dataset is:\nA goodness of dataset:"
-  },
-  {
-    "objectID": "content/data.html#tabular-data",
-    "href": "content/data.html#tabular-data",
-    "title": "About Data",
-    "section": "Tabular Data",
-    "text": "Tabular Data\n\nscatter plot \\(\\Longrightarrow\\) two variables are plotted along two axes.\npairplot \\(\\Longrightarrow\\) pairwise relationships between variables within a dataset\n\nThe closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.\nIf a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: positive or negative, strong or weak.\n\n\n\nFigure 1: correlation plot\n\n\nSo, in statistical terms we use correlation to denote association between two quantitative variables.\n\nExample 1\nImagine you have tabular data as below.\n\n\n\n\n\n\n\nTable 1: Dummy Dataset\n\n\n\nfeature_A\nfeature_B\nfeature_D\n\n\n\n\n0\n14.54\n32.66\n16\n\n\n1\n28.29\n77.11\n0\n\n\n2\n33.47\n88.45\n3\n\n\n3\n28.73\n93.44\n30\n\n\n4\n24.37\n88.45\n4\n\n\n\n\n\n\n\n\nDataset in Table 1 have 7 columns \\(\\Longrightarrow\\) 7 features\nQuestion : From Figure 1, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)\n\n\n\n\n\nFigure 2: pair plot\n\n\n\n\nWhat can we say about Figure 2 ?\n\n\n\n\n\nFigure 3: big pair plot\n\n\n\n\n\n\nExample 2\n\n\n\n\n\n\n\nTable 2: Dummy Big Dataset\n\n\n\nfeature_B\nfeature_C\nfeature_D\nfeature_E\nfeature_F\nfeature_G\nfeature_H\nfeature_I\nfeature_J\nfeature_K\n...\nfeature_M\nfeature_M.1\nfeature_O\nfeature_P\nfeature_Q\nfeature_R\nfeature_S\nfeature_T\nfeature_U\nfeature_V\n\n\n\n\n0\n27.0\n30.1\n24.0\n83.68\n0.3\n100.0\nrain\n0\n0\n4.0\n...\n0.0\n1011.0\n26.8\n10.0\n0\nNaN\n0\n10\nRain, Partially cloudy\nrain\n\n\n1\n27.0\n30.0\n24.0\n84.04\n0.0\n0.0\nNaN\n0\n0\n3.2\n...\n0.0\n1011.0\n26.8\n10.0\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n2\n27.0\n29.6\n23.0\n79.12\n0.0\n0.0\nNaN\n0\n0\n3.2\n...\n0.0\n1010.9\n26.8\n10.0\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n3\n26.9\n29.9\n24.0\n84.40\n0.0\n0.0\nNaN\n0\n0\n4.7\n...\n0.0\n1010.0\n25.0\n9.9\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n4\n26.0\n26.0\n24.0\n88.75\n0.9\n100.0\nrain\n0\n0\n5.0\n...\n0.0\n1009.9\n25.0\n9.9\n0\nNaN\n0\n10\nRain, Partially cloudy\nrain\n\n\n\n\n\n5 rows × 21 columns\n\n\n\nBut if we have many features like Table 2 and want to plot pair-plot like Figure 3, seem to overwhelming and confuse isn’t?\nSolution? Use correlation heatmap \\(\\Longrightarrow\\) easier to see based on correlation value/coefficient, r (recall our Figure 1).r value is the degree of association.\n\n\n\n\nTable 3: correlation guide\n\n\nCorrelation Value (r)\nStrength of Relationship\n\n\n\n\nr &lt; 0.3\nNone or very weak\n\n\n0.3 &lt; r &lt;0.5\nWeak\n\n\n0.5 &lt; r &lt; 0.7\nModerate\n\n\nr &gt; 0.7\nStrong\n\n\n\n\n\n\nNow, based on Table 3, let change our Figure 3 to correlation heatmap\n\n\n\n\n\nFigure 4: correlation plot for big data\n\n\n\n\n\n\n\n\n\nFigure 5: correlation plot for Figure 2"
-  },
-  {
-    "objectID": "content/data.html#categorical-data",
-    "href": "content/data.html#categorical-data",
-    "title": "About Data",
-    "section": "Categorical Data",
-    "text": "Categorical Data\n\nExample 1\nImagine you have mnist image data below.\n\n\n\n\n\nFigure 6: sample images of mnist dataset\n\n\n\n\nNow, since our data now is images and not tabular. We can use simple histogram plot like Figure 7 to view each class of MNIST dataset.\n\nWe can observe that data distribution almost the same (almost balanced) for each class\n\n\n\n\n\n\nFigure 7: images distribution of mnist dataset"
-  },
-  {
-    "objectID": "content/data.html#appendix",
-    "href": "content/data.html#appendix",
-    "title": "About Data",
-    "section": "Appendix",
-    "text": "Appendix\nWe want our machine model to generalize as good as possible in order to evade overfitting, and thus many models assume the data to be normally distributed due to the central limit theorem\nSee here on example to normalize data."
+    "text": "Data & Sampling\nYou’ve learnt basic about EDA & basic of machine “learning” process. Now, let’s go a bit further."
   },
   {
     "objectID": "content/data_2.html",
@@ -133,11 +84,67 @@
     "text": "Association, that is \\(Pr(Y|X)\\)\nClassification, that is \\(if(x_1 &gt; a)\\) and \\(if(x_2 &lt; b)\\) then ..\nPattern recognition\n\nPixel based (image and video)\nword based (NLP)\nfrequency based (sound, etc.)\n\nKnowledge extraction\n\nemergent structures\nextreme observations (outlier) detection\n\nReinforcement learning\n\nGame theoretic\nProbabilistic learning\n\nNetwork or Graph theory based learning\n\nDriven by network/graph theory\nEmergent\nScaling\n\n\n\n\n\nIt is important to know the objective; this will determine which is more important in choosing models and methods\nClassically in statistics - this is called the “degrees of freedom” of any statistical tests and estimators.\nTrade-offs between interpretability and flexibility is a major issue."
   },
   {
-    "objectID": "content/intro-data_2.html",
-    "href": "content/intro-data_2.html",
-    "title": "Data & Sampling",
+    "objectID": "content/data.html",
+    "href": "content/data.html",
+    "title": "About Data",
     "section": "",
-    "text": "Data & Sampling\nYou’ve learnt basic about EDA & basic of machine “learning” process. Now, let’s go a bit further."
+    "text": "Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform basic data exploration to study the basic characteristics of a dataset.\nBy studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called data exploration or exploratory data analysis (EDA).\nThe whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is good or not.\nOnce we have good data, we can training our machine learning model and get accurate results."
+  },
+  {
+    "objectID": "content/data.html#data-barier-to-widespread-ai-adoption",
+    "href": "content/data.html#data-barier-to-widespread-ai-adoption",
+    "title": "About Data",
+    "section": "Data barier to widespread AI adoption",
+    "text": "Data barier to widespread AI adoption\n\nsmall datasets\nLong tail problem (customization)1\n\n\n\n\nFigure 1: the need of customization of specific AI projects"
+  },
+  {
+    "objectID": "content/data.html#data-centric-ai",
+    "href": "content/data.html#data-centric-ai",
+    "title": "About Data",
+    "section": "Data-Centric AI",
+    "text": "Data-Centric AI\nCurrently, the majority of AI applications are model-centric, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng2, more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.\nIn model-centric approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data."
+  },
+  {
+    "objectID": "content/data.html#goodness-of-dataset",
+    "href": "content/data.html#goodness-of-dataset",
+    "title": "About Data",
+    "section": "Goodness of dataset:",
+    "text": "Goodness of dataset:\nWhat makes a good dataset?\n\nquality (representative and high-quality of inputs data)\nquantity (consistent and accurate labels on target data/ground truth)\nvariability (reflect post deployment changes)\n\ndata cleaning is no longer merely a “pre-processing” step, but an iterative ML process!"
+  },
+  {
+    "objectID": "content/data.html#dataset-source-type",
+    "href": "content/data.html#dataset-source-type",
+    "title": "About Data",
+    "section": "Dataset Source Type",
+    "text": "Dataset Source Type\nCommon type of dataset is:\n\ncategorical data (image, voice, videos)\ntabular/numerical data\ntime series\ntext"
+  },
+  {
+    "objectID": "content/data.html#categorical-data",
+    "href": "content/data.html#categorical-data",
+    "title": "About Data",
+    "section": "Categorical Data",
+    "text": "Categorical Data\n\nExample 1\nImagine you have mnist image data below.\n\n\n\n\n\nFigure 2: sample images of mnist dataset\n\n\n\n\nNow, since our data now is images and not tabular. We can use simple histogram plot like Figure 3 to view each class of MNIST dataset.\n\nWe can observe that data distribution almost the same (almost balanced) for each class\n\n\n\n\n\n\nFigure 3: images distribution of mnist dataset"
+  },
+  {
+    "objectID": "content/data.html#tabular-data",
+    "href": "content/data.html#tabular-data",
+    "title": "About Data",
+    "section": "Tabular Data",
+    "text": "Tabular Data\n\nscatter plot \\(\\Longrightarrow\\) two variables are plotted along two axes.\npairplot \\(\\Longrightarrow\\) pairwise relationships between variables within a dataset\n\nThe closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.\nIf a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: positive or negative, strong or weak.\n\n\n\nFigure 4: correlation plot\n\n\nSo, in statistical terms we use correlation to denote association between two quantitative variables.\n\nExample 1\nImagine you have tabular data as below.\n\n\n\n\n\n\n\nTable 1: Dummy Dataset\n\n\n\nfeature_A\nfeature_B\nfeature_D\n\n\n\n\n0\n14.54\n32.66\n16\n\n\n1\n28.29\n77.11\n0\n\n\n2\n33.47\n88.45\n3\n\n\n3\n28.73\n93.44\n30\n\n\n4\n24.37\n88.45\n4\n\n\n\n\n\n\n\n\nDataset in Table 1 have 7 columns \\(\\Longrightarrow\\) 7 features\nQuestion : From Figure 4, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)\n\n\n\n\n\nFigure 5: pair plot\n\n\n\n\nWhat can we say about Figure 5 ?\n\n\n\n\n\nFigure 6: big pair plot\n\n\n\n\n\n\nExample 2\n\n\n\n\n\n\n\nTable 2: Dummy Big Dataset\n\n\n\nfeature_B\nfeature_C\nfeature_D\nfeature_E\nfeature_F\nfeature_G\nfeature_H\nfeature_I\nfeature_J\nfeature_K\n...\nfeature_M\nfeature_M.1\nfeature_O\nfeature_P\nfeature_Q\nfeature_R\nfeature_S\nfeature_T\nfeature_U\nfeature_V\n\n\n\n\n0\n27.0\n30.1\n24.0\n83.68\n0.3\n100.0\nrain\n0\n0\n4.0\n...\n0.0\n1011.0\n26.8\n10.0\n0\nNaN\n0\n10\nRain, Partially cloudy\nrain\n\n\n1\n27.0\n30.0\n24.0\n84.04\n0.0\n0.0\nNaN\n0\n0\n3.2\n...\n0.0\n1011.0\n26.8\n10.0\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n2\n27.0\n29.6\n23.0\n79.12\n0.0\n0.0\nNaN\n0\n0\n3.2\n...\n0.0\n1010.9\n26.8\n10.0\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n3\n26.9\n29.9\n24.0\n84.40\n0.0\n0.0\nNaN\n0\n0\n4.7\n...\n0.0\n1010.0\n25.0\n9.9\n0\nNaN\n0\n10\nPartially cloudy\npartly-cloudy-night\n\n\n4\n26.0\n26.0\n24.0\n88.75\n0.9\n100.0\nrain\n0\n0\n5.0\n...\n0.0\n1009.9\n25.0\n9.9\n0\nNaN\n0\n10\nRain, Partially cloudy\nrain\n\n\n\n\n\n5 rows × 21 columns\n\n\n\nBut if we have many features like Table 2 and want to plot pair-plot like Figure 6, seem to overwhelming and confuse isn’t?\nSolution? Use correlation heatmap \\(\\Longrightarrow\\) easier to see based on correlation value/coefficient, r (recall our Figure 4).r value is the degree of association.\n\n\n\n\nTable 3: correlation guide\n\n\nCorrelation Value (r)\nStrength of Relationship\n\n\n\n\nr &lt; 0.3\nNone or very weak\n\n\n0.3 &lt; r &lt;0.5\nWeak\n\n\n0.5 &lt; r &lt; 0.7\nModerate\n\n\nr &gt; 0.7\nStrong\n\n\n\n\n\n\nNow, based on Table 3, let change our Figure 6 to correlation heatmap\n\n\n\n\n\nFigure 7: correlation plot for big data\n\n\n\n\n\n\n\n\n\nFigure 8: correlation plot for Figure 5"
+  },
+  {
+    "objectID": "content/data.html#time-series-data",
+    "href": "content/data.html#time-series-data",
+    "title": "About Data",
+    "section": "Time Series Data",
+    "text": "Time Series Data\n\nExample 1\nImagine you have time-series data as below.\n\n\n\n\n\n\n\nTable 4: Weather Dataset\n\n\n\nTemperature (C)\nApparent Temperature (C)\nHumidity\nWind Speed (km/h)\nWind Bearing (degrees)\nVisibility (km)\nLoud Cover\nPressure (millibars)\nDaily Summary\n\n\n\n\n0\n9.472222\n7.388889\n0.89\n14.1197\n251.0\n15.8263\n0.0\n1015.13\nPartly cloudy throughout the day.\n\n\n1\n9.355556\n7.227778\n0.86\n14.2646\n259.0\n15.8263\n0.0\n1015.63\nPartly cloudy throughout the day.\n\n\n2\n9.377778\n9.377778\n0.89\n3.9284\n204.0\n14.9569\n0.0\n1015.94\nPartly cloudy throughout the day.\n\n\n3\n8.288889\n5.944444\n0.83\n14.1036\n269.0\n15.8263\n0.0\n1016.41\nPartly cloudy throughout the day.\n\n\n4\n8.755556\n6.977778\n0.83\n11.0446\n259.0\n15.8263\n0.0\n1016.51\nPartly cloudy throughout the day.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: pair-plot for Table 4"
+  },
+  {
+    "objectID": "content/intro-data.html",
+    "href": "content/intro-data.html",
+    "title": "Machine Learning Life-Cycle",
+    "section": "",
+    "text": "Machine Learning Life-Cycle\nSince Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.\n\n\n\nFigure 1: ML Lifecycle1\n\n\n\n\nData source as vector\nIt is natural that we should seek to design and build machines that can recognize patterns. Consider an example in Figure 2. Suppose that we want to have a automate the process of detection whether the image is either “roti canai” or “chapati”. How do we do this?\n\n\n\nFigure 2: Typical information flow from data source to ML modelling\n\n\nFor an image, we need to get suitable “feature” from the source image and “teach” our system about the feature.\n\\[\n\\begin{equation*}\n\\textbf{x}=\n\\begin{bmatrix}\n1 \\\\\n4 \\\\\n5 \\\\\n6\n\\end{bmatrix}\n\\end{equation*}\n\\] \\[\n\\begin{equation*}\n\\textbf{y}=\n\\begin{bmatrix}\n.3 \\\\\n-7\n\\end{bmatrix}\n\\end{equation*}\n\\] \\[\n\\begin{equation*}\n\\textbf{z}=\n\\begin{bmatrix}\n1 & 4 & 5 & 6\n\\end{bmatrix}\n\\end{equation*}\n\\]\n\\(\\textbf{x}\\) is a 4D column vector, \\(\\textbf{y}\\) is a 2D column vector, and \\(\\textbf{z}\\) is a 4D row vector.\nLinear algebra convention is to assume that vectors are in column orientation unless otherwise specified. Row vectors are written as \\(\\mathbf{w}^T\\). The \\(\\mathbf{}^T\\) indicates the transpose operation.\n\n\n\nFigure 3: 1 image(2D) to 1D\n\n\nLet’s consider a face like in Figure 3 be a two-dimensional \\(N\\) by \\(N\\) array of intensity values. This image may also be considered as a vector of dimension \\(N^{2}\\), so that a typical image of size 256 by 256 becomes a vector of dimension 65,536, or, equivalently, a point in 65,536-dimensional space.\n\n\n\nFigure 4: Time series to 1D\n\n\nFigure 4 on the hand show example of how time series data becomes a vector of 1D.\n\n\n\n\n\nReferences\n\n1. Watson, A. Synthetic data and the data-centric machine learning life cycle. (2022)."
   },
   {
     "objectID": "content/learning_1.html",

@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -157,16 +176,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link active" data-scroll-target="#tabular-data">Tabular Data</a>
-  <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  </ul></li>
+  <li><a href="#data-barier-to-widespread-ai-adoption" id="toc-data-barier-to-widespread-ai-adoption" class="nav-link active" data-scroll-target="#data-barier-to-widespread-ai-adoption">Data barier to widespread AI adoption</a></li>
+  <li><a href="#data-centric-ai" id="toc-data-centric-ai" class="nav-link" data-scroll-target="#data-centric-ai">Data-Centric AI</a></li>
+  <li><a href="#goodness-of-dataset" id="toc-goodness-of-dataset" class="nav-link" data-scroll-target="#goodness-of-dataset">Goodness of dataset:</a></li>
+  <li><a href="#dataset-source-type" id="toc-dataset-source-type" class="nav-link" data-scroll-target="#dataset-source-type">Dataset Source Type</a></li>
   <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a>
   <ul class="collapse">
-  <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">Example 1</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
   </ul></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data">Tabular Data</a>
+  <ul class="collapse">
+  <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  </ul></li>
+  <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time Series Data</a>
+  <ul class="collapse">
+  <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">Example 1</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/data.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -194,20 +220,75 @@ ul.task-list li input[type="checkbox"] {
 <p>By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
 <p>The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is <strong><em>good or not</em></strong>.</p>
 <p>Once we have <strong><em>good data</em></strong>, we can training our machine learning model and get <strong><em>accurate</em></strong> results.</p>
+<section id="data-barier-to-widespread-ai-adoption" class="level2">
+<h2 class="anchored" data-anchor-id="data-barier-to-widespread-ai-adoption">Data barier to widespread AI adoption</h2>
+<ol type="1">
+<li>small datasets</li>
+<li>Long tail problem (customization)<span class="citation" data-cites="andrewGTC"><sup><a href="#ref-andrewGTC" role="doc-biblioref">1</a></sup></span></li>
+</ol>
+<div id="fig-longtail" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/long_tail.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: the need of customization of specific AI projects</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-centric-ai" class="level2">
+<h2 class="anchored" data-anchor-id="data-centric-ai">Data-Centric AI</h2>
+<p>Currently, the majority of AI applications are <em><strong>model-centric</strong></em>, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng<span class="citation" data-cites="andrew"><sup><a href="#ref-andrew" role="doc-biblioref">2</a></sup></span>, more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.</p>
+<p>In <em><strong>model-centric</strong></em> approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data.</p>
+</section>
+<section id="goodness-of-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="goodness-of-dataset">Goodness of dataset:</h2>
+<p>What makes a good dataset?</p>
+<ul>
+<li>quality (representative and high-quality of inputs data)</li>
+<li>quantity (consistent and accurate labels on target data/ground truth)</li>
+<li>variability (reflect post deployment changes)</li>
+</ul>
+<p><em><strong>data cleaning</strong></em> is no longer merely a “pre-processing” step, but an iterative ML process!</p>
+</section>
+<section id="dataset-source-type" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-source-type">Dataset Source Type</h2>
 <p>Common type of dataset is:</p>
 <ul>
-<li>tabular/numerical data</li>
 <li>categorical data (image, voice, videos)</li>
+<li>tabular/numerical data</li>
 <li>time series</li>
 <li>text</li>
 </ul>
-<p>A goodness of dataset:</p>
+</section>
+<section id="categorical-data" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="categorical-data">Categorical Data</h2>
+<section id="example-1" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
+<p>Imagine you have mnist image <a href="https://www.kaggle.com/competitions/digit-recognizer/data">data</a> below.</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-mnist" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="data_files/figure-html/fig-mnist-output-1.png" width="465" height="463" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: sample images of mnist dataset</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <a href="#fig-mnist-count">Figure&nbsp;3</a> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
 <ul>
-<li>quality</li>
-<li>quantity</li>
-<li>variability</li>
+<li>We can observe that data distribution <code>almost</code> the same (almost balanced) for each class</li>
 </ul>
-<p><img src="image/ml_lib.png" id="fig-ml-lib" class="img-fluid" alt="common python libraries package for ML"> <img src="image/ml_cloud.png" id="fig-ml-cloud" class="img-fluid" alt="cloud service for ML"></p>
+<div class="cell page-columns page-full" data-execution_count="2">
+<div class="cell-output cell-output-display column-screen-inset-shaded">
+<div id="fig-mnist-count" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="data_files/figure-html/fig-mnist-count-output-1.png" width="453" height="376" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: images distribution of mnist dataset</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
 <section id="tabular-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tabular-data">Tabular Data</h2>
 <ul>
@@ -219,15 +300,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-corre" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="image/corre.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: correlation plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4: correlation plot</figcaption>
 </figure>
 </div>
 <p>So, in statistical terms we use correlation to denote association between two quantitative variables.</p>
-<section id="example-1" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
+<section id="example-1-1" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="example-1-1">Example 1</h3>
 <p>Imagine you have tabular <a href="https://www.kaggle.com/competitions/titanic/data">data</a> as below.</p>
-<div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -293,24 +374,24 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Dataset in <a href="#tbl-dummy-data">Table&nbsp;1</a> have 7 columns <span class="math inline">\(\Longrightarrow\)</span> 7 features</p>
-<p>Question : From <a href="#fig-corre">Figure&nbsp;1</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
-<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="2">
+<p>Question : From <a href="#fig-corre">Figure&nbsp;4</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
+<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="4">
 <div class="cell-output cell-output-display column-screen">
 <div id="fig-pair-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="data_files/figure-html/fig-pair-plot-output-1.png" width="712" height="714" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: pair plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;5: pair plot</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>What can we say about <a href="#fig-pair-plot">Figure&nbsp;2</a> ?</p>
-<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="3">
+<p>What can we say about <a href="#fig-pair-plot">Figure&nbsp;5</a> ?</p>
+<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="5">
 <div class="cell-output cell-output-display column-screen-inset-shaded">
 <div id="fig-big-pair-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="data_files/figure-html/fig-big-pair-plot-output-1.png" width="4243" height="4244" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: big pair plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6: big pair plot</figcaption>
 </figure>
 </div>
 </div>
@@ -318,8 +399,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="example-2" class="level3">
 <h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -493,10 +574,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>But if we have many features like <a href="#tbl-big-dummy-data">Table&nbsp;2</a> and want to plot pair-plot like <a href="#fig-big-pair-plot">Figure&nbsp;3</a>, seem to overwhelming and confuse isn’t?</p>
-<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre">Figure&nbsp;1</a>).r value is the degree of association.</p>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<p>But if we have many features like <a href="#tbl-big-dummy-data">Table&nbsp;2</a> and want to plot pair-plot like <a href="#fig-big-pair-plot">Figure&nbsp;6</a>, seem to overwhelming and confuse isn’t?</p>
+<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre">Figure&nbsp;4</a>).r value is the degree of association.</p>
+<div class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div id="tbl-correlation" class="anchored">
 <table class="table table-sm table-striped small">
 <caption>Table&nbsp;3: correlation guide</caption>
@@ -528,69 +609,160 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Now, based on <a href="#tbl-correlation">Table&nbsp;3</a>, let change our <a href="#fig-big-pair-plot">Figure&nbsp;3</a> to correlation heatmap</p>
-<div class="cell" data-execution_count="6">
+<p>Now, based on <a href="#tbl-correlation">Table&nbsp;3</a>, let change our <a href="#fig-big-pair-plot">Figure&nbsp;6</a> to correlation heatmap</p>
+<div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div id="fig-big-correlation-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="data_files/figure-html/fig-big-correlation-plot-output-1.png" width="679" height="536" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: correlation plot for big data</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;7: correlation plot for big data</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div id="fig-small-correlation-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="data_files/figure-html/fig-small-correlation-plot-output-1.png" width="639" height="502" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: correlation plot for <a href="#fig-pair-plot">Figure&nbsp;2</a></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;8: correlation plot for <a href="#fig-pair-plot">Figure&nbsp;5</a></figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="categorical-data" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="categorical-data">Categorical Data</h2>
-<section id="example-1-1" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="example-1-1">Example 1</h3>
-<p>Imagine you have mnist image <a href="https://www.kaggle.com/competitions/digit-recognizer/data">data</a> below.</p>
-<div class="cell" data-execution_count="8">
+<section id="time-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-data">Time Series Data</h2>
+<section id="example-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-2">Example 1</h3>
+<p>Imagine you have time-series <a href="https://www.kaggle.com/datasets/muthuj7/weather-dataset/data">data</a> as below.</p>
+<div class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<div id="tbl-weather-data" class="anchored">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>Table&nbsp;4: Weather Dataset</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Temperature (C)</th>
+<th data-quarto-table-cell-role="th">Apparent Temperature (C)</th>
+<th data-quarto-table-cell-role="th">Humidity</th>
+<th data-quarto-table-cell-role="th">Wind Speed (km/h)</th>
+<th data-quarto-table-cell-role="th">Wind Bearing (degrees)</th>
+<th data-quarto-table-cell-role="th">Visibility (km)</th>
+<th data-quarto-table-cell-role="th">Loud Cover</th>
+<th data-quarto-table-cell-role="th">Pressure (millibars)</th>
+<th data-quarto-table-cell-role="th">Daily Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>9.472222</td>
+<td>7.388889</td>
+<td>0.89</td>
+<td>14.1197</td>
+<td>251.0</td>
+<td>15.8263</td>
+<td>0.0</td>
+<td>1015.13</td>
+<td>Partly cloudy throughout the day.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>9.355556</td>
+<td>7.227778</td>
+<td>0.86</td>
+<td>14.2646</td>
+<td>259.0</td>
+<td>15.8263</td>
+<td>0.0</td>
+<td>1015.63</td>
+<td>Partly cloudy throughout the day.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>9.377778</td>
+<td>9.377778</td>
+<td>0.89</td>
+<td>3.9284</td>
+<td>204.0</td>
+<td>14.9569</td>
+<td>0.0</td>
+<td>1015.94</td>
+<td>Partly cloudy throughout the day.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>8.288889</td>
+<td>5.944444</td>
+<td>0.83</td>
+<td>14.1036</td>
+<td>269.0</td>
+<td>15.8263</td>
+<td>0.0</td>
+<td>1016.41</td>
+<td>Partly cloudy throughout the day.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8.755556</td>
+<td>6.977778</td>
+<td>0.83</td>
+<td>11.0446</td>
+<td>259.0</td>
+<td>15.8263</td>
+<td>0.0</td>
+<td>1016.51</td>
+<td>Partly cloudy throughout the day.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<div id="fig-mnist" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-weather-correlation-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="data_files/figure-html/fig-mnist-output-1.png" width="465" height="463" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: sample images of mnist dataset</figcaption>
+<p><img src="data_files/figure-html/fig-weather-correlation-plot-output-1.png" width="1968" height="1892" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;9: pair-plot for <a href="#tbl-weather-data">Table&nbsp;4</a></figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <a href="#fig-mnist-count">Figure&nbsp;7</a> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
-<ul>
-<li>We can observe that data distribution <code>almost</code> the same (almost balanced) for each class</li>
-</ul>
-<div class="cell page-columns page-full" data-execution_count="9">
-<div class="cell-output cell-output-display column-screen-inset-shaded">
-<div id="fig-mnist-count" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="data_files/figure-html/fig-mnist-count-output-1.png" width="427" height="361" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: images distribution of mnist dataset</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="appendix" class="level2">
-<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
-<p>We want our machine model to generalize as good as possible in order to evade overfitting, and thus many models assume the data to be <strong><em>normally distributed</em></strong> due to the <a href="https://theanalyticsgeek.com/central-limit-theorem/">central limit theorem</a></p>
-<p>See <a href="https://www.kaggle.com/code/allunia/titanic-dive-through-feature-scaling-and-outliers">here</a> on example to normalize data.</p>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-andrewGTC" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">2022, N. G. <a href="https://www.nvidia.com/en-us/on-demand/session/gtcspring22-s42658/">The data-centric AI movement</a>. (2022).</div>
+</div>
+<div id="ref-andrew" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">DeepLearningAI. <a href="https://www.youtube.com/watch?v=06-AZXmwHjo&amp;t=69s">A chat with andrew on MLOps: From model-centric to data-centric AI</a>. (2021).</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -954,11 +1126,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Draft,© CC-1.0</div>   
+    <div class="nav-footer-left">Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
 
