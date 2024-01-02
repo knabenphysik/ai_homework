@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Hitchhiker Guide to AI – learning_3</title>
+<title>My Hitchhiker Guide to AI – use_case</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/use_case.html" rel="next">
-<link href="../content/learning_2.html" rel="prev">
+<link href="../content/learning_3.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -64,8 +63,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -78,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/learning_3.html">About Learning III</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/use_case.html">Type of Learning</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,13 +137,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/learning_3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/learning_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About Learning III</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/use_case.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/use_case.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Type of Learning</span></a>
   </div>
 </li>
@@ -160,64 +157,69 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-learning-iii" id="toc-about-learning-iii" class="nav-link active" data-scroll-target="#about-learning-iii">About Learning III</a>
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link active" data-scroll-target="#supervised-learning">Supervised Learning</a></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a>
   <ul class="collapse">
-  <li><a href="#common-metrics" id="toc-common-metrics" class="nav-link" data-scroll-target="#common-metrics">Common metrics</a>
+  <li><a href="#model-trade-off" id="toc-model-trade-off" class="nav-link" data-scroll-target="#model-trade-off">Model Trade-Off</a></li>
+  <li><a href="#use-case" id="toc-use-case" class="nav-link" data-scroll-target="#use-case">Use Case</a>
   <ul class="collapse">
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References:</a></li>
+  <li><a href="#case-1-face-recognitionverification" id="toc-case-1-face-recognitionverification" class="nav-link" data-scroll-target="#case-1-face-recognitionverification">Case-1: Face Recognition/Verification</a></li>
+  <li><a href="#case-2-weatherrain-prediction" id="toc-case-2-weatherrain-prediction" class="nav-link" data-scroll-target="#case-2-weatherrain-prediction">Case-2: Weather(Rain) Prediction</a></li>
+  <li><a href="#case-3-housing-price-prediction" id="toc-case-3-housing-price-prediction" class="nav-link" data-scroll-target="#case-3-housing-price-prediction">Case-3: Housing Price Prediction</a></li>
   </ul></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/learning_3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/learning_3.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/use_case.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/use_case.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<section id="about-learning-iii" class="level1">
-<h1>About Learning III</h1>
-<p>At the end of “training” (after model optimization), we need to ask the following:</p>
-<ol type="1">
-<li><p>How well is our model doing?</p></li>
-<li><p>Is our model good enough for us to use?</p></li>
-</ol>
-<p>To answer this, we must do <strong>model evaluation</strong>. And to evaluate, certain measurement or metric is used to judge (evaluate) the performance of your model. It provides a more interpretable measure of your model’s performance.</p>
-<p>Also recall that our “learning” output answer will always be in terms of probability.</p>
-<section id="common-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="common-metrics">Common metrics</h2>
-<p>Here are the essential metrics:</p>
+<p>So far we have learnt</p>
 <ul>
-<li><p><strong>True Positives (TP)</strong> is an outcome where the model correctly predicts the positive class.</p></li>
-<li><p><strong>True Negatives (TN)</strong> is an outcome where the model correctly predicts the negative class</p></li>
-<li><p><strong>False Positives (FP)</strong> is an outcome where the model incorrectly predicts the positive class.</p></li>
-<li><p><strong>False Negatives (FN)</strong> is an outcome where the model incorrectly predicts the negative class.</p></li>
+<li>ML life-cycle</li>
+<li>Data representation as vector</li>
+<li>basic of “learning”</li>
 </ul>
-<div id="fig-common-metrics" class="quarto-figure quarto-figure-center anchored">
+<section id="supervised-learning" class="level1">
+<h1>Supervised Learning</h1>
+<p>Supervised learning is a machine learning approach that is s defined by its use of <strong><em>labeled datasets</em></strong>. These datasets are designed to train or “supervise” algorithms into classifying data or predicting outcomes accurately. Using labeled inputs and outputs, the model can measure its accuracy and learn over time.</p>
+</section>
+<section id="unsupervised-learning" class="level1">
+<h1>Unsupervised Learning</h1>
+<p>Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. These algorithms <strong><em>discover hidden patterns</em></strong> in data without the need for human intervention</p>
+<div id="fig-ml-type" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="image/metrics_common.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: common general metric</figcaption>
+<p><img src="image/concept_learning.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Type of Learning</figcaption>
 </figure>
 </div>
-<p><strong>Precision</strong>: This metric shows how often your model is <strong>correct</strong> when predicting the <strong>target class</strong>.</p>
-<p><span class="math display">\[
-Precision = \frac{TP}{TP + FP}
-\]</span> <strong>Recall</strong>: metric that shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)</p>
-<p><span class="math display">\[
-Recall = \frac{TP}{TP + FN}
-\]</span></p>
+<section id="model-trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="model-trade-off">Model Trade-Off</h2>
+<div id="fig-ml-tradeoff" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="image/model_trade_off.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Trade-off between model interpretability and performance</figcaption>
+</figure>
+</div>
+<p>When building a model, things to consider:</p>
 <ul>
-<li>High precision and high recall mean that your model is performing well.</li>
-<li>Low precision means that your model will predict some false positives</li>
-<li>Low recall means that your model will predict some false negatives</li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References:</h3>
-<ol type="1">
-<li><p>Bishop, C. M., <a href="https://www.amazon.com/gp/product/0387310738/"><em>Pattern Recognition and Machine Learning</em></a>, Springer, 2006</p></li>
-<li><p>Wan Hasni, <em>MD Labs Data Science Lecture Series</em>, Techna-X, 2020</p></li>
-<li><p>Rohit Kundu, <a href="https://www.v7labs.com/blog/precision-vs-recall-guide">Precision vs.&nbsp;Recall: Differences, Use Cases &amp; Evaluation</a>, 2022</p></li>
-</ol>
+</section>
+<section id="use-case" class="level2">
+<h2 class="anchored" data-anchor-id="use-case">Use Case</h2>
+<section id="case-1-face-recognitionverification" class="level3">
+<h3 class="anchored" data-anchor-id="case-1-face-recognitionverification">Case-1: Face Recognition/Verification</h3>
+</section>
+<section id="case-2-weatherrain-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="case-2-weatherrain-prediction">Case-2: Weather(Rain) Prediction</h3>
+</section>
+<section id="case-3-housing-price-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="case-3-housing-price-prediction">Case-3: Housing Price Prediction</h3>
 
 
 </section>
@@ -575,14 +577,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/learning_2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About Learning II</span>
+      <a href="../content/learning_3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About Learning III</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/use_case.html" class="pagination-link">
-        <span class="nav-page-text">Type of Learning</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

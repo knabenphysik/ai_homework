@@ -166,6 +166,12 @@ div.csl-indent {
  <span class="menu-text">About Learning III</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/use_case.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Type of Learning</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -176,8 +182,7 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-barier-to-widespread-ai-adoption" id="toc-data-barier-to-widespread-ai-adoption" class="nav-link active" data-scroll-target="#data-barier-to-widespread-ai-adoption">Data barier to widespread AI adoption</a></li>
-  <li><a href="#data-centric-ai" id="toc-data-centric-ai" class="nav-link" data-scroll-target="#data-centric-ai">Data-Centric AI</a></li>
+  <li><a href="#why-ai-not-widely-adopted" id="toc-why-ai-not-widely-adopted" class="nav-link active" data-scroll-target="#why-ai-not-widely-adopted">Why AI not widely adopted</a></li>
   <li><a href="#goodness-of-dataset" id="toc-goodness-of-dataset" class="nav-link" data-scroll-target="#goodness-of-dataset">Goodness of dataset:</a></li>
   <li><a href="#dataset-source-type" id="toc-dataset-source-type" class="nav-link" data-scroll-target="#dataset-source-type">Dataset Source Type</a></li>
   <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a>
@@ -220,8 +225,8 @@ div.csl-indent {
 <p>By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
 <p>The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is <strong><em>good or not</em></strong>.</p>
 <p>Once we have <strong><em>good data</em></strong>, we can training our machine learning model and get <strong><em>accurate</em></strong> results.</p>
-<section id="data-barier-to-widespread-ai-adoption" class="level2">
-<h2 class="anchored" data-anchor-id="data-barier-to-widespread-ai-adoption">Data barier to widespread AI adoption</h2>
+<section id="why-ai-not-widely-adopted" class="level2">
+<h2 class="anchored" data-anchor-id="why-ai-not-widely-adopted">Why AI not widely adopted</h2>
 <ol type="1">
 <li>small datasets</li>
 <li>Long tail problem (customization)<span class="citation" data-cites="andrewGTC"><sup><a href="#ref-andrewGTC" role="doc-biblioref">1</a></sup></span></li>
@@ -233,11 +238,6 @@ div.csl-indent {
 </figure>
 </div>
 </section>
-<section id="data-centric-ai" class="level2">
-<h2 class="anchored" data-anchor-id="data-centric-ai">Data-Centric AI</h2>
-<p>Currently, the majority of AI applications are <em><strong>model-centric</strong></em>, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng<span class="citation" data-cites="andrew"><sup><a href="#ref-andrew" role="doc-biblioref">2</a></sup></span>, more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.</p>
-<p>In <em><strong>model-centric</strong></em> approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data.</p>
-</section>
 <section id="goodness-of-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="goodness-of-dataset">Goodness of dataset:</h2>
 <p>What makes a good dataset?</p>
@@ -246,7 +246,6 @@ div.csl-indent {
 <li>quantity (consistent and accurate labels on target data/ground truth)</li>
 <li>variability (reflect post deployment changes)</li>
 </ul>
-<p><em><strong>data cleaning</strong></em> is no longer merely a “pre-processing” step, but an iterative ML process!</p>
 </section>
 <section id="dataset-source-type" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-source-type">Dataset Source Type</h2>
@@ -758,9 +757,6 @@ div.csl-indent {
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
 <div id="ref-andrewGTC" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">2022, N. G. <a href="https://www.nvidia.com/en-us/on-demand/session/gtcspring22-s42658/">The data-centric AI movement</a>. (2022).</div>
-</div>
-<div id="ref-andrew" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">DeepLearningAI. <a href="https://www.youtube.com/watch?v=06-AZXmwHjo&amp;t=69s">A chat with andrew on MLOps: From model-centric to data-centric AI</a>. (2021).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

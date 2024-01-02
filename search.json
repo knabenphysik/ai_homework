@@ -1,38 +1,38 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
     "section": "",
-    "text": "AI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: General goal of AI1\n\n\n\n\n\n\nData science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.\n\n\n\n\n\n\n\n\nFigure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\n\n\n\n\n\n\n\n\nFigure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated!\n\n\n\n\n\n\n\n\nFigure 7: Data and computational trend\n\n\n\n\nIn modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.\n\n\n\n\n\nFigure 8: Data Processing Evolution7\n\n\n\n\n\n\n\n\n\nFigure 9: NVIDIA GPU FP32 Cores evolution8"
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n2"
   },
   {
-    "objectID": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
-    "href": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
-    "title": "Overview",
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
     "section": "",
-    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data."
+    "text": "This is a book created from markdown and executable code.\nSeeknuth84? for additional discussion of literate programming.\n\n1 + 1\n\n2"
   },
   {
-    "objectID": "index.html#data-scientist-vs-machine-learning-engineer",
-    "href": "index.html#data-scientist-vs-machine-learning-engineer",
-    "title": "Overview",
+    "objectID": "content/use_case.html",
+    "href": "content/use_case.html",
+    "title": "Supervised Learning",
     "section": "",
-    "text": "Figure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows."
+    "text": "So far we have learnt"
   },
   {
-    "objectID": "index.html#reality-ml-in-production",
-    "href": "index.html#reality-ml-in-production",
-    "title": "Overview",
-    "section": "",
-    "text": "Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated!"
+    "objectID": "content/use_case.html#model-trade-off",
+    "href": "content/use_case.html#model-trade-off",
+    "title": "Supervised Learning",
+    "section": "Model Trade-Off",
+    "text": "Model Trade-Off\n\n\n\nFigure 2: Trade-off between model interpretability and performance\n\n\nWhen building a model, things to consider:"
   },
   {
-    "objectID": "index.html#reality-big-data-fast-compute",
-    "href": "index.html#reality-big-data-fast-compute",
-    "title": "Overview",
-    "section": "",
-    "text": "Figure 7: Data and computational trend\n\n\n\n\nIn modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.\n\n\n\n\n\nFigure 8: Data Processing Evolution7\n\n\n\n\n\n\n\n\n\nFigure 9: NVIDIA GPU FP32 Cores evolution8"
+    "objectID": "content/use_case.html#use-case",
+    "href": "content/use_case.html#use-case",
+    "title": "Supervised Learning",
+    "section": "Use Case",
+    "text": "Use Case\n\nCase-1: Face Recognition/Verification\n\n\nCase-2: Weather(Rain) Prediction\n\n\nCase-3: Housing Price Prediction"
   },
   {
     "objectID": "content/learning_2.html",
@@ -91,25 +91,18 @@
     "text": "Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform basic data exploration to study the basic characteristics of a dataset.\nBy studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called data exploration or exploratory data analysis (EDA).\nThe whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is good or not.\nOnce we have good data, we can training our machine learning model and get accurate results."
   },
   {
-    "objectID": "content/data.html#data-barier-to-widespread-ai-adoption",
-    "href": "content/data.html#data-barier-to-widespread-ai-adoption",
+    "objectID": "content/data.html#why-ai-not-widely-adopted",
+    "href": "content/data.html#why-ai-not-widely-adopted",
     "title": "About Data",
-    "section": "Data barier to widespread AI adoption",
-    "text": "Data barier to widespread AI adoption\n\nsmall datasets\nLong tail problem (customization)1\n\n\n\n\nFigure 1: the need of customization of specific AI projects"
-  },
-  {
-    "objectID": "content/data.html#data-centric-ai",
-    "href": "content/data.html#data-centric-ai",
-    "title": "About Data",
-    "section": "Data-Centric AI",
-    "text": "Data-Centric AI\nCurrently, the majority of AI applications are model-centric, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng2, more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.\nIn model-centric approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data."
+    "section": "Why AI not widely adopted",
+    "text": "Why AI not widely adopted\n\nsmall datasets\nLong tail problem (customization)1\n\n\n\n\nFigure 1: the need of customization of specific AI projects"
   },
   {
     "objectID": "content/data.html#goodness-of-dataset",
     "href": "content/data.html#goodness-of-dataset",
     "title": "About Data",
     "section": "Goodness of dataset:",
-    "text": "Goodness of dataset:\nWhat makes a good dataset?\n\nquality (representative and high-quality of inputs data)\nquantity (consistent and accurate labels on target data/ground truth)\nvariability (reflect post deployment changes)\n\ndata cleaning is no longer merely a “pre-processing” step, but an iterative ML process!"
+    "text": "Goodness of dataset:\nWhat makes a good dataset?\n\nquality (representative and high-quality of inputs data)\nquantity (consistent and accurate labels on target data/ground truth)\nvariability (reflect post deployment changes)"
   },
   {
     "objectID": "content/data.html#dataset-source-type",
@@ -144,7 +137,7 @@
     "href": "content/intro-data.html",
     "title": "Machine Learning Life-Cycle",
     "section": "",
-    "text": "Machine Learning Life-Cycle\nSince Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.\n\n\n\nFigure 1: ML Lifecycle1\n\n\n\n\nData source as vector\nIt is natural that we should seek to design and build machines that can recognize patterns. Consider an example in Figure 2. Suppose that we want to have a automate the process of detection whether the image is either “roti canai” or “chapati”. How do we do this?\n\n\n\nFigure 2: Typical information flow from data source to ML modelling\n\n\nFor an image, we need to get suitable “feature” from the source image and “teach” our system about the feature.\n\\[\n\\begin{equation*}\n\\textbf{x}=\n\\begin{bmatrix}\n1 \\\\\n4 \\\\\n5 \\\\\n6\n\\end{bmatrix}\n\\end{equation*}\n\\] \\[\n\\begin{equation*}\n\\textbf{y}=\n\\begin{bmatrix}\n.3 \\\\\n-7\n\\end{bmatrix}\n\\end{equation*}\n\\] \\[\n\\begin{equation*}\n\\textbf{z}=\n\\begin{bmatrix}\n1 & 4 & 5 & 6\n\\end{bmatrix}\n\\end{equation*}\n\\]\n\\(\\textbf{x}\\) is a 4D column vector, \\(\\textbf{y}\\) is a 2D column vector, and \\(\\textbf{z}\\) is a 4D row vector.\nLinear algebra convention is to assume that vectors are in column orientation unless otherwise specified. Row vectors are written as \\(\\mathbf{w}^T\\). The \\(\\mathbf{}^T\\) indicates the transpose operation.\n\n\n\nFigure 3: 1 image(2D) to 1D\n\n\nLet’s consider a face like in Figure 3 be a two-dimensional \\(N\\) by \\(N\\) array of intensity values. This image may also be considered as a vector of dimension \\(N^{2}\\), so that a typical image of size 256 by 256 becomes a vector of dimension 65,536, or, equivalently, a point in 65,536-dimensional space.\n\n\n\nFigure 4: Time series to 1D\n\n\nFigure 4 on the hand show example of how time series data becomes a vector of 1D.\n\n\n\n\n\nReferences\n\n1. Watson, A. Synthetic data and the data-centric machine learning life cycle. (2022)."
+    "text": "Machine Learning Life-Cycle\nSince Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.\n\n\n\nFigure 1: ML Lifecycle1\n\n\n\n\n\n\n\nReferences\n\n1. Watson, A. Synthetic data and the data-centric machine learning life cycle. (2022)."
   },
   {
     "objectID": "content/learning_1.html",
@@ -215,5 +208,40 @@
     "title": "About Learning III",
     "section": "",
     "text": "Here are the essential metrics:\n\nTrue Positives (TP) is an outcome where the model correctly predicts the positive class.\nTrue Negatives (TN) is an outcome where the model correctly predicts the negative class\nFalse Positives (FP) is an outcome where the model incorrectly predicts the positive class.\nFalse Negatives (FN) is an outcome where the model incorrectly predicts the negative class.\n\n\n\n\nFigure 1: common general metric\n\n\nPrecision: This metric shows how often your model is correct when predicting the target class.\n\\[\nPrecision = \\frac{TP}{TP + FP}\n\\] Recall: metric that shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)\n\\[\nRecall = \\frac{TP}{TP + FN}\n\\]\n\nHigh precision and high recall mean that your model is performing well.\nLow precision means that your model will predict some false positives\nLow recall means that your model will predict some false negatives\n\n\n\n\nBishop, C. M., Pattern Recognition and Machine Learning, Springer, 2006\nWan Hasni, MD Labs Data Science Lecture Series, Techna-X, 2020\nRohit Kundu, Precision vs. Recall: Differences, Use Cases & Evaluation, 2022"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "AI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: General goal of AI1\n\n\n\n\n\n\nData science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.\n\n\n\n\n\n\n\n\nFigure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\nIn a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.\n\n\n\n\n\n\n\n\nFigure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine."
+  },
+  {
+    "objectID": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
+    "href": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
+    "title": "Overview",
+    "section": "",
+    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data."
+  },
+  {
+    "objectID": "index.html#data-scientist-vs-machine-learning-engineer",
+    "href": "index.html#data-scientist-vs-machine-learning-engineer",
+    "title": "Overview",
+    "section": "",
+    "text": "Figure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\nIn a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist."
+  },
+  {
+    "objectID": "index.html#reality-ml-in-production",
+    "href": "index.html#reality-ml-in-production",
+    "title": "Overview",
+    "section": "",
+    "text": "Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "References"
   }
 ]

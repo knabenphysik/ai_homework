@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://knabenphysik.github.io/ai_note/index.html</loc>
-    <lastmod>2023-12-05T15:18:32.187Z</lastmod>
+    <loc>https://knabenphysik.github.io/ai_note/summary.html</loc>
+    <lastmod>2024-01-02T04:05:22.972Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/intro.html</loc>
+    <lastmod>2024-01-02T04:05:20.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/use_case.html</loc>
+    <lastmod>2024-01-02T04:05:16.694Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/learning_2.html</loc>
-    <lastmod>2023-12-05T15:18:30.542Z</lastmod>
+    <lastmod>2024-01-02T04:05:16.203Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/intro-data_2.html</loc>
-    <lastmod>2023-12-05T15:18:29.976Z</lastmod>
+    <lastmod>2024-01-02T04:05:15.613Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/data_2.html</loc>
-    <lastmod>2023-12-05T15:18:29.526Z</lastmod>
+    <lastmod>2024-01-02T04:05:15.188Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/data.html</loc>
-    <lastmod>2023-12-05T15:18:29.179Z</lastmod>
+    <lastmod>2024-01-02T04:05:14.800Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/intro-data.html</loc>
-    <lastmod>2023-12-05T15:18:29.766Z</lastmod>
+    <lastmod>2024-01-02T04:05:15.402Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/learning_1.html</loc>
-    <lastmod>2023-12-05T15:18:30.289Z</lastmod>
+    <lastmod>2024-01-02T04:05:15.939Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/learning_3.html</loc>
-    <lastmod>2023-12-05T15:18:30.783Z</lastmod>
+    <lastmod>2024-01-02T04:05:16.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/index.html</loc>
+    <lastmod>2024-01-02T04:05:17.717Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/references.html</loc>
+    <lastmod>2024-01-02T04:05:20.460Z</lastmod>
   </url>
 </urlset>

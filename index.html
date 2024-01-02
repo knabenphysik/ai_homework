@@ -160,6 +160,12 @@ div.csl-indent {
  <span class="menu-text">About Learning III</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./content/use_case.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Type of Learning</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -175,7 +181,6 @@ div.csl-indent {
   <li><a href="#artificial-intelligence-machine-learning-and-deep-learning" id="toc-artificial-intelligence-machine-learning-and-deep-learning" class="nav-link" data-scroll-target="#artificial-intelligence-machine-learning-and-deep-learning">Artificial intelligence, Machine learning and Deep learning</a></li>
   <li><a href="#data-scientist-vs-machine-learning-engineer" id="toc-data-scientist-vs-machine-learning-engineer" class="nav-link" data-scroll-target="#data-scientist-vs-machine-learning-engineer">Data Scientist vs Machine Learning Engineer</a></li>
   <li><a href="#reality-ml-in-production" id="toc-reality-ml-in-production" class="nav-link" data-scroll-target="#reality-ml-in-production">Reality: ML in production</a></li>
-  <li><a href="#reality-big-data-fast-compute" id="toc-reality-big-data-fast-compute" class="nav-link" data-scroll-target="#reality-big-data-fast-compute">Reality: Big Data, Fast Compute</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -256,6 +261,7 @@ div.csl-indent {
 </div>
 </div>
 <p>MLOps is the process of automating and productionalizing machine learning applications and workflows.</p>
+<p>In a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.</p>
 </section>
 <section id="reality-ml-in-production" class="level2">
 <h2 class="anchored" data-anchor-id="reality-ml-in-production">Reality: ML in production</h2>
@@ -269,41 +275,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Machine learning in production is very complicated!</p>
-</section>
-<section id="reality-big-data-fast-compute" class="level2">
-<h2 class="anchored" data-anchor-id="reality-big-data-fast-compute">Reality: Big Data, Fast Compute</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="content/image/gpu_big_data.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption class="figure-caption">Figure 7: Data and computational trend</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>In modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="content/image/data_processing_trend.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure 8: Data Processing Evolution<span class="citation" data-cites="nvidia"><sup><a href="#ref-nvidia" role="doc-biblioref">7</a></sup></span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="content/image/gpu_benchmark.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure 9: NVIDIA GPU FP32 Cores evolution<span class="citation" data-cites="nextplatform"><sup><a href="#ref-nextplatform" role="doc-biblioref">8</a></sup></span></figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Machine learning in production is very complicated! In reality (especially in Small &amp; Medium Enterprise), Data Scientist &amp; ML Engineer jobscrope is intertwine.</p>
 
 
 
@@ -328,12 +300,6 @@ div.csl-indent {
 </div>
 <div id="ref-NIPS2015_86df7dcf" class="csl-entry" role="listitem">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline">Sculley, D. <em>et al.</em> <a href="https://proceedings.neurips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf">Hidden technical debt in machine learning systems</a>. in <em>Advances in neural information processing systems</em> (eds. Cortes, C., Lawrence, N., Lee, D., Sugiyama, M. &amp; Garnett, R.) vol. 28 (Curran Associates, Inc., 2015).</div>
-</div>
-<div id="ref-nvidia" class="csl-entry" role="listitem">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline">NVIDIA. <a href="https://www.nvidia.com/en-us/deep-learning-ai/software/rapids/">GPU accelerated data science with RAPIDS</a>.</div>
-</div>
-<div id="ref-nextplatform" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">Morgan, T. P. <a href="https://www.nextplatform.com/2022/03/31/deep-dive-into-nvidias-hopper-gpu-architecture/">Deep dive into nvidia’s <span>“hopper”</span> GPU architecture</a>. (2022).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
