@@ -43,6 +43,8 @@ website:
         text: About Learning II
       - href: content/learning_3.qmd
         text: About Learning III
+      - href: content/use_case.qmd
+        text: Type of Learning
 #      - href: content/data_2.qmd
 #        text: Data & Sampling
 

@@ -1,0 +1,36 @@
+So far we have learnt
+
+- ML life-cycle
+- Data representation as vector
+- basic of "learning"
+
+
+# Supervised Learning
+
+Supervised learning is a machine learning approach that is s defined by its use of **_labeled datasets_**. These datasets are designed to train or “supervise” algorithms into classifying data or predicting outcomes accurately. Using labeled inputs and outputs, the model can measure its accuracy and learn over time.
+
+# Unsupervised Learning
+
+Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled data sets. These algorithms **_discover hidden patterns_** in data without the need for human intervention 
+
+
+![Type of Learning](image/concept_learning.png){#fig-ml-type}
+
+
+## Model Trade-Off
+
+![Trade-off between model interpretability and performance](image/model_trade_off.png){#fig-ml-tradeoff}
+
+When building a model, things to consider:
+
+- 
+- 
+- 
+
+## Use Case
+
+### Case-1: Face Recognition/Verification
+
+### Case-2: Weather(Rain) Prediction
+
+### Case-3: Housing Price Prediction

@@ -9,21 +9,13 @@ The whole idea is to get better understanding of the dataset at hand. We want to
 Once we have ***good data***, we can training our machine learning model and get ***accurate*** results.
 
 
-## Data barier to widespread AI adoption
+## Why AI not widely adopted
 
 1. small datasets
 2. Long tail problem (customization) [@andrewGTC]
 
 ![the need of customization of specific AI projects](image/long_tail.png){#fig-longtail}
 
-
-
-
-## Data-Centric AI
-
-Currently, the majority of AI applications are _**model-centric**_, one possible reason behind this is that the AI sector pays careful attention to academic research on models. According to Andrew Ng [@andrew], more than 90% of research papers in this domain are model-centric. In this approach, data is frequently overlooked, and data collection is viewed as a one-time event.
-
-In _**model-centric**_ approach, you hold the model or code fixed and iteratively improve the quality of the data. This is shift from big data to good data.
 
 ## Goodness of dataset:
 
@@ -34,7 +26,6 @@ What makes a good dataset?
 -   quantity (consistent and accurate labels on target data/ground truth)
 -   variability (reflect post deployment changes)
 
-_**data cleaning**_ is no longer merely a "pre-processing" step, but an iterative ML process!
 
 ## Dataset Source Type
 

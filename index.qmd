@@ -23,24 +23,21 @@ Some notable examples:
 knitr::include_graphics("content/image/useful_ai.webp")
 ```
 
-
 ## Artificial intelligence, Machine learning and Deep learning
 
-Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called "statistical data analysis" or "applied statistics". 
+Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called "statistical data analysis" or "applied statistics".
 
 "Data Scientist" means a professional who uses scientific methods to liberate and create meaning from raw data.
 
-"Statistics" means the practice or science of collecting and analyzing numerical data in large quantities. 
+"Statistics" means the practice or science of collecting and analyzing numerical data in large quantities.
 
-There are no real difference between the two, except that "Data Scientists" prowes in large scale data or Big Data and fast computing. Otherwise, they are the same. 
+There are no real difference between the two, except that "Data Scientists" prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.
 
 Today, there are no difference between the two.[@Donoho]
-
 
 ```{r venna, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 2: Everything everywhere all at once[@Ryan]"}
 knitr::include_graphics("content/image/venn_diagram.jpeg")
 ```
-
 
 ```{r relationship, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 3: Artificial intelligence, machine learning, and data science.[@KOTU20191]"}
 knitr::include_graphics("content/image/relationship.jpg")
@@ -56,7 +53,6 @@ Artificial Neural Networks (ANNs) are a class of machine learning algorithms tha
 
 Deep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.
 
-
 ## Data Scientist vs Machine Learning Engineer
 
 ```{r gpu-domain, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 4: domain area of deep learning[@Prabhu]"}
@@ -65,6 +61,7 @@ knitr::include_graphics("content/image/ml_ops.png")
 
 MLOps is the process of automating and productionalizing machine learning applications and workflows.
 
+In a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.
 
 ## Reality: ML in production
 
@@ -72,20 +69,6 @@ MLOps is the process of automating and productionalizing machine learning applic
 knitr::include_graphics("content/image/technical_debt.png")
 ```
 
-Machine learning in production is very complicated!
+Machine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine.
 
-## Reality: Big Data, Fast Compute
 
-```{r gpu-bigdata, echo=FALSE , fig.align = 'center', out.width = "60%", fig.cap = " Figure 7: Data and computational trend"}
-knitr::include_graphics("content/image/gpu_big_data.png")
-```
-
-In modern days, it is well established fact that the modern AI/ML systems success has been critically dependent on their ability to process massive amounts of raw data in a parallel fashion using task-optimized hardware. 
-
-```{r gpu-bigdata-trend, echo=FALSE , fig.align = 'center', out.width = "70%", fig.cap = " Figure 8: Data Processing Evolution [@nvidia]"}
-knitr::include_graphics("content/image/data_processing_trend.png")
-```
-
-```{r gpu--trend, echo=FALSE , fig.align = 'center', out.width = "70%", fig.cap = " Figure 9: NVIDIA GPU FP32 Cores evolution [@nextplatform]"}
-knitr::include_graphics("content/image/gpu_benchmark.png")
-```
