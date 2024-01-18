@@ -2,54 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://knabenphysik.github.io/ai_note/summary.html</loc>
-    <lastmod>2024-01-18T09:29:03.232Z</lastmod>
+    <lastmod>2024-01-18T09:53:08.063Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/index.html</loc>
-    <lastmod>2024-01-18T09:29:00.367Z</lastmod>
+    <lastmod>2024-01-18T09:53:05.346Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/license.html</loc>
-    <lastmod>2024-01-18T09:28:58.550Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/06_deployment.html</loc>
-    <lastmod>2024-01-18T09:28:58.036Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/04_learning.html</loc>
-    <lastmod>2024-01-18T09:28:57.420Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/02_eda.html</loc>
-    <lastmod>2024-01-18T09:28:56.866Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/00_intro-ml-life-cyle.html</loc>
-    <lastmod>2024-01-18T09:23:58.224Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/01_data_collection.html</loc>
-    <lastmod>2024-01-18T09:23:58.559Z</lastmod>
-  </url>
-  <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/03_data_labelling.html</loc>
-    <lastmod>2024-01-18T09:28:57.107Z</lastmod>
+    <lastmod>2024-01-18T09:53:04.125Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/05_evaluation.html</loc>
-    <lastmod>2024-01-18T09:28:57.691Z</lastmod>
+    <lastmod>2024-01-18T09:53:03.638Z</lastmod>
   </url>
   <url>
-    <loc>https://knabenphysik.github.io/ai_note/content/learning_2.html</loc>
-    <lastmod>2024-01-18T09:28:58.317Z</lastmod>
+    <loc>https://knabenphysik.github.io/ai_note/content/03_data_labelling.html</loc>
+    <lastmod>2024-01-18T09:53:03.095Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/01_data_collection.html</loc>
+    <lastmod>2024-01-18T09:48:33.767Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/00_intro-ml-life-cyle.html</loc>
+    <lastmod>2024-01-18T09:48:33.433Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/02_eda.html</loc>
+    <lastmod>2024-01-18T09:53:02.866Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/04_learning.html</loc>
+    <lastmod>2024-01-18T09:53:03.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://knabenphysik.github.io/ai_note/content/06_deployment.html</loc>
+    <lastmod>2024-01-18T09:53:03.907Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/content/use_case.html</loc>
-    <lastmod>2024-01-18T09:28:58.819Z</lastmod>
+    <lastmod>2024-01-18T09:53:04.351Z</lastmod>
   </url>
   <url>
     <loc>https://knabenphysik.github.io/ai_note/references.html</loc>
-    <lastmod>2024-01-18T09:29:00.607Z</lastmod>
+    <lastmod>2024-01-18T09:53:05.543Z</lastmod>
   </url>
 </urlset>

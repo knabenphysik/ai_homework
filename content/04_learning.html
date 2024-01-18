@@ -203,10 +203,10 @@ div.csl-indent {
   <li><a href="#case-3-low-variance-and-high-bias" id="toc-case-3-low-variance-and-high-bias" class="nav-link" data-scroll-target="#case-3-low-variance-and-high-bias">Case 3: Low Variance and High Bias</a></li>
   <li><a href="#case-4-low-variance-and-low-bias" id="toc-case-4-low-variance-and-low-bias" class="nav-link" data-scroll-target="#case-4-low-variance-and-low-bias">Case 4: Low Variance and Low Bias</a></li>
   </ul></li>
-  <li><a href="#trade-off" id="toc-trade-off" class="nav-link" data-scroll-target="#trade-off">Trade off</a>
+  </ul></li>
+  <li><a href="#interpretability-vs-flexibility-in-learning" id="toc-interpretability-vs-flexibility-in-learning" class="nav-link" data-scroll-target="#interpretability-vs-flexibility-in-learning">Interpretability vs flexibility in learning</a>
   <ul class="collapse">
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question?</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/04_learning.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/04_learning.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -312,10 +312,10 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <figcaption class="figure-caption">Figure&nbsp;6: training loss plot</figcaption>
 </figure>
 </div>
-<div id="fig-ref-plot" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-model-tradeoff" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="image/1_2BvEinjHM4SXt2ge0MOi4w.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: reference plot</figcaption>
+<p><img src="image/biasvariance.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">2</a></sup></span></figcaption>
 </figure>
 </div>
 <div id="fig-good-plot" class="quarto-figure quarto-figure-center anchored">
@@ -379,13 +379,20 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <p>The predictor will have a <strong><em>good fit</em></strong> for both <strong>training sample</strong> and <strong>test sample</strong>. This is what we want.</p>
 </section>
 </section>
-<section id="trade-off" class="level2">
-<h2 class="anchored" data-anchor-id="trade-off">Trade off</h2>
-<p>Base on our earlier objective:</p>
-<div id="fig-model-tradeoff" class="quarto-figure quarto-figure-center anchored">
+</section>
+<section id="interpretability-vs-flexibility-in-learning" class="level1">
+<h1>Interpretability vs flexibility in learning</h1>
+<p>It is important to know the objective; this will determine which is more important in choosing models and methods.</p>
+<blockquote class="blockquote">
+<p>Q:Which method should i used in my analysis?</p>
+<p>A: Depends on your goal - the big picture is inference vs prediction<span class="citation" data-cites="cmu"><sup><a href="#ref-cmu" role="doc-biblioref">3</a></sup></span></p>
+</blockquote>
+<p>Classically in statistics - this is called the “degrees of freedom” of any statistical tests and estimators.</p>
+<p>Trade-offs between interpretability and flexibility is a major issue.</p>
+<div id="fig-model-interpretability" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="image/biasvariance.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;13: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">2</a></sup></span></figcaption>
+<p><img src="image/model_trade_off.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;13: trade-off between flexibility and interpretability of ML models<span class="citation" data-cites="huppenkothen2023constructing"><sup><a href="#ref-huppenkothen2023constructing" role="doc-biblioref">4</a></sup></span></figcaption>
 </figure>
 </div>
 <section id="question" class="level3">
@@ -399,7 +406,6 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 
 </section>
 </section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
 <div id="ref-hasni" class="csl-entry" role="listitem">
@@ -407,6 +413,12 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 </div>
 <div id="ref-javatpoint" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">www.javatpoint.com. <a href="https://www.javatpoint.com/bias-and-variance-in-machine-learning">Bias and variance in machine learning</a>. (2021).</div>
+</div>
+<div id="ref-cmu" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">CMU. <a href="https://www.stat.cmu.edu/cmsac/sure/2021/materials/lectures/slides/10-Model-assess.html#1">Supervised learning: Model selection vs assessment</a>.</div>
+</div>
+<div id="ref-huppenkothen2023constructing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Huppenkothen, D. <em>et al.</em> <a href="https://arxiv.org/abs/2310.12528">Constructing impactful machine learning research for astronomy: Best practices for researchers and reviewers</a>. (2023).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
