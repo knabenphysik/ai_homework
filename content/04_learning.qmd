@@ -58,7 +58,6 @@ noise in data refers to unwanted modifications introduced to a source signal dur
 
 ![Example 1:Image data representation in vector](image/image_rep.png){#fig-img-rep}
 
-
 Before learning, data at hand must be representing in vector (e.g. Figure 2 & Figure 3)
 
 ![Example 2:Image data representation in vector](image/image_rep_2.png){#fig-img-rep-2}
@@ -87,12 +86,11 @@ Imagine you have a set of data. In order to have ***good estimated*** model, we 
 
 ![training loss plot](image/example_loss_plot.png){#fig-loss-plot}
 
-![reference plot](image/1_2BvEinjHM4SXt2ge0MOi4w.png){#fig-ref-plot}
+![Training trade-off [@javatpoint]](image/biasvariance.png){#fig-model-tradeoff}
 
 ![good plot](image/perfect_loss_plot.png){#fig-good-plot}
 
 > Learning is **NOT** memorization! The ability to produce correct outputs on previously unseen inputs is called **generalization**
-
 
 ## **Error and Bias**
 
@@ -129,12 +127,19 @@ We have precise predictor, but will work well only for **training sample**, howe
 
 The predictor will have a ***good fit*** for both **training sample** and **test sample**. This is what we want.
 
-## Trade off
+# Interpretability vs flexibility in learning
 
-Base on our earlier objective:
+It is important to know the objective; this will determine which is more important in choosing models and methods.
 
-![Training trade-off [@javatpoint]](image/biasvariance.png){#fig-model-tradeoff}
+> Q:Which method should i used in my analysis?
+>
+> A: Depends on your goal - the big picture is inference vs prediction [@cmu]
 
+Classically in statistics - this is called the “degrees of freedom” of any statistical tests and estimators.
+
+Trade-offs between interpretability and flexibility is a major issue.
+
+![trade-off between flexibility and interpretability of ML models [@huppenkothen2023constructing]](image/model_trade_off.png){#fig-model-interpretability}
 
 ### Question?
 
