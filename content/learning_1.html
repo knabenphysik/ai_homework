@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/learning_2.html" rel="next">
-<link href="../content/data.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -78,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/learning_1.html">About Learning I</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -111,43 +109,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/intro-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basic</span></a>
+  <a href="../content/00_intro-ml-life-cyle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning Life Cycle</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/learning_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">About Learning I</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/learning_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Learning II</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/learning_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About Learning III</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/use_case.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Type of Learning</span></a>
+  <a href="../content/01_data_collection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Collection</span></a>
   </div>
 </li>
     </ul>
@@ -171,7 +145,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data representation</a></li>
   <li><a href="#the-learning" id="toc-the-learning" class="nav-link" data-scroll-target="#the-learning">The “learning”</a></li>
   </ul></li>
-  <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How much data?</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References:</a>
   <ul class="collapse">
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question?</a></li>
@@ -297,34 +270,6 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <p>Learning is <strong>NOT</strong> memorization! The ability to produce correct outputs on previously unseen inputs is called <strong>generalization</strong></p>
 </blockquote>
 </section>
-</section>
-<section id="how-much-data" class="level2">
-<h2 class="anchored" data-anchor-id="how-much-data">How much data?</h2>
-<p>To <strong>“learn”</strong> and achieve <strong>good generalization</strong>, how much data do we need?</p>
-<div id="fig-img-cla" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/medical_plot2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Effect of training data size on accuracy on medical images</figcaption>
-</figure>
-</div>
-<p><a href="#fig-img-cla">Figure&nbsp;9</a> showed the effect of training data size on <a href="https://arxiv.org/pdf/1511.06348.pdf">medical classification</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.</p>
-<div id="fig-multi-cla" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/cifar10_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;10: Effect of training data size on accuracy on cifar-10 images</figcaption>
-</figure>
-</div>
-<p>In contrast, <a href="#fig-multi-cla">Figure&nbsp;10</a> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 images</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
-<div id="fig-yolov5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/yolov5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;11: Effect of categories and instances size for YoloV5</figcaption>
-</figure>
-</div>
-<p>And for <a href="#fig-yolov5">Figure&nbsp;11</a> is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.</p>
-<blockquote class="blockquote">
-<p>“To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case.” — Maksym Tatariants</p>
-</blockquote>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References:</h2>
@@ -698,18 +643,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../content/data.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About Data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../content/learning_2.html" class="pagination-link">
-        <span class="nav-page-text">About Learning II</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
