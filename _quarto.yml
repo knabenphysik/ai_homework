@@ -12,6 +12,9 @@ website:
   page-footer:
     right: "Built with [Quarto](https://quarto.org/)."
     left: "Draft,&copy; [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)"
+    center:
+      - text: "License"
+        href: content/license.qmd
   
   sidebar:
     background: "#D9E3E4"
@@ -32,21 +35,21 @@ website:
     collapse-level: 1
     contents:
       - href: index.qmd
-        text: Home
-      - href: content/intro-data.qmd
-        text: Basic
-      - href: content/data.qmd
-        text: About Data
-      - href: content/learning_1.qmd
-        text: About Learning I
-      - href: content/learning_2.qmd
-        text: About Learning II
-      - href: content/learning_3.qmd
-        text: About Learning III
-      - href: content/use_case.qmd
-        text: Type of Learning
-#      - href: content/data_2.qmd
-#        text: Data & Sampling
+        text: Introduction
+      - href: content/00_intro-ml-life-cyle.qmd
+        text: Machine Learning Life Cycle
+      - href: content/01_data_collection.qmd
+        text: 01 - Data Collection        
+      - href: content/02_eda.qmd
+        text: 02 - EDA
+      - href: content/03_data_labelling.qmd
+        text: 03 - Data Labelling
+      - href: content/04_learning.qmd
+        text: 04 - Model Learning
+      - href: content/05_evaluation.qmd
+        text: 05 - Model Evaluation
+      - href: content/06_deployment.qmd
+        text: 06 - Model Deployment & Monitoring
 
 format:
   html:

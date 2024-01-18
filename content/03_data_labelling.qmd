@@ -1,0 +1,31 @@
+# Overview
+
+In machine learning, data labeling, or data annotation is the process of identifying raw data (images, text files, videos, etc.) and adding one or more meaningful and informative labels to provide context so that a machine learning model can learn from it.
+
+## Computer vision and Audio
+
+For __*classification*__ problem, organize your dataset according to the following structure:
+
+```
+├── train
+│   ├── category 1
+|      ├── 1.jpg
+│      ├── 2.jpg
+│   ├── category 2
+|      ├── 1.jpg
+│      ├── 2.jpg
+├── valid
+│   ├── category 1
+|      ├── 1.jpg
+│      ├── 2.jpg
+│   ├── category 2
+|      ├── 1.jpg
+│      ├── 2.jpg
+
+```
+
+In PyTorch, [`ImageFolder`](https://pytorch.org/vision/stable/datasets.html?highlight=imagefolder#torchvision.datasets.ImageFolder) can be use to automatically label your data. In Tensorflow, similar class, [`image_dataset_from_directory`](https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory) can also be use.
+
+For __*object detection*__ problem, we can use several tool such as [label-studio](https://labelstud.io/blog/getting-started-with-object-detection/), [labelImg](https://github.com/HumanSignal/labelImg), [labelme](https://github.com/labelmeai/labelme), etc.
+
+![label object in image](image/image_labelling_object.png){#fig-object-label}

@@ -1,0 +1,58 @@
+# Model Serving & Montoring
+
+When a data scientist has a model ready, the next step is to deploy it in a way that it can serve the application.
+
+The basic meaning of model serving is to __*host machine-learning models*__ (on the cloud or on premises) and to make their functions available via __*API*__ so that applications can incorporate AI into their systems.[@iguazio]
+
+Deploying a machine-learning model in production also involves resource management and model monitoring  including operations stats as well as _model drifts_.
+
+Things to consider:
+
+- __*Access points (endpoints)*__: An endpoint is a URL that allows applications to communicate with the target service via HTTPS protocol
+
+- __*Traffic management*__: Requests at an endpoint go through various routes, depending on the destination service. Traffic management may also deploy a load-balancing feature to process requests concurrently.
+
+- __*Pre- and post-processing requests*__: A service may need to transform request messages into the format suitable for the target model and convert response messages into the format required by client applications. Often, serverless functions can handle such transformations.
+
+- __*Monitor model drifts*__: We must monitor how each machine-learning model performs and detect when the performance deteriorates and requires retraining. 
+
+
+## Model Serving Strategy
+
+Serving the model as:
+
+- __*Analytic*__ system that make data-driven decisions
+- __*Operational*__ system to build data-powered products
+
+For both method, things to consider is:
+
+- whether model embedded in the app or not
+- whether model served as an API
+- pre-trained model used as a library
+
+Challenge in model serving is always scalability while monitoring model drift!
+
+## Model Monitor
+
+Model monitoring is the ongoing process of tracking, analyzing, and evaluating the performance and behavior of machine learning models in real-world, production environments.[@evidentlyai]
+
+### What needs to be monitored in production? [@Pykes]
+
+- __*input data*__: Models depend on the data received as input. If a model receives an input it does not expect, the model may break.
+- __*data quality*__: To maintain data integrity, you must validate production data before it sees the machine learning model, using metrics based on data properties. In other words, ensure that data types are equivalent.
+- __*data drift*__: Changes in distribution between the training data and production data can be monitored to check for drift: this is done by detecting changes in the statistical properties of feature values over time.
+
+## Privacy
+
+A conventional approach was to gather all data at a central server and use it to train the model. But this method, while easy, has raised concerns about data privacy, leaving a lot of valuable but sensitive data inaccessible.
+
+To address this issue, AI models started to shift to a decentralized approach, and a new concept called "federated learning" has emerged.
+
+__*Federated learning*__ is used for distributed training of machine learning algorithms on multiple edge devices __*without exchanging training data*__.
+
+Easy concept but challenging[@Boesch] to implement due to:
+
+- _Efficient Communication across the federated network_: communication in the network can be slower than local computation by many orders of magnitude.federated learning depends on communication-efficient methods that iteratively send small messages or model updates over the network
+- _Managing heterogeneous systems in the same networks_: The storage, computational, and communication capabilities of the devices that are part of a federated network may differ significantly. Differences usually occur due to variability in hardware (CPU, memory), network connectivity (3G, 4G, 5G, wifi), and power supply (battery level).
+- _Statistical heterogeneity of data in federated networks_: Devices frequently generate and collect data in a non-identically distributed manner across the network. Challenges arise when training federated models from data that is not identically distributed across devices, both in terms of modeling the data and in terms of analyzing the convergence behavior of associated training procedures
+-  _Privacy concerns and privacy-preserving methods_:sharing other information such as model updates as part of the training process can also potentially reveal sensitive information, either to a third party or to the central server

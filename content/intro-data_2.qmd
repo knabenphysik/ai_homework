@@ -1,3 +1,0 @@
-# Data & Sampling
-
-You've learnt basic about EDA & basic of machine "learning" process. Now, let's go a bit further.

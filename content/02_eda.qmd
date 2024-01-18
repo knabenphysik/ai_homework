@@ -1,4 +1,4 @@
-# About Data
+# Overview
 
 Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform *`basic data exploration`* to study the basic characteristics of a dataset.
 
@@ -7,24 +7,6 @@ By studying it basic properties, we may find useful patterns, connections, and r
 The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is ***good or not***.
 
 Once we have ***good data***, we can training our machine learning model and get ***accurate*** results.
-
-
-## Why AI not widely adopted
-
-1. small datasets
-2. Long tail problem (customization) [@andrewGTC]
-
-![the need of customization of specific AI projects](image/long_tail.png){#fig-longtail}
-
-
-## Goodness of dataset:
-
-What makes a good dataset?
-
-
--   quality (representative and high-quality of inputs data)
--   quantity (consistent and accurate labels on target data/ground truth)
--   variability (reflect post deployment changes)
 
 
 ## Dataset Source Type

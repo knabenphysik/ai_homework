@@ -24,7 +24,7 @@ All these statements are **probability statements**, which answers will be TRUE 
 
 e.g. The probability of a image cheque whose size is 1264x616 pixel is image Standard Charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%. The probability of raining in Petaling Jaya for the coming 3 hours is 63.5%.
 
-## Statistical Modelling
+## Statistical Modelling [@hasni]
 
 From a statistical learning point-of-view:
 
@@ -94,40 +94,47 @@ Imagine you have a set of data. In order to have ***good estimated*** model, we 
 > Learning is **NOT** memorization! The ability to produce correct outputs on previously unseen inputs is called **generalization**
 
 
-## How much data?
+## **Error and Bias**
 
-To **"learn"** and achieve **good generalization**, how much data do we need?
+The objective of "learning" is to simultaneously:
 
-![Effect of training data size on accuracy on medical images](image/medical_plot2.png){#fig-img-cla}
+-   Achieve LOW variance of Estimator
+-   Achieve LOW Bias of Estimator
 
-@fig-img-cla showed the effect of training data size on [medical classification](https://arxiv.org/pdf/1511.06348.pdf) problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.
+### Case 1: High Variance and High Bias
 
-![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
+![High Variance and High Bias](image/bias_case_1.png){#fig-bias-case1}
 
-In contrast, @fig-multi-cla showed the effect of training data size on [cifar-10 images](https://ieeexplore.ieee.org/abstract/document/8599448) problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
+We have a poor estimator. Poor fit and poor predictor for **training sample** as well as for **test sample**.
 
-![Effect of categories and instances size for YoloV5](image/yolov5.png){#fig-yolov5}
+### Case 2: High Variance and Low Bias
 
-And for @fig-yolov5 is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.
+![High Variance and Low Bias](image/bias_case_2.png){#fig-bias-case2}
 
-> "To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
+We have a low "precision" predictor. In another word, we have an **over-fitting**, and hence the precision is poor.
 
+**Overfitting**: too much reliance on the training data
 
-## References:
+### Case 3: Low Variance and High Bias
 
-1.  Vijay Kotu and Bala Deshpande, [*Data Science Concepts and Practice, 2nd Ed.*](https://pyimagesearch.com/deep-learning-computer-vision-python-book/), Elsevier Inc, 2019.
+![Low Variance and High Bias](image/bias_case_3.png){#fig-bias-case3}
 
-2.  Bishop, C. M., [*Pattern Recognition and Machine Learning*](https://www.amazon.com/gp/product/0387310738/), Springer, 2006
+We have precise predictor, but will work well only for **training sample**, however will be problematic when applied to cases **test sample**. This is the case of **underfitting**.
 
-3.  Wan Hasni, *MD Labs Data Science Lecture Series*, Techna-X, 2020
+**Underfitting**: a failure to learn the relationships in the data
 
-4.  Scott Fortmann-Roe, [Understanding the Bias-Variance Tradeoff](https://scott.fortmann-roe.com/docs/BiasVariance.html), 2012
+### Case 4: Low Variance and Low Bias
 
-5.  [Machine Learning for Intelligent Systems: Bias-Variance Tradeoff](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote12.html)
+![Low Variance and Low Bias](image/bias_case_4.png){#fig-bias-case4}
 
-6.  [ML 101: Bias and Variance](https://machinelearning101.readthedocs.io/en/latest/_pages/03_bias_variance.html)
+The predictor will have a ***good fit*** for both **training sample** and **test sample**. This is what we want.
 
-7.  [Bias and Variance in Machine Learning](https://www.javatpoint.com/bias-and-variance-in-machine-learning)
+## Trade off
+
+Base on our earlier objective:
+
+![Training trade-off [@javatpoint]](image/biasvariance.png){#fig-model-tradeoff}
+
 
 ### Question?
 
