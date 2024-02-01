@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.548">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Hitchhiker Guide to AI – eda</title>
+<title>My Hitchhiker Guide to AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,17 +64,45 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -78,12 +112,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/02_eda.html">02 - EDA</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/02_eda.html">02 - EDA</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -93,14 +127,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://knabenphysik.github.io/ai_note" rel="" title="Open Data Science" class="quarto-navigation-tool px-1" aria-label="Open Data Science"><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/knabenphysik/ai_note" rel="" title="AI Note" class="quarto-navigation-tool px-1" aria-label="AI Note"><i class="bi bi-github"></i></a>
+    <a href="https://knabenphysik.github.io/ai_note" title="Open Data Science" class="quarto-navigation-tool px-1" aria-label="Open Data Science"><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/knabenphysik/ai_note" title="AI Note" class="quarto-navigation-tool px-1" aria-label="AI Note"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -162,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -170,6 +204,16 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#dataset-source-type" id="toc-dataset-source-type" class="nav-link active" data-scroll-target="#dataset-source-type">Dataset Source Type</a></li>
+  <li><a href="#common-data-pre-processing" id="toc-common-data-pre-processing" class="nav-link" data-scroll-target="#common-data-pre-processing">Common Data pre-processing</a>
+  <ul class="collapse">
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data transformation</a></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
+  <li><a href="#data-de-noising" id="toc-data-de-noising" class="nav-link" data-scroll-target="#data-de-noising">Data de-noising</a></li>
+  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">Data pre-processing</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#missing-data-imputation" id="toc-missing-data-imputation" class="nav-link" data-scroll-target="#missing-data-imputation">Missing-data imputation</a></li>
+  <li><a href="#data-duplicate" id="toc-data-duplicate" class="nav-link" data-scroll-target="#data-duplicate">Data Duplicate</a></li>
+  </ul></li>
   <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a>
   <ul class="collapse">
   <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
@@ -184,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">Example 1</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/02_eda.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/02_eda.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/02_eda.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/02_eda.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -204,7 +248,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform <em><code>basic data exploration</code></em> to study the basic characteristics of a dataset.</p>
 <p>By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
@@ -220,31 +266,70 @@ ul.task-list li input[type="checkbox"] {
 <li>text</li>
 </ul>
 </section>
+<section id="common-data-pre-processing" class="level2">
+<h2 class="anchored" data-anchor-id="common-data-pre-processing">Common Data pre-processing</h2>
+<section id="data-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="data-transformation">Data transformation</h3>
+<p>Many times in Machine Learning, we have to pre-process the data by “normalizing”, such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that. Furthermore, this will standardized numbers of various scales into same unique scale.</p>
+</section>
+<section id="data-augmentation" class="level3">
+<h3 class="anchored" data-anchor-id="data-augmentation">Data augmentation</h3>
+<p>Data augmentation is used when we want to add “organized entropy” into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the “meaningful aspects” of the data. That’s why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.</p>
+</section>
+<section id="data-de-noising" class="level3">
+<h3 class="anchored" data-anchor-id="data-de-noising">Data de-noising</h3>
+<p>Opposite to augmentation is “de-noising”, where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.</p>
+</section>
+<section id="data-pre-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-pre-processing">Data pre-processing</h3>
+<p>Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.</p>
+</section>
+<section id="dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
+<p>Dimensionality Reduction is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a “look-up table”. This reduction does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its “essence” representations. An example of this is tokenization in NLP.</p>
+</section>
+<section id="missing-data-imputation" class="level3">
+<h3 class="anchored" data-anchor-id="missing-data-imputation">Missing-data imputation</h3>
+<p>Imputation is a technique used for replacing the missing data with some substitute value to retain most of the data/information of the dataset. These techniques are used because removing the data from the dataset every time is not feasible and can lead to a reduction in the size of the dataset to a large extend, which not only raises concerns for biasing the dataset but also leads to incorrect analysis.</p>
+</section>
+<section id="data-duplicate" class="level3">
+<h3 class="anchored" data-anchor-id="data-duplicate">Data Duplicate</h3>
+<p>To reduce model biased toward certain patterns in data, data duplicate should be remove.</p>
+</section>
+</section>
 <section id="categorical-data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="categorical-data">Categorical Data</h2>
 <section id="example-1" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
 <p>Imagine you have mnist image <a href="https://www.kaggle.com/competitions/digit-recognizer/data">data</a> below.</p>
-<div class="cell" data-execution_count="1">
+<div id="cell-fig-mnist" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="fig-mnist" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-mnist-output-1.png" width="465" height="463" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: sample images of mnist dataset</figcaption>
+<div id="fig-mnist" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mnist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02_eda_files/figure-html/fig-mnist-output-1.png" width="465" height="463" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mnist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: sample images of mnist dataset
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <a href="#fig-mnist-count">Figure&nbsp;2</a> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
+<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <a href="#fig-mnist-count" class="quarto-xref">Figure&nbsp;2</a> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
 <ul>
 <li>We can observe that data distribution <code>almost</code> the same (almost balanced) for each class</li>
 </ul>
-<div class="cell page-columns page-full" data-execution_count="2">
-<div class="cell-output cell-output-display column-screen-inset-shaded">
-<div id="fig-mnist-count" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-mnist-count-output-1.png" width="453" height="376" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: images distribution of mnist dataset</figcaption>
+<div id="cell-fig-mnist-count" class="cell page-columns page-full" data-execution_count="2">
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-mnist-count" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-mnist-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="02_eda_files/figure-html/fig-mnist-count-output-1.png" width="453" height="376" class="figure-img column-screen-inset-shaded">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mnist-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: images distribution of mnist dataset
+</figcaption>
 </figure>
 </div>
 </div>
@@ -259,10 +344,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>The closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.</p>
 <p>If a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: <strong>positive</strong> or <strong>negative</strong>, <strong>strong</strong> or <strong>weak</strong>.</p>
-<div id="fig-corre" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/corre.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: correlation plot</figcaption>
+<div id="fig-corre" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/corre.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: correlation plot
+</figcaption>
 </figure>
 </div>
 <p>So, in statistical terms we use correlation to denote association between two quantitative variables.</p>
@@ -270,25 +359,17 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="example-1-1">Example 1</h3>
 <p>Imagine you have tabular <a href="https://www.kaggle.com/competitions/titanic/data">data</a> as below.</p>
 <div class="cell" data-execution_count="3">
+<div id="tbl-dummy-data" class="cell quarto-float anchored" data-execution_count="3">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Dummy Dataset
+</figcaption>
+<div aria-describedby="tbl-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<div id="tbl-dummy-data" class="anchored">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<caption>Table&nbsp;1: Dummy Dataset</caption>
+<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -330,30 +411,40 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</div>
 
 </div>
 </div>
 </div>
-<p>Dataset in <a href="#tbl-dummy-data">Table&nbsp;1</a> have 7 columns <span class="math inline">\(\Longrightarrow\)</span> 7 features</p>
-<p>Question : From <a href="#fig-corre">Figure&nbsp;3</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
-<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="4">
-<div class="cell-output cell-output-display column-screen">
-<div id="fig-pair-plot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-pair-plot-output-1.png" width="712" height="714" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: pair plot</figcaption>
+</figure>
+</div>
+</div>
+<p>Dataset in <a href="#tbl-dummy-data" class="quarto-xref">Table&nbsp;1</a> have 7 columns <span class="math inline">\(\Longrightarrow\)</span> 7 features</p>
+<p>Question : From <a href="#fig-corre" class="quarto-xref">Figure&nbsp;3</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
+<div id="cell-fig-pair-plot" class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="4">
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-pair-plot" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="02_eda_files/figure-html/fig-pair-plot-output-1.png" width="712" height="714" class="figure-img column-screen">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: pair plot
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>What can we say about <a href="#fig-pair-plot">Figure&nbsp;4</a> ?</p>
-<div class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="5">
-<div class="cell-output cell-output-display column-screen-inset-shaded">
-<div id="fig-big-pair-plot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-big-pair-plot-output-1.png" width="4243" height="4244" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: big pair plot</figcaption>
+<p>What can we say about <a href="#fig-pair-plot" class="quarto-xref">Figure&nbsp;4</a> ?</p>
+<div id="cell-fig-big-pair-plot" class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="5">
+<div class="cell-output cell-output-display page-columns page-full">
+<div id="fig-big-pair-plot" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-big-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="02_eda_files/figure-html/fig-big-pair-plot-output-1.png" width="4243" height="4244" class="figure-img column-screen-inset-shaded">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-big-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: big pair plot
+</figcaption>
 </figure>
 </div>
 </div>
@@ -362,25 +453,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="example-2" class="level3">
 <h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
 <div class="cell" data-execution_count="6">
+<div id="tbl-big-dummy-data" class="cell quarto-float anchored" data-execution_count="6">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-big-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Dummy Big Dataset
+</figcaption>
+<div aria-describedby="tbl-big-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<div id="tbl-big-dummy-data" class="anchored">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<caption>Table&nbsp;2: Dummy Big Dataset</caption>
+<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -530,19 +613,25 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</div>
 
 <p>5 rows × 21 columns</p>
 </div>
 </div>
 </div>
-<p>But if we have many features like <a href="#tbl-big-dummy-data">Table&nbsp;2</a> and want to plot pair-plot like <a href="#fig-big-pair-plot">Figure&nbsp;5</a>, seem to overwhelming and confuse isn’t?</p>
-<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre">Figure&nbsp;3</a>).r value is the degree of association.</p>
+</figure>
+</div>
+</div>
+<p>But if we have many features like <a href="#tbl-big-dummy-data" class="quarto-xref">Table&nbsp;2</a> and want to plot pair-plot like <a href="#fig-big-pair-plot" class="quarto-xref">Figure&nbsp;5</a>, seem to overwhelming and confuse isn’t?</p>
+<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre" class="quarto-xref">Figure&nbsp;3</a>).r value is the degree of association.</p>
 <div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div id="tbl-correlation" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;3: correlation guide</caption>
+<div id="tbl-correlation" class="cell quarto-float anchored" data-execution_count="7">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: correlation guide
+</figcaption>
+<div aria-describedby="tbl-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Correlation Value (r)</th>
@@ -570,24 +659,34 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</figure>
 </div>
-<p>Now, based on <a href="#tbl-correlation">Table&nbsp;3</a>, let change our <a href="#fig-big-pair-plot">Figure&nbsp;5</a> to correlation heatmap</p>
-<div class="cell" data-execution_count="8">
+</div>
+<p>Now, based on <a href="#tbl-correlation" class="quarto-xref">Table&nbsp;3</a>, let change our <a href="#fig-big-pair-plot" class="quarto-xref">Figure&nbsp;5</a> to correlation heatmap</p>
+<div id="cell-fig-big-correlation-plot" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
-<div id="fig-big-correlation-plot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-big-correlation-plot-output-1.png" width="679" height="536" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: correlation plot for big data</figcaption>
+<div id="fig-big-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-big-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02_eda_files/figure-html/fig-big-correlation-plot-output-1.png" width="679" height="536" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-big-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: correlation plot for big data
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div id="cell-fig-small-correlation-plot" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
-<div id="fig-small-correlation-plot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-small-correlation-plot-output-1.png" width="639" height="502" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: correlation plot for <a href="#fig-pair-plot">Figure&nbsp;4</a></figcaption>
+<div id="fig-small-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-small-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02_eda_files/figure-html/fig-small-correlation-plot-output-1.png" width="639" height="502" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-small-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: correlation plot for <a href="#fig-pair-plot" class="quarto-xref">Figure&nbsp;4</a>
+</figcaption>
 </figure>
 </div>
 </div>
@@ -600,25 +699,17 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="example-1-2">Example 1</h3>
 <p>Imagine you have time-series <a href="https://www.kaggle.com/datasets/muthuj7/weather-dataset/data">data</a> as below.</p>
 <div class="cell" data-execution_count="10">
+<div id="tbl-weather-data" class="cell quarto-float anchored" data-execution_count="10">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-weather-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Weather Dataset
+</figcaption>
+<div aria-describedby="tbl-weather-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<div id="tbl-weather-data" class="anchored">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<caption>Table&nbsp;4: Weather Dataset</caption>
+<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -696,17 +787,23 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</div>
 
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+</figure>
+</div>
+</div>
+<div id="cell-fig-weather-correlation-plot" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<div id="fig-weather-correlation-plot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="02_eda_files/figure-html/fig-weather-correlation-plot-output-1.png" width="1968" height="1892" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: pair-plot for <a href="#tbl-weather-data">Table&nbsp;4</a></figcaption>
+<div id="fig-weather-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-weather-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02_eda_files/figure-html/fig-weather-correlation-plot-output-1.png" width="1968" height="1892" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weather-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: pair-plot for <a href="#tbl-weather-data" class="quarto-xref">Table&nbsp;4</a>
+</figcaption>
 </figure>
 </div>
 </div>
@@ -758,6 +855,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -826,13 +950,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -911,10 +1037,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -924,8 +1049,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -938,6 +1072,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -981,6 +1234,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1006,6 +1260,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1067,12 +1347,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/01_data_collection.html" class="pagination-link">
+      <a href="../content/01_data_collection.html" class="pagination-link  aria-label=" 01="" -="" data="" collection"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01 - Data Collection</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/03_data_labelling.html" class="pagination-link">
+      <a href="../content/03_data_labelling.html" class="pagination-link" aria-label="03 - Data Labelling">
         <span class="nav-page-text">03 - Data Labelling</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1080,17 +1360,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></div>   
+    <div class="nav-footer-left">
+<p>Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../content/license.html">License</a>
+    <a class="nav-link" href="../content/license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/02_eda.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/02_eda.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

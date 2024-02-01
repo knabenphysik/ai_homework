@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.548">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Hitchhiker Guide to AI – data_collection</title>
+<title>My Hitchhiker Guide to AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -68,7 +69,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -77,6 +84,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -92,12 +100,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/01_data_collection.html">01 - Data Collection</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/01_data_collection.html">01 - Data Collection</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -107,14 +115,14 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
-    <a href="https://knabenphysik.github.io/ai_note" rel="" title="Open Data Science" class="quarto-navigation-tool px-1" aria-label="Open Data Science"><i class="bi bi-globe"></i></a>
-    <a href="https://github.com/knabenphysik/ai_note" rel="" title="AI Note" class="quarto-navigation-tool px-1" aria-label="AI Note"><i class="bi bi-github"></i></a>
+    <a href="https://knabenphysik.github.io/ai_note" title="Open Data Science" class="quarto-navigation-tool px-1" aria-label="Open Data Science"><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/knabenphysik/ai_note" title="AI Note" class="quarto-navigation-tool px-1" aria-label="AI Note"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div>
@@ -176,7 +184,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -185,56 +193,88 @@ div.csl-indent {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
+  <li><a href="#goodness-of-dataset" id="toc-goodness-of-dataset" class="nav-link" data-scroll-target="#goodness-of-dataset">Goodness of dataset</a></li>
   <li><a href="#general-problem" id="toc-general-problem" class="nav-link" data-scroll-target="#general-problem">General Problem</a></li>
   <li><a href="#data-and-sampling" id="toc-data-and-sampling" class="nav-link" data-scroll-target="#data-and-sampling">Data and sampling</a></li>
-  <li><a href="#goodness-of-dataset" id="toc-goodness-of-dataset" class="nav-link" data-scroll-target="#goodness-of-dataset">Goodness of dataset</a></li>
   <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How much data?</a></li>
   <li><a href="#dealing-with-data" id="toc-dealing-with-data" class="nav-link" data-scroll-target="#dealing-with-data">Dealing with data</a>
   <ul class="collapse">
-  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data transformation</a></li>
-  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
-  <li><a href="#data-de-noising" id="toc-data-de-noising" class="nav-link" data-scroll-target="#data-de-noising">Data de-noising</a></li>
-  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">Data pre-processing</a></li>
-  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
-  <li><a href="#missing-data-imputation" id="toc-missing-data-imputation" class="nav-link" data-scroll-target="#missing-data-imputation">Missing-data imputation</a></li>
-  <li><a href="#data-duplicate" id="toc-data-duplicate" class="nav-link" data-scroll-target="#data-duplicate">Data Duplicate</a></li>
+  <li><a href="#classcategory-re-balancing" id="toc-classcategory-re-balancing" class="nav-link" data-scroll-target="#classcategory-re-balancing">Class/Category Re-balancing</a></li>
   </ul></li>
-  <li><a href="#dealing-with-imbalanced-data" id="toc-dealing-with-imbalanced-data" class="nav-link" data-scroll-target="#dealing-with-imbalanced-data">Dealing with Imbalanced data</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/knabenphysik/ai_note/edit/main/content/01_data_collection.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/knabenphysik/ai_note/blob/main/content/01_data_collection.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/01_data_collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/01_data_collection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>First we must differentiate between <strong>data at hand</strong> - which is the data that is available to us as data scientist, and <strong>data not in hand</strong>, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to <strong>data collecting</strong>.</p>
+<section id="goodness-of-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="goodness-of-dataset">Goodness of dataset</h2>
+<p>Before collecting data for your machine learning problem, we first need to know <strong>“what makes a good dataset”</strong>?</p>
+<ul>
+<li>quality (representative and high-quality of inputs data)</li>
+<li>quantity (consistent and accurate labels on target data/ground truth)</li>
+<li>variability (reflect post deployment changes)</li>
+</ul>
+</section>
 <section id="general-problem" class="level2">
 <h2 class="anchored" data-anchor-id="general-problem">General Problem</h2>
-<p>Usually, in practice we have the following problem when we have <strong>data at hand</strong>.</p>
-<ol type="1">
-<li>small datasets</li>
-<li>Long tail problem (organization data are specific)<span class="citation" data-cites="andrewGTC"><sup><a href="#ref-andrewGTC" role="doc-biblioref">1</a></sup></span></li>
-</ol>
-<div id="fig-longtail" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/long_tail.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: the need of customization of specific AI projects</figcaption>
+<p>Most learning systems usually assume (e.g.&nbsp;academic, kaggle data) that training datasets used for learning are balanced.</p>
+<p>However, in real-world applications, training samples( <strong>data at hand</strong> ) typically exhibit a long-tailed class distribution, where a small portion of classes have a massive number of sample points but the others are associated with only a few samples<span class="citation" data-cites="zhang2023deep"><sup><a href="#ref-zhang2023deep" role="doc-biblioref">1</a></sup></span>.</p>
+<div id="fig-longtail_normal" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-longtail_normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/long_tail_2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-longtail_normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Long Tail Data Illustration
+</figcaption>
 </figure>
 </div>
-<p>Thus, need to <strong><em>acquire</em></strong> more!</p>
+<p>Long-tail data is visually represented by a hyperbolic curve like in <a href="#fig-longtail_normal" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>So long-tail data is the collection of all data about items that serve a specific niche and have a low demand but exist in greater varieties.</p>
+<p>Consider example, in autonomous driving, you would want a model detecting pedestrians to work equally well, irrespective of the weather, visual conditions, how fast the pedestrian is moving, how occluded they are, et cetera. Most likely however, your model will perform much worse on cases that are more rare—for example, a baby stroller swiftly emerging from behind a parked car in unpleasant weather.</p>
+<p>The point of failure here is that the model has been trained on data that was recorded during regular traffic conditions. As a result, the representation of these rare scenarios (as a portion of the entire training dataset) is much lower compared to common scenarios. <a href="#fig-tesla" class="quarto-xref">Figure&nbsp;2</a> is an example of two highway scenarios, whereas lane detection will be significantly more difficult in the right hand picture compared to the left.</p>
+<div id="fig-tesla" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tesla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/car_sight.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tesla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: long tail scenario
+</figcaption>
+</figure>
+</div>
+<p>Thus, need to <strong><em>acquire</em></strong> more of these rare cases in our training data!</p>
+<div id="fig-solve-long" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-solve-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/long_tail_1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solve-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: class imbalance problem
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="data-and-sampling" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-sampling">Data and sampling</h2>
 <p>Consider that you have big <strong>dataset at hand</strong>. Is there a way to pick a subset of the dataset and that can be a good representation of the entire dataset?</p>
 <p><strong>Answer</strong>: Yes! We have statistical approach which we called “Sampling”.</p>
-<div id="fig-data-sampling" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/data_sampling.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Sampling from big data</figcaption>
+<div id="fig-data-sampling" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/data_sampling.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Sampling from big data
+</figcaption>
 </figure>
 </div>
 <p>Type of sampling:</p>
@@ -245,96 +285,99 @@ div.csl-indent {
 <li><strong><em>stratified random sampling</em></strong>: divide the population into subgroups (called strata) based on different traits like category, then we select the sample(s) from these subgroup.</li>
 </ul>
 </section>
-<section id="goodness-of-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-dataset">Goodness of dataset</h2>
-<p>What makes a good dataset?</p>
-<ul>
-<li>quality (representative and high-quality of inputs data)</li>
-<li>quantity (consistent and accurate labels on target data/ground truth)</li>
-<li>variability (reflect post deployment changes)</li>
-</ul>
-</section>
 <section id="how-much-data" class="level2">
 <h2 class="anchored" data-anchor-id="how-much-data">How much data?</h2>
 <p>To <strong>“learn”</strong> and achieve <strong>good generalization</strong>, how much data do we need?</p>
-<div id="fig-img-cla" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/medical_plot2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Effect of training data size on accuracy on medical images</figcaption>
+<ul>
+<li>increasing the dataset sample size is a reduction in model over-fitting (avoid the model “memorize”)</li>
+<li>be careful of noise, outliers, and irrelevant information in additional data (recall “Goodness of dataset”)</li>
+</ul>
+<div id="fig-multi-cla" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/cifar10_plot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Effect of training data size on accuracy on cifar-10 images
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-img-cla">Figure&nbsp;3</a> showed the effect of training data size on <a href="https://arxiv.org/pdf/1511.06348.pdf">medical classification</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.</p>
-<div id="fig-multi-cla" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/cifar10_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: Effect of training data size on accuracy on cifar-10 images</figcaption>
+<p><a href="#fig-multi-cla" class="quarto-xref">Figure&nbsp;5</a> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 dataset</a>. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
+<p><a href="#fig-multi-pascal" class="quarto-xref">Figure&nbsp;6</a> also show similar insight showing the learning classifier will improve its accuracy as the dataset is increase.</p>
+<div id="fig-multi-pascal" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multi-pascal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/data_size_plot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-pascal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Effect of training data size on accuracy on PASCAL<span class="citation" data-cites="Zhu_2015"><sup><a href="#ref-Zhu_2015" role="doc-biblioref">2</a></sup></span> Dataset
+</figcaption>
 </figure>
 </div>
-<p>In contrast, <a href="#fig-multi-cla">Figure&nbsp;4</a> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 images</a> problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
-<div id="fig-yolov5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="image/yolov5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Effect of categories and instances size for YoloV5</figcaption>
-</figure>
-</div>
-<p>And for <a href="#fig-yolov5">Figure&nbsp;5</a> is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.</p>
 <blockquote class="blockquote">
 <p>“To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case.” — Maksym Tatariants</p>
 </blockquote>
-<blockquote class="blockquote">
-<p>For instance, annotating segmentation masks for a driving data set takes between 15 to 40 seconds per object. For 100,000 images the annotation could require between 170 and 460 days-equivalent of time.</p>
-</blockquote>
 <p>We always prefer <strong>large amount</strong> of data, but how large is large, and how big is big? This is a problem of <strong>sufficiency</strong>, because even though the data may be large, but contains insufficient <strong>entropy</strong>, will render the data to be small, despite the large size in bytes.</p>
+<blockquote class="blockquote">
+<p><strong>Entropy</strong> quantifies how much information there is in a random variable, or more specifically its probability distribution.</p>
+</blockquote>
 </section>
 <section id="dealing-with-data" class="level2">
 <h2 class="anchored" data-anchor-id="dealing-with-data">Dealing with data</h2>
-<section id="data-transformation" class="level3">
-<h3 class="anchored" data-anchor-id="data-transformation">Data transformation</h3>
-<p>Many times in Machine Learning, we have to pre-process the data by “normalizing”, such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that. Furthermore, this will standardized numbers of various scales into same unique scale.</p>
-</section>
-<section id="data-augmentation" class="level3">
-<h3 class="anchored" data-anchor-id="data-augmentation">Data augmentation</h3>
-<p>Data augmentation is used when we want to add “organized entropy” into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the “meaningful aspects” of the data. That’s why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.</p>
-</section>
-<section id="data-de-noising" class="level3">
-<h3 class="anchored" data-anchor-id="data-de-noising">Data de-noising</h3>
-<p>Opposite to augmentation is “de-noising”, where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.</p>
-</section>
-<section id="data-pre-processing" class="level3">
-<h3 class="anchored" data-anchor-id="data-pre-processing">Data pre-processing</h3>
-<p>Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.</p>
-</section>
-<section id="dimensionality-reduction" class="level3">
-<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
-<p>Dimensionality Reduction is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a “look-up table”. This reduction does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its “essence” representations. An example of this is tokenization in NLP.</p>
-</section>
-<section id="missing-data-imputation" class="level3">
-<h3 class="anchored" data-anchor-id="missing-data-imputation">Missing-data imputation</h3>
-<p>Imputation is a technique used for replacing the missing data with some substitute value to retain most of the data/information of the dataset. These techniques are used because removing the data from the dataset every time is not feasible and can lead to a reduction in the size of the dataset to a large extend, which not only raises concerns for biasing the dataset but also leads to incorrect analysis.</p>
-</section>
-<section id="data-duplicate" class="level3">
-<h3 class="anchored" data-anchor-id="data-duplicate">Data Duplicate</h3>
-<p>To reduce model biased toward certain patterns in data, data duplicate should be remove.</p>
-</section>
-</section>
-<section id="dealing-with-imbalanced-data" class="level2">
-<h2 class="anchored" data-anchor-id="dealing-with-imbalanced-data">Dealing with Imbalanced data</h2>
-<p>Imbalanced classes are a common problem in machine learning where there are a disproportionate ratio of observations in each data category.</p>
-<p>Some popular techniques:</p>
+<p>Now, we already establish criteria of good data &amp; how much data to collect.</p>
+<p>Assume now you already collect data and still facing <strong>“imbalanced”</strong> where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?</p>
+<div id="fig-imbalanced" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/imbalanced.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right<span class="citation" data-cites="Johnson"><sup><a href="#ref-Johnson" role="doc-biblioref">3</a></sup></span>
+</figcaption>
+</figure>
+</div>
+<section id="classcategory-re-balancing" class="level3">
+<h3 class="anchored" data-anchor-id="classcategory-re-balancing">Class/Category Re-balancing</h3>
+<p>via “data method”:</p>
+<ul>
+<li>pre-processing
 <ul>
 <li><p><strong><em>Oversampling Minority Category</em></strong>: Oversampling can be defined as adding more copies of the minority class. Oversampling can be a good choice when you don’t have a ton of data to work with. A con to consider when undersampling is that it can cause overfitting and poor generalization to your test set.</p></li>
 <li><p><strong><em>Undersampling Majority Class</em></strong>: Undersampling can be defined as removing some observations of the majority class. Undersampling can be a good choice when you have a ton of data -think millions of rows. But a drawback to undersampling is that we are removing information that may be valuable.</p></li>
-<li><p><strong><em>Generate Synthetic Samples</em></strong>: SMOTE or Synthetic Minority Oversampling Technique is a popular algorithm to creates synthetic observations of the minority class.</p></li>
+</ul></li>
+<li>post-processing
+<ul>
+<li><strong>threshold</strong> : Changing the decision threshold using prior class probabilities</li>
+</ul></li>
+</ul>
+<p>via Algorithm-level methods:</p>
+<ul>
+<li><strong>loss function</strong></li>
+</ul>
+<blockquote class="blockquote">
+<p>A loss function is a mathematical function that quantifies the difference between predicted and actual values in a machine learning model. It measures the model’s performance and guides the optimization process by providing feedback on how well it fits the data.</p>
+</blockquote>
+<ul>
+<li><p><strong>transfer learning</strong></p></li>
+<li><p><strong>2-stage learning</strong></p></li>
+<li><p><strong>deep ensemble</strong></p></li>
 </ul>
 
 
 
 </section>
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-andrewGTC" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">2022, N. G. <a href="https://www.nvidia.com/en-us/on-demand/session/gtcspring22-s42658/">The data-centric AI movement</a>. (2022).</div>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-zhang2023deep" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Zhang, Y., Kang, B., Hooi, B., Yan, S. &amp; Feng, J. <a href="https://arxiv.org/abs/2110.04596">Deep long-tailed learning: A survey</a>. (2023).</div>
+</div>
+<div id="ref-Zhu_2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Zhu, X., Vondrick, C., Fowlkes, C. C. &amp; Ramanan, D. <a href="https://doi.org/10.1007/s11263-015-0812-2">Do we need more training data?</a> <em>International Journal of Computer Vision</em> <strong>119</strong>, 76–92 (2015).</div>
+</div>
+<div id="ref-Johnson" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Johnson, J. M. &amp; Khoshgoftaar, T. M. Survey on deep learning with class imbalance. <em>Journal of Big Data</em> (2019) doi:<a href="https://doi.org/10.1186/s40537-019-0192-5">10.1186/s40537-019-0192-5</a>.</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -378,6 +421,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -446,13 +516,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -531,10 +603,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -544,8 +615,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -558,6 +638,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -601,6 +800,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -626,6 +826,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -687,12 +913,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/00_intro-ml-life-cyle.html" class="pagination-link">
+      <a href="../content/00_intro-ml-life-cyle.html" class="pagination-link  aria-label=" machine="" learning="" life="" cycle"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Machine Learning Life Cycle</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/02_eda.html" class="pagination-link">
+      <a href="../content/02_eda.html" class="pagination-link" aria-label="02 - EDA">
         <span class="nav-page-text">02 - EDA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -700,17 +926,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></div>   
+    <div class="nav-footer-left">
+<p>Draft,© <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA</a></p>
+</div>   
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../content/license.html">License</a>
+    <a class="nav-link" href="../content/license.html">
+<p>License</p>
+</a>
   </li>  
 </ul>
-    </div>
-    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/01_data_collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/01_data_collection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 
