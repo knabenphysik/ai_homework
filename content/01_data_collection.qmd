@@ -2,17 +2,38 @@
 
 First we must differentiate between __data at hand__ - which is the data that is available to us as data scientist, and __data not in hand__, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to __data collecting__.
 
+## Goodness of dataset
+
+Before collecting data for your machine learning problem, we first need to know __"what makes a good dataset"__?
+
+-   quality (representative and high-quality of inputs data)
+-   quantity (consistent and accurate labels on target data/ground truth)
+-   variability (reflect post deployment changes)
+
 
 ## General Problem
 
-Usually, in practice we have the following problem when we have __data at hand__.
+Most learning systems usually assume (e.g. academic, kaggle data) that training datasets used for learning are balanced.
 
-1. small datasets
-2. Long tail problem (organization data are specific) [@andrewGTC]
+However, in real-world applications, training samples( __data at hand__ ) typically exhibit a long-tailed class distribution, where a small portion of classes have a massive number of sample points but the others are associated with only a few samples [@zhang2023deep].
 
-![the need of customization of specific AI projects](image/long_tail.png){#fig-longtail}
+![Long Tail Data Illustration](image/long_tail_2.png){#fig-longtail_normal}
 
-Thus, need to __*acquire*__ more!
+Long-tail data is visually represented by a hyperbolic curve like in @fig-longtail_normal.
+
+So long-tail data is the collection of all data about items that serve a specific niche and have a low demand but exist in greater varieties.
+
+
+Consider example, in autonomous driving, you would want a model detecting pedestrians to work equally well, irrespective of the weather, visual conditions, how fast the pedestrian is moving, how occluded they are, et cetera. Most likely however, your model will perform much worse on cases that are more rare—for example, a baby stroller swiftly emerging from behind a parked car in unpleasant weather. 
+
+The point of failure here is that the model has been trained on data that was recorded during regular traffic conditions. As a result, the representation of these rare scenarios (as a portion of the entire training dataset) is much lower compared to common scenarios. @fig-tesla is an example of two highway scenarios, whereas lane detection will be significantly more difficult in the right hand picture compared to the left.
+
+![long tail scenario](image/car_sight.png){#fig-tesla}
+
+Thus, need to __*acquire*__ more of these rare cases in our training data!
+
+![class imbalance problem](image/long_tail_1.png){#fig-solve-long}
+
 
 ## Data and sampling
 
@@ -30,77 +51,60 @@ Type of sampling:
 - __*stratified random sampling*__: divide the population into subgroups (called strata) based on different traits like category, then we select the sample(s) from these subgroup.
 
 
-## Goodness of dataset
-
-What makes a good dataset?
-
--   quality (representative and high-quality of inputs data)
--   quantity (consistent and accurate labels on target data/ground truth)
--   variability (reflect post deployment changes)
-
-
 ## How much data?
 
 To **"learn"** and achieve **good generalization**, how much data do we need?
 
-![Effect of training data size on accuracy on medical images](image/medical_plot2.png){#fig-img-cla}
+- increasing the dataset sample size is a reduction in model over-fitting (avoid the model "memorize")
+- be careful of noise, outliers, and irrelevant information in additional data (recall "Goodness of dataset")
 
-@fig-img-cla showed the effect of training data size on [medical classification](https://arxiv.org/pdf/1511.06348.pdf) problem. From that report (see learning curve), learning classifier needs a training data set per class of 4092 to reach the desired accuracy, 99.5%.
 
 ![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
 
-In contrast, @fig-multi-cla showed the effect of training data size on [cifar-10 images](https://ieeexplore.ieee.org/abstract/document/8599448) problem. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
+@fig-multi-cla showed the effect of training data size on [cifar-10 dataset](https://ieeexplore.ieee.org/abstract/document/8599448). From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
 
-![Effect of categories and instances size for YoloV5](image/yolov5.png){#fig-yolov5}
+@fig-multi-pascal also show similar insight showing the learning classifier will improve its accuracy as the dataset is increase.
 
-And for @fig-yolov5 is the famous Yolo object detection classifier where number of images per category is recommended around ≥ 1500.
+![Effect of training data size on accuracy on PASCAL [@Zhu_2015] Dataset](image/data_size_plot.png){#fig-multi-pascal} 
 
 > "To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
 
-> For instance, annotating segmentation masks for a driving data set takes between 15
-to 40 seconds per object. For 100,000 images the annotation could require between 170 and 460
-days-equivalent of time.
 
 We always prefer **large amount** of data, but how large is large, and how big is big? This is a problem of **sufficiency**, because even though the data may be large, but contains insufficient **entropy**, will render the data to be small, despite the large size in bytes.
 
+>  **Entropy** quantifies how much information there is in a random variable, or more specifically its probability distribution.
 
 ## Dealing with data
-### Data transformation
 
-Many times in Machine Learning, we have to pre-process the data by “normalizing”, such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that. Furthermore, this will standardized numbers of various scales into same unique scale.
+Now, we already establish criteria of good data & how much data to collect.
 
-### Data augmentation
+Assume now you already collect data and still facing __"imbalanced"__ where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?
 
-Data augmentation is used when we want to add “organized entropy” into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the “meaningful aspects” of the data. That’s why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.
 
-### Data de-noising
+![ Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right [@Johnson]](image/imbalanced.png){#fig-imbalanced}
 
-Opposite to augmentation is “de-noising”, where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.
 
-### Data pre-processing
+### Class/Category Re-balancing
 
-Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.
+via "data method":
 
-### Dimensionality  Reduction
+- pre-processing
+  - __*Oversampling Minority Category*__: Oversampling can be defined as adding more copies of the minority class. Oversampling can be a good choice when you don't have a ton of data to work with. A con to consider when undersampling is that it can cause overfitting and poor generalization to your test set.
+  
+  - __*Undersampling Majority Class*__: Undersampling can be defined as removing some observations of the majority class. Undersampling can be a good choice when you have a ton of data -think millions of rows. But a drawback to undersampling is that we are removing information that may be valuable.
 
-Dimensionality Reduction is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a “look-up table”. This reduction does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its "essence" representations. An example of this is tokenization in NLP.
+- post-processing
+  - __threshold__ :  Changing the decision threshold using prior class probabilities
+  
 
-### Missing-data imputation
+via Algorithm-level methods:
 
-Imputation is a technique used for replacing the missing data with some substitute value to retain most of the data/information of the dataset. These techniques are used because removing the data from the dataset every time is not feasible and can lead to a reduction in the size of the dataset to a large extend, which not only raises concerns for biasing the dataset but also leads to incorrect analysis.
+- __loss function__ 
 
-### Data Duplicate
+> A loss function is a mathematical function that quantifies the difference between predicted and actual values in a machine learning model. It measures the model's performance and guides the optimization process by providing feedback on how well it fits the data.
 
-To reduce model biased toward certain patterns in data, data duplicate should be remove.
+- __transfer learning__ 
 
-## Dealing with Imbalanced data
+- __2-stage learning__
 
-Imbalanced classes are a common problem in machine learning where there are a disproportionate ratio of observations in each data category.
-
-Some popular techniques:
-
-- __*Oversampling Minority Category*__: Oversampling can be defined as adding more copies of the minority class. Oversampling can be a good choice when you don't have a ton of data to work with. A con to consider when undersampling is that it can cause overfitting and poor generalization to your test set.
-
-- __*Undersampling Majority Class*__: Undersampling can be defined as removing some observations of the majority class. Undersampling can be a good choice when you have a ton of data -think millions of rows. But a drawback to undersampling is that we are removing information that may be valuable.
-
-- __*Generate Synthetic Samples*__: SMOTE or Synthetic Minority Oversampling Technique is a popular algorithm to creates synthetic observations of the minority class.
+- __deep ensemble__
