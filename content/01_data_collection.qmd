@@ -58,7 +58,9 @@ To **"learn"** and achieve **good generalization**, how much data do we need?
 - increasing the dataset sample size is a reduction in model over-fitting (avoid the model "memorize")
 - be careful of noise, outliers, and irrelevant information in additional data (recall "Goodness of dataset")
 
+![ Model performance of deep learning vs. other machine learning algorithms as a function of number of samples. @Ng](image/data_scale.png){#fig-data-scale}
 
+> relabel this
 ![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
 
 @fig-multi-cla showed the effect of training data size on [cifar-10 dataset](https://ieeexplore.ieee.org/abstract/document/8599448). From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
@@ -80,31 +82,7 @@ Now, we already establish criteria of good data & how much data to collect.
 
 Assume now you already collect data and still facing __"imbalanced"__ where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?
 
+> simplify image
+
 
 ![ Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right [@Johnson]](image/imbalanced.png){#fig-imbalanced}
-
-
-### Class/Category Re-balancing
-
-via "data method":
-
-- pre-processing
-  - __*Oversampling Minority Category*__: Oversampling can be defined as adding more copies of the minority class. Oversampling can be a good choice when you don't have a ton of data to work with. A con to consider when undersampling is that it can cause overfitting and poor generalization to your test set.
-  
-  - __*Undersampling Majority Class*__: Undersampling can be defined as removing some observations of the majority class. Undersampling can be a good choice when you have a ton of data -think millions of rows. But a drawback to undersampling is that we are removing information that may be valuable.
-
-- post-processing
-  - __threshold__ :  Changing the decision threshold using prior class probabilities
-  
-
-via Algorithm-level methods:
-
-- __loss function__ 
-
-> A loss function is a mathematical function that quantifies the difference between predicted and actual values in a machine learning model. It measures the model's performance and guides the optimization process by providing feedback on how well it fits the data.
-
-- __transfer learning__ 
-
-- __2-stage learning__
-
-- __deep ensemble__
