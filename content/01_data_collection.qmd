@@ -63,12 +63,6 @@ To **"learn"** and achieve **good generalization**, how much data do we need?
 > relabel this
 ![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
 
-@fig-multi-cla showed the effect of training data size on [cifar-10 dataset](https://ieeexplore.ieee.org/abstract/document/8599448). From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.
-
-@fig-multi-pascal also show similar insight showing the learning classifier will improve its accuracy as the dataset is increase.
-
-![Effect of training data size on accuracy on PASCAL [@Zhu_2015] Dataset](image/data_size_plot.png){#fig-multi-pascal} 
-
 > "To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
 
 
