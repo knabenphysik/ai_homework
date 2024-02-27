@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Hitchhiker Guide to AI - Open Source License</title>
+<title>My Hitchhiker Guide to AI - Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Open Source License</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Overview</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -95,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
+      <a href="./index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
@@ -113,49 +142,49 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/00_intro-ml-life-cyle.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/00_intro-ml-life-cyle.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning Life Cycle</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/01_data_collection.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/01_data_collection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 - Data Collection</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02_eda.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/02_eda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02 - EDA</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03_data_labelling.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/03_data_labelling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">03 - Data Labelling</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04_learning.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/04_learning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">04 - Model Learning</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/05_evaluation.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/05_evaluation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">05 - Model Evaluation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/06_deployment.html" class="sidebar-item-text sidebar-link">
+  <a href="./content/06_deployment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">06 - Model Deployment &amp; Monitoring</span></a>
   </div>
 </li>
@@ -165,14 +194,46 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#dataset-source-type" id="toc-dataset-source-type" class="nav-link" data-scroll-target="#dataset-source-type">Dataset Source Type</a></li>
+  <li><a href="#common-data-pre-processing" id="toc-common-data-pre-processing" class="nav-link" data-scroll-target="#common-data-pre-processing">Common Data pre-processing</a>
+  <ul class="collapse">
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data transformation</a></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
+  <li><a href="#data-de-noising" id="toc-data-de-noising" class="nav-link" data-scroll-target="#data-de-noising">Data de-noising</a></li>
+  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">Data pre-processing</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#missing-data-imputation" id="toc-missing-data-imputation" class="nav-link" data-scroll-target="#missing-data-imputation">Missing-data imputation</a></li>
+  <li><a href="#data-duplicate" id="toc-data-duplicate" class="nav-link" data-scroll-target="#data-duplicate">Data Duplicate</a></li>
+  </ul></li>
+  <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  </ul></li>
+  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data">Tabular Data</a>
+  <ul class="collapse">
+  <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  </ul></li>
+  <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time Series Data</a>
+  <ul class="collapse">
+  <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">Example 1</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/knabenphysik/ai_note/blob/main/02_eda - Copy.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/02_eda - Copy.ipynb" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Open Source License</h1>
+<h1 class="title">Overview</h1>
 </div>
 
 
@@ -189,9 +250,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Text and figures are licensed under Creative Commons Attribution <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The figures that have been reused from other sources don’t fall under this license and can be recognized by a note in their caption: “Figure from …”.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform <em><code>basic data exploration</code></em> to study the basic characteristics of a dataset.</p>
+<p>By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
+<p>The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is <strong><em>good or not</em></strong>.</p>
+<p>Once we have <strong><em>good data</em></strong>, we can training our machine learning model and get <strong><em>accurate</em></strong> results.</p>
+<section id="dataset-source-type" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-source-type">Dataset Source Type</h2>
+<p>Common type of dataset is:</p>
+<ul>
+<li>categorical data (image, voice, videos)</li>
+<li>tabular/numerical data</li>
+<li>time series</li>
+<li>text</li>
+</ul>
+</section>
+<section id="common-data-pre-processing" class="level2">
+<h2 class="anchored" data-anchor-id="common-data-pre-processing">Common Data pre-processing</h2>
+<section id="data-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="data-transformation">Data transformation</h3>
+<p>Many times in Machine Learning, we have to pre-process the data by “normalizing”, such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that. Furthermore, this will standardized numbers of various scales into same unique scale.</p>
+</section>
+<section id="data-augmentation" class="level3">
+<h3 class="anchored" data-anchor-id="data-augmentation">Data augmentation</h3>
+<p>Data augmentation is used when we want to add “organized entropy” into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the “meaningful aspects” of the data. That’s why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.</p>
+</section>
+<section id="data-de-noising" class="level3">
+<h3 class="anchored" data-anchor-id="data-de-noising">Data de-noising</h3>
+<p>Opposite to augmentation is “de-noising”, where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.</p>
+</section>
+<section id="data-pre-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-pre-processing">Data pre-processing</h3>
+<p>Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.</p>
+</section>
+<section id="dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
+<p>Dimensionality Reduction is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a “look-up table”. This reduction does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its “essence” representations. An example of this is tokenization in NLP.</p>
+</section>
+<section id="missing-data-imputation" class="level3">
+<h3 class="anchored" data-anchor-id="missing-data-imputation">Missing-data imputation</h3>
+<p>Imputation is a technique used for replacing the missing data with some substitute value to retain most of the data/information of the dataset. These techniques are used because removing the data from the dataset every time is not feasible and can lead to a reduction in the size of the dataset to a large extend, which not only raises concerns for biasing the dataset but also leads to incorrect analysis.</p>
+</section>
+<section id="data-duplicate" class="level3">
+<h3 class="anchored" data-anchor-id="data-duplicate">Data Duplicate</h3>
+<p>To reduce model biased toward certain patterns in data, data duplicate should be remove.</p>
+</section>
+</section>
+<section id="categorical-data" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-data">Categorical Data</h2>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
+<p>Imagine you have mnist image <a href="https://www.kaggle.com/competitions/digit-recognizer/data">data</a> below.</p>
+<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <strong>?@fig-mnist-count</strong> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
+<ul>
+<li>We can observe that data distribution <code>almost</code> the same (almost balanced) for each class</li>
+</ul>
+</section>
+</section>
+<section id="tabular-data" class="level2">
+<h2 class="anchored" data-anchor-id="tabular-data">Tabular Data</h2>
+<ul>
+<li>scatter plot <span class="math inline">\(\Longrightarrow\)</span> two variables are plotted along two axes.</li>
+<li>pairplot <span class="math inline">\(\Longrightarrow\)</span> pairwise relationships between variables within a dataset</li>
+</ul>
+<p>The closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.</p>
+<p>If a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: <strong>positive</strong> or <strong>negative</strong>, <strong>strong</strong> or <strong>weak</strong>.</p>
+<div id="fig-corre" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/corre.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: correlation plot
+</figcaption>
+</figure>
+</div>
+<p>So, in statistical terms we use correlation to denote association between two quantitative variables.</p>
+<section id="example-1-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-1">Example 1</h3>
+<p>Imagine you have tabular <a href="https://www.kaggle.com/competitions/titanic/data">data</a> as below.</p>
+<p>Dataset in <strong>?@tbl-dummy-data</strong> have 7 columns <span class="math inline">\(\Longrightarrow\)</span> 7 features</p>
+<p>Question : From <a href="#fig-corre" class="quarto-xref">Figure&nbsp;1</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
+<p>What can we say about <strong>?@fig-pair-plot</strong> ?</p>
+</section>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
+<p>But if we have many features like <strong>?@tbl-big-dummy-data</strong> and want to plot pair-plot like <strong>?@fig-big-pair-plot</strong>, seem to overwhelming and confuse isn’t?</p>
+<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre" class="quarto-xref">Figure&nbsp;1</a>).r value is the degree of association.</p>
+<p>Now, based on <strong>?@tbl-correlation</strong>, let change our <strong>?@fig-big-pair-plot</strong> to correlation heatmap</p>
+</section>
+</section>
+<section id="time-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-data">Time Series Data</h2>
+<section id="example-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-2">Example 1</h3>
+<p>Imagine you have time-series <a href="https://www.kaggle.com/datasets/muthuj7/weather-dataset/data">data</a> as below.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -734,12 +893,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link active" href="../content/license.html" aria-current="page">
+    <a class="nav-link" href="./content/license.html">
 <p>License</p>
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/license.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/license.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/knabenphysik/ai_note/blob/main/02_eda - Copy.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/02_eda - Copy.ipynb" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

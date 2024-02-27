@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.548">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -197,10 +197,7 @@ div.csl-indent {
   <li><a href="#general-problem" id="toc-general-problem" class="nav-link" data-scroll-target="#general-problem">General Problem</a></li>
   <li><a href="#data-and-sampling" id="toc-data-and-sampling" class="nav-link" data-scroll-target="#data-and-sampling">Data and sampling</a></li>
   <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How much data?</a></li>
-  <li><a href="#dealing-with-data" id="toc-dealing-with-data" class="nav-link" data-scroll-target="#dealing-with-data">Dealing with data</a>
-  <ul class="collapse">
-  <li><a href="#classcategory-re-balancing" id="toc-classcategory-re-balancing" class="nav-link" data-scroll-target="#classcategory-re-balancing">Class/Category Re-balancing</a></li>
-  </ul></li>
+  <li><a href="#dealing-with-data" id="toc-dealing-with-data" class="nav-link" data-scroll-target="#dealing-with-data">Dealing with data</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/01_data_collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/01_data_collection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -292,17 +289,20 @@ Figure&nbsp;4: Sampling from big data
 <li>increasing the dataset sample size is a reduction in model over-fitting (avoid the model “memorize”)</li>
 <li>be careful of noise, outliers, and irrelevant information in additional data (recall “Goodness of dataset”)</li>
 </ul>
-<div id="fig-multi-cla" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-data-scale" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/cifar10_plot.png" class="img-fluid figure-img">
+<div aria-describedby="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/data_scale.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Effect of training data size on accuracy on cifar-10 images
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Model performance of deep learning vs.&nbsp;other machine learning algorithms as a function of number of samples.<span class="citation" data-cites="Ng"><sup><a href="#ref-Ng" role="doc-biblioref">2</a></sup></span>
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-multi-cla" class="quarto-xref">Figure&nbsp;5</a> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 dataset</a>. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
+<blockquote class="blockquote">
+<p>relabel this <img src="image/cifar10_plot.png" id="fig-multi-cla" class="img-fluid" alt="Effect of training data size on accuracy on cifar-10 images"></p>
+</blockquote>
+<p><strong>?@fig-multi-cla</strong> showed the effect of training data size on <a href="https://ieeexplore.ieee.org/abstract/document/8599448">cifar-10 dataset</a>. From that report (see learning curve), learning classifier needs a training data set per class of 6000 to reach the desired accuracy of above 90%.</p>
 <p><a href="#fig-multi-pascal" class="quarto-xref">Figure&nbsp;6</a> also show similar insight showing the learning classifier will improve its accuracy as the dataset is increase.</p>
 <div id="fig-multi-pascal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -310,7 +310,7 @@ Figure&nbsp;5: Effect of training data size on accuracy on cifar-10 images
 <img src="image/data_size_plot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-pascal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Effect of training data size on accuracy on PASCAL<span class="citation" data-cites="Zhu_2015"><sup><a href="#ref-Zhu_2015" role="doc-biblioref">2</a></sup></span> Dataset
+Figure&nbsp;6: Effect of training data size on accuracy on PASCAL<span class="citation" data-cites="Zhu_2015"><sup><a href="#ref-Zhu_2015" role="doc-biblioref">3</a></sup></span> Dataset
 </figcaption>
 </figure>
 </div>
@@ -326,46 +326,22 @@ Figure&nbsp;6: Effect of training data size on accuracy on PASCAL<span class="ci
 <h2 class="anchored" data-anchor-id="dealing-with-data">Dealing with data</h2>
 <p>Now, we already establish criteria of good data &amp; how much data to collect.</p>
 <p>Assume now you already collect data and still facing <strong>“imbalanced”</strong> where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?</p>
+<blockquote class="blockquote">
+<p>simplify image</p>
+</blockquote>
 <div id="fig-imbalanced" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="image/imbalanced.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right<span class="citation" data-cites="Johnson"><sup><a href="#ref-Johnson" role="doc-biblioref">3</a></sup></span>
+Figure&nbsp;7: Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right<span class="citation" data-cites="Johnson"><sup><a href="#ref-Johnson" role="doc-biblioref">4</a></sup></span>
 </figcaption>
 </figure>
 </div>
-<section id="classcategory-re-balancing" class="level3">
-<h3 class="anchored" data-anchor-id="classcategory-re-balancing">Class/Category Re-balancing</h3>
-<p>via “data method”:</p>
-<ul>
-<li>pre-processing
-<ul>
-<li><p><strong><em>Oversampling Minority Category</em></strong>: Oversampling can be defined as adding more copies of the minority class. Oversampling can be a good choice when you don’t have a ton of data to work with. A con to consider when undersampling is that it can cause overfitting and poor generalization to your test set.</p></li>
-<li><p><strong><em>Undersampling Majority Class</em></strong>: Undersampling can be defined as removing some observations of the majority class. Undersampling can be a good choice when you have a ton of data -think millions of rows. But a drawback to undersampling is that we are removing information that may be valuable.</p></li>
-</ul></li>
-<li>post-processing
-<ul>
-<li><strong>threshold</strong> : Changing the decision threshold using prior class probabilities</li>
-</ul></li>
-</ul>
-<p>via Algorithm-level methods:</p>
-<ul>
-<li><strong>loss function</strong></li>
-</ul>
-<blockquote class="blockquote">
-<p>A loss function is a mathematical function that quantifies the difference between predicted and actual values in a machine learning model. It measures the model’s performance and guides the optimization process by providing feedback on how well it fits the data.</p>
-</blockquote>
-<ul>
-<li><p><strong>transfer learning</strong></p></li>
-<li><p><strong>2-stage learning</strong></p></li>
-<li><p><strong>deep ensemble</strong></p></li>
-</ul>
 
 
 
-</section>
 </section>
 </section>
 
@@ -373,11 +349,14 @@ Figure&nbsp;7: Three main categories of approaches proposed and tested for tackl
 <div id="ref-zhang2023deep" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Zhang, Y., Kang, B., Hooi, B., Yan, S. &amp; Feng, J. <a href="https://arxiv.org/abs/2110.04596">Deep long-tailed learning: A survey</a>. (2023).</div>
 </div>
+<div id="ref-Ng" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ng, A. <a href="https://www.youtube.com/watch?v=LcfLo7YP8O4">How scale is enabling deep learning</a>. (2016).</div>
+</div>
 <div id="ref-Zhu_2015" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Zhu, X., Vondrick, C., Fowlkes, C. C. &amp; Ramanan, D. <a href="https://doi.org/10.1007/s11263-015-0812-2">Do we need more training data?</a> <em>International Journal of Computer Vision</em> <strong>119</strong>, 76–92 (2015).</div>
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Zhu, X., Vondrick, C., Fowlkes, C. C. &amp; Ramanan, D. <a href="https://doi.org/10.1007/s11263-015-0812-2">Do we need more training data?</a> <em>International Journal of Computer Vision</em> <strong>119</strong>, 76–92 (2015).</div>
 </div>
 <div id="ref-Johnson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Johnson, J. M. &amp; Khoshgoftaar, T. M. Survey on deep learning with class imbalance. <em>Journal of Big Data</em> (2019) doi:<a href="https://doi.org/10.1186/s40537-019-0192-5">10.1186/s40537-019-0192-5</a>.</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Johnson, J. M. &amp; Khoshgoftaar, T. M. Survey on deep learning with class imbalance. <em>Journal of Big Data</em> (2019) doi:<a href="https://doi.org/10.1186/s40537-019-0192-5">10.1186/s40537-019-0192-5</a>.</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

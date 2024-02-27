@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.548">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -70,9 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -203,90 +200,63 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset-source-type" id="toc-dataset-source-type" class="nav-link active" data-scroll-target="#dataset-source-type">Dataset Source Type</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#common-data-analysis" id="toc-common-data-analysis" class="nav-link" data-scroll-target="#common-data-analysis">Common Data Analysis</a></li>
   <li><a href="#common-data-pre-processing" id="toc-common-data-pre-processing" class="nav-link" data-scroll-target="#common-data-pre-processing">Common Data pre-processing</a>
   <ul class="collapse">
   <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation">Data transformation</a></li>
-  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
-  <li><a href="#data-de-noising" id="toc-data-de-noising" class="nav-link" data-scroll-target="#data-de-noising">Data de-noising</a></li>
-  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing">Data pre-processing</a></li>
-  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
   <li><a href="#missing-data-imputation" id="toc-missing-data-imputation" class="nav-link" data-scroll-target="#missing-data-imputation">Missing-data imputation</a></li>
   <li><a href="#data-duplicate" id="toc-data-duplicate" class="nav-link" data-scroll-target="#data-duplicate">Data Duplicate</a></li>
   </ul></li>
-  <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a>
-  <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
-  </ul></li>
-  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data">Tabular Data</a>
-  <ul class="collapse">
-  <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  </ul></li>
-  <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time Series Data</a>
-  <ul class="collapse">
-  <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">Example 1</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/02_eda.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/02_eda.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Overview</h1>
-</div>
+<main class="content" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform <em><code>basic data exploration</code></em> to study the basic characteristics of a dataset.</p>
-<p>By studying it basic properties, we may find useful patterns, connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Before venturing into any advanced analysis of data using statistical, machine learning, and algorithmic techniques, it is essential to perform <em><code>basic data exploration</code></em> to study the basic <strong>characteristics</strong> of a dataset.</p>
+<p>By studying it basic properties, we may find useful patterns (trend), connections, and relationships within data. This is usually called <em><code>data exploration</code></em> or <em><code>exploratory data analysis (EDA)</code></em>.</p>
 <p>The whole idea is to get better understanding of the dataset at hand. We want to know, whether our data is <strong><em>good or not</em></strong>.</p>
 <p>Once we have <strong><em>good data</em></strong>, we can training our machine learning model and get <strong><em>accurate</em></strong> results.</p>
-<section id="dataset-source-type" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-source-type">Dataset Source Type</h2>
-<p>Common type of dataset is:</p>
+<section id="common-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="common-data-analysis">Common Data Analysis</h2>
 <ul>
-<li>categorical data (image, voice, videos)</li>
-<li>tabular/numerical data</li>
-<li>time series</li>
-<li>text</li>
+<li><p>descriptive statistic : summarizing, organizing, and presenting data meaningfully and concisely.</p>
+<ul>
+<li>catagorize by group</li>
+<li>data distribution</li>
+</ul></li>
+<li><p>correlation analysis</p>
+<ul>
+<li>scatter plot <span class="math inline">\(\Longrightarrow\)</span> two variables are plotted along two axes.</li>
+<li>pairplot <span class="math inline">\(\Longrightarrow\)</span> pairwise relationships between variables within a dataset</li>
 </ul>
+<p>The closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.</p>
+<p>If a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: <strong>positive</strong> or <strong>negative</strong>, <strong>strong</strong> or <strong>weak</strong>.</p></li>
+</ul>
+<div id="fig-corre" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/corre.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: correlation plot
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="common-data-pre-processing" class="level2">
 <h2 class="anchored" data-anchor-id="common-data-pre-processing">Common Data pre-processing</h2>
 <section id="data-transformation" class="level3">
 <h3 class="anchored" data-anchor-id="data-transformation">Data transformation</h3>
 <p>Many times in Machine Learning, we have to pre-process the data by “normalizing”, such as to set it to be in [0,1] (by scaling), or [-1,+1], scaling and centering, log or exponential, square root, etc. All these exercises do is only changing the scale and not the structure of the data. This is needed to assist computations and reduce computing errors, and not in any way doing anything beyond that. Furthermore, this will standardized numbers of various scales into same unique scale.</p>
-</section>
-<section id="data-augmentation" class="level3">
-<h3 class="anchored" data-anchor-id="data-augmentation">Data augmentation</h3>
-<p>Data augmentation is used when we want to add “organized entropy” into an existing data set. This is only meaningful if those entropy helps to expand the data at hand, without altering the “meaningful aspects” of the data. That’s why it is useful in image processing or voice, which structures are not altered, but increase the space and dimensions.</p>
-</section>
-<section id="data-de-noising" class="level3">
-<h3 class="anchored" data-anchor-id="data-de-noising">Data de-noising</h3>
-<p>Opposite to augmentation is “de-noising”, where we apply filters to take out the noises in the data. The argument here is reverse that is to reduce entropy in the data. Again, this is meaningful if there are no alterations to the basic structure of the data; and hence useful in image or voice processing. In NLP, removal of stop-words is a de-noising exercise.</p>
-</section>
-<section id="data-pre-processing" class="level3">
-<h3 class="anchored" data-anchor-id="data-pre-processing">Data pre-processing</h3>
-<p>Data pre-processing may involve all of the above: transformation, augmentation and de-noising. In some cases all are required and helpful, in some cases a mixture of them will do. The basic process however is always data transformation.</p>
-</section>
-<section id="dimensionality-reduction" class="level3">
-<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
-<p>Dimensionality Reduction is a method of mapping a set of data onto a smaller space, represented by unique mapping between the raw data and a vector space, which serves as a “look-up table”. This reduction does not alter the structure of the data, instead it just compressed the data into a smaller space in terms of computer memories. Instead of working with raw data, we deal with its “essence” representations. An example of this is tokenization in NLP.</p>
 </section>
 <section id="missing-data-imputation" class="level3">
 <h3 class="anchored" data-anchor-id="missing-data-imputation">Missing-data imputation</h3>
@@ -295,521 +265,9 @@ window.Quarto = {
 <section id="data-duplicate" class="level3">
 <h3 class="anchored" data-anchor-id="data-duplicate">Data Duplicate</h3>
 <p>To reduce model biased toward certain patterns in data, data duplicate should be remove.</p>
+
+
 </section>
-</section>
-<section id="categorical-data" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="categorical-data">Categorical Data</h2>
-<section id="example-1" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
-<p>Imagine you have mnist image <a href="https://www.kaggle.com/competitions/digit-recognizer/data">data</a> below.</p>
-<div id="cell-fig-mnist" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div id="fig-mnist" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-mnist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_eda_files/figure-html/fig-mnist-output-1.png" width="465" height="463" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mnist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: sample images of mnist dataset
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Now, since our data now is images and not tabular. We can use simple <strong><em>histogram plot</em></strong> like <a href="#fig-mnist-count" class="quarto-xref">Figure&nbsp;2</a> to view each <strong><em>class</em></strong> of MNIST dataset.</p>
-<ul>
-<li>We can observe that data distribution <code>almost</code> the same (almost balanced) for each class</li>
-</ul>
-<div id="cell-fig-mnist-count" class="cell page-columns page-full" data-execution_count="2">
-<div class="cell-output cell-output-display page-columns page-full">
-<div id="fig-mnist-count" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-mnist-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<img src="02_eda_files/figure-html/fig-mnist-count-output-1.png" width="453" height="376" class="figure-img column-screen-inset-shaded">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mnist-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: images distribution of mnist dataset
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="tabular-data" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="tabular-data">Tabular Data</h2>
-<ul>
-<li>scatter plot <span class="math inline">\(\Longrightarrow\)</span> two variables are plotted along two axes.</li>
-<li>pairplot <span class="math inline">\(\Longrightarrow\)</span> pairwise relationships between variables within a dataset</li>
-</ul>
-<p>The closer the data points come to forming a straight line when plotted, the higher the correlation between the two variables, or the stronger the relationship.</p>
-<p>If a relationship exists, the scatterplot indicates its direction and whether it is a linear or curved relationship. Relationships between variables can be described in many ways: <strong>positive</strong> or <strong>negative</strong>, <strong>strong</strong> or <strong>weak</strong>.</p>
-<div id="fig-corre" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/corre.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-corre-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: correlation plot
-</figcaption>
-</figure>
-</div>
-<p>So, in statistical terms we use correlation to denote association between two quantitative variables.</p>
-<section id="example-1-1" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="example-1-1">Example 1</h3>
-<p>Imagine you have tabular <a href="https://www.kaggle.com/competitions/titanic/data">data</a> as below.</p>
-<div class="cell" data-execution_count="3">
-<div id="tbl-dummy-data" class="cell quarto-float anchored" data-execution_count="3">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Dummy Dataset
-</figcaption>
-<div aria-describedby="tbl-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">feature_A</th>
-<th data-quarto-table-cell-role="th">feature_B</th>
-<th data-quarto-table-cell-role="th">feature_D</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>14.54</td>
-<td>32.66</td>
-<td>16</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>28.29</td>
-<td>77.11</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>33.47</td>
-<td>88.45</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>28.73</td>
-<td>93.44</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>24.37</td>
-<td>88.45</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Dataset in <a href="#tbl-dummy-data" class="quarto-xref">Table&nbsp;1</a> have 7 columns <span class="math inline">\(\Longrightarrow\)</span> 7 features</p>
-<p>Question : From <a href="#fig-corre" class="quarto-xref">Figure&nbsp;3</a>, what is the best way to describe or visualize the data given to us? Answer: Let’s do pair-plot (combination of scatter plot)</p>
-<div id="cell-fig-pair-plot" class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="4">
-<div class="cell-output cell-output-display page-columns page-full">
-<div id="fig-pair-plot" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<img src="02_eda_files/figure-html/fig-pair-plot-output-1.png" width="712" height="714" class="figure-img column-screen">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: pair plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>What can we say about <a href="#fig-pair-plot" class="quarto-xref">Figure&nbsp;4</a> ?</p>
-<div id="cell-fig-big-pair-plot" class="cell page-columns page-full" data-fig-height="4" data-fig-width="5" data-execution_count="5">
-<div class="cell-output cell-output-display page-columns page-full">
-<div id="fig-big-pair-plot" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-big-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
-<img src="02_eda_files/figure-html/fig-big-pair-plot-output-1.png" width="4243" height="4244" class="figure-img column-screen-inset-shaded">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-big-pair-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: big pair plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example 2</h3>
-<div class="cell" data-execution_count="6">
-<div id="tbl-big-dummy-data" class="cell quarto-float anchored" data-execution_count="6">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-big-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Dummy Big Dataset
-</figcaption>
-<div aria-describedby="tbl-big-dummy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">feature_B</th>
-<th data-quarto-table-cell-role="th">feature_C</th>
-<th data-quarto-table-cell-role="th">feature_D</th>
-<th data-quarto-table-cell-role="th">feature_E</th>
-<th data-quarto-table-cell-role="th">feature_F</th>
-<th data-quarto-table-cell-role="th">feature_G</th>
-<th data-quarto-table-cell-role="th">feature_H</th>
-<th data-quarto-table-cell-role="th">feature_I</th>
-<th data-quarto-table-cell-role="th">feature_J</th>
-<th data-quarto-table-cell-role="th">feature_K</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">feature_M</th>
-<th data-quarto-table-cell-role="th">feature_M.1</th>
-<th data-quarto-table-cell-role="th">feature_O</th>
-<th data-quarto-table-cell-role="th">feature_P</th>
-<th data-quarto-table-cell-role="th">feature_Q</th>
-<th data-quarto-table-cell-role="th">feature_R</th>
-<th data-quarto-table-cell-role="th">feature_S</th>
-<th data-quarto-table-cell-role="th">feature_T</th>
-<th data-quarto-table-cell-role="th">feature_U</th>
-<th data-quarto-table-cell-role="th">feature_V</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>27.0</td>
-<td>30.1</td>
-<td>24.0</td>
-<td>83.68</td>
-<td>0.3</td>
-<td>100.0</td>
-<td>rain</td>
-<td>0</td>
-<td>0</td>
-<td>4.0</td>
-<td>...</td>
-<td>0.0</td>
-<td>1011.0</td>
-<td>26.8</td>
-<td>10.0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>10</td>
-<td>Rain, Partially cloudy</td>
-<td>rain</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>27.0</td>
-<td>30.0</td>
-<td>24.0</td>
-<td>84.04</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>3.2</td>
-<td>...</td>
-<td>0.0</td>
-<td>1011.0</td>
-<td>26.8</td>
-<td>10.0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>10</td>
-<td>Partially cloudy</td>
-<td>partly-cloudy-night</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>27.0</td>
-<td>29.6</td>
-<td>23.0</td>
-<td>79.12</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>3.2</td>
-<td>...</td>
-<td>0.0</td>
-<td>1010.9</td>
-<td>26.8</td>
-<td>10.0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>10</td>
-<td>Partially cloudy</td>
-<td>partly-cloudy-night</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>26.9</td>
-<td>29.9</td>
-<td>24.0</td>
-<td>84.40</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>4.7</td>
-<td>...</td>
-<td>0.0</td>
-<td>1010.0</td>
-<td>25.0</td>
-<td>9.9</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>10</td>
-<td>Partially cloudy</td>
-<td>partly-cloudy-night</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>26.0</td>
-<td>26.0</td>
-<td>24.0</td>
-<td>88.75</td>
-<td>0.9</td>
-<td>100.0</td>
-<td>rain</td>
-<td>0</td>
-<td>0</td>
-<td>5.0</td>
-<td>...</td>
-<td>0.0</td>
-<td>1009.9</td>
-<td>25.0</td>
-<td>9.9</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>10</td>
-<td>Rain, Partially cloudy</td>
-<td>rain</td>
-</tr>
-</tbody>
-</table>
-
-<p>5 rows × 21 columns</p>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>But if we have many features like <a href="#tbl-big-dummy-data" class="quarto-xref">Table&nbsp;2</a> and want to plot pair-plot like <a href="#fig-big-pair-plot" class="quarto-xref">Figure&nbsp;5</a>, seem to overwhelming and confuse isn’t?</p>
-<p>Solution? Use correlation heatmap <span class="math inline">\(\Longrightarrow\)</span> easier to see based on correlation value/coefficient, r (recall our <a href="#fig-corre" class="quarto-xref">Figure&nbsp;3</a>).r value is the degree of association.</p>
-<div class="cell" data-execution_count="7">
-<div id="tbl-correlation" class="cell quarto-float anchored" data-execution_count="7">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: correlation guide
-</figcaption>
-<div aria-describedby="tbl-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
-<table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Correlation Value (r)</th>
-<th style="text-align: left;">Strength of Relationship</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">r &lt; 0.3</td>
-<td style="text-align: left;">None or very weak</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0.3 &lt; r &lt;0.5</td>
-<td style="text-align: left;">Weak</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0.5 &lt; r &lt; 0.7</td>
-<td style="text-align: left;">Moderate</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">r &gt; 0.7</td>
-<td style="text-align: left;">Strong</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p>Now, based on <a href="#tbl-correlation" class="quarto-xref">Table&nbsp;3</a>, let change our <a href="#fig-big-pair-plot" class="quarto-xref">Figure&nbsp;5</a> to correlation heatmap</p>
-<div id="cell-fig-big-correlation-plot" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div id="fig-big-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-big-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_eda_files/figure-html/fig-big-correlation-plot-output-1.png" width="679" height="536" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-big-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: correlation plot for big data
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div id="cell-fig-small-correlation-plot" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div id="fig-small-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-small-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_eda_files/figure-html/fig-small-correlation-plot-output-1.png" width="639" height="502" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-small-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: correlation plot for <a href="#fig-pair-plot" class="quarto-xref">Figure&nbsp;4</a>
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="time-series-data" class="level2">
-<h2 class="anchored" data-anchor-id="time-series-data">Time Series Data</h2>
-<section id="example-1-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-2">Example 1</h3>
-<p>Imagine you have time-series <a href="https://www.kaggle.com/datasets/muthuj7/weather-dataset/data">data</a> as below.</p>
-<div class="cell" data-execution_count="10">
-<div id="tbl-weather-data" class="cell quarto-float anchored" data-execution_count="10">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-weather-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Weather Dataset
-</figcaption>
-<div aria-describedby="tbl-weather-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Temperature (C)</th>
-<th data-quarto-table-cell-role="th">Apparent Temperature (C)</th>
-<th data-quarto-table-cell-role="th">Humidity</th>
-<th data-quarto-table-cell-role="th">Wind Speed (km/h)</th>
-<th data-quarto-table-cell-role="th">Wind Bearing (degrees)</th>
-<th data-quarto-table-cell-role="th">Visibility (km)</th>
-<th data-quarto-table-cell-role="th">Loud Cover</th>
-<th data-quarto-table-cell-role="th">Pressure (millibars)</th>
-<th data-quarto-table-cell-role="th">Daily Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>9.472222</td>
-<td>7.388889</td>
-<td>0.89</td>
-<td>14.1197</td>
-<td>251.0</td>
-<td>15.8263</td>
-<td>0.0</td>
-<td>1015.13</td>
-<td>Partly cloudy throughout the day.</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>9.355556</td>
-<td>7.227778</td>
-<td>0.86</td>
-<td>14.2646</td>
-<td>259.0</td>
-<td>15.8263</td>
-<td>0.0</td>
-<td>1015.63</td>
-<td>Partly cloudy throughout the day.</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>9.377778</td>
-<td>9.377778</td>
-<td>0.89</td>
-<td>3.9284</td>
-<td>204.0</td>
-<td>14.9569</td>
-<td>0.0</td>
-<td>1015.94</td>
-<td>Partly cloudy throughout the day.</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>8.288889</td>
-<td>5.944444</td>
-<td>0.83</td>
-<td>14.1036</td>
-<td>269.0</td>
-<td>15.8263</td>
-<td>0.0</td>
-<td>1016.41</td>
-<td>Partly cloudy throughout the day.</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>8.755556</td>
-<td>6.977778</td>
-<td>0.83</td>
-<td>11.0446</td>
-<td>259.0</td>
-<td>15.8263</td>
-<td>0.0</td>
-<td>1016.51</td>
-<td>Partly cloudy throughout the day.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<div id="cell-fig-weather-correlation-plot" class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display">
-<div id="fig-weather-correlation-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-weather-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="02_eda_files/figure-html/fig-weather-correlation-plot-output-1.png" width="1968" height="1892" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weather-correlation-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: pair-plot for <a href="#tbl-weather-data" class="quarto-xref">Table&nbsp;4</a>
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-
-
 </section>
 </section>
 
