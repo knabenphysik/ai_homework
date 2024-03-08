@@ -223,25 +223,14 @@ window.Quarto = {
   <li><a href="#about-learning-i" id="toc-about-learning-i" class="nav-link active" data-scroll-target="#about-learning-i">About Learning I</a>
   <ul class="collapse">
   <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture">Big Picture</a></li>
+  <li><a href="#learning-overview" id="toc-learning-overview" class="nav-link" data-scroll-target="#learning-overview">Learning Overview</a></li>
   <li><a href="#the-problem-setting-of-statistical-learning." id="toc-the-problem-setting-of-statistical-learning." class="nav-link" data-scroll-target="#the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</a></li>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem statement</a></li>
   <li><a href="#statistical-modelling-hasni" id="toc-statistical-modelling-hasni" class="nav-link" data-scroll-target="#statistical-modelling-hasni">Statistical Modelling<span class="citation" data-cites="hasni"><sup>1</sup></span></a></li>
   <li><a href="#how-to-learn" id="toc-how-to-learn" class="nav-link" data-scroll-target="#how-to-learn"><strong>How to Learn ?</strong></a>
   <ul class="collapse">
   <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data representation</a></li>
   <li><a href="#the-learning" id="toc-the-learning" class="nav-link" data-scroll-target="#the-learning">The “learning”</a></li>
   </ul></li>
-  <li><a href="#error-and-bias" id="toc-error-and-bias" class="nav-link" data-scroll-target="#error-and-bias"><strong>Error and Bias</strong></a>
-  <ul class="collapse">
-  <li><a href="#case-1-high-variance-and-high-bias" id="toc-case-1-high-variance-and-high-bias" class="nav-link" data-scroll-target="#case-1-high-variance-and-high-bias">Case 1: High Variance and High Bias</a></li>
-  <li><a href="#case-2-high-variance-and-low-bias" id="toc-case-2-high-variance-and-low-bias" class="nav-link" data-scroll-target="#case-2-high-variance-and-low-bias">Case 2: High Variance and Low Bias</a></li>
-  <li><a href="#case-3-low-variance-and-high-bias" id="toc-case-3-low-variance-and-high-bias" class="nav-link" data-scroll-target="#case-3-low-variance-and-high-bias">Case 3: Low Variance and High Bias</a></li>
-  <li><a href="#case-4-low-variance-and-low-bias" id="toc-case-4-low-variance-and-low-bias" class="nav-link" data-scroll-target="#case-4-low-variance-and-low-bias">Case 4: Low Variance and Low Bias</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#interpretability-vs-flexibility-in-learning" id="toc-interpretability-vs-flexibility-in-learning" class="nav-link" data-scroll-target="#interpretability-vs-flexibility-in-learning">Interpretability vs flexibility in learning</a>
-  <ul class="collapse">
-  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/04_learning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/04_learning.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -257,20 +246,24 @@ window.Quarto = {
 <section id="big-picture" class="level2">
 <h2 class="anchored" data-anchor-id="big-picture">Big Picture</h2>
 <p>To automatically discover regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into different categories.</p>
+<p>or the ability to automatically learn from data and past experiences while identifying patterns to make predictions with minimal human intervention.</p>
+</section>
+<section id="learning-overview" class="level2">
+<h2 class="anchored" data-anchor-id="learning-overview">Learning Overview</h2>
+<div id="fig-learning-strategy" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-learning-strategy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/jenis_ml.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learning-strategy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Different learning strategy
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="the-problem-setting-of-statistical-learning." class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</h2>
 <p>The basic setting of statistical learning is: given a <strong>problem statement</strong>, we want to find <strong>prediction model</strong> which <strong>estimate</strong> has <strong>best fit</strong> in providing <strong>solutions</strong> to the problem, using <strong>data at hand</strong> (in sample data) which has the <strong>Lowest Variance and Lowest Bias</strong> when applied to the data at hand as well as to the <strong>data not in hand</strong> (unseen data).</p>
-</section>
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem statement</h2>
-<p>Problem statement must be made in <strong>probability statement(s)</strong>.</p>
-<p>Given a data, can we test whether our statement is : TRUE or FALSE.</p>
-<p>e.g.&nbsp;Given an image cheque whose size is 1264x616 pixel, is image Standard Charted cheque or not?</p>
-<p>e.g.&nbsp;Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?</p>
-<p>e.g.&nbsp;Given 4 to 5 parameter of atmospheric reading in Petaling Jaya, what is the chance of raining the next 3 hours?</p>
-<p>All these statements are <strong>probability statements</strong>, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.</p>
-<p>e.g.&nbsp;The probability of a image cheque whose size is 1264x616 pixel is image Standard Charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%. The probability of raining in Petaling Jaya for the coming 3 hours is 63.5%.</p>
 </section>
 <section id="statistical-modelling-hasni" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-modelling-hasni">Statistical Modelling<span class="citation" data-cites="hasni"><sup><a href="#ref-hasni" role="doc-biblioref">1</a></sup></span></h2>
@@ -294,7 +287,7 @@ Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
 <img src="image/basic_model.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learning-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Visualize learning model
+Figure&nbsp;2: Visualize learning model
 </figcaption>
 </figure>
 </div>
@@ -311,18 +304,7 @@ Figure&nbsp;1: Visualize learning model
 <img src="image/image_rep.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Example 1:Image data representation in vector
-</figcaption>
-</figure>
-</div>
-<p>Before learning, data at hand must be representing in vector (e.g.&nbsp;Figure 2 &amp; Figure 3)</p>
-<div id="fig-img-rep-2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-img-rep-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/image_rep_2.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-rep-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Example 2:Image data representation in vector
+Figure&nbsp;3: Example 1:Image data representation in vector
 </figcaption>
 </figure>
 </div>
@@ -362,136 +344,23 @@ Figure&nbsp;5: generic learning process
 <li>How we will do this? <span class="math inline">\(\Longrightarrow\)</span> controlling the <strong>complexity</strong> of the model (learning parameter)</li>
 <li>How do we know if our model generalizes? <span class="math inline">\(\Longrightarrow\)</span> evaluating on <strong>test</strong> data.</li>
 </ul>
-<div id="fig-loss-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-loss-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/example_loss_plot.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loss-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: training loss plot
-</figcaption>
-</figure>
-</div>
 <div id="fig-model-tradeoff" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-tradeoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="image/biasvariance.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-tradeoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">2</a></sup></span>
-</figcaption>
-</figure>
-</div>
-<div id="fig-good-plot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-good-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/perfect_loss_plot.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-good-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: good plot
+Figure&nbsp;6: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">2</a></sup></span>
 </figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
 <p>Learning is <strong>NOT</strong> memorization! The ability to produce correct outputs on previously unseen inputs is called <strong>generalization</strong></p>
 </blockquote>
-</section>
-</section>
-<section id="error-and-bias" class="level2">
-<h2 class="anchored" data-anchor-id="error-and-bias"><strong>Error and Bias</strong></h2>
-<p>The objective of “learning” is to simultaneously:</p>
-<ul>
-<li>Achieve LOW variance of Estimator</li>
-<li>Achieve LOW Bias of Estimator</li>
-</ul>
-<section id="case-1-high-variance-and-high-bias" class="level3">
-<h3 class="anchored" data-anchor-id="case-1-high-variance-and-high-bias">Case 1: High Variance and High Bias</h3>
-<div id="fig-bias-case1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bias-case1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/bias_case_1.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bias-case1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: High Variance and High Bias
-</figcaption>
-</figure>
-</div>
-<p>We have a poor estimator. Poor fit and poor predictor for <strong>training sample</strong> as well as for <strong>test sample</strong>.</p>
-</section>
-<section id="case-2-high-variance-and-low-bias" class="level3">
-<h3 class="anchored" data-anchor-id="case-2-high-variance-and-low-bias">Case 2: High Variance and Low Bias</h3>
-<div id="fig-bias-case2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bias-case2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/bias_case_2.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bias-case2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: High Variance and Low Bias
-</figcaption>
-</figure>
-</div>
-<p>We have a low “precision” predictor. In another word, we have an <strong>over-fitting</strong>, and hence the precision is poor.</p>
-<p><strong>Overfitting</strong>: too much reliance on the training data</p>
-</section>
-<section id="case-3-low-variance-and-high-bias" class="level3">
-<h3 class="anchored" data-anchor-id="case-3-low-variance-and-high-bias">Case 3: Low Variance and High Bias</h3>
-<div id="fig-bias-case3" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bias-case3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/bias_case_3.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bias-case3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Low Variance and High Bias
-</figcaption>
-</figure>
-</div>
-<p>We have precise predictor, but will work well only for <strong>training sample</strong>, however will be problematic when applied to cases <strong>test sample</strong>. This is the case of <strong>underfitting</strong>.</p>
-<p><strong>Underfitting</strong>: a failure to learn the relationships in the data</p>
-</section>
-<section id="case-4-low-variance-and-low-bias" class="level3">
-<h3 class="anchored" data-anchor-id="case-4-low-variance-and-low-bias">Case 4: Low Variance and Low Bias</h3>
-<div id="fig-bias-case4" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bias-case4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/bias_case_4.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bias-case4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Low Variance and Low Bias
-</figcaption>
-</figure>
-</div>
-<p>The predictor will have a <strong><em>good fit</em></strong> for both <strong>training sample</strong> and <strong>test sample</strong>. This is what we want.</p>
-</section>
-</section>
-</section>
-<section id="interpretability-vs-flexibility-in-learning" class="level1">
-<h1>Interpretability vs flexibility in learning</h1>
-<p>It is important to know the objective; this will determine which is more important in choosing models and methods.</p>
-<blockquote class="blockquote">
-<p>Q:Which method should i used in my analysis?</p>
-<p>A: Depends on your goal - the big picture is inference vs prediction<span class="citation" data-cites="cmu"><sup><a href="#ref-cmu" role="doc-biblioref">3</a></sup></span></p>
-</blockquote>
-<p>Classically in statistics - this is called the “degrees of freedom” of any statistical tests and estimators.</p>
-<p>Trade-offs between interpretability and flexibility is a major issue.</p>
-<div id="fig-model-interpretability" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-model-interpretability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/model_trade_off.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-interpretability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: trade-off between flexibility and interpretability of ML models<span class="citation" data-cites="huppenkothen2023constructing"><sup><a href="#ref-huppenkothen2023constructing" role="doc-biblioref">4</a></sup></span>
-</figcaption>
-</figure>
-</div>
-<section id="question" class="level3">
-<h3 class="anchored" data-anchor-id="question">Question?</h3>
-<ol type="1">
-<li>What is learning? What does it mean for a computer to learn?</li>
-<li>The big question of Learning Theory (and practice): how to get good generalization with a limited number of examples?</li>
-</ol>
 
 
 
+</section>
 </section>
 </section>
 
@@ -501,12 +370,6 @@ Figure&nbsp;13: trade-off between flexibility and interpretability of ML models<
 </div>
 <div id="ref-javatpoint" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">www.javatpoint.com. <a href="https://www.javatpoint.com/bias-and-variance-in-machine-learning">Bias and variance in machine learning</a>. (2021).</div>
-</div>
-<div id="ref-cmu" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">CMU. <a href="https://www.stat.cmu.edu/cmsac/sure/2021/materials/lectures/slides/10-Model-assess.html#1">Supervised learning: Model selection vs assessment</a>.</div>
-</div>
-<div id="ref-huppenkothen2023constructing" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Huppenkothen, D. <em>et al.</em> <a href="https://arxiv.org/abs/2310.12528">Constructing impactful machine learning research for astronomy: Best practices for researchers and reviewers</a>. (2023).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
