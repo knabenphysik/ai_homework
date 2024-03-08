@@ -4,25 +4,18 @@
 
 To automatically discover regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into different categories.
 
+or the ability to automatically learn from data and past experiences while identifying patterns to make predictions with minimal human intervention.
+
+
+## Learning Overview
+
+![Different learning strategy](image/jenis_ml.png){#fig-learning-strategy}
+
 ## The "problem setting" of statistical learning.
 
 The basic setting of statistical learning is: given a **problem statement**, we want to find **prediction model** which **estimate** has **best fit** in providing **solutions** to the problem, using **data at hand** (in sample data) which has the **Lowest Variance and Lowest Bias** when applied to the data at hand as well as to the **data not in hand** (unseen data).
 
-## Problem statement
 
-Problem statement must be made in **probability statement(s)**.
-
-Given a data, can we test whether our statement is : TRUE or FALSE.
-
-e.g. Given an image cheque whose size is 1264x616 pixel, is image Standard Charted cheque or not?
-
-e.g. Given a 3 bedroom apartment in Kelana Jaya, will the resale price be between RM1,400/sqf and below RM1500/sqf?
-
-e.g. Given 4 to 5 parameter of atmospheric reading in Petaling Jaya, what is the chance of raining the next 3 hours?
-
-All these statements are **probability statements**, which answers will be TRUE or FALSE; but the answer will always be in terms of probability.
-
-e.g. The probability of a image cheque whose size is 1264x616 pixel is image Standard Charted cheque is 43%. The probability for the resale price of the said apartment in the range will be 91.3%. The probability of raining in Petaling Jaya for the coming 3 hours is 63.5%.
 
 ## Statistical Modelling [@hasni]
 
@@ -58,10 +51,6 @@ noise in data refers to unwanted modifications introduced to a source signal dur
 
 ![Example 1:Image data representation in vector](image/image_rep.png){#fig-img-rep}
 
-Before learning, data at hand must be representing in vector (e.g. Figure 2 & Figure 3)
-
-![Example 2:Image data representation in vector](image/image_rep_2.png){#fig-img-rep-2}
-
 But wait, how about textual data ?
 
 ![Example 3:Text data representation in vector](image/text_rep.png){#fig-text-rep}
@@ -84,64 +73,7 @@ Imagine you have a set of data. In order to have ***good estimated*** model, we 
 -   How we will do this? $\Longrightarrow$ controlling the **complexity** of the model (learning parameter)
 -   How do we know if our model generalizes? $\Longrightarrow$ evaluating on **test** data.
 
-![training loss plot](image/example_loss_plot.png){#fig-loss-plot}
-
 ![Training trade-off [@javatpoint]](image/biasvariance.png){#fig-model-tradeoff}
 
-![good plot](image/perfect_loss_plot.png){#fig-good-plot}
 
 > Learning is **NOT** memorization! The ability to produce correct outputs on previously unseen inputs is called **generalization**
-
-## **Error and Bias**
-
-The objective of "learning" is to simultaneously:
-
--   Achieve LOW variance of Estimator
--   Achieve LOW Bias of Estimator
-
-### Case 1: High Variance and High Bias
-
-![High Variance and High Bias](image/bias_case_1.png){#fig-bias-case1}
-
-We have a poor estimator. Poor fit and poor predictor for **training sample** as well as for **test sample**.
-
-### Case 2: High Variance and Low Bias
-
-![High Variance and Low Bias](image/bias_case_2.png){#fig-bias-case2}
-
-We have a low "precision" predictor. In another word, we have an **over-fitting**, and hence the precision is poor.
-
-**Overfitting**: too much reliance on the training data
-
-### Case 3: Low Variance and High Bias
-
-![Low Variance and High Bias](image/bias_case_3.png){#fig-bias-case3}
-
-We have precise predictor, but will work well only for **training sample**, however will be problematic when applied to cases **test sample**. This is the case of **underfitting**.
-
-**Underfitting**: a failure to learn the relationships in the data
-
-### Case 4: Low Variance and Low Bias
-
-![Low Variance and Low Bias](image/bias_case_4.png){#fig-bias-case4}
-
-The predictor will have a ***good fit*** for both **training sample** and **test sample**. This is what we want.
-
-# Interpretability vs flexibility in learning
-
-It is important to know the objective; this will determine which is more important in choosing models and methods.
-
-> Q:Which method should i used in my analysis?
->
-> A: Depends on your goal - the big picture is inference vs prediction [@cmu]
-
-Classically in statistics - this is called the “degrees of freedom” of any statistical tests and estimators.
-
-Trade-offs between interpretability and flexibility is a major issue.
-
-![trade-off between flexibility and interpretability of ML models [@huppenkothen2023constructing]](image/model_trade_off.png){#fig-model-interpretability}
-
-### Question?
-
-1.  What is learning? What does it mean for a computer to learn?
-2.  The big question of Learning Theory (and practice): how to get good generalization with a limited number of examples?
