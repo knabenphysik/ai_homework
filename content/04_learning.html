@@ -223,14 +223,10 @@ window.Quarto = {
   <li><a href="#about-learning-i" id="toc-about-learning-i" class="nav-link active" data-scroll-target="#about-learning-i">About Learning I</a>
   <ul class="collapse">
   <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture">Big Picture</a></li>
-  <li><a href="#learning-overview" id="toc-learning-overview" class="nav-link" data-scroll-target="#learning-overview">Learning Overview</a></li>
+  <li><a href="#statistical-learning" id="toc-statistical-learning" class="nav-link" data-scroll-target="#statistical-learning">Statistical Learning</a></li>
   <li><a href="#the-problem-setting-of-statistical-learning." id="toc-the-problem-setting-of-statistical-learning." class="nav-link" data-scroll-target="#the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</a></li>
-  <li><a href="#statistical-modelling-hasni" id="toc-statistical-modelling-hasni" class="nav-link" data-scroll-target="#statistical-modelling-hasni">Statistical Modelling<span class="citation" data-cites="hasni"><sup>1</sup></span></a></li>
-  <li><a href="#how-to-learn" id="toc-how-to-learn" class="nav-link" data-scroll-target="#how-to-learn"><strong>How to Learn ?</strong></a>
-  <ul class="collapse">
-  <li><a href="#data-representation" id="toc-data-representation" class="nav-link" data-scroll-target="#data-representation">Data representation</a></li>
-  <li><a href="#the-learning" id="toc-the-learning" class="nav-link" data-scroll-target="#the-learning">The “learning”</a></li>
-  </ul></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#interpret-step-6" id="toc-interpret-step-6" class="nav-link" data-scroll-target="#interpret-step-6">Interpret step (6)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/04_learning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/04_learning.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -243,13 +239,18 @@ window.Quarto = {
 
 <section id="about-learning-i" class="level1">
 <h1>About Learning I</h1>
+<blockquote class="blockquote">
+<p>“The answers you get depend upon the questions you ask.” - Thomas Kuhn.</p>
+</blockquote>
 <section id="big-picture" class="level2">
 <h2 class="anchored" data-anchor-id="big-picture">Big Picture</h2>
-<p>To automatically discover regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into different categories.</p>
-<p>or the ability to automatically learn from data and past experiences while identifying patterns to make predictions with minimal human intervention.</p>
+<p>Learning in <em><strong>Machine Learning</strong></em> is learning via computational methods using experience (data) to improve performance or to make accurate predictions.<span class="citation" data-cites="Mohri"><sup><a href="#ref-Mohri" role="doc-biblioref">1</a></sup></span></p>
+<p>This learning is to automatically (minimal human intervention) discover regularities/patterns in data (through the use of computer algorithms) and with the use of these regularities to take actions (e.g.&nbsp;classifying the data into different categories)</p>
 </section>
-<section id="learning-overview" class="level2">
-<h2 class="anchored" data-anchor-id="learning-overview">Learning Overview</h2>
+<section id="statistical-learning" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-learning">Statistical Learning</h2>
+<p>Statistical learning refers to a vast set of tools for understanding data. These tools can be classified as supervised or unsupervised. Broadly speaking, supervised statistical learning involves building a statistical model for predicting, or estimating, an output based on one or more inputs. With unsupervised statistical learning, there are inputs but no supervising output; nevertheless we can learn relationships and structure from such data.<span class="citation" data-cites="Gareth"><sup><a href="#ref-Gareth" role="doc-biblioref">2</a></sup></span></p>
+<p>Another way of understanding statistical learning is, it’s about studying the concept of inference (process of drawing conclusions from data) in both supervised and unsupervised machine learning. Inference covers the entire spectrum of machine learning, from gaining knowledge, making predictions or decisions and constructing models from a set of labeled or unlabeled data.</p>
 <div id="fig-learning-strategy" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-learning-strategy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -260,81 +261,147 @@ Figure&nbsp;1: Different learning strategy
 </figcaption>
 </figure>
 </div>
+<ul>
+<li><p>Supervised Learning: learning approach that’s defined by its use of <em><strong>labeled</strong></em> datasets. These datasets are designed to train or “supervise” algorithms into certain task (e.g.&nbsp;classifying data or predicting outcomes accurately)</p></li>
+<li><p>Unsupervised Learning: learning strategy that’s looking for <em><strong>hidden or underlying patterns</strong></em> in datasets.</p></li>
+<li><p>Reinforcement Learning: learning strategy which does not require labeled data or a training set. It relies on the ability to monitor the response to the actions of the learning agent. In general, a reinforcement learning agent is able to perceive and interpret its environment, take actions and learn through trial and error.</p></li>
+</ul>
+<p>At the end we will <em><strong>measure success</strong></em> of this learning by some <em><strong>statistical model performance</strong></em>. This will tell whether our <em><strong>“trained” model</strong></em> is generalize(model’s ability to adapt properly to new, previously unseen data) well or not,</p>
+<div id="fig-learning-landscape" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-learning-landscape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/ai_lanscape.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learning-landscape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Current AI Landscape
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-learning-landscape" class="quarto-xref">Figure&nbsp;2</a> shows current <a href="https://www.youtube.com/watch?v=5p248yoa3oE">AI opportunities</a>. Andrew Ng highlight the opportunities in:</p>
+<ul>
+<li>AI for productivity : usage of Large Language Model (LLM) for office work</li>
+<li>AI for new products and services : to utilised AI to build previously unimaginable services and products.</li>
+</ul>
+<blockquote class="blockquote">
+<p>We shall focus on Supervised Learning</p>
+</blockquote>
 </section>
 <section id="the-problem-setting-of-statistical-learning." class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</h2>
 <p>The basic setting of statistical learning is: given a <strong>problem statement</strong>, we want to find <strong>prediction model</strong> which <strong>estimate</strong> has <strong>best fit</strong> in providing <strong>solutions</strong> to the problem, using <strong>data at hand</strong> (in sample data) which has the <strong>Lowest Variance and Lowest Bias</strong> when applied to the data at hand as well as to the <strong>data not in hand</strong> (unseen data).</p>
 </section>
-<section id="statistical-modelling-hasni" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-modelling-hasni">Statistical Modelling<span class="citation" data-cites="hasni"><sup><a href="#ref-hasni" role="doc-biblioref">1</a></sup></span></h2>
-<p>From a statistical learning point-of-view:</p>
-<p><span class="math display">\[
-Y = f(\bf{X}) + \epsilon
-\]</span> where <span class="math inline">\({X}\)</span> is <strong><em>input</em></strong> variable:</p>
-<p><span class="math display">\[
-X = (X_1,X_2,...,X_p)
-\]</span> and <span class="math inline">\(\epsilon\)</span> is <strong><em>noise</em></strong>.</p>
-<p>The task is to get prediction/estimation of:</p>
-<p><span class="math display">\[
-\hat{Y} = \hat{f}(\bf{X}) + \hat{\epsilon}
-\]</span> The task is then relegated to <em>error estimator</em>, by defining <strong>Loss function</strong>:</p>
-<p><span class="math display">\[
-Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
-\]</span></p>
-<div id="fig-learning-model" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-learning-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/basic_model.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learning-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Visualize learning model
-</figcaption>
-</figure>
-</div>
-<p>A loss function, also known as a cost function, is a method used to estimate the discrepancies between the actual and predicted values in a machine learning model. It provides a measure of how well the model is performing.</p>
-<p>noise in data refers to unwanted modifications introduced to a source signal during the capture, storage, transmission, or processing of its information.</p>
-</section>
-<section id="how-to-learn" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-learn"><strong>How to Learn ?</strong></h2>
-<section id="data-representation" class="level3">
-<h3 class="anchored" data-anchor-id="data-representation">Data representation</h3>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>We will use the problem of car image classification as a running example to illustrate some basic definitions and to describe the use and evaluation of machine learning algorithms in practice. car image classification is the problem of learning to automatically classify 2 type of car image messages as either Perodua MyVi or Proton Iriz.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>MyVi</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Iriz</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Examples</strong>: Items or instances of data used for learning or evaluation. In our problem, these examples correspond to the collection of car images we will use for learning and testing.</p></li>
+<li><p><strong>Features</strong>: The set of attributes, often represented as a vector, associated to an example. In the case of image classification, pixels are the raw building blocks of an image. Every image consists of a set of pixels. There is no finer granularity than the pixel. A pixel is considered the “color” or the “intensity” of light that appears in a given place in our image. Various location of this color will give texture, and shape.</p></li>
+</ul>
 <div id="fig-img-rep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-img-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="image/image_rep.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Example 1:Image data representation in vector
+Figure&nbsp;3: Image data representation in vector
 </figcaption>
 </figure>
 </div>
-<p>But wait, how about textual data ?</p>
-<div id="fig-text-rep" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-text-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/text_rep.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-text-rep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Example 3:Text data representation in vector
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="the-learning" class="level3">
-<h3 class="anchored" data-anchor-id="the-learning">The “learning”</h3>
-<p>Imagine you have a set of data. In order to have <strong><em>good estimated</em></strong> model, we have to split data at hand into:</p>
 <ul>
-<li><p>Training set: This is the largest part in terms of the size of the dataset.</p></li>
-<li><p>Validation set: model training process is not a one-time process (highly iterative process). We have to train multiple models by trying different combinations of parameters (complexity). Then, we evaluate the performance of each model on the validation set.</p></li>
-<li><p>Test set: this is use <strong><em>after the training</em></strong> to evaluate performance of the model via <em>un-seen</em> data</p></li>
+<li><p><strong>Labels</strong>: Values or categories assigned to examples. In classification problems, examples are assigned specific categories, for instance, the Perodua MyVi and Proton Iriz categories in our binary classification problem.</p></li>
+<li><p><strong>Training sample</strong>: Examples used to train a learning algorithm. In our problem, the training sample consists of a set of car image examples along with their associated labels.</p></li>
+<li><p><strong>Validation sample</strong>: Examples used to tune the parameters of a learning algorithm when working with labeled data. Learning algorithms typically have one or more free parameters, and the validation sample is used to select appropriate values for these model parameters.</p></li>
+<li><p><strong>Test sample</strong>: Examples used to evaluate the performance of a learning algorithm. The test sample is separate from the training and validation data and is not made available (unseen data) in the learning stage.</p></li>
+<li><p><strong>Loss function</strong>: A function that measures the difference, or loss, between a predicted label and a true label. Also termed as <strong>objective function</strong>.</p></li>
+<li><p><strong><span class="math inline">\(h\)</span>, (hypothesis)</strong>: an instance or specific candidate model that maps inputs to outputs and can be evaluated and used to make predictions. A hypothesis is like a smart(well-informed) guess.</p></li>
+<li><p><strong><span class="math inline">\(H\)</span>, Hypothesis set</strong>: set of conditions of specific candidate model that determines the classification into a group (a function approximation for the target function). It is a statement about the input data and its relation to the class. These “function” is used to associate/estimate or predict the target value, based on the input dataset, algorithm parameters (and hyper-parameters). Mathematically, it is a set of functions mapping features (feature vectors) to the set of labels Y. In our example, these may be a set of functions mapping car image features to Y = {MyVi, Iriz}.</p></li>
 </ul>
-<div id="fig-learn" class="quarto-figure quarto-figure-center quarto-float anchored">
+<blockquote class="blockquote">
+<p>Learning is a search through the space of possible hypotheses for one that will perform well, even on new examples beyond the training set.<span class="citation" data-cites="Stuart"><sup><a href="#ref-Stuart" role="doc-biblioref">3</a></sup></span></p>
+</blockquote>
+<div id="fig-high-level" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-learn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/learning.png" class="img-fluid figure-img">
+<div aria-describedby="fig-high-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/high_level_training.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: generic learning process
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-high-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: generic learning process
+</figcaption>
+</figure>
+</div>
+<p>In <a href="#fig-high-level" class="quarto-xref">Figure&nbsp;4</a>, we show generic statistical learning process.To ensure that our statistical model is going to perform well on new data, we need to consider the following:</p>
+<ol type="1">
+<li>Using “user” prior knowledge, map relevant features of the collection of image into label/category</li>
+<li>Partition the data into a training sample, a validation sample, and a test sample.</li>
+<li>During training, example are drawn <strong><em>independently at random</em></strong></li>
+<li>Our Machine learning algorithm now analyze the examples and produce a classifier,<span class="math inline">\(f\)</span></li>
+<li>given new example from validation, classifier,<span class="math inline">\(f\)</span> predict <span class="math inline">\(\hat{y}=f(x)\)</span></li>
+<li>Measure loss between real truth, <span class="math inline">\(y\)</span> and predicted,<span class="math inline">\(\hat{y}\)</span></li>
+<li>If loss high, repeat (3)-(6) until loss is minimize.</li>
+</ol>
+<blockquote class="blockquote">
+<p>What happen at step (4) - step (6)</p>
+</blockquote>
+<p>To have rough idea what’s going on at step (4), consider <a href="#fig-data-label" class="quarto-xref">Figure&nbsp;5</a> where our data is label as vector(step (1)).</p>
+<div id="fig-data-label" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-label-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/data_label.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-label-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: data label
+</figcaption>
+</figure>
+</div>
+<div id="fig-latihan" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-latihan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/what_happen_in_training.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-latihan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: What happened during training
+</figcaption>
+</figure>
+</div>
+<p>Thus in <a href="#fig-latihan" class="quarto-xref">Figure&nbsp;6</a>, during 1 individual training loop. Prediction vector is later will be compare with data label using <em>loss function</em> and error is compute.</p>
+</section>
+<section id="interpret-step-6" class="level2">
+<h2 class="anchored" data-anchor-id="interpret-step-6">Interpret step (6)</h2>
+<ul>
+<li><p><em><strong>Bias</strong></em> : amount that a model’s prediction differs from the target value, compared to the training data.</p></li>
+<li><p><em><strong>Low Bias</strong></em>: fewer strong assumptions or constraints placed during model training. In this case, the model will closely match the training dataset. Model has ability to capture the true underlying patterns or relationships present in the data</p></li>
+<li><p><em><strong>High Bias</strong></em> : model simplifies the underlying patterns too much (strong assumptions or constraints placed during model training). In this case, the model will not match the training dataset closely. Usually called <em><strong>under-fitting</strong></em></p></li>
+<li><p><em><strong>Variance</strong></em>: the variability of the model that how much it is sensitive to another subset of the training dataset. i.e.&nbsp;how much it can adjust on the new subset of the training dataset.</p></li>
+<li><p><em><strong>Low Variance</strong></em> : not overly influenced by the noise or fluctuations in the training data. It tends to be more stable, providing consistent predictions even when trained on different subsets of the data.</p></li>
+<li><p><em><strong>High Variance</strong></em> : overly sensitive to the noise or fluctuations in the training data. It tries to fit the training data so closely that it captures not only the true underlying patterns but also the random noise in the data. Usually called <em><strong>over-fitting</strong></em></p></li>
+<li><p><em><strong>High Bias and Low Variance</strong></em>: Consistent but inaccurate due to oversimplification. <span class="math inline">\(\Longrightarrow\)</span> poor performance</p></li>
+<li><p><em><strong>High Variance and Low Bias</strong></em>: Accurate but inconsistent, capturing noise and over-fitting to the training data. <span class="math inline">\(\Longrightarrow\)</span> poor performance</p></li>
+</ul>
+<div id="fig-vis-var-bias" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vis-var-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/bias-var-visual.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vis-var-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: What happened during training
 </figcaption>
 </figure>
 </div>
@@ -350,7 +417,7 @@ Figure&nbsp;5: generic learning process
 <img src="image/biasvariance.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-tradeoff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">2</a></sup></span>
+Figure&nbsp;8: Training trade-off<span class="citation" data-cites="javatpoint"><sup><a href="#ref-javatpoint" role="doc-biblioref">4</a></sup></span>
 </figcaption>
 </figure>
 </div>
@@ -362,14 +429,19 @@ Figure&nbsp;6: Training trade-off<span class="citation" data-cites="javatpoint">
 
 </section>
 </section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-hasni" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Techna-X. <a href="https://www.techna-x.com/">MD labs data science lecture series</a>. (2020).</div>
+<div id="ref-Mohri" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Mehryar Mohri, et al., Afshin Rostamizadeh. <a href="https://www.amazon.com/Foundations-Machine-Learning-Adaptive-Computation/dp/026201825X/ref=sr_1_2?dib=eyJ2IjoiMSJ9.anGsUiz-A-b-LJpuBQ7qAZNZOr7gHafZecbh6LLotAD6o8X7_69tFRHbfL0kkevgm6Q9FnaxwtSemL-pfpRwuYZ3bL2vFMeBShRX1CMkobffvQh3XfUzcLWpmoEGED9T1FjjHitEuBGSTQunZ6JC510JEAwtxVETrdnOcFhpO_VsmcHfZeq6vrjoJw98d_hYmdwyYTV2pKyGmrNGbT0_wq703_dAKAvWsOStWpa845Y.KLI6-arUUJBPtZ3arz22ZOYgzzdNh8-Q3ClpDsLHn3M&amp;dib_tag=se&amp;keywords=Foundations+of+Machine+Learning&amp;qid=1710313798&amp;s=books&amp;sr=1-2">Foundations of machine learning</a>. (2012).</div>
+</div>
+<div id="ref-Gareth" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Gareth James, T. H., Daniela Witten. <a href="https://link.springer.com/book/10.1007/978-3-031-38747-0">An introduction to statistical learning with application in python</a>. (2023).</div>
+</div>
+<div id="ref-Stuart" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Stuart Russell, P. N. <a href="https://www.pearson.com/en-us/subject-catalog/p/artificial-intelligence-a-modern-approach/P200000003500/9780137505135">Artificial intelligence: A modern approach,3rd ed.</a> (2010).</div>
 </div>
 <div id="ref-javatpoint" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">www.javatpoint.com. <a href="https://www.javatpoint.com/bias-and-variance-in-machine-learning">Bias and variance in machine learning</a>. (2021).</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">www.javatpoint.com. <a href="https://www.javatpoint.com/bias-and-variance-in-machine-learning">Bias and variance in machine learning</a>. (2021).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

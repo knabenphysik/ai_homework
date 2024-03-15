@@ -1,5 +1,0 @@
----
-title: "Open Source License"
----
-
-Text and figures are licensed under Creative Commons Attribution [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".
