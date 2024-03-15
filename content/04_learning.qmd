@@ -1,75 +1,126 @@
 # About Learning I
 
+> "The answers you get depend upon the questions you ask.”  - Thomas Kuhn.
+
 ## Big Picture
 
-To automatically discover regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as classifying the data into different categories.
+Learning in _**Machine Learning**_ is learning via computational methods using experience (data) to improve performance or to make accurate predictions.[@Mohri]
 
-or the ability to automatically learn from data and past experiences while identifying patterns to make predictions with minimal human intervention.
+This learning is to automatically (minimal human intervention) discover regularities/patterns in data (through the use of computer algorithms) and with the use of these regularities to take actions (e.g. classifying the data into different categories)
 
+## Statistical Learning
+Statistical learning refers to a vast set of tools for understanding data. These tools can be classified as supervised or unsupervised. Broadly speaking, supervised statistical learning involves building a statistical model for predicting, or estimating, an output based on one or more inputs. With unsupervised statistical learning, there are inputs but no supervising output; nevertheless we can learn relationships and structure from such data.[@Gareth]
 
-## Learning Overview
+Another way of understanding statistical learning is, it's about studying the concept of inference (process of drawing conclusions from data) in both supervised and unsupervised machine learning. Inference covers the entire spectrum of machine learning, from gaining knowledge, making predictions or decisions and constructing models from a set of labeled or unlabeled data.
 
 ![Different learning strategy](image/jenis_ml.png){#fig-learning-strategy}
+
+- Supervised Learning: learning approach that’s defined by its use of _**labeled**_ datasets. These datasets are designed to train or “supervise” algorithms into certain task (e.g. classifying data or predicting outcomes accurately)
+
+- Unsupervised Learning: learning strategy that's looking for _**hidden or underlying patterns**_ in datasets.
+
+- Reinforcement Learning: learning strategy which does not require labeled data or a training set. It relies on the ability to monitor the response to the actions of the learning agent. In general, a reinforcement learning agent is able to perceive and interpret its environment, take actions and learn through trial and error.
+
+
+At the end we will _**measure success**_ of this learning by some _**statistical model performance**_. This will tell whether our _**"trained" model**_ is generalize(model's ability to adapt properly to new, previously unseen data) well or not,
+
+
+![Current AI Landscape](image/ai_lanscape.png){#fig-learning-landscape}
+
+@fig-learning-landscape shows current [AI opportunities](https://www.youtube.com/watch?v=5p248yoa3oE). Andrew Ng highlight the opportunities in:
+
+- AI for productivity :  usage of Large Language Model (LLM) for office work
+- AI for new products and services : to utilised AI to build previously unimaginable services and products.
+
+> We shall focus on Supervised Learning
+
 
 ## The "problem setting" of statistical learning.
 
 The basic setting of statistical learning is: given a **problem statement**, we want to find **prediction model** which **estimate** has **best fit** in providing **solutions** to the problem, using **data at hand** (in sample data) which has the **Lowest Variance and Lowest Bias** when applied to the data at hand as well as to the **data not in hand** (unseen data).
 
 
+## Example
 
-## Statistical Modelling [@hasni]
+We will use the problem of car image classification as a running example to illustrate some basic definitions and to describe the use and evaluation of machine learning algorithms in practice. car image classification is the problem of learning to automatically classify 2 type of car image messages as either Perodua MyVi or Proton Iriz.
 
-From a statistical learning point-of-view:
+| Label    | Description |
+| -------- | ------- |
+| 0 | MyVi    |
+| 1 | Iriz   |
 
-$$
-Y = f(\bf{X}) + \epsilon
-$$ where ${X}$ is ***input*** variable:
 
-$$
-X = (X_1,X_2,...,X_p)
-$$ and $\epsilon$ is ***noise***.
+- **Examples**: Items or instances of data used for learning or evaluation. In our problem, these examples correspond to the collection of car images we will use for learning and testing.
 
-The task is to get prediction/estimation of:
+- **Features**: The set of attributes, often represented as a vector, associated to an
+example. In the case of image classification, pixels are the raw building blocks of an image. Every image consists of a set of pixels. There is no finer granularity than the pixel. A pixel is considered the “color” or the “intensity” of light that appears in a given place in our image. Various location of this color will give texture, and shape.
 
-$$
-\hat{Y} = \hat{f}(\bf{X}) + \hat{\epsilon}
-$$ The task is then relegated to *error estimator*, by defining **Loss function**:
+![Image data representation in vector](image/image_rep.png){#fig-img-rep}
 
-$$ 
-Error(x) = E[(Y−\hat{f}(\bf{X}))^2]
-$$
+- **Labels**: Values or categories assigned to examples. In classification problems,
+examples are assigned specific categories, for instance, the Perodua MyVi and Proton Iriz categories in our binary classification problem. 
 
-![Visualize learning model](image/basic_model.png){#fig-learning-model}
+- **Training sample**: Examples used to train a learning algorithm. In our problem, the training sample consists of a set of car image examples along with their associated labels.
 
-A loss function, also known as a cost function, is a method used to estimate the discrepancies between the actual and predicted values in a machine learning model. It provides a measure of how well the model is performing.
+- **Validation sample**: Examples used to tune the parameters of a learning algorithm when working with labeled data. Learning algorithms typically have one or more free parameters, and the validation sample is used to select appropriate values for these model parameters.
 
-noise in data refers to unwanted modifications introduced to a source signal during the capture, storage, transmission, or processing of its information.
+- **Test sample**: Examples used to evaluate the performance of a learning algorithm. The test sample is separate from the training and validation data and is not made available (unseen data) in the learning stage.
 
-## **How to Learn ?**
+- **Loss function**: A function that measures the difference, or loss, between a predicted label and a true label. Also termed as **objective function**.
 
-### Data representation
+- **$h$, (hypothesis)**: an instance or specific candidate model that maps inputs to outputs and can be evaluated and used to make predictions. A hypothesis is like a smart(well-informed) guess.
 
-![Example 1:Image data representation in vector](image/image_rep.png){#fig-img-rep}
+- **$H$, Hypothesis set**: set of conditions of specific candidate model that determines the classification into a group (a function approximation for the target function). It is a statement about the input data and its relation to the class. These "function" is used to associate/estimate or predict the target value, based on the input dataset, algorithm parameters (and hyper-parameters). Mathematically, it is a set of functions mapping features (feature vectors) to the set of labels Y. In our example, these may be a set of functions mapping car image features to Y = {MyVi, Iriz}.
 
-But wait, how about textual data ?
+> Learning is a search through the space of possible hypotheses for one that will perform well, even on new examples beyond the training set.[@Stuart]
 
-![Example 3:Text data representation in vector](image/text_rep.png){#fig-text-rep}
+![generic learning process](image/high_level_training.png){#fig-high-level width=80%}
 
-### The "learning"
+In @fig-high-level, we show generic statistical learning process.To ensure that our statistical model is going to perform well on new data, we need to consider the following:
 
-Imagine you have a set of data. In order to have ***good estimated*** model, we have to split data at hand into:
+1. Using "user" prior knowledge, map relevant features of the collection of image into label/category
+2. Partition the data into a training sample, a validation sample, and a test sample.
+3. During training, example are drawn **_independently at random_**
+4. Our Machine learning algorithm now analyze the examples and produce a classifier,$f$
+5. given new example from validation, classifier,$f$ predict $\hat{y}=f(x)$
+6. Measure loss between real truth, $y$ and predicted,$\hat{y}$
+7. If loss high, repeat (3)-(6) until loss is minimize. 
 
--   Training set: This is the largest part in terms of the size of the dataset.
+> What happen at step (4) - step (6)
 
--   Validation set: model training process is not a one-time process (highly iterative process). We have to train multiple models by trying different combinations of parameters (complexity). Then, we evaluate the performance of each model on the validation set.
+To have rough idea what's going on at step (4), consider @fig-data-label where  our data is label as vector(step (1)).
 
--   Test set: this is use ***after the training*** to evaluate performance of the model via *un-seen* data
+![data label](image/data_label.png){#fig-data-label}
 
-![generic learning process](image/learning.png){#fig-learn}
+![What happened during training](image/what_happen_in_training.png){#fig-latihan width=85%}
 
-------------------------------------------------------------------------
+Thus in @fig-latihan, during 1 individual training loop. Prediction vector is later will be compare with data label using _loss function_ and error is compute.
 
--   What do we want? $\Longrightarrow$ To make *predictions* on *unseen data* $\Longrightarrow$ We want a *model* that **generalizes** well $\Longrightarrow$ generalizes to unseen data
+## Interpret step (6)
+
+- _**Bias**_ : amount that a model’s prediction differs from the target value, compared to the training data. 
+
+- _**Low Bias**_: fewer strong assumptions or constraints placed during model training. In this case, the model will closely match the training dataset. Model has ability to capture the true underlying patterns or relationships present in the data
+
+- _**High Bias**_ : model simplifies the underlying patterns too much (strong assumptions or constraints placed during model training). In this case, the model will not match the training dataset closely. Usually called _**under-fitting**_
+
+- _**Variance**_: the variability of the model that how much it is sensitive to another subset of the training dataset. i.e. how much it can adjust on the new subset of the training dataset.
+
+- _**Low Variance**_ : not overly influenced by the noise or fluctuations in the training data. It tends to be more stable, providing consistent predictions even when trained on different subsets of the data.
+
+- _**High Variance**_ : overly sensitive to the noise or fluctuations in the training data. It tries to fit the training data so closely that it captures not only the true underlying patterns but also the random noise in the data. Usually called _**over-fitting**_
+
+- _**High Bias and Low Variance**_: Consistent but inaccurate due to oversimplification. $\Longrightarrow$ poor performance
+
+- _**High Variance and Low Bias**_: Accurate but inconsistent, capturing noise and over-fitting to the training data. $\Longrightarrow$ poor performance
+
+
+![What happened during training](image/bias-var-visual.png){#fig-vis-var-bias width=70%}
+
+
+---
+
+-   What do we want? $\Longrightarrow$ To make *predictions* on *unseen data* $\Longrightarrow$ We want a *model*  that **generalizes** well $\Longrightarrow$ generalizes to unseen data
 -   How we will do this? $\Longrightarrow$ controlling the **complexity** of the model (learning parameter)
 -   How do we know if our model generalizes? $\Longrightarrow$ evaluating on **test** data.
 
