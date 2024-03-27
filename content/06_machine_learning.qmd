@@ -1,0 +1,109 @@
+# What is Machine Learning
+
+__Supervised Learning__
+
+Is to map input onto sets of output, which had been pre-determined by the "supervisor" or researcher/analyzer. Hence called "supervised".  The problem is $X \mapsto Y$. In another word, we have $X$ as input space, and $Y$ output space, and the learning is a process of mapping from $X$ to $Y$.
+
+Examples:
+
+1. Learning associations
+     Association rule, where given X, we want to know Y, or $Pr(Y|X)$
+
+2. Classification
+    Classification rule, where: IF $X_1 > a$ AND $X_2 > b$ THEN  Y = 0 else Y = 1
+    
+3. Pattern recognition
+    This is by way of patterns, such as "pixels" in image, "frequencies" in sound and speech, "medical records and data" in medical diagnosis, biometrics in identification, etc. IF pattern $X_1$ matches pattern $X_2$, then $Y = k$
+    
+4. Knowledge extraction
+    Using models, such as Linear Model to predict information given the data. $Y = \beta_0 + \beta_1X_1 +....$
+    
+__Unsupervised learning__
+
+We have only $Xs$, input data, and no output to map to. $Y$ may exist, but it is "latent" (i.e. not directly observable)
+
+1. Clustering
+   Simple clustering procedure, $Pr(X_i = k)$ given a certain rule, to discover similarities across groupings.
+   E.g. Customer segmentation, density estimation, image compression, etc.
+
+2. Discriminant
+   To "discriminate" $Xs$ across distinct groupings by using certain measures 
+   E.g. Principle Components, Linear Discriminant, etc.
+
+__Reinforcement Learning__
+
+The output $Y$ is a set of actions, which is ordered in a sequence $(a_ia_ja_k...a_n)$. The objective is to "learn" which set of actions sequence which maximizes the rewards, $Z$. $X$ now is called the possible states or set of states. $Y$ is the game theoretic action space choosing the states, and $Z$ is the reward space, given various state space sequences or paths. Here the "learning" is by process of learning from various paths, to discover the paths which gives optimal rewards. An example of this a chess game between two players. Here, we could say generally that the domain is both "game theory" involving "multiple agents" which involve choices which are probabilistic in nature.
+
+
+## Simple Linear Regression
+
+## Simple Tree partitioning (Tree models)
+
+## Random Forest
+
+## Generalized Linear Model (GLM)
+
+## Support Vector Machines (SVM)
+
+## Neural Network
+
+## Comparing Different Classification Algorithms
+
+We've [saw](https://www.kaggle.com/code/mehmetlaudatekman/comparing-different-classification-algorithms) our scores. Let's sort them.
+
+    Random Forest Classification %87 Accuracy
+    Naive Bayes and KNN Classification %81 Accuracy
+    Support Vector Machine Classification %80 Accuracy
+    Decision Tree Classification %78 Accuracy
+    Logistic Regression %74 Accuracy
+
+As we can see, for classification, the best algorithm is Random Forest Classification.
+
+>But do not forget that, in different datasets, it will be a different algorithm
+So it does not show that, Random Forest Classification is not the best algorithm for classification - however for this dataset it is :) 
+
+Make your own observations.
+
+|     | Accuracy |
+| -------- | ------- |
+| Naive Bayes  | 	0.776042   |
+| Support Vector Machine | 0.770796     |
+| Logistic Regression | 0.766917 |
+| K Nearest Neighbor    | 0.706955   |
+| Decision Tree | 0.706955 |
+
+From the above output, it is clear that for this [dataset](https://www.kaggle.com/code/opawar600/comparing-some-basic-ml-classification-algorithms), SVM, Logistic Regression and Naive Bayes works better....
+ 
+
+## Simulating the exercise
+
+You can re-run the Rmd file, and you can see changes happen in the plots. But doesn't matter how many time you run it, the main conclusions doesn't change!!! If you do this, effectively, you are repeating the simulations over and over again, which cause some minor changes to the results (i.e. due to randomize errors or white noise), but the conclusions remains the same.
+
+
+## Interpretability vs flexibility
+
+![Sampling from big data](image/model_trade_off.png){#fig-data-sampling}
+
+**Interpretability** — If a business wants high model transparency and wants to understand exactly why and how the model is generating predictions, they need to observe the inner mechanics of the AI/ML method. This leads to interpreting the model’s weights and features to determine the given output. This is interpretability. 
+
+High interpretability typically comes at the cost of performance, as seen in the following figure. If we wants to achieve high performance but still wants to have a general understanding of the model behavior, model explainability starts to play a larger role.
+
+**Explainability** — Explainability is how to take an ML model and explain the behavior in human terms.
+
+When datasets are large and the data is related to images or text, neural networks can meet the customer's AI/ML objective with high performance. In such cases, where complex methods are required to maximize performance, data scientists may focus on model explainability instead of interpretability. 
+
+![The trade-off between accuracy and interpretability.](image/trade_off.webp){#fig-trade-off}
+
+@fig-trade-off shows the trade-off between accuracy and interpretability of machine learning algorithms.
+
+Model interpretability is mainly related to the complexity of ML that is used to build the model. Generally speaking, models with more complex ML algorithms are more challenging to interpret and explain. In contrast, models with more straightforward ML algorithms are easiest to interpret and explain. Therefore, ML models can be categorized into two criteria: intrinsic or post hoc.
+
+Intrinsic interpretability model uses transparent ML model, such as sparse linear models or short decision trees. Interpretability is achieved by limiting the ML model complexity in such a way that the output is understandable by humans. Unfortunately, in most cases, the best performance of ML models belongs to very complex ML algorithms. In other words, model accuracy requires more complex ML algorithms, and simple ML algorithms might not make the most accurate prediction. Therefore, intrinsic models are suitable when interpretability is more important than accuracy.
+
+In contrast, post hoc interpretability model is used to explain complex/black-box ML models. After the ML models have been trained, the interpretation method is applied to extract information from the trained ML model without precisely depending on how they work.
+
+## Interpretability in Machine Learning
+
+A popular definition of interpretability frequently used by researchers is “interpretability in machine learning is a degree to which a human can understand the cause
+of a decision from an ML model”. It can also be defined as “the ability to explain the model outcome in understandable ways to a human. So far, no mathematical definition. The primary
+goal of interpretability is to explain the model outcomes in a way that is easy for users to understand. 

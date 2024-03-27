@@ -1,0 +1,7 @@
+# Exciting AI
+
+What is exciting AI today?
+
+- transformer
+- LLM
+- image generation

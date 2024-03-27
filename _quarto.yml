@@ -48,8 +48,12 @@ website:
         text: 04 - Model Learning
       - href: content/05_evaluation.qmd
         text: 05 - Model Evaluation
-      - href: content/06_deployment.qmd
-        text: 06 - Model Deployment & Monitoring
+      - href: content/06_machine_learning.qmd
+        text: 06 - Machine Learning        
+      - href: content/07_deployment.qmd
+        text: 07 - Model Deployment & Monitoring        
+      - href: content/08_exciting_ai.qmd
+        text: 08 - Exciting AI Today        
 
 format:
   html:
