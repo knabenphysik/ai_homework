@@ -10,26 +10,39 @@ To answer this, we must do **model evaluation**. And to evaluate, certain measur
 
 Also recall that our "learning" output answer will always be in terms of probability.
 
+The end goal is to:
+
+- Optimal: our trained model(s) performs as well in unseen dataset
+- Reliable: our trained model(s) behaves as expected
+
 ## Common metrics
 
 Here are the essential metrics:
 
-- **True Positives (TP)** is an outcome where the model correctly predicts the positive class. 
+- **True Positives (TP)** is an outcome where the model correctly predicts the positive class, and the actual value was also positive
 
-- **True Negatives (TN)** is an outcome where the model correctly predicts the negative class
+- **True Negatives (TN)** is an outcome where the model correctly predicts the negative class, and the actual value was also negative
 
-- **False Positives (FP)** is an outcome where the model incorrectly predicts the positive class.
+- **False Positives (FP)** is an outcome where the model predicted the positive class incorrectly, and the actual value was negative
 
-- **False Negatives (FN)** is an outcome where the model incorrectly predicts the negative class.
+- **False Negatives (FN)** is an outcome where the model predicted the negative class incorrectly, and the actual value was positive    .
 
-![common general metric](image/metrics_common.png){#fig-common-metrics} 
+![common general metric](image/metrics_common.png){#fig-common-metrics}
 
-**Precision**: This metric shows how often your model is **correct** when predicting the **target class**.
+## Example
+
+![Example 1](image/spam_example.png){#fig-spam-example}
+
+![Example 2](image/metric_example_2.webp){#fig-lain-example}
+
+![Example 3](image/cancer_example.png){#fig-cancer-example}
+
+**Precision (or correctness)**: This metric shows how often your model is **correct** when predicting the **target class**.
 
 $$
 Precision = \frac{TP}{TP + FP}
 $$
-**Recall**: metric that shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)
+**Recall (sensitivity)**: a measure of how actual observations are predicted correctly.This shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)
 
 $$
 Recall = \frac{TP}{TP + FN}
@@ -38,3 +51,10 @@ $$
 - High precision and high recall mean that your model is performing well. 
 - Low precision means that your model will predict some false positives
 - Low recall means that your model will predict some false negatives
+
+
+**F1-score**:  is the harmonic mean of the precision and recall values
+
+$$
+F1  Score = \frac{2 \times Precision \times  Recall}{Precision +  Recall}
+$$
