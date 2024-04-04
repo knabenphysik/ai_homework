@@ -215,6 +215,7 @@ window.Quarto = {
   <li><a href="#about-learning-iii" id="toc-about-learning-iii" class="nav-link active" data-scroll-target="#about-learning-iii">About Learning III</a>
   <ul class="collapse">
   <li><a href="#common-metrics" id="toc-common-metrics" class="nav-link" data-scroll-target="#common-metrics">Common metrics</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/05_evaluation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/05_evaluation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -234,14 +235,19 @@ window.Quarto = {
 </ol>
 <p>To answer this, we must do <strong>model evaluation</strong>. And to evaluate, certain measurement or metric is used to judge (evaluate) the performance of your model. It provides a more interpretable measure of your model’s performance.</p>
 <p>Also recall that our “learning” output answer will always be in terms of probability.</p>
+<p>The end goal is to:</p>
+<ul>
+<li>Optimal: our trained model(s) performs as well in unseen dataset</li>
+<li>Reliable: our trained model(s) behaves as expected</li>
+</ul>
 <section id="common-metrics" class="level2">
 <h2 class="anchored" data-anchor-id="common-metrics">Common metrics</h2>
 <p>Here are the essential metrics:</p>
 <ul>
-<li><p><strong>True Positives (TP)</strong> is an outcome where the model correctly predicts the positive class.</p></li>
-<li><p><strong>True Negatives (TN)</strong> is an outcome where the model correctly predicts the negative class</p></li>
-<li><p><strong>False Positives (FP)</strong> is an outcome where the model incorrectly predicts the positive class.</p></li>
-<li><p><strong>False Negatives (FN)</strong> is an outcome where the model incorrectly predicts the negative class.</p></li>
+<li><p><strong>True Positives (TP)</strong> is an outcome where the model correctly predicts the positive class, and the actual value was also positive</p></li>
+<li><p><strong>True Negatives (TN)</strong> is an outcome where the model correctly predicts the negative class, and the actual value was also negative</p></li>
+<li><p><strong>False Positives (FP)</strong> is an outcome where the model predicted the positive class incorrectly, and the actual value was negative</p></li>
+<li><p><strong>False Negatives (FN)</strong> is an outcome where the model predicted the negative class incorrectly, and the actual value was positive .</p></li>
 </ul>
 <div id="fig-common-metrics" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -253,10 +259,43 @@ Figure&nbsp;1: common general metric
 </figcaption>
 </figure>
 </div>
-<p><strong>Precision</strong>: This metric shows how often your model is <strong>correct</strong> when predicting the <strong>target class</strong>.</p>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<div id="fig-spam-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spam-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/spam_example.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spam-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Example 1
+</figcaption>
+</figure>
+</div>
+<div id="fig-lain-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lain-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/metric_example_2.webp" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lain-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Example 2
+</figcaption>
+</figure>
+</div>
+<div id="fig-cancer-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cancer-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/cancer_example.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cancer-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Example 3
+</figcaption>
+</figure>
+</div>
+<p><strong>Precision (or correctness)</strong>: This metric shows how often your model is <strong>correct</strong> when predicting the <strong>target class</strong>.</p>
 <p><span class="math display">\[
 Precision = \frac{TP}{TP + FP}
-\]</span> <strong>Recall</strong>: metric that shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)</p>
+\]</span> <strong>Recall (sensitivity)</strong>: a measure of how actual observations are predicted correctly.This shows whether your model can find all objects of the target class(how many correct items were found compared to how many were actually there)</p>
 <p><span class="math display">\[
 Recall = \frac{TP}{TP + FN}
 \]</span></p>
@@ -265,6 +304,10 @@ Recall = \frac{TP}{TP + FN}
 <li>Low precision means that your model will predict some false positives</li>
 <li>Low recall means that your model will predict some false negatives</li>
 </ul>
+<p><strong>F1-score</strong>: is the harmonic mean of the precision and recall values</p>
+<p><span class="math display">\[
+F1  Score = \frac{2 \times Precision \times  Recall}{Precision +  Recall}
+\]</span></p>
 
 
 </section>

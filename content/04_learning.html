@@ -417,6 +417,8 @@ Figure&nbsp;7: What happened during training
 </figcaption>
 </figure>
 </div>
+<p><strong>Overfitting</strong> is when your model is basically memorising the data without really understanding/interpolating a general function that would apply to any external data. In other words it creates a function that is tailored specifically to the training dataset thus it would perform near perfectly with the training data, but it would perform quite badly with any data that it hasn’t seen before. (models the training data too well but fails to generalize to new data)</p>
+<p><strong>Underfitting</strong> is simply when you do not have enough data for the model to create/interpolate a general function that describes the process. This leads to the model performing badly for most input data. (model that fails to capture the underlying pattern in the training data)</p>
 <hr>
 <ul>
 <li>What do we want? <span class="math inline">\(\Longrightarrow\)</span> To make <em>predictions</em> on <em>unseen data</em> <span class="math inline">\(\Longrightarrow\)</span> We want a <em>model</em> that <strong>generalizes</strong> well <span class="math inline">\(\Longrightarrow\)</span> generalizes to unseen data</li>
