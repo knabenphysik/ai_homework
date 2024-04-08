@@ -1,0 +1,51 @@
+# Draft Planning
+
+::: {.callout-warning}
+## What is not in scope
+1. This is not a math course or ML Theory course
+2. This is not programming/python course
+3. This is not an ML system development course
+:::
+
+::: {.callout-note collapse="true"}
+## Learning objective
+To design effective ML solution, by ...
+
+1. preparing suitable data for modeling
+2. to build generalizable model
+3. optimization decision system
+:::
+
+## What is Data Science?
+
+- data scientist is someone who knows more statistics than a computer scientist and more computer science than a statistician ?
+
+- a data scientist is someone who extracts insights from messy data. Today’s world is full of people trying to turn data into insight
+
+### Breakdown
+
+Inference
+
+- basic of probability theory
+- hypothesis testing
+- significance test
+- randomization inference
+- power and confidence
+- bayesian inference
+
+Machine Learning
+
+- regression
+- regularization
+- recommender system
+- classification
+- unsupervised learning
+- neural networks   
+
+## Ref
+
+- https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython/Lectures
+
+- https://nyu-ds1003.github.io/spring2023/#lectures
+ 
+- https://github.com/memosys/NYU-DS-MS-AT-HOME
