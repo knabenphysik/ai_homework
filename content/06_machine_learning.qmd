@@ -1,8 +1,31 @@
 # What is Machine Learning
 
-__Supervised Learning__
+::: {.callout-note}
+## What is algorithm?
+Informally, an algorithm is any _well-defined_ computational _procedure_ that takes _some value_, or set of values, as input and _produces_ some values, or set of values, as _output_. An algorithm is thus a sequence of computational steps that transform the input into the output.
+:::
 
-Is to map input onto sets of output, which had been pre-determined by the "supervisor" or researcher/analyzer. Hence called "supervised".  The problem is $X \mapsto Y$. In another word, we have $X$ as input space, and $Y$ output space, and the learning is a process of mapping from $X$ to $Y$.
+## Mimic Outputs, Not The Process
+
+In the context of prediction, nature can be seen as a mechanism that takes features $X$ and produces output $Y$ . This mechanism is unknown, and modelers “fill” the gap with models.
+
+![Modelling nature](image/nature.png){#fig-nature}
+
+Statistical modelers fill this box with a statistical model. If the modeler is convinced that the model represents the data-generating
+process well, they can interpret the model and parameters as parameters of nature. Since nature’s true mechanism is unknown and not fully specified by the data, modelers have to make some assumptions.
+
+![Statistical Model](image/stat_model.png){#fig-stat-model}
+
+
+### __Supervised Learning__
+
+In supervised learning, nature is seen as unknowable. Instead of the intrinsic approach, supervised learning takes an extrinsic approach. The supervised model is supposed to mimic the outputs of nature, but it doesn’t matter whether the model’s inner mechanism is a reasonable substitute for nature’s mechanism.
+
+![Supervised Learning Model](image/supervise_model.png){#fig-super-model}
+
+A statistical modeler would try to find a plausible recipe, even if the end result is not perfect. The supervised learner would only be interested in the end result; it doesn’t matter whether it was exactly the same recipe.
+
+Is to map input onto sets of output, which had been pre-determined by the "supervisor" or researcher/analyzer/modeler. Hence called "supervised".  The problem is $X \mapsto Y$. In another word, we have $X$ as input space, and $Y$ output space, and the learning is a process of mapping from $X$ to $Y$. The learner receives a set of labeled examples as training data and makes predictions for all unseen points.
 
 Examples:
 
@@ -18,7 +41,9 @@ Examples:
 4. Knowledge extraction
     Using models, such as Linear Model to predict information given the data. $Y = \beta_0 + \beta_1X_1 +....$
     
-__Unsupervised learning__
+### __Unsupervised learning__
+
+Unsupervised learning means discovering hidden patterns in data. Unsupervised learning is more like, “Here are some data points. Please find something interesting.” The learner exclusively receives unlabeled training data, and makes predictions for all unseen points.
 
 We have only $Xs$, input data, and no output to map to. $Y$ may exist, but it is "latent" (i.e. not directly observable)
 
@@ -30,9 +55,14 @@ We have only $Xs$, input data, and no output to map to. $Y$ may exist, but it is
    To "discriminate" $Xs$ across distinct groupings by using certain measures 
    E.g. Principle Components, Linear Discriminant, etc.
 
-__Reinforcement Learning__
+### __Reinforcement Learning__
+
+Reinforcement learning is dynamic learning.
 
 The output $Y$ is a set of actions, which is ordered in a sequence $(a_ia_ja_k...a_n)$. The objective is to "learn" which set of actions sequence which maximizes the rewards, $Z$. $X$ now is called the possible states or set of states. $Y$ is the game theoretic action space choosing the states, and $Z$ is the reward space, given various state space sequences or paths. Here the "learning" is by process of learning from various paths, to discover the paths which gives optimal rewards. An example of this a chess game between two players. Here, we could say generally that the domain is both "game theory" involving "multiple agents" which involve choices which are probabilistic in nature.
+
+
+
 
 
 ## Simple Linear Regression

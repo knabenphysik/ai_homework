@@ -39,6 +39,24 @@ At the end we will _**measure success**_ of this learning by some _**statistical
 
 The basic setting of statistical learning is: given a **problem statement**, we want to find **prediction model** which **estimate** has **best fit** in providing **solutions** to the problem, using **data at hand** (in sample data) which has the **Lowest Variance and Lowest Bias** when applied to the data at hand as well as to the **data not in hand** (unseen data).
 
+## Vectors and Matrices
+
+Vectors and matrices are fundamental mathematical structures that serve as the building blocks for representing and manipulating data in machine learning. They provide a concise and efficient way to organize, transform, and analyze complex datasets, enabling machine learning algorithms to make sense of raw information and extract meaningful patterns.
+
+- **scalar**: just a number, like 7, 42, $\pi$. To a computer, a _scalar_ is a simple numeric variable
+
+- **vector**: **_1D_** array of numbers. Mathematically, a vector has an orientation, either horizontal or vertical. If horizontal, it’s a row vector. For example:
+
+$$\textbf x = \begin{bmatrix} x_0 & x_1 & x_3 \end{bmatrix}$$
+  Mathematically, vectors are usually assumed to be column vectors:
+
+$$\textbf y = \begin{pmatrix} y_0 \\ y_1 \\ y_2 \\ y_3 \end{pmatrix}$$
+Either notation is acceptable. As we recall from _**SPM**_, vector usually have component (x,y and z) to represent a point in 3D space. However, in deep learning, and machine learning in general, vector are used to represent _**features**_, _**qualities**_ of some sample that the model will use to attempt to arrive at a useful output, like a class label, or a regression value.
+
+- **matrices**: **_2D_** array of numbers:
+
+$$\textbf A = \begin{bmatrix} a_{00} & a_{01} & a_{02} \\ a_{10} & a_{11} & a_{12}  \end{bmatrix}$$
+
 
 ## Example
 
