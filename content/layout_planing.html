@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +29,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/01_data_collection.html" rel="next">
-<link href="../index.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -103,7 +81,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/00_intro-ml-life-cyle.html">Machine Learning Life Cycle</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -141,7 +119,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/00_intro-ml-life-cyle.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/00_intro-ml-life-cyle.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning Life Cycle</span></a>
   </div>
 </li>
@@ -203,9 +181,16 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#machine-learning-life-cycle" id="toc-machine-learning-life-cycle" class="nav-link active" data-scroll-target="#machine-learning-life-cycle">Machine Learning Life-Cycle</a></li>
+  <li><a href="#draft-planning" id="toc-draft-planning" class="nav-link active" data-scroll-target="#draft-planning">Draft Planning</a>
+  <ul class="collapse">
+  <li><a href="#what-is-data-science" id="toc-what-is-data-science" class="nav-link" data-scroll-target="#what-is-data-science">What is Data Science?</a>
+  <ul class="collapse">
+  <li><a href="#breakdown" id="toc-breakdown" class="nav-link" data-scroll-target="#breakdown">Breakdown</a></li>
+  </ul></li>
+  <li><a href="#ref" id="toc-ref" class="nav-link" data-scroll-target="#ref">Ref</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/00_intro-ml-life-cyle.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/00_intro-ml-life-cyle.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/layout_planing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/layout_planing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,29 +198,87 @@ div.csl-indent {
 
 
 
-<section id="machine-learning-life-cycle" class="level1">
-<h1>Machine Learning Life-Cycle</h1>
-<p>Since Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.</p>
-<div id="fig-ml-cycle" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ml-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/ml_cycle.png" class="img-fluid figure-img">
+<section id="draft-planning" class="level1">
+<h1>Draft Planning</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: ML Lifecycle<span class="citation" data-cites="alex"><sup><a href="#ref-alex" role="doc-biblioref">1</a></sup></span>
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+What is not in scope
 </div>
-
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>This is not a math course or ML Theory course</li>
+<li>This is not programming/python course</li>
+<li>This is not an ML system development course</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objective
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To design effective ML solution, by …</p>
+<ol type="1">
+<li>preparing suitable data for modeling</li>
+<li>to build generalizable model</li>
+<li>optimization decision system</li>
+</ol>
+</div>
+</div>
+</div>
+<section id="what-is-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-data-science">What is Data Science?</h2>
+<ul>
+<li><p>data scientist is someone who knows more statistics than a computer scientist and more computer science than a statistician ?</p></li>
+<li><p>a data scientist is someone who extracts insights from messy data. Today’s world is full of people trying to turn data into insight</p></li>
+</ul>
+<section id="breakdown" class="level3">
+<h3 class="anchored" data-anchor-id="breakdown">Breakdown</h3>
+<p>Inference</p>
+<ul>
+<li>basic of probability theory</li>
+<li>hypothesis testing</li>
+<li>significance test</li>
+<li>randomization inference</li>
+<li>power and confidence</li>
+<li>bayesian inference</li>
+</ul>
+<p>Machine Learning</p>
+<ul>
+<li>regression</li>
+<li>regularization</li>
+<li>recommender system</li>
+<li>classification</li>
+<li>unsupervised learning</li>
+<li>neural networks</li>
+</ul>
+</section>
+</section>
+<section id="ref" class="level2">
+<h2 class="anchored" data-anchor-id="ref">Ref</h2>
+<ul>
+<li><p>https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython/Lectures</p></li>
+<li><p>https://nyu-ds1003.github.io/spring2023/#lectures</p></li>
+<li><p>https://github.com/memosys/NYU-DS-MS-AT-HOME</p></li>
+</ul>
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-alex" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Watson, A. <a href="https://gretel.ai/blog/synthetic-data-and-the-data-centric-machine-learning-life-cycle">Synthetic data and the data-centric machine learning life cycle</a>. (2022).</div>
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -789,18 +832,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../content/01_data_collection.html" class="pagination-link" aria-label="01 - Data Collection">
-        <span class="nav-page-text">01 - Data Collection</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -815,7 +846,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/00_intro-ml-life-cyle.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/00_intro-ml-life-cyle.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/layout_planing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/layout_planing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

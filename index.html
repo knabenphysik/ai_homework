@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -115,7 +115,7 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -236,7 +236,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/useful_ai.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="content/image/useful_ai.webp" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Figure 1: General goal of AI<span class="citation" data-cites="Gugel"><sup><a href="#ref-Gugel" role="doc-biblioref">1</a></sup></span></figcaption>
 </figure>
 </div>
@@ -253,7 +253,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/venn_diagram.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="content/image/venn_diagram.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Figure 2: Everything everywhere all at once<span class="citation" data-cites="Ryan"><sup><a href="#ref-Ryan" role="doc-biblioref">3</a></sup></span></figcaption>
 </figure>
 </div>
@@ -263,7 +263,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/relationship.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="content/image/relationship.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Figure 3: Artificial intelligence, machine learning, and data science.<span class="citation" data-cites="KOTU20191"><sup><a href="#ref-KOTU20191" role="doc-biblioref">4</a></sup></span></figcaption>
 </figure>
 </div>
@@ -281,7 +281,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/ml_ops.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="content/image/ml_ops.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Figure 4: domain area of deep learning<span class="citation" data-cites="Prabhu"><sup><a href="#ref-Prabhu" role="doc-biblioref">5</a></sup></span></figcaption>
 </figure>
 </div>
@@ -296,7 +296,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="content/image/technical_debt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="content/image/technical_debt.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption>Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.<span class="citation" data-cites="NIPS2015_86df7dcf"><sup><a href="#ref-NIPS2015_86df7dcf" role="doc-biblioref">6</a></sup></span></figcaption>
 </figure>
 </div>
@@ -552,6 +552,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/knabenphysik\.github\.io\/ai_note");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -586,7 +604,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

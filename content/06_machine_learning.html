@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -125,7 +125,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -214,6 +214,12 @@ window.Quarto = {
   <ul>
   <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link active" data-scroll-target="#what-is-machine-learning">What is Machine Learning</a>
   <ul class="collapse">
+  <li><a href="#mimic-outputs-not-the-process" id="toc-mimic-outputs-not-the-process" class="nav-link" data-scroll-target="#mimic-outputs-not-the-process">Mimic Outputs, Not The Process</a>
+  <ul class="collapse">
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning"><strong>Supervised Learning</strong></a></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning"><strong>Unsupervised learning</strong></a></li>
+  <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link" data-scroll-target="#reinforcement-learning"><strong>Reinforcement Learning</strong></a></li>
+  </ul></li>
   <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a></li>
   <li><a href="#simple-tree-partitioning-tree-models" id="toc-simple-tree-partitioning-tree-models" class="nav-link" data-scroll-target="#simple-tree-partitioning-tree-models">Simple Tree partitioning (Tree models)</a></li>
   <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest">Random Forest</a></li>
@@ -236,8 +242,58 @@ window.Quarto = {
 
 <section id="what-is-machine-learning" class="level1">
 <h1>What is Machine Learning</h1>
-<p><strong>Supervised Learning</strong></p>
-<p>Is to map input onto sets of output, which had been pre-determined by the “supervisor” or researcher/analyzer. Hence called “supervised”. The problem is <span class="math inline">\(X \mapsto Y\)</span>. In another word, we have <span class="math inline">\(X\)</span> as input space, and <span class="math inline">\(Y\)</span> output space, and the learning is a process of mapping from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is algorithm?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Informally, an algorithm is any <em>well-defined</em> computational <em>procedure</em> that takes <em>some value</em>, or set of values, as input and <em>produces</em> some values, or set of values, as <em>output</em>. An algorithm is thus a sequence of computational steps that transform the input into the output.</p>
+</div>
+</div>
+<section id="mimic-outputs-not-the-process" class="level2">
+<h2 class="anchored" data-anchor-id="mimic-outputs-not-the-process">Mimic Outputs, Not The Process</h2>
+<p>In the context of prediction, nature can be seen as a mechanism that takes features <span class="math inline">\(X\)</span> and produces output <span class="math inline">\(Y\)</span> . This mechanism is unknown, and modelers “fill” the gap with models.</p>
+<div id="fig-nature" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/nature.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nature-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Modelling nature
+</figcaption>
+</figure>
+</div>
+<p>Statistical modelers fill this box with a statistical model. If the modeler is convinced that the model represents the data-generating process well, they can interpret the model and parameters as parameters of nature. Since nature’s true mechanism is unknown and not fully specified by the data, modelers have to make some assumptions.</p>
+<div id="fig-stat-model" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stat-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/stat_model.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Statistical Model
+</figcaption>
+</figure>
+</div>
+<section id="supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-learning"><strong>Supervised Learning</strong></h3>
+<p>In supervised learning, nature is seen as unknowable. Instead of the intrinsic approach, supervised learning takes an extrinsic approach. The supervised model is supposed to mimic the outputs of nature, but it doesn’t matter whether the model’s inner mechanism is a reasonable substitute for nature’s mechanism.</p>
+<div id="fig-super-model" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-super-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/supervise_model.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-super-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Supervised Learning Model
+</figcaption>
+</figure>
+</div>
+<p>A statistical modeler would try to find a plausible recipe, even if the end result is not perfect. The supervised learner would only be interested in the end result; it doesn’t matter whether it was exactly the same recipe.</p>
+<p>Is to map input onto sets of output, which had been pre-determined by the “supervisor” or researcher/analyzer/modeler. Hence called “supervised”. The problem is <span class="math inline">\(X \mapsto Y\)</span>. In another word, we have <span class="math inline">\(X\)</span> as input space, and <span class="math inline">\(Y\)</span> output space, and the learning is a process of mapping from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>. The learner receives a set of labeled examples as training data and makes predictions for all unseen points.</p>
 <p>Examples:</p>
 <ol type="1">
 <li><p>Learning associations Association rule, where given X, we want to know Y, or <span class="math inline">\(Pr(Y|X)\)</span></p></li>
@@ -245,14 +301,22 @@ window.Quarto = {
 <li><p>Pattern recognition This is by way of patterns, such as “pixels” in image, “frequencies” in sound and speech, “medical records and data” in medical diagnosis, biometrics in identification, etc. IF pattern <span class="math inline">\(X_1\)</span> matches pattern <span class="math inline">\(X_2\)</span>, then <span class="math inline">\(Y = k\)</span></p></li>
 <li><p>Knowledge extraction Using models, such as Linear Model to predict information given the data. <span class="math inline">\(Y = \beta_0 + \beta_1X_1 +....\)</span></p></li>
 </ol>
-<p><strong>Unsupervised learning</strong></p>
+</section>
+<section id="unsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="unsupervised-learning"><strong>Unsupervised learning</strong></h3>
+<p>Unsupervised learning means discovering hidden patterns in data. Unsupervised learning is more like, “Here are some data points. Please find something interesting.” The learner exclusively receives unlabeled training data, and makes predictions for all unseen points.</p>
 <p>We have only <span class="math inline">\(Xs\)</span>, input data, and no output to map to. <span class="math inline">\(Y\)</span> may exist, but it is “latent” (i.e.&nbsp;not directly observable)</p>
 <ol type="1">
 <li><p>Clustering Simple clustering procedure, <span class="math inline">\(Pr(X_i = k)\)</span> given a certain rule, to discover similarities across groupings. E.g. Customer segmentation, density estimation, image compression, etc.</p></li>
 <li><p>Discriminant To “discriminate” <span class="math inline">\(Xs\)</span> across distinct groupings by using certain measures E.g. Principle Components, Linear Discriminant, etc.</p></li>
 </ol>
-<p><strong>Reinforcement Learning</strong></p>
+</section>
+<section id="reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="reinforcement-learning"><strong>Reinforcement Learning</strong></h3>
+<p>Reinforcement learning is dynamic learning.</p>
 <p>The output <span class="math inline">\(Y\)</span> is a set of actions, which is ordered in a sequence <span class="math inline">\((a_ia_ja_k...a_n)\)</span>. The objective is to “learn” which set of actions sequence which maximizes the rewards, <span class="math inline">\(Z\)</span>. <span class="math inline">\(X\)</span> now is called the possible states or set of states. <span class="math inline">\(Y\)</span> is the game theoretic action space choosing the states, and <span class="math inline">\(Z\)</span> is the reward space, given various state space sequences or paths. Here the “learning” is by process of learning from various paths, to discover the paths which gives optimal rewards. An example of this a chess game between two players. Here, we could say generally that the domain is both “game theory” involving “multiple agents” which involve choices which are probabilistic in nature.</p>
+</section>
+</section>
 <section id="simple-linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="simple-linear-regression">Simple Linear Regression</h2>
 </section>
@@ -328,7 +392,7 @@ Logistic Regression %74 Accuracy</code></pre>
 <img src="image/model_trade_off.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Sampling from big data
+Figure&nbsp;4: Sampling from big data
 </figcaption>
 </figure>
 </div>
@@ -342,11 +406,11 @@ Figure&nbsp;1: Sampling from big data
 <img src="image/trade_off.webp" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trade-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: The trade-off between accuracy and interpretability.
+Figure&nbsp;5: The trade-off between accuracy and interpretability.
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-trade-off" class="quarto-xref">Figure&nbsp;2</a> shows the trade-off between accuracy and interpretability of machine learning algorithms.</p>
+<p><a href="#fig-trade-off" class="quarto-xref">Figure&nbsp;5</a> shows the trade-off between accuracy and interpretability of machine learning algorithms.</p>
 <p>Model interpretability is mainly related to the complexity of ML that is used to build the model. Generally speaking, models with more complex ML algorithms are more challenging to interpret and explain. In contrast, models with more straightforward ML algorithms are easiest to interpret and explain. Therefore, ML models can be categorized into two criteria: intrinsic or post hoc.</p>
 <p>Intrinsic interpretability model uses transparent ML model, such as sparse linear models or short decision trees. Interpretability is achieved by limiting the ML model complexity in such a way that the output is understandable by humans. Unfortunately, in most cases, the best performance of ML models belongs to very complex ML algorithms. In other words, model accuracy requires more complex ML algorithms, and simple ML algorithms might not make the most accurate prediction. Therefore, intrinsic models are suitable when interpretability is more important than accuracy.</p>
 <p>In contrast, post hoc interpretability model is used to explain complex/black-box ML models. After the ML models have been trained, the interpretation method is applied to extract information from the trained ML model without precisely depending on how they work.</p>
@@ -583,6 +647,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/knabenphysik\.github\.io\/ai_note");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -617,7 +699,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -893,7 +979,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/05_evaluation.html" class="pagination-link  aria-label=" 05="" -="" model="" evaluation"="">
+      <a href="../content/05_evaluation.html" class="pagination-link" aria-label="05 - Model Evaluation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">05 - Model Evaluation</span>
       </a>          
   </div>

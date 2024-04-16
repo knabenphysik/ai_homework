@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -145,7 +145,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="https://img.freepik.com/premium-vector/artificial-intelligence-logo-icon-vector-symbol-ai-deep-learning-blockchain-neural-network-concept-machine-learning-artificial-intelligence-ai_230610-480.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -237,6 +237,7 @@ window.Quarto = {
   <li><a href="#big-picture" id="toc-big-picture" class="nav-link" data-scroll-target="#big-picture">Big Picture</a></li>
   <li><a href="#statistical-learning" id="toc-statistical-learning" class="nav-link" data-scroll-target="#statistical-learning">Statistical Learning</a></li>
   <li><a href="#the-problem-setting-of-statistical-learning." id="toc-the-problem-setting-of-statistical-learning." class="nav-link" data-scroll-target="#the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</a></li>
+  <li><a href="#vectors-and-matrices" id="toc-vectors-and-matrices" class="nav-link" data-scroll-target="#vectors-and-matrices">Vectors and Matrices</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   <li><a href="#interpret-step-6" id="toc-interpret-step-6" class="nav-link" data-scroll-target="#interpret-step-6">Interpret step (6)</a></li>
   </ul></li>
@@ -301,6 +302,20 @@ Figure&nbsp;2: Current AI Landscape
 <section id="the-problem-setting-of-statistical-learning." class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-setting-of-statistical-learning.">The “problem setting” of statistical learning.</h2>
 <p>The basic setting of statistical learning is: given a <strong>problem statement</strong>, we want to find <strong>prediction model</strong> which <strong>estimate</strong> has <strong>best fit</strong> in providing <strong>solutions</strong> to the problem, using <strong>data at hand</strong> (in sample data) which has the <strong>Lowest Variance and Lowest Bias</strong> when applied to the data at hand as well as to the <strong>data not in hand</strong> (unseen data).</p>
+</section>
+<section id="vectors-and-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="vectors-and-matrices">Vectors and Matrices</h2>
+<p>Vectors and matrices are fundamental mathematical structures that serve as the building blocks for representing and manipulating data in machine learning. They provide a concise and efficient way to organize, transform, and analyze complex datasets, enabling machine learning algorithms to make sense of raw information and extract meaningful patterns.</p>
+<ul>
+<li><p><strong>scalar</strong>: just a number, like 7, 42, <span class="math inline">\(\pi\)</span>. To a computer, a <em>scalar</em> is a simple numeric variable</p></li>
+<li><p><strong>vector</strong>: <strong><em>1D</em></strong> array of numbers. Mathematically, a vector has an orientation, either horizontal or vertical. If horizontal, it’s a row vector. For example:</p></li>
+</ul>
+<p><span class="math display">\[\textbf x = \begin{bmatrix} x_0 &amp; x_1 &amp; x_3 \end{bmatrix}\]</span> Mathematically, vectors are usually assumed to be column vectors:</p>
+<p><span class="math display">\[\textbf y = \begin{pmatrix} y_0 \\ y_1 \\ y_2 \\ y_3 \end{pmatrix}\]</span> Either notation is acceptable. As we recall from <em><strong>SPM</strong></em>, vector usually have component (x,y and z) to represent a point in 3D space. However, in deep learning, and machine learning in general, vector are used to represent <em><strong>features</strong></em>, <em><strong>qualities</strong></em> of some sample that the model will use to attempt to arrive at a useful output, like a class label, or a regression value.</p>
+<ul>
+<li><strong>matrices</strong>: <strong><em>2D</em></strong> array of numbers:</li>
+</ul>
+<p><span class="math display">\[\textbf A = \begin{bmatrix} a_{00} &amp; a_{01} &amp; a_{02} \\ a_{10} &amp; a_{11} &amp; a_{12}  \end{bmatrix}\]</span></p>
 </section>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
@@ -681,6 +696,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/knabenphysik\.github\.io\/ai_note");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -715,7 +748,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -991,7 +1028,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/03_data_labelling.html" class="pagination-link  aria-label=" 03="" -="" data="" labelling"="">
+      <a href="../content/03_data_labelling.html" class="pagination-link" aria-label="03 - Data Labelling">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">03 - Data Labelling</span>
       </a>          
   </div>
