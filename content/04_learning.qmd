@@ -90,6 +90,8 @@ examples are assigned specific categories, for instance, the Perodua MyVi and Pr
 
 - **$H$, Hypothesis set**: set of conditions of specific candidate model that determines the classification into a group (a function approximation for the target function). It is a statement about the input data and its relation to the class. These "function" is used to associate/estimate or predict the target value, based on the input dataset, algorithm parameters (and hyper-parameters). Mathematically, it is a set of functions mapping features (feature vectors) to the set of labels Y. In our example, these may be a set of functions mapping car image features to Y = {MyVi, Iriz}.
 
+- **model**: A model can be viewed as a probabilistic model or as a non-probabilistic model(function). Every model has its own set of parameters(the weights and bias). 
+
 > Learning is a search through the space of possible hypotheses for one that will perform well, even on new examples beyond the training set.[@Stuart]
 
 ![generic learning process](image/high_level_training.png){#fig-high-level width=80%}

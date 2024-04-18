@@ -16,6 +16,12 @@ process well, they can interpret the model and parameters as parameters of natur
 
 ![Statistical Model](image/stat_model.png){#fig-stat-model}
 
+### __Type of Learning__
+
+
+![Type of ML](image/jenis-learning.png){#fig-learn-type width=70%}
+
+
 
 ### __Supervised Learning__
 
@@ -27,19 +33,71 @@ A statistical modeler would try to find a plausible recipe, even if the end resu
 
 Is to map input onto sets of output, which had been pre-determined by the "supervisor" or researcher/analyzer/modeler. Hence called "supervised".  The problem is $X \mapsto Y$. In another word, we have $X$ as input space, and $Y$ output space, and the learning is a process of mapping from $X$ to $Y$. The learner receives a set of labeled examples as training data and makes predictions for all unseen points.
 
+### Regression
+
+The goal of regression is to predict the value of one or more continuous target variables $t$ given the value of a D-dimensional vector $x$ of input variables. 
+
+Given a training data set comprising $N$ observations $\{x_n \}$, where $n = 1, . . . , N ,$ together with corresponding target values $\{t_n\}$, the goal is to predict the value of $t$ for a new value of $x$. 
+
+
+![Regression Learning](image/regression.png){#fig-regression}
+
+Example:
+
+  - What will the temperature for tomorrow morning?
+  - What is Kelana Park View apartment current selling prices?
+  - predict water temperature based on salinity
+  - predict the apparent temperature given the humidity
+  - stock price predict of Tesla Inc
+
+Types of Regression Algorithm:
+
+  - Simple Linear Regression
+  - Multiple Linear Regression
+  - Polynomial Regression
+  - Support Vector Regression
+  - Decision Tree Regression
+  - Random Forest Regression
+
+     
+
+### Classification
+
+The goal in classification is to take an input vector $x$ and to assign it to one of $K$ discrete classes $\{C_k \}$ where $k = 1, . . . , K$.
+In the most common scenario, the classes are taken to be disjoint, so that **_each input is assigned to one and only one class_**. The input space is thereby divided into decision regions whose boundaries are called _**decision boundaries**_.
+
+![Classification Learning](image/classification.png){#fig-classification}
+
+
+
 Examples:
 
-1. Learning associations
-     Association rule, where given X, we want to know Y, or $Pr(Y|X)$
+  - Tomorrow morning raining or sunny?
+  - Image classification
+  - Document classification
+  - Facial/Voice recognition
+  - Text classification
 
-2. Classification
-    Classification rule, where: IF $X_1 > a$ AND $X_2 > b$ THEN  Y = 0 else Y = 1
-    
-3. Pattern recognition
-    This is by way of patterns, such as "pixels" in image, "frequencies" in sound and speech, "medical records and data" in medical diagnosis, biometrics in identification, etc. IF pattern $X_1$ matches pattern $X_2$, then $Y = k$
-    
-4. Knowledge extraction
-    Using models, such as Linear Model to predict information given the data. $Y = \beta_0 + \beta_1X_1 +....$
+Types of Classification Algorithm:
+
+  - Logistic regression
+  - Neural network
+  - support vector machine
+  - Naive Bayes
+  - K-Nearest Neighbors
+  - Decision Tree Classifier
+  - Random Forest Classifier
+
+::: {.callout-important}
+## Curse of dimensionality
+With the rapid development of data collection and storage technologies, we have entered the era of big data, where the data holds a trend of rapid growth in both sample size and feature dimensionality.
+
+As we add more dimensions(features) to our dataset, the volume of the space increases exponentially. This means that the data becomes sparse.
+
+This sparsity making it hard to find patterns or relationships (lack of representativeness). It also will increase computation cost.
+:::
+
+
     
 ### __Unsupervised learning__
 
@@ -47,35 +105,43 @@ Unsupervised learning means discovering hidden patterns in data. Unsupervised le
 
 We have only $Xs$, input data, and no output to map to. $Y$ may exist, but it is "latent" (i.e. not directly observable)
 
-1. Clustering
-   Simple clustering procedure, $Pr(X_i = k)$ given a certain rule, to discover similarities across groupings.
-   E.g. Customer segmentation, density estimation, image compression, etc.
+![Cluster Learning](image/clustering.jpg){#fig-clustering width=60%}
 
-2. Discriminant
-   To "discriminate" $Xs$ across distinct groupings by using certain measures 
-   E.g. Principle Components, Linear Discriminant, etc.
+Examples:
+
+  - anomaly detection
+  - customer segmentation
+
 
 ### __Reinforcement Learning__
 
 Reinforcement learning is dynamic learning.
 
-The output $Y$ is a set of actions, which is ordered in a sequence $(a_ia_ja_k...a_n)$. The objective is to "learn" which set of actions sequence which maximizes the rewards, $Z$. $X$ now is called the possible states or set of states. $Y$ is the game theoretic action space choosing the states, and $Z$ is the reward space, given various state space sequences or paths. Here the "learning" is by process of learning from various paths, to discover the paths which gives optimal rewards. An example of this a chess game between two players. Here, we could say generally that the domain is both "game theory" involving "multiple agents" which involve choices which are probabilistic in nature.
+The output $Y$ is a set of actions, which is ordered in a sequence $(A_i,A_j,A_k,...,A_n)$. The objective is to "learn" which set of actions sequence which maximizes the rewards, $R$. $S$ now is called the possible states or set of states. $Y$ is the game theoretic action space choosing the states, and $Z$ is the reward space, given various state space sequences or paths.
 
+![Reinforcement Learning](image/reinforcement-learning.png){#fig-reinforcement width=20%}
 
+Examples:
 
+  - self-driving cars
+  - industrial robotics
+  - chatGPT
 
+---
 
-## Simple Linear Regression
+- Linear regression: Predict a numerical value.
+- Logistic regression: Classify into two classes (binary classification).
+- Softmax regression: Classify into multiple classes.
+- Support vector machines: Classify into two classes, or regression (predict a numerical value).
+- Decision trees: Classify into any number of classes, or regression (predict a numerical value).
+- Random forests: Classify into any number of classes, or regression (predict a numerical value).
+- Ensembles of models: Bundle up the results of many models by averaging the prediction values, voting for the most popular class, or some other bundling mechanism.
+- k-means clustering: Classify into any number of classes, or regression
 
-## Simple Tree partitioning (Tree models)
+::: {.callout-tip}
+Practical example with supervised learning.
+:::
 
-## Random Forest
-
-## Generalized Linear Model (GLM)
-
-## Support Vector Machines (SVM)
-
-## Neural Network
 
 ## Comparing Different Classification Algorithms
 
