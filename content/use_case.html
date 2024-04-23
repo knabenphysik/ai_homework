@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -253,6 +282,156 @@ Figure&nbsp;2: Trade-off between model interpretability and performance
 </section>
 <section id="case-3-housing-price-prediction" class="level3">
 <h3 class="anchored" data-anchor-id="case-3-housing-price-prediction">Case-3: Housing Price Prediction</h3>
+<hr>
+<p>List of possible question (theory):</p>
+<ol type="1">
+<li><p>For each of parts (a) through (d), indicate whether we would generally expect the performance of a flexible statistical learning method to be better or worse than an inflexible method. Justify your answer.</p>
+<ol type="a">
+<li>The sample size n is extremely large, and the number of predictors p is small.</li>
+<li>The number of predictors p is extremely large, and the number of observations n is small.</li>
+<li>The relationship between the predictors and response is highly non-linear.</li>
+<li>The variance of the error terms, i.e.&nbsp;<span class="math inline">\(\sigma^2\)</span> = Var<span class="math inline">\((\epsilon)\)</span>, is extremely high.</li>
+</ol></li>
+<li><p>Explain whether each scenario is a classification or regression problem, and indicate whether we are most interested in inference or prediction. Finally, provide n and p.</p>
+<ol type="a">
+<li><p>We collect a set of data on the top 500 firms in the US. For each firm we record profit, number of employees, industry and the CEO salary. We are interested in understanding which factors affect CEO salary.</p></li>
+<li><p>We are considering launching a new product and wish to know whether it will be a success or a failure. We collect data on 20 similar products that were previously launched. For each product we have recorded whether it was a success or failure, price charged for the product, marketing budget, competition price,and ten other variables.</p></li>
+<li><p>We are interested in predicting the % change in the USD/Euro exchange rate in relation to the weekly changes in the world stock markets. Hence we collect weekly data for all of 2012. For each week we record the % change in the USD/Euro, the % change in the US market, the % change in the British market, and the % change in the German market.</p></li>
+</ol></li>
+<li><p>We now revisit the bias-variance decomposition.</p>
+<ol type="a">
+<li>Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (or irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.</li>
+<li>Explain why each of the five curves has the shape displayed in part (a).</li>
+</ol></li>
+<li><p>You will now think of some real-life applications for statistical learning.</p>
+<ol type="a">
+<li>Describe three real-life applications in which classification might be useful. Describe the response, as well as the predictors. Is the goal of each application inference or prediction? Explain your answer.</li>
+<li>Describe three real-life applications in which regression might be useful. Describe the response, as well as the predictors. Is the goal of each application inference or prediction? Explain your answer.</li>
+<li>Describe three real-life applications in which cluster analysis might be useful.</li>
+</ol></li>
+<li><p>What are the advantages and disadvantages of a very flexible (versus a less flexible) approach for regression or classification? Under what circumstances might a more flexible approach be preferred to a less flexible approach? When might a less flexible approach be preferred?</p></li>
+<li><p>Describe the differences between a parametric and a non-parametric statistical learning approach. What are the advantages of a parametric approach to regression or classification (as opposed to a nonparametric approach)? What are its disadvantages?</p></li>
+<li><p>Suppose that we use some statistical learning method to make a prediction for the response Y for a particular value of the predictor X. Carefully describe how we might estimate the standard deviation of our prediction.</p></li>
+<li><p>What is a feature space? What do the dimensions of such a space represent? What is a vector? What is a feature vector?</p></li>
+</ol>
+<p>9.If we want to use the values of F different features, in order to classify objects, where each feature can have any of G different values, what is the dimension of the feature space?</p>
+<ol start="10" type="1">
+<li><p>For a 12 × 12 grayscale image (256 grayscale levels), how many dimensions are there for the feature vector? How many different possible feature vectors are there?</p></li>
+<li><p>True or false: A probability density can take on values greater than 1.</p></li>
+<li><p>True or false: A probability density can take on values less than 0.</p></li>
+<li><p>What is a decision rule? If there are 10 possible feature vectors, how many possible decision rules are there?</p></li>
+<li><p>What are the advantages of choosing/using more features and what are the disadvantages?</p></li>
+<li><p>What is the general learning problem we are concerned with?</p></li>
+<li><p>Why do we need learning? Why cannot we simply use a Bayes rule for pattern classification?</p></li>
+<li><p>What are training data for learning from examples?</p></li>
+<li><p>What sorts of assumptions do we need to make about the training data?</p></li>
+<li><p>What is the curse of dimensionality?</p></li>
+<li><p>What is inductive bias? Is it good or bad?</p></li>
+<li><p>a(a) Sketch a diagram of a perceptron with three inputs x1, x2, x3 and weights w1,w2,w3. Label the inputs, weights, and output.</p></li>
+</ol>
+<p>2 consider a classification problem in which each instance consists of <span class="math inline">\(d\)</span> features <span class="math inline">\(x1, . . . , xd\)</span>, each of which can take on only the values 0 or 1. A feature vector belongs to class 0 if <span class="math inline">\(x_1 + x_2 +· · ·+x_d\)</span> is even (i.e., the number of 1’s is even) and it belongs to class 1 otherwise. Can this problem be solved by a single perceptron? A three-layered network? Why or why not?</p>
+<ol start="3" type="1">
+<li><p>If a loss function other than squared error is used, will the regression function (i.e., the conditional mean of y, given <span class="math inline">\(\bar{x}\)</span>) still always be the best estimator?</p></li>
+<li><p>with less than 10 words, what is the purpose of machine learning?</p></li>
+<li><p>Imagine you are solving a classification problem with a highly imbalanced class.</p>
+<p>The majority class is observed 99% of the time in the training data. Your model has 99% accuracy after taking the predictions on the test set. Which of the following is true in such a case?</p>
+<pre><code>   1.The accuracy metric is not a good idea for imbalanced class problems.
+   2.The accuracy metric is a good idea for imbalanced class problems.
+   3.Precision and recall metrics are good for imbalanced class problems.
+   4.Precision and recall metrics aren’t good for imbalanced class problems.</code></pre>
+<ol type="A">
+<li>1 and 3</li>
+<li>1 and 4</li>
+<li>2 and 3</li>
+<li>2 and 4</li>
+</ol>
+<p>Solution: (A)</p></li>
+<li><p>In machine learning, what is the primary difference between supervised and unsupervised learning?</p>
+<p>1.Supervised learning involves data that has been labeled and classified, while unsupervised learning data is unlabeled and unclassified. 2.Supervised learning is monitored closely by data scientists, while they don’t play a role in unsupervised learning. 3.Supervised learning is only used for image recognition, while unsupervised learning can be used for various analytics applications.</p></li>
+<li><p>True or false? Bias is a common problem in data science applications.</p></li>
+<li><p>Why is data sampling useful for data scientists?</p>
+<ol type="1">
+<li>It lets them analyze data sets in small batches to reduce their use of system resources.</li>
+<li>It reduces the amount of data storage space that’s required for data science applications.</li>
+<li>It enables them to use a representative subset of data to build accurate analytical models more quickly.</li>
+</ol></li>
+<li><p>In traditional computer programming, you input commands. What do you input with machine learning?</p>
+<ol type="1">
+<li>patterns</li>
+<li>programs</li>
+<li>rules</li>
+<li>data</li>
+</ol></li>
+<li><p>Why is it important for machine learning algorithms to have access to high-quality data?</p>
+<p>It will take too long for programmers to scrub poor data. If the data is high quality, the algorithms will be easier to develop. Low-quality data requires much more processing power than high-quality data. If the data is low quality, you will get inaccurate results.[aws]</p></li>
+<li><p>Your company wants to predict whether existing automotive insurance customers are more likely to buy homeowners insurance. It created a model to better predict the best customers contact about homeowners insurance, and the model had a low variance but high bias. What does that say about the data model?</p>
+<p>1.It was consistently wrong.(ini jwABAN) 2.It was inconsistently wrong.</p>
+<ol start="3" type="1">
+<li>It was consistently right.</li>
+<li>It was equally right end wrong.</li>
+</ol></li>
+<li><p>You want to identify global weather patterns that may have been affected by climate change. To do so, you want to use machine learning algorithms to find patterns that would otherwise be imperceptible to a human meteorologist. What is the place to start?</p>
+<ol type="1">
+<li>Find labeled data of sunny days so that the machine will learn to identify bad weather.</li>
+<li>Use unsupervised learning have the machine look for anomalies in a massive weather database.</li>
+<li>Create a training set of unusual patterns and ask the machine learning algorithms to classify them.</li>
+<li>Create a training set of normal weather and have the machine look for similar patterns. [anw]</li>
+</ol></li>
+<li><p>You work for a power company that owns hundreds of thousands of electric meters. These meters are connected to the internet and transmit energy usage data in real-time. Your supervisor asks you to direct project to use machine learning to analyze this usage data. Why are machine learning algorithms ideal in this scenario?</p>
+<p>The algorithms would help the meters access the internet. The algorithms will improve the wireless connectivity. The algorithms would help your organization see patterns of the data.[anw] By using machine learning algorithms, you are creating an IoT device.</p></li>
+<li><p>How is machine learning related to artificial intelligence?</p>
+<p>Artificial intelligence focuses on classification, while machine learning is about clustering data. Machine learning is a type of artificial intelligence that relies on learning through data. Artificial intelligence is form of unsupervised machine learning. Machine learning and artificial intelligence are the same thing.</p></li>
+<li><p>What is one reason not to use the same data for both your training set and your testing set?</p>
+<p>You will almost certainly underfit the model. You will pick the wrong algorithm. You might not have enough data for both. You will almost certainly overfit the model.[anw]</p></li>
+<li><p>Are data model bias and variance a challenge with unsupervised learning?</p>
+<p>No, data model bias and variance are only a challenge with reinforcement learning. Yes, data model bias is a challenge when the machine creates clusters.[anw] Yes, data model variance trains the unsupervised machine learning algorithm. No, data model bias and variance involve supervised learning.</p></li>
+<li><p>Many of the advances in machine learning have come from improved ___.</p>
+<p>statistics structured data availability algorithms[anw]</p></li>
+<li><p>You work for a website that enables customers see all images of themselves on the internet by uploading one self-photo. Your data model uses 5 characteristics to match people to their foto: color, eye, gender, eyeglasses and facial hair. Your customers have been complaining that get tens of thousands of photos without them. What is the problem?</p>
+<p>You are overfitting the model to the data You need a smaller training set You are underfitting the model to the data[anw] You need a larger training set</p></li>
+<li><p>___ refers to a model that can neither model the training data nor generalize to new data.</p>
+<p>good fitting overfitting underfitting[anw] all of the above</p></li>
+<li><p>What does it mean to underfit your data model?</p>
+<p>There is too little data in your training set. There is too much data in your training set. There is not a lot of variance but there is a high bias.[anw] Your model has low bias but high variance.</p>
+<p>Explanation: Underfitted data models usually have high bias and low variance. Overfitted data models have low bias and high variance.</p></li>
+<li><p>Asian user complains that your company’s facial recognition model does not properly identify their facial expressions. What should you do?</p>
+<p>Include Asian faces in your test data and retrain your model. Retrain your model with updated hyperparameter values. Retrain your model with smaller batch sizes. Include Asian faces in your training data and retrain your model.[anw]</p></li>
+<li><p>The new dataset you have just scraped seems to exhibit lots of missing values. What action will help you minimizing that problem?</p>
+<p>Wise fill-in of controlled random values Replace missing values with averaging across all samples Remove defective samples Imputation[anw]</p></li>
+<li><p>Which choice is the best example of labeled data?</p>
+<p>a spreadsheet [anw] 20,000 recorded voicemail messages 100,000 images of automobiles hundreds of gigabytes of audio files</p></li>
+<li><p>The data in your model has low bias and low variance. How would you expect the data points to be grouped together on the diagram?</p>
+<p>They would be grouped tightly together in the predicted outcome.[anw] They would be grouped tightly together but far from the predicted. They would be scattered around the predict outcome. They would be scattered far away from the predicted outcome.</p></li>
+<li><p>In supervised machine learning, data scientist often have the challenge of balancing between underfitting or overfitting their data model. They often have to adjust the training set to make better predictions. What is this balance called?</p>
+<p>the under/over challenge balance between clustering classification bias-variance trade-off[anw] the multiclass training set challenge</p></li>
+<li><p>If you are thinking about using machine learning algorithms, the best thing you can do today is to ensure you have quality _.</p>
+<p>data[anw] processors networking statistical techniques</p></li>
+<li><p>You’ve received 1,000,000 images and have split it in 96%/2%/2% between train, dev and test sets. You’ve trained your model, and analyzed the results. After working further on the problem, you’ve decided to correct the incorrectly labeled data on the dev set.</p></li>
+</ol>
+<p>Which of these statements do you agree with?</p>
+<pre><code>You should also correct the incorrectly labeled data in the test set, so that the dev and test sets still come from the same distribution.[anw]
+You should correct incorrectly labeled data in the training set as well so as to avoid your training set now being even more different from your dev set.
+You should not correct the incorrectly labeled data in the test set, because the test set should reflect the data distribution of the real world.
+If you want to correct incorrectly labeled data, you should do it on all three sets (train/dev/test) in order to maintain similar distributions.</code></pre>
+<ol start="27" type="1">
+<li><p>In simple words, Define precision and recall.</p></li>
+<li><p>As the number of training examples goes to infinity, your model trained on that data will have:</p>
+<pre><code>A. Lower variance [anw]
+B. Higher variance 
+C. Same variance</code></pre></li>
+</ol>
+<p>Explanation: It is important that your dev and test set have the closest possible distribution to “real” data.</p>
+<ol start="29" type="1">
+<li><p>During the data preprocessing step, how should one treat missing/null values? How will you deal with them?</p></li>
+<li><p>Which approach is used for handling imbalanced datasets in classification tasks, where one class has significantly fewer samples than the others?</p>
+<ol type="a">
+<li>Overfitting</li>
+<li>Data Augmentation</li>
+<li>Oversampling the minority class</li>
+<li>Feature Scaling</li>
+</ol>
+<p>Answer: c) Oversampling the minority class</p></li>
+</ol>
 
 
 </section>

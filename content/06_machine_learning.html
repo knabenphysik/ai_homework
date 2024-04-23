@@ -216,20 +216,15 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#mimic-outputs-not-the-process" id="toc-mimic-outputs-not-the-process" class="nav-link" data-scroll-target="#mimic-outputs-not-the-process">Mimic Outputs, Not The Process</a>
   <ul class="collapse">
+  <li><a href="#type-of-learning" id="toc-type-of-learning" class="nav-link" data-scroll-target="#type-of-learning"><strong>Type of Learning</strong></a></li>
   <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning"><strong>Supervised Learning</strong></a></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">Regression</a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
   <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning"><strong>Unsupervised learning</strong></a></li>
   <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link" data-scroll-target="#reinforcement-learning"><strong>Reinforcement Learning</strong></a></li>
   </ul></li>
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a></li>
-  <li><a href="#simple-tree-partitioning-tree-models" id="toc-simple-tree-partitioning-tree-models" class="nav-link" data-scroll-target="#simple-tree-partitioning-tree-models">Simple Tree partitioning (Tree models)</a></li>
-  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest">Random Forest</a></li>
-  <li><a href="#generalized-linear-model-glm" id="toc-generalized-linear-model-glm" class="nav-link" data-scroll-target="#generalized-linear-model-glm">Generalized Linear Model (GLM)</a></li>
-  <li><a href="#support-vector-machines-svm" id="toc-support-vector-machines-svm" class="nav-link" data-scroll-target="#support-vector-machines-svm">Support Vector Machines (SVM)</a></li>
-  <li><a href="#neural-network" id="toc-neural-network" class="nav-link" data-scroll-target="#neural-network">Neural Network</a></li>
-  <li><a href="#comparing-different-classification-algorithms" id="toc-comparing-different-classification-algorithms" class="nav-link" data-scroll-target="#comparing-different-classification-algorithms">Comparing Different Classification Algorithms</a></li>
-  <li><a href="#simulating-the-exercise" id="toc-simulating-the-exercise" class="nav-link" data-scroll-target="#simulating-the-exercise">Simulating the exercise</a></li>
+  <li><a href="#example-session" id="toc-example-session" class="nav-link" data-scroll-target="#example-session">Example Session</a></li>
   <li><a href="#interpretability-vs-flexibility" id="toc-interpretability-vs-flexibility" class="nav-link" data-scroll-target="#interpretability-vs-flexibility">Interpretability vs flexibility</a></li>
-  <li><a href="#interpretability-in-machine-learning" id="toc-interpretability-in-machine-learning" class="nav-link" data-scroll-target="#interpretability-in-machine-learning">Interpretability in Machine Learning</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/06_machine_learning.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/06_machine_learning.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -279,6 +274,19 @@ Figure&nbsp;2: Statistical Model
 </figcaption>
 </figure>
 </div>
+<section id="type-of-learning" class="level3">
+<h3 class="anchored" data-anchor-id="type-of-learning"><strong>Type of Learning</strong></h3>
+<div id="fig-learn-type" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-learn-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/jenis-learning.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-learn-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Type of ML
+</figcaption>
+</figure>
+</div>
+</section>
 <section id="supervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="supervised-learning"><strong>Supervised Learning</strong></h3>
 <p>In supervised learning, nature is seen as unknowable. Instead of the intrinsic approach, supervised learning takes an extrinsic approach. The supervised model is supposed to mimic the outputs of nature, but it doesn’t matter whether the model’s inner mechanism is a reasonable substitute for nature’s mechanism.</p>
@@ -288,111 +296,142 @@ Figure&nbsp;2: Statistical Model
 <img src="image/supervise_model.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-super-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Supervised Learning Model
+Figure&nbsp;4: Supervised Learning Model
 </figcaption>
 </figure>
 </div>
 <p>A statistical modeler would try to find a plausible recipe, even if the end result is not perfect. The supervised learner would only be interested in the end result; it doesn’t matter whether it was exactly the same recipe.</p>
 <p>Is to map input onto sets of output, which had been pre-determined by the “supervisor” or researcher/analyzer/modeler. Hence called “supervised”. The problem is <span class="math inline">\(X \mapsto Y\)</span>. In another word, we have <span class="math inline">\(X\)</span> as input space, and <span class="math inline">\(Y\)</span> output space, and the learning is a process of mapping from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>. The learner receives a set of labeled examples as training data and makes predictions for all unseen points.</p>
+</section>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">Regression</h3>
+<p>The goal of regression is to predict the value of one or more continuous target variables <span class="math inline">\(t\)</span> given the value of a D-dimensional vector <span class="math inline">\(x\)</span> of input variables. Usually, predict a numerical value.</p>
+<p>Given a training data set comprising <span class="math inline">\(N\)</span> observations <span class="math inline">\(\{x_n \}\)</span>, where <span class="math inline">\(n = 1, . . . , N ,\)</span> together with corresponding target values <span class="math inline">\(\{t_n\}\)</span>, the goal is to predict the value of <span class="math inline">\(t\)</span> for a new value of <span class="math inline">\(x\)</span>.</p>
+<div id="fig-regression" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/regression.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Regression Learning
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<ul>
+<li>What will the temperature for tomorrow morning?</li>
+<li>What is Kelana Park View apartment current selling prices?</li>
+<li>predict water temperature based on salinity</li>
+<li>predict the apparent temperature given the humidity</li>
+<li>stock price predict of Tesla Inc</li>
+</ul>
+<p>Types of Regression Algorithm:</p>
+<ul>
+<li>Simple Linear Regression</li>
+</ul>
+</section>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">Classification</h3>
+<p>The goal in classification is to take an input vector <span class="math inline">\(x\)</span> and to assign it to one of <span class="math inline">\(K\)</span> discrete classes <span class="math inline">\(\{C_k \}\)</span> where <span class="math inline">\(k = 1, . . . , K\)</span>. In the most common scenario, the classes are taken to be disjoint, so that <strong><em>each input is assigned to one and only one class</em></strong>. The input space is thereby divided into decision regions whose boundaries are called <em><strong>decision boundaries</strong></em>. Classify into two or multiple classes.</p>
+<div id="fig-classification" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/classification.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Classification Learning
+</figcaption>
+</figure>
+</div>
 <p>Examples:</p>
-<ol type="1">
-<li><p>Learning associations Association rule, where given X, we want to know Y, or <span class="math inline">\(Pr(Y|X)\)</span></p></li>
-<li><p>Classification Classification rule, where: IF <span class="math inline">\(X_1 &gt; a\)</span> AND <span class="math inline">\(X_2 &gt; b\)</span> THEN Y = 0 else Y = 1</p></li>
-<li><p>Pattern recognition This is by way of patterns, such as “pixels” in image, “frequencies” in sound and speech, “medical records and data” in medical diagnosis, biometrics in identification, etc. IF pattern <span class="math inline">\(X_1\)</span> matches pattern <span class="math inline">\(X_2\)</span>, then <span class="math inline">\(Y = k\)</span></p></li>
-<li><p>Knowledge extraction Using models, such as Linear Model to predict information given the data. <span class="math inline">\(Y = \beta_0 + \beta_1X_1 +....\)</span></p></li>
-</ol>
+<ul>
+<li>Tomorrow morning raining or sunny?</li>
+<li>Image classification</li>
+<li>Document classification</li>
+<li>Facial/Voice recognition</li>
+<li>Text classification</li>
+</ul>
+<p>Types of Classification Algorithm:</p>
+<ul>
+<li>Neural network</li>
+<li>support vector machine</li>
+<li>Naive Bayes</li>
+<li>K-Nearest Neighbors</li>
+<li>Decision Tree Classifier</li>
+<li>Random Forest Classifier</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Curse of dimensionality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With the rapid development of data collection and storage technologies, we have entered the era of big data, where the data holds a trend of rapid growth in both sample size and feature dimensionality.</p>
+<p>As we add more dimensions(features) to our dataset, the volume of the space increases exponentially. This means that the data becomes sparse.</p>
+<p>This sparsity making it hard to find patterns or relationships (lack of representativeness). It also will increase computation cost.</p>
+</div>
+</div>
 </section>
 <section id="unsupervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="unsupervised-learning"><strong>Unsupervised learning</strong></h3>
 <p>Unsupervised learning means discovering hidden patterns in data. Unsupervised learning is more like, “Here are some data points. Please find something interesting.” The learner exclusively receives unlabeled training data, and makes predictions for all unseen points.</p>
 <p>We have only <span class="math inline">\(Xs\)</span>, input data, and no output to map to. <span class="math inline">\(Y\)</span> may exist, but it is “latent” (i.e.&nbsp;not directly observable)</p>
-<ol type="1">
-<li><p>Clustering Simple clustering procedure, <span class="math inline">\(Pr(X_i = k)\)</span> given a certain rule, to discover similarities across groupings. E.g. Customer segmentation, density estimation, image compression, etc.</p></li>
-<li><p>Discriminant To “discriminate” <span class="math inline">\(Xs\)</span> across distinct groupings by using certain measures E.g. Principle Components, Linear Discriminant, etc.</p></li>
-</ol>
+<div id="fig-clustering" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clustering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/clustering.jpg" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clustering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Cluster Learning
+</figcaption>
+</figure>
+</div>
+<p>Examples:</p>
+<ul>
+<li>anomaly detection</li>
+<li>customer segmentation</li>
+</ul>
 </section>
 <section id="reinforcement-learning" class="level3">
 <h3 class="anchored" data-anchor-id="reinforcement-learning"><strong>Reinforcement Learning</strong></h3>
 <p>Reinforcement learning is dynamic learning.</p>
-<p>The output <span class="math inline">\(Y\)</span> is a set of actions, which is ordered in a sequence <span class="math inline">\((a_ia_ja_k...a_n)\)</span>. The objective is to “learn” which set of actions sequence which maximizes the rewards, <span class="math inline">\(Z\)</span>. <span class="math inline">\(X\)</span> now is called the possible states or set of states. <span class="math inline">\(Y\)</span> is the game theoretic action space choosing the states, and <span class="math inline">\(Z\)</span> is the reward space, given various state space sequences or paths. Here the “learning” is by process of learning from various paths, to discover the paths which gives optimal rewards. An example of this a chess game between two players. Here, we could say generally that the domain is both “game theory” involving “multiple agents” which involve choices which are probabilistic in nature.</p>
+<p>The output <span class="math inline">\(Y\)</span> is a set of actions, which is ordered in a sequence <span class="math inline">\((A_i,A_j,A_k,...,A_n)\)</span>. The objective is to “learn” which set of actions sequence which maximizes the rewards, <span class="math inline">\(R\)</span>. <span class="math inline">\(S\)</span> now is called the possible states or set of states. <span class="math inline">\(Y\)</span> is the game theoretic action space choosing the states, and <span class="math inline">\(Z\)</span> is the reward space, given various state space sequences or paths.</p>
+<div id="fig-reinforcement" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reinforcement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/reinforcement-learning.png" class="img-fluid figure-img" style="width:20.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reinforcement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Reinforcement Learning
+</figcaption>
+</figure>
+</div>
+<p>Examples:</p>
+<ul>
+<li>self-driving cars</li>
+<li>industrial robotics</li>
+<li>chatGPT</li>
+</ul>
 </section>
 </section>
-<section id="simple-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="simple-linear-regression">Simple Linear Regression</h2>
-</section>
-<section id="simple-tree-partitioning-tree-models" class="level2">
-<h2 class="anchored" data-anchor-id="simple-tree-partitioning-tree-models">Simple Tree partitioning (Tree models)</h2>
-</section>
-<section id="random-forest" class="level2">
-<h2 class="anchored" data-anchor-id="random-forest">Random Forest</h2>
-</section>
-<section id="generalized-linear-model-glm" class="level2">
-<h2 class="anchored" data-anchor-id="generalized-linear-model-glm">Generalized Linear Model (GLM)</h2>
-</section>
-<section id="support-vector-machines-svm" class="level2">
-<h2 class="anchored" data-anchor-id="support-vector-machines-svm">Support Vector Machines (SVM)</h2>
-</section>
-<section id="neural-network" class="level2">
-<h2 class="anchored" data-anchor-id="neural-network">Neural Network</h2>
-</section>
-<section id="comparing-different-classification-algorithms" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-different-classification-algorithms">Comparing Different Classification Algorithms</h2>
-<p>We’ve <a href="https://www.kaggle.com/code/mehmetlaudatekman/comparing-different-classification-algorithms">saw</a> our scores. Let’s sort them.</p>
-<pre><code>Random Forest Classification %87 Accuracy
-Naive Bayes and KNN Classification %81 Accuracy
-Support Vector Machine Classification %80 Accuracy
-Decision Tree Classification %78 Accuracy
-Logistic Regression %74 Accuracy</code></pre>
-<p>As we can see, for classification, the best algorithm is Random Forest Classification.</p>
-<blockquote class="blockquote">
-<p>But do not forget that, in different datasets, it will be a different algorithm So it does not show that, Random Forest Classification is not the best algorithm for classification - however for this dataset it is :)</p>
-</blockquote>
-<p>Make your own observations.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Accuracy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Naive Bayes</td>
-<td>0.776042</td>
-</tr>
-<tr class="even">
-<td>Support Vector Machine</td>
-<td>0.770796</td>
-</tr>
-<tr class="odd">
-<td>Logistic Regression</td>
-<td>0.766917</td>
-</tr>
-<tr class="even">
-<td>K Nearest Neighbor</td>
-<td>0.706955</td>
-</tr>
-<tr class="odd">
-<td>Decision Tree</td>
-<td>0.706955</td>
-</tr>
-</tbody>
-</table>
-<p>From the above output, it is clear that for this <a href="https://www.kaggle.com/code/opawar600/comparing-some-basic-ml-classification-algorithms">dataset</a>, SVM, Logistic Regression and Naive Bayes works better….</p>
-</section>
-<section id="simulating-the-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="simulating-the-exercise">Simulating the exercise</h2>
-<p>You can re-run the Rmd file, and you can see changes happen in the plots. But doesn’t matter how many time you run it, the main conclusions doesn’t change!!! If you do this, effectively, you are repeating the simulations over and over again, which cause some minor changes to the results (i.e.&nbsp;due to randomize errors or white noise), but the conclusions remains the same.</p>
+<section id="example-session" class="level2">
+<h2 class="anchored" data-anchor-id="example-session">Example Session</h2>
+<p>Session with python and relevant libraries.</p>
 </section>
 <section id="interpretability-vs-flexibility" class="level2">
 <h2 class="anchored" data-anchor-id="interpretability-vs-flexibility">Interpretability vs flexibility</h2>
+<p>A popular definition of interpretability frequently used by researchers is “interpretability in machine learning is a degree to which a human can understand the cause of a decision from an ML model”. It can also be defined as “the ability to explain the model outcome in understandable ways to a human. So far, no mathematical definition. The primary goal of interpretability is to explain the model outcomes in a way that is easy for users to understand.</p>
 <div id="fig-data-sampling" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="image/model_trade_off.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Sampling from big data
+Figure&nbsp;9: Sampling from big data
 </figcaption>
 </figure>
 </div>
@@ -400,24 +439,7 @@ Figure&nbsp;4: Sampling from big data
 <p>High interpretability typically comes at the cost of performance, as seen in the following figure. If we wants to achieve high performance but still wants to have a general understanding of the model behavior, model explainability starts to play a larger role.</p>
 <p><strong>Explainability</strong> — Explainability is how to take an ML model and explain the behavior in human terms.</p>
 <p>When datasets are large and the data is related to images or text, neural networks can meet the customer’s AI/ML objective with high performance. In such cases, where complex methods are required to maximize performance, data scientists may focus on model explainability instead of interpretability.</p>
-<div id="fig-trade-off" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-trade-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/trade_off.webp" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trade-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: The trade-off between accuracy and interpretability.
-</figcaption>
-</figure>
-</div>
-<p><a href="#fig-trade-off" class="quarto-xref">Figure&nbsp;5</a> shows the trade-off between accuracy and interpretability of machine learning algorithms.</p>
-<p>Model interpretability is mainly related to the complexity of ML that is used to build the model. Generally speaking, models with more complex ML algorithms are more challenging to interpret and explain. In contrast, models with more straightforward ML algorithms are easiest to interpret and explain. Therefore, ML models can be categorized into two criteria: intrinsic or post hoc.</p>
-<p>Intrinsic interpretability model uses transparent ML model, such as sparse linear models or short decision trees. Interpretability is achieved by limiting the ML model complexity in such a way that the output is understandable by humans. Unfortunately, in most cases, the best performance of ML models belongs to very complex ML algorithms. In other words, model accuracy requires more complex ML algorithms, and simple ML algorithms might not make the most accurate prediction. Therefore, intrinsic models are suitable when interpretability is more important than accuracy.</p>
-<p>In contrast, post hoc interpretability model is used to explain complex/black-box ML models. After the ML models have been trained, the interpretation method is applied to extract information from the trained ML model without precisely depending on how they work.</p>
-</section>
-<section id="interpretability-in-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="interpretability-in-machine-learning">Interpretability in Machine Learning</h2>
-<p>A popular definition of interpretability frequently used by researchers is “interpretability in machine learning is a degree to which a human can understand the cause of a decision from an ML model”. It can also be defined as “the ability to explain the model outcome in understandable ways to a human. So far, no mathematical definition. The primary goal of interpretability is to explain the model outcomes in a way that is easy for users to understand.</p>
+<p><strong>Flexibility</strong> — There’s no rigor definition of method’s flexibility. Flexibility describes the ability to increase the degrees of freedom available to the model to “fit” to the training data.</p>
 
 
 </section>
