@@ -35,7 +35,7 @@ Is to map input onto sets of output, which had been pre-determined by the "super
 
 ### Regression
 
-The goal of regression is to predict the value of one or more continuous target variables $t$ given the value of a D-dimensional vector $x$ of input variables. 
+The goal of regression is to predict the value of one or more continuous target variables $t$ given the value of a D-dimensional vector $x$ of input variables. Usually, predict a numerical value.
 
 Given a training data set comprising $N$ observations $\{x_n \}$, where $n = 1, . . . , N ,$ together with corresponding target values $\{t_n\}$, the goal is to predict the value of $t$ for a new value of $x$. 
 
@@ -53,18 +53,11 @@ Example:
 Types of Regression Algorithm:
 
   - Simple Linear Regression
-  - Multiple Linear Regression
-  - Polynomial Regression
-  - Support Vector Regression
-  - Decision Tree Regression
-  - Random Forest Regression
-
-     
 
 ### Classification
 
 The goal in classification is to take an input vector $x$ and to assign it to one of $K$ discrete classes $\{C_k \}$ where $k = 1, . . . , K$.
-In the most common scenario, the classes are taken to be disjoint, so that **_each input is assigned to one and only one class_**. The input space is thereby divided into decision regions whose boundaries are called _**decision boundaries**_.
+In the most common scenario, the classes are taken to be disjoint, so that **_each input is assigned to one and only one class_**. The input space is thereby divided into decision regions whose boundaries are called _**decision boundaries**_. Classify into two or multiple classes.
 
 ![Classification Learning](image/classification.png){#fig-classification}
 
@@ -80,7 +73,6 @@ Examples:
 
 Types of Classification Algorithm:
 
-  - Logistic regression
   - Neural network
   - support vector machine
   - Naive Bayes
@@ -127,56 +119,16 @@ Examples:
   - industrial robotics
   - chatGPT
 
----
+## Example Session
 
-- Linear regression: Predict a numerical value.
-- Logistic regression: Classify into two classes (binary classification).
-- Softmax regression: Classify into multiple classes.
-- Support vector machines: Classify into two classes, or regression (predict a numerical value).
-- Decision trees: Classify into any number of classes, or regression (predict a numerical value).
-- Random forests: Classify into any number of classes, or regression (predict a numerical value).
-- Ensembles of models: Bundle up the results of many models by averaging the prediction values, voting for the most popular class, or some other bundling mechanism.
-- k-means clustering: Classify into any number of classes, or regression
-
-::: {.callout-tip}
-Practical example with supervised learning.
-:::
-
-
-## Comparing Different Classification Algorithms
-
-We've [saw](https://www.kaggle.com/code/mehmetlaudatekman/comparing-different-classification-algorithms) our scores. Let's sort them.
-
-    Random Forest Classification %87 Accuracy
-    Naive Bayes and KNN Classification %81 Accuracy
-    Support Vector Machine Classification %80 Accuracy
-    Decision Tree Classification %78 Accuracy
-    Logistic Regression %74 Accuracy
-
-As we can see, for classification, the best algorithm is Random Forest Classification.
-
->But do not forget that, in different datasets, it will be a different algorithm
-So it does not show that, Random Forest Classification is not the best algorithm for classification - however for this dataset it is :) 
-
-Make your own observations.
-
-|     | Accuracy |
-| -------- | ------- |
-| Naive Bayes  | 	0.776042   |
-| Support Vector Machine | 0.770796     |
-| Logistic Regression | 0.766917 |
-| K Nearest Neighbor    | 0.706955   |
-| Decision Tree | 0.706955 |
-
-From the above output, it is clear that for this [dataset](https://www.kaggle.com/code/opawar600/comparing-some-basic-ml-classification-algorithms), SVM, Logistic Regression and Naive Bayes works better....
- 
-
-## Simulating the exercise
-
-You can re-run the Rmd file, and you can see changes happen in the plots. But doesn't matter how many time you run it, the main conclusions doesn't change!!! If you do this, effectively, you are repeating the simulations over and over again, which cause some minor changes to the results (i.e. due to randomize errors or white noise), but the conclusions remains the same.
+Session with python and relevant libraries.
 
 
 ## Interpretability vs flexibility
+
+A popular definition of interpretability frequently used by researchers is “interpretability in machine learning is a degree to which a human can understand the cause
+of a decision from an ML model”. It can also be defined as “the ability to explain the model outcome in understandable ways to a human. So far, no mathematical definition. The primary
+goal of interpretability is to explain the model outcomes in a way that is easy for users to understand. 
 
 ![Sampling from big data](image/model_trade_off.png){#fig-data-sampling}
 
@@ -188,18 +140,4 @@ High interpretability typically comes at the cost of performance, as seen in the
 
 When datasets are large and the data is related to images or text, neural networks can meet the customer's AI/ML objective with high performance. In such cases, where complex methods are required to maximize performance, data scientists may focus on model explainability instead of interpretability. 
 
-![The trade-off between accuracy and interpretability.](image/trade_off.webp){#fig-trade-off}
-
-@fig-trade-off shows the trade-off between accuracy and interpretability of machine learning algorithms.
-
-Model interpretability is mainly related to the complexity of ML that is used to build the model. Generally speaking, models with more complex ML algorithms are more challenging to interpret and explain. In contrast, models with more straightforward ML algorithms are easiest to interpret and explain. Therefore, ML models can be categorized into two criteria: intrinsic or post hoc.
-
-Intrinsic interpretability model uses transparent ML model, such as sparse linear models or short decision trees. Interpretability is achieved by limiting the ML model complexity in such a way that the output is understandable by humans. Unfortunately, in most cases, the best performance of ML models belongs to very complex ML algorithms. In other words, model accuracy requires more complex ML algorithms, and simple ML algorithms might not make the most accurate prediction. Therefore, intrinsic models are suitable when interpretability is more important than accuracy.
-
-In contrast, post hoc interpretability model is used to explain complex/black-box ML models. After the ML models have been trained, the interpretation method is applied to extract information from the trained ML model without precisely depending on how they work.
-
-## Interpretability in Machine Learning
-
-A popular definition of interpretability frequently used by researchers is “interpretability in machine learning is a degree to which a human can understand the cause
-of a decision from an ML model”. It can also be defined as “the ability to explain the model outcome in understandable ways to a human. So far, no mathematical definition. The primary
-goal of interpretability is to explain the model outcomes in a way that is easy for users to understand. 
+**Flexibility** — There's no rigor definition of method's flexibility. Flexibility describes the ability to increase the degrees of freedom available to the model to "fit" to the training data.
