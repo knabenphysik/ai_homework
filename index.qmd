@@ -3,25 +3,109 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
+# Preface {.unnumbered}
+
+These lecture notes aim to gives a short introduction into the basic ideas and concepts of artificial intelligence (AI). The approach and selection of topics reflect my experience with AI for the past 15 years. Most of my knowledge about the subject was self-taught through online courses, side projects and professional activities. Since my background was in applied physics,basis for getting into machine learning for natural and easy.
+
+I hope that this notes will be useful for self-study and as a companion for more formal AI course offered elsewhere.
+
+I have tried throughout to minimize rigorous mathematics thus making the note as accessible and self-contained as possible. Some relevant background material is provided through appendices or ‘narrative summaries’ within the main text, together with pointers to the literature.
+
+
 # Overview {.unnumbered}
 
-AI is everywhere!
+AI is everywhere (overhyped)!
+
+::: {#fig-meme layout-ncol=2}
+
+![Learning AI is easy!](content/image/intro/meme_1.jpg){#fig-meme1 width=70%}
+
+![I am AI expert!](content/image/intro/meme_2.jpg){#fig-meme2 width=70%}
+
+Famous Memes
+:::
+
+
 
 Some notable examples:
 
--   google lens ([region proposal network](https://arxiv.org/abs/1506.01497v3))
--   google translate ([Transformer-based](https://arxiv.org/abs/2205.03983))
--   YouTube automatic captioning ([automatic speech recognition](https://arxiv.org/abs/2005.08100))
--   Gmail spam filters (rule-based filters + Density clustering)
--   apple's faceID ([deep convolutional networks](https://machinelearning.apple.com/research/face-detection))
--   Tesla autonomous car ([deep learning](https://www.youtube.com/watch?v=j0z4FweCy4M))
--   virtual assistant (Siri, Google Assistant)
--   NVIDIA DLSS ([Deep learning supersampling](https://www.nvidia.com/en-my/geforce/technologies/dlss/))
--   Bloomberg ([NLP sentiment analysis](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
+-   Google  ([region proposal network](https://arxiv.org/abs/1506.01497v3))
+-   Google  ([Transformer-based](https://arxiv.org/abs/2205.03983))
 
-```{r ai-mana, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 1: General goal of AI[@Gugel]"}
-knitr::include_graphics("content/image/useful_ai.webp")
-```
+![Google Lens & Translate](content/image/google_lens.webp){#fig-ml-google-1 width=70%}
+
+-   YouTube automatic captioning ([automatic speech recognition](https://arxiv.org/abs/2005.08100))
+
+![Google Auto Captioning](content/image/YouTube_Caption_Auto.jpg){#fig-ml-google-2 width=70%}
+
+-   G-mail spam filters (rule-based filters + Density clustering)
+-   Apple's face-ID ([deep convolutional networks](https://machinelearning.apple.com/research/face-detection))
+
+![Apple Face-ID](content/image/face_ID.gif){#fig-ml-faceid width=70%}
+
+
+-   Tesla autonomous car ([deep learning](https://www.youtube.com/watch?v=j0z4FweCy4M))
+
+![Tesla's AI](content/image/Tesla-object-detection.webp){#fig-ml-teslai width=70%}
+
+
+-   virtual assistant (Siri, Google Assistant)
+
+::: {#fig-assistant layout-ncol=2}
+
+![Google Assistant](content/image/google-assistant.jpg){#fig-assist-1 width=70%}
+
+![Apple Siri](content/image/siri-assistant.jpg){#fig-assist-2 width=70%}
+
+Intelligence Chatbot Asssistant
+:::
+
+
+-   NVIDIA DLSS ([Deep learning supersampling](https://www.nvidia.com/en-my/geforce/technologies/dlss/))
+
+![NVIDIA DLSS](content/image/nvidia-dlss.jpg){#fig-nvidia-dlss width=70%}
+
+-   Bloomberg ([NLP](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
+
+![Bloomberg NLP](content/image/bloomberg_nlp.webp){#fig-bloomberg-ai width=70%}
+
+Some notable examples (science):
+
+- [Milky Way’s Black Hole](https://physics.aps.org/articles/v15/74)
+
+![First Image of the Milky Way’s Black Hole](content/image/blackhole.png){#fig-BH width=40%}
+
+- [Molecular Design](https://www.microsoft.com/en-us/research/blog/fs-mol-bringing-deep-learning-to-early-stage-drug-discovery/)
+
+![Drug Discovery](content/image/drug-desgn.webp){#fig-drug width=40%}
+
+my encounter:
+
+- geospatial intelligence: land use analysis
+
+![Land Clearing Detection (Urban Planning)](content/image/geospatial.jpeg){#fig-geo width=70%}
+
+- oil & gas: corrosion detection in confined space
+
+![corrosion detection in pipeline](content/image/corrosion_detection.png){#fig-karat width=70%}
+
+- automation: vehicle QC inspection (detect scratch, dent on body surface)
+
+- automation: vehicle QC inspection (detect missing screw in motorcycle assembly line)
+
+- safety: Personal protective equipment (PPE) detection for safety inspection
+
+![ppe detection](content/image/ppe.png){#fig-karat width=40%}
+
+- finding oil: salt detection
+
+![salt detection](content/image/salt_detection.png){#fig-salt width=60%}
+
+
+So, why do we need AI? 
+
+![General goal of AI[@Gugel]](content/image/useful_ai.webp){#fig-ml-google width=70%}
+
 
 ## Artificial intelligence, Machine learning and Deep learning
 
