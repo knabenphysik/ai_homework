@@ -202,7 +202,8 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#artificial-intelligence-machine-learning-and-deep-learning" id="toc-artificial-intelligence-machine-learning-and-deep-learning" class="nav-link" data-scroll-target="#artificial-intelligence-machine-learning-and-deep-learning">Artificial intelligence, Machine learning and Deep learning</a></li>
   <li><a href="#data-scientist-vs-machine-learning-engineer" id="toc-data-scientist-vs-machine-learning-engineer" class="nav-link" data-scroll-target="#data-scientist-vs-machine-learning-engineer">Data Scientist vs Machine Learning Engineer</a></li>
@@ -217,30 +218,261 @@ div.csl-indent {
 
 
 
+<section id="preface" class="level1 unnumbered">
+<h1 class="unnumbered">Preface</h1>
+<p>These lecture notes aim to gives a short introduction into the basic ideas and concepts of artificial intelligence (AI). The approach and selection of topics reflect my experience with AI for the past 15 years. Most of my knowledge about the subject was self-taught through online courses, side projects and professional activities. Since my background was in applied physics,basis for getting into machine learning for natural and easy.</p>
+<p>I hope that this notes will be useful for self-study and as a companion for more formal AI course offered elsewhere.</p>
+<p>I have tried throughout to minimize rigorous mathematics thus making the note as accessible and self-contained as possible. Some relevant background material is provided through appendices or ‘narrative summaries’ within the main text, together with pointers to the literature.</p>
+</section>
 <section id="overview" class="level1 unnumbered">
 <h1 class="unnumbered">Overview</h1>
-<p>AI is everywhere!</p>
-<p>Some notable examples:</p>
-<ul>
-<li>google lens (<a href="https://arxiv.org/abs/1506.01497v3">region proposal network</a>)</li>
-<li>google translate (<a href="https://arxiv.org/abs/2205.03983">Transformer-based</a>)</li>
-<li>YouTube automatic captioning (<a href="https://arxiv.org/abs/2005.08100">automatic speech recognition</a>)</li>
-<li>Gmail spam filters (rule-based filters + Density clustering)</li>
-<li>apple’s faceID (<a href="https://machinelearning.apple.com/research/face-detection">deep convolutional networks</a>)</li>
-<li>Tesla autonomous car (<a href="https://www.youtube.com/watch?v=j0z4FweCy4M">deep learning</a>)</li>
-<li>virtual assistant (Siri, Google Assistant)</li>
-<li>NVIDIA DLSS (<a href="https://www.nvidia.com/en-my/geforce/technologies/dlss/">Deep learning supersampling</a>)</li>
-<li>Bloomberg (<a href="https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/">NLP sentiment analysis</a>)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="content/image/useful_ai.webp" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Figure 1: General goal of AI<span class="citation" data-cites="Gugel"><sup><a href="#ref-Gugel" role="doc-biblioref">1</a></sup></span></figcaption>
+<p>AI is everywhere (overhyped)!</p>
+<div id="fig-meme" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-meme" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-meme1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-meme1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/intro/meme_1.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-meme">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meme1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Learning AI is easy!
+</figcaption>
 </figure>
 </div>
 </div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-meme" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-meme2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-meme2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/intro/meme_2.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-meme">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meme2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) I am AI expert!
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Famous Memes
+</figcaption>
+</figure>
+</div>
+<p>Some notable examples:</p>
+<ul>
+<li>Google (<a href="https://arxiv.org/abs/1506.01497v3">region proposal network</a>)</li>
+<li>Google (<a href="https://arxiv.org/abs/2205.03983">Transformer-based</a>)</li>
+</ul>
+<div id="fig-ml-google-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-google-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/google_lens.webp" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-google-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Google Lens &amp; Translate
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>YouTube automatic captioning (<a href="https://arxiv.org/abs/2005.08100">automatic speech recognition</a>)</li>
+</ul>
+<div id="fig-ml-google-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-google-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/YouTube_Caption_Auto.jpg" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-google-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Google Auto Captioning
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>G-mail spam filters (rule-based filters + Density clustering)</li>
+<li>Apple’s face-ID (<a href="https://machinelearning.apple.com/research/face-detection">deep convolutional networks</a>)</li>
+</ul>
+<div id="fig-ml-faceid" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-faceid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/face_ID.gif" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-faceid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Apple Face-ID
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Tesla autonomous car (<a href="https://www.youtube.com/watch?v=j0z4FweCy4M">deep learning</a>)</li>
+</ul>
+<div id="fig-ml-teslai" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-teslai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/Tesla-object-detection.webp" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-teslai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Tesla’s AI
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>virtual assistant (Siri, Google Assistant)</li>
+</ul>
+<div id="fig-assistant" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-assistant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-assistant" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-assist-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-assist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/google-assistant.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-assistant">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-assist-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Google Assistant
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-assistant" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-assist-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-assist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/siri-assistant.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-assistant">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-assist-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Apple Siri
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-assistant-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Intelligence Chatbot Asssistant
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>NVIDIA DLSS (<a href="https://www.nvidia.com/en-my/geforce/technologies/dlss/">Deep learning supersampling</a>)</li>
+</ul>
+<div id="fig-nvidia-dlss" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nvidia-dlss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/nvidia-dlss.jpg" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nvidia-dlss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: NVIDIA DLSS
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Bloomberg (<a href="https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/">NLP</a>)</li>
+</ul>
+<div id="fig-bloomberg-ai" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bloomberg-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/bloomberg_nlp.webp" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bloomberg-ai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Bloomberg NLP
+</figcaption>
+</figure>
+</div>
+<p>Some notable examples (science):</p>
+<ul>
+<li><a href="https://physics.aps.org/articles/v15/74">Milky Way’s Black Hole</a></li>
+</ul>
+<div id="fig-BH" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BH-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/blackhole.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BH-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: First Image of the Milky Way’s Black Hole
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/research/blog/fs-mol-bringing-deep-learning-to-early-stage-drug-discovery/">Molecular Design</a></li>
+</ul>
+<div id="fig-drug" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-drug-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/drug-desgn.webp" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-drug-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Drug Discovery
+</figcaption>
+</figure>
+</div>
+<p>my encounter:</p>
+<ul>
+<li>geospatial intelligence: land use analysis</li>
+</ul>
+<div id="fig-geo" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-geo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/geospatial.jpeg" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Land Clearing Detection (Urban Planning)
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>oil &amp; gas: corrosion detection in confined space</li>
+</ul>
+<div id="fig-karat" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-karat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/corrosion_detection.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-karat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: corrosion detection in pipeline
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>automation: vehicle QC inspection (detect scratch, dent on body surface)</p></li>
+<li><p>automation: vehicle QC inspection (detect missing screw in motorcycle assembly line)</p></li>
+<li><p>safety: Personal protective equipment (PPE) detection for safety inspection</p></li>
+</ul>
+<div id="fig-karat" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-karat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/ppe.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-karat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: ppe detection
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>finding oil: salt detection</li>
+</ul>
+<div id="fig-salt" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-salt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/salt_detection.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-salt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: salt detection
+</figcaption>
+</figure>
+</div>
+<p>So, why do we need AI?</p>
+<div id="fig-ml-google" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-google-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="content/image/useful_ai.webp" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-google-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: General goal of AI<span class="citation" data-cites="Gugel"><sup><a href="#ref-Gugel" role="doc-biblioref">1</a></sup></span>
+</figcaption>
+</figure>
 </div>
 <section id="artificial-intelligence-machine-learning-and-deep-learning" class="level2">
 <h2 class="anchored" data-anchor-id="artificial-intelligence-machine-learning-and-deep-learning">Artificial intelligence, Machine learning and Deep learning</h2>

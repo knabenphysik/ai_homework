@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Overview",
+    "title": "Preface",
     "section": "",
-    "text": "AI is everywhere!\nSome notable examples:\n\ngoogle lens (region proposal network)\ngoogle translate (Transformer-based)\nYouTube automatic captioning (automatic speech recognition)\nGmail spam filters (rule-based filters + Density clustering)\napple’s faceID (deep convolutional networks)\nTesla autonomous car (deep learning)\nvirtual assistant (Siri, Google Assistant)\nNVIDIA DLSS (Deep learning supersampling)\nBloomberg (NLP sentiment analysis)\n\n\n\n\n\n\nFigure 1: General goal of AI1\n\n\n\n\n\n\nData science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.\n\n\n\n\n\n\n\n\nFigure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\nIn a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.\n\n\n\n\n\n\n\n\nFigure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine.",
+    "text": "These lecture notes aim to gives a short introduction into the basic ideas and concepts of artificial intelligence (AI). The approach and selection of topics reflect my experience with AI for the past 15 years. Most of my knowledge about the subject was self-taught through online courses, side projects and professional activities. Since my background was in applied physics,basis for getting into machine learning for natural and easy.\nI hope that this notes will be useful for self-study and as a companion for more formal AI course offered elsewhere.\nI have tried throughout to minimize rigorous mathematics thus making the note as accessible and self-contained as possible. Some relevant background material is provided through appendices or ‘narrative summaries’ within the main text, together with pointers to the literature.",
     "crumbs": [
       "Introduction"
     ]
@@ -19,9 +19,9 @@
   {
     "objectID": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
     "href": "index.html#artificial-intelligence-machine-learning-and-deep-learning",
-    "title": "Overview",
-    "section": "",
-    "text": "Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.",
+    "title": "Preface",
+    "section": "Artificial intelligence, Machine learning and Deep learning",
+    "text": "Artificial intelligence, Machine learning and Deep learning\nData science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called “statistical data analysis” or “applied statistics”.\n“Data Scientist” means a professional who uses scientific methods to liberate and create meaning from raw data.\n“Statistics” means the practice or science of collecting and analyzing numerical data in large quantities.\nThere are no real difference between the two, except that “Data Scientists” prowes in large scale data or Big Data and fast computing. Otherwise, they are the same.\nToday, there are no difference between the two.2\n\n\n\n\n\nFigure 2: Everything everywhere all at once3\n\n\n\n\n\n\n\n\n\nFigure 3: Artificial intelligence, machine learning, and data science.4\n\n\n\n\nDeep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).\nThe central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform intuitively and near automatically. A great example of such a class of AI problems is interpreting and understanding the contents of an image – this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.\nMachine learning is subfield tends to be specifically interested in pattern recognition and learning from data.\nArtificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.\nDeep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.",
     "crumbs": [
       "Introduction"
     ]
@@ -29,9 +29,9 @@
   {
     "objectID": "index.html#data-scientist-vs-machine-learning-engineer",
     "href": "index.html#data-scientist-vs-machine-learning-engineer",
-    "title": "Overview",
-    "section": "",
-    "text": "Figure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\nIn a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.",
+    "title": "Preface",
+    "section": "Data Scientist vs Machine Learning Engineer",
+    "text": "Data Scientist vs Machine Learning Engineer\n\n\n\n\n\nFigure 4: domain area of deep learning5\n\n\n\n\nMLOps is the process of automating and productionalizing machine learning applications and workflows.\nIn a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.",
     "crumbs": [
       "Introduction"
     ]
@@ -39,9 +39,9 @@
   {
     "objectID": "index.html#reality-ml-in-production",
     "href": "index.html#reality-ml-in-production",
-    "title": "Overview",
-    "section": "",
-    "text": "Figure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine.",
+    "title": "Preface",
+    "section": "Reality: ML in production",
+    "text": "Reality: ML in production\n\n\n\n\n\nFigure 6: Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.6\n\n\n\n\nMachine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine.",
     "crumbs": [
       "Introduction"
     ]
