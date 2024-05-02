@@ -1,10 +1,10 @@
 # Introduction
 
-First we must differentiate between __data at hand__ - which is the data that is available to us as data scientist, and __data not in hand__, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to __data collecting__.
+First we must differentiate between __data at hand__ - which is the data that is available to us, and __data not in hand__, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to __data collecting__.
 
 ## Goodness of dataset
 
-Before collecting data for your machine learning problem, we first need to know __"what makes a good dataset"__?
+Before collecting data for your problem, we first need to know __"what makes a good dataset"__?
 
 -   quality (representative and high-quality of inputs data)
 -   quantity (consistent and accurate labels on target data/ground truth)
@@ -13,70 +13,93 @@ Before collecting data for your machine learning problem, we first need to know 
 
 ## General Problem
 
+Nowadays, the availability of large volumes of data and the widespread use of tools for the proper extraction of knowledge information has become very frequent.
+
 Most learning systems usually assume (e.g. academic, kaggle data) that training datasets used for learning are balanced.
 
 However, in real-world applications, training samples( __data at hand__ ) typically exhibit a long-tailed class distribution, where a small portion of classes have a massive number of sample points but the others are associated with only a few samples [@zhang2023deep].
 
-![Long Tail Data Illustration](image/long_tail_2.png){#fig-longtail_normal}
+![Long Tail Data Illustration](image/01/long_tail_2.png){#fig-longtail_normal}
 
 Long-tail data is visually represented by a hyperbolic curve like in @fig-longtail_normal.
 
 So long-tail data is the collection of all data about items that serve a specific niche and have a low demand but exist in greater varieties.
 
-
 Consider example, in autonomous driving, you would want a model detecting pedestrians to work equally well, irrespective of the weather, visual conditions, how fast the pedestrian is moving, how occluded they are, et cetera. Most likely however, your model will perform much worse on cases that are more rare—for example, a baby stroller swiftly emerging from behind a parked car in unpleasant weather. 
 
 The point of failure here is that the model has been trained on data that was recorded during regular traffic conditions. As a result, the representation of these rare scenarios (as a portion of the entire training dataset) is much lower compared to common scenarios. @fig-tesla is an example of two highway scenarios, whereas lane detection will be significantly more difficult in the right hand picture compared to the left.
 
-![long tail scenario](image/car_sight.png){#fig-tesla}
+![long tail scenario](image/01/car_sight.png){#fig-tesla}
 
 Thus, need to __*acquire*__ more of these rare cases in our training data!
 
-![class imbalance problem](image/long_tail_1.png){#fig-solve-long}
+![class imbalance problem](image/01/long_tail_1.png){#fig-solve-long}
 
+## Addressing imbalanced dataset
 
-## Data and sampling
+- Data sampling : in which the dataset instances are modified in such a way as to produce a more balanced class distribution.
+- Algorithmic modification
+- Cost-sensitive learning
 
-Consider that you have big __dataset at hand__. Is there a way to pick a subset of the dataset and that can be a good representation of the entire dataset?
+### Data sampling
 
-__Answer__: Yes! We have statistical approach which we called “Sampling”.
+![Downsample and Upsample](image/01/data_sampling.png){#fig-data-sampling}
 
-![Sampling from big data](image/data_sampling.png){#fig-data-sampling}
+- __*Upsampling*__ : process of *_randomly_* duplicating observations from the minority class to reinforce its signal.
+- __*Downsampling*__:  sample the majority class *_randomly_* to make their frequencies closer to the rarest class.
+- __*hybrid*__: some methodologies do a little of both and possibly impute synthetic data for the minority class.
 
-Type of sampling:
+### Algorithmic modification
 
-- __*random sampling*__ : every individual is chosen entirely by chance and each member of the population has an equal chance of being selected.
-- __*cluster sampling*__:  we use the subgroups of the population as the sampling unit rather than individuals. The population is divided into subgroups and a whole subgroups is randomly selected
-- __*systematic sampling*__:  chooses member from a target population by selecting a random starting point and selects sample members after a fixed ‘sampling interval.’
-- __*stratified random sampling*__: divide the population into subgroups (called strata) based on different traits like category, then we select the sample(s) from these subgroup.
+Instead of focusing on modifying the training set in order to combat class skew, this approach aims at modifying the classifier learning procedure itself.
 
+### Cost-sensitive learning
 
-## How much data?
-
-To **"learn"** and achieve **good generalization**, how much data do we need?
-
-- increasing the dataset sample size is a reduction in model over-fitting (avoid the model "memorize")
-- be careful of noise, outliers, and irrelevant information in additional data (recall "Goodness of dataset")
-
-![ Model performance of deep learning vs. other machine learning algorithms as a function of number of samples. @Ng](image/data_scale.png){#fig-data-scale}
-
-> relabel this
-![Effect of training data size on accuracy on cifar-10 images](image/cifar10_plot.png){#fig-multi-cla}
-
-> "To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
-
-
-We always prefer **large amount** of data, but how large is large, and how big is big? This is a problem of **sufficiency**, because even though the data may be large, but contains insufficient **entropy**, will render the data to be small, despite the large size in bytes.
-
->  **Entropy** quantifies how much information there is in a random variable, or more specifically its probability distribution.
-
-## Dealing with data
-
-Now, we already establish criteria of good data & how much data to collect.
-
-Assume now you already collect data and still facing __"imbalanced"__ where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?
-
-> simplify image
+Cost-sensitive learning for imbalanced classification is focused on first assigning different costs to the types of misclassification errors that can be made, then using specialized methods to take those costs into account.
 
 
 ![ Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right [@Johnson]](image/imbalanced.png){#fig-imbalanced}
+
+## How much data?
+
+::: {.callout-tip}
+## Wisdom
+
+"To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case." --- Maksym Tatariants
+
+"no learner(classifier) can beat random guessing over all possible functions to be learned" - no free lunch theorem[@6795940]
+
+:::
+
+The fundamental goal of machine learning is to generalize beyond the examples in the training set. This is because, no matter how much data we have, it is very unlikely that we will see those exact examples again at test time.
+
+
+**Question** : To **"learn"** and achieve **good generalization**, how much data do we need?
+
+## Observed and test
+
+- increase the dataset sample size is a reduction in model over-fitting (avoid the model "memorize")
+- be careful of noise, outliers, and irrelevant information in additional data (recall "Goodness of dataset")
+
+![ Model performance of deep learning vs. other machine learning algorithms as a function of number of samples. @Ng](image/01/data_scale.png){#fig-data-scale}
+
+### Observation 1:
+
+![Effect of training data size on accuracy on cifar-10 images](image/01/cifar10_plot.png){#fig-multi-cla}
+
+### Observation 2:
+
+![Effect of training data size on accuracy on medical(CT scan image) classification](image/01/medical_plot2.png){#fig-medic}
+
+### Observation 3:
+
+![Effect of training data size on accuracy on credit card fraud detection](image/01/faud_plot1.png){#fig-fraud}
+
+We always prefer **large amount** of data, but how large is large, and how big is big? This is a problem of **sufficiency**, because even though the data may be large, but contains insufficient **entropy**, will render the data to be small, despite the large size in bytes.
+
+::: {.callout-warning}
+## Wisdom
+
+**Entropy** quantifies how much information there is in a random variable (recall variability)
+
+:::

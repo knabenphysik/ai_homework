@@ -1,5 +1,23 @@
+::: {.callout-tip}
+## Wisdom
+
+"The purpose of computing is insight, not numbers." - Richard Hamming,mathematician
+
+:::
+
+
 # Machine Learning Life-Cycle
 
-Since Machine Learning (ML) is a collection of learning techniques used to extract value from data, we need to know what to say about data-at-hand, how machine learnt and how to evaluate learning model.
+Since Machine Learning (ML) is a collection of learning techniques used to extract **"valuable insight"** from data, we need to know what to say about data-at-hand, how machine extract & learnt from data and how to evaluate "extraction" procedure.
 
-![ML Lifecycle [@alex]](image/ml_cycle.png){#fig-ml-cycle}
+![ML Lifecycle [@alex]](image/00/ml_cycle.png){#fig-ml-cycle}
+
+| Statistical Term | Data Science Term | 
+|---------|:-----|
+| Estimation | Learning  |  
+| Classification     | Supervised Learning |  
+| Clustering       | Unsupervised Learning    |
+| Covariate/Independent variable       | Features   |
+| Classifier       | Hypothesis    |   
+
+: Statistics syntax in Data Science {.striped .hover}

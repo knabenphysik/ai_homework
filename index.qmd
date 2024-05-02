@@ -32,30 +32,30 @@ Some notable examples:
 -   Google  ([region proposal network](https://arxiv.org/abs/1506.01497v3))
 -   Google  ([Transformer-based](https://arxiv.org/abs/2205.03983))
 
-![Google Lens & Translate](content/image/google_lens.webp){#fig-ml-google-1 width=70%}
+![Google Lens & Translate](content/image/intro/google_lens.webp){#fig-ml-google-1 width=70%}
 
 -   YouTube automatic captioning ([automatic speech recognition](https://arxiv.org/abs/2005.08100))
 
-![Google Auto Captioning](content/image/YouTube_Caption_Auto.jpg){#fig-ml-google-2 width=70%}
+![Google Auto Captioning](content/image/intro/YouTube_Caption_Auto.jpg){#fig-ml-google-2 width=70%}
 
 -   G-mail spam filters (rule-based filters + Density clustering)
 -   Apple's face-ID ([deep convolutional networks](https://machinelearning.apple.com/research/face-detection))
 
-![Apple Face-ID](content/image/face_ID.gif){#fig-ml-faceid width=70%}
+![Apple Face-ID](content/image/intro/face_ID.gif){#fig-ml-faceid width=70%}
 
 
 -   Tesla autonomous car ([deep learning](https://www.youtube.com/watch?v=j0z4FweCy4M))
 
-![Tesla's AI](content/image/Tesla-object-detection.webp){#fig-ml-teslai width=70%}
+![Tesla's AI](content/image/intro/Tesla-object-detection.webp){#fig-ml-teslai width=70%}
 
 
 -   virtual assistant (Siri, Google Assistant)
 
 ::: {#fig-assistant layout-ncol=2}
 
-![Google Assistant](content/image/google-assistant.jpg){#fig-assist-1 width=70%}
+![Google Assistant](content/image/intro/google-assistant.jpg){#fig-assist-1 width=70%}
 
-![Apple Siri](content/image/siri-assistant.jpg){#fig-assist-2 width=70%}
+![Apple Siri](content/image/intro/siri-assistant.jpg){#fig-assist-2 width=70%}
 
 Intelligence Chatbot Asssistant
 :::
@@ -63,31 +63,31 @@ Intelligence Chatbot Asssistant
 
 -   NVIDIA DLSS ([Deep learning supersampling](https://www.nvidia.com/en-my/geforce/technologies/dlss/))
 
-![NVIDIA DLSS](content/image/nvidia-dlss.jpg){#fig-nvidia-dlss width=70%}
+![NVIDIA DLSS](content/image/intro/nvidia-dlss.jpg){#fig-nvidia-dlss width=70%}
 
 -   Bloomberg ([NLP](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
 
-![Bloomberg NLP](content/image/bloomberg_nlp.webp){#fig-bloomberg-ai width=70%}
+![Bloomberg NLP](content/image/intro/bloomberg_nlp.webp){#fig-bloomberg-ai width=70%}
 
 Some notable examples (science):
 
 - [Milky Way’s Black Hole](https://physics.aps.org/articles/v15/74)
 
-![First Image of the Milky Way’s Black Hole](content/image/blackhole.png){#fig-BH width=40%}
+![First Image of the Milky Way’s Black Hole](content/image/intro/blackhole.png){#fig-BH width=40%}
 
 - [Molecular Design](https://www.microsoft.com/en-us/research/blog/fs-mol-bringing-deep-learning-to-early-stage-drug-discovery/)
 
-![Drug Discovery](content/image/drug-desgn.webp){#fig-drug width=40%}
+![Drug Discovery](content/image/intro/drug-desgn.webp){#fig-drug width=40%}
 
 my encounter:
 
 - geospatial intelligence: land use analysis
 
-![Land Clearing Detection (Urban Planning)](content/image/geospatial.jpeg){#fig-geo width=70%}
+![Land Clearing Detection (Urban Planning)](content/image/intro/geospatial.jpeg){#fig-geo width=70%}
 
 - oil & gas: corrosion detection in confined space
 
-![corrosion detection in pipeline](content/image/corrosion_detection.png){#fig-karat width=70%}
+![corrosion detection in pipeline](content/image/intro/corrosion_detection.png){#fig-karat width=70%}
 
 - automation: vehicle QC inspection (detect scratch, dent on body surface)
 
@@ -95,18 +95,20 @@ my encounter:
 
 - safety: Personal protective equipment (PPE) detection for safety inspection
 
-![ppe detection](content/image/ppe.png){#fig-karat width=40%}
+![ppe detection](content/image/intro/ppe.png){#fig-karat width=40%}
 
 - finding oil: salt detection
 
-![salt detection](content/image/salt_detection.png){#fig-salt width=60%}
+![salt detection](content/image/intro/salt_detection.png){#fig-salt width=60%}
 
+::: {.callout-caution collapse="true"}
+## So, why do we need AI?
 
-So, why do we need AI? 
+![General goal of AI[@Gugel]](content/image/intro/useful.png){#fig-ml-google width=70%}
 
-![General goal of AI[@Gugel]](content/image/useful_ai.webp){#fig-ml-google width=70%}
+:::
 
-
+ 
 ## Artificial intelligence, Machine learning and Deep learning
 
 Data science and statistics - are two of the same, except that in earlier days, Data Science as we know it today, was called "statistical data analysis" or "applied statistics".
@@ -119,40 +121,44 @@ There are no real difference between the two, except that "Data Scientists" prow
 
 Today, there are no difference between the two.[@Donoho]
 
-```{r venna, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 2: Everything everywhere all at once[@Ryan]"}
-knitr::include_graphics("content/image/venn_diagram.jpeg")
-```
+![Everything everywhere all at once[@Ryan]](content/image/intro/venn_diagram.jpeg){#fig-semua width=70%}
 
-```{r relationship, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 3: Artificial intelligence, machine learning, and data science.[@KOTU20191]"}
-knitr::include_graphics("content/image/relationship.jpg")
-```
-
-Deep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).
+![Artificial intelligence, machine learning, and data science.[@KOTU20191]](content/image/intro/relationship.jpg){#fig-ml-kaitan width=70%}
 
 The central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform *intuitively* and near *automatically*. A great example of such a class of AI problems is interpreting and understanding the contents of an image -- this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.
 
-Machine learning is subfield tends to be specifically interested in ***pattern recognition*** and ***learning from data***.
+::: {.callout-tip}
+## How do we relate it all?
 
-Artificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.
+Deep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).
+:::
+
+
+Machine learning tends to be specifically interested in ***pattern recognition*** and ***learning from data***. Artificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.
 
 Deep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.
 
 ## Data Scientist vs Machine Learning Engineer
 
-```{r gpu-domain, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 4: domain area of deep learning[@Prabhu]"}
-knitr::include_graphics("content/image/ml_ops.png")
-```
+![Domain area of deep learning[@Prabhu]](content/image/intro/ml_ops.png){#fig-ml-kaitan width=70%}
 
-MLOps is the process of automating and productionalizing machine learning applications and workflows.
+MLOps is the process of automating and _**productize**_ machine learning applications and workflows.
 
-In a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist.
 
 ## Reality: ML in production
 
-```{r tec-dep, echo=FALSE , fig.align = 'center', out.width = "80%", fig.cap = " Figure 6:  Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.[@NIPS2015_86df7dcf]"}
-knitr::include_graphics("content/image/technical_debt.png")
-```
+Machine learning in production is very complicated! 
 
-Machine learning in production is very complicated! In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer jobscrope is intertwine.
+![Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.[@NIPS2015_86df7dcf]](content/image/intro/technical_debt.png){#fig-ml-kaitan width=70%}
 
+In a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist. In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer job scope is intertwine (or even the same person!)
+
+![Categories of job titles related to AI](content/image/intro/work_list.png){#fig-work-list width=20%}
+
+::: {.callout-important collapse="true"}
+## Exercises
+
+- Formulate a definition of intelligence. How do we test this intelligence empirically ( testable and verifiable by observation)?
+
+:::
 
