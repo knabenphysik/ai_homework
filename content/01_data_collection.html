@@ -207,9 +207,19 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#goodness-of-dataset" id="toc-goodness-of-dataset" class="nav-link" data-scroll-target="#goodness-of-dataset">Goodness of dataset</a></li>
   <li><a href="#general-problem" id="toc-general-problem" class="nav-link" data-scroll-target="#general-problem">General Problem</a></li>
-  <li><a href="#data-and-sampling" id="toc-data-and-sampling" class="nav-link" data-scroll-target="#data-and-sampling">Data and sampling</a></li>
+  <li><a href="#addressing-imbalanced-dataset" id="toc-addressing-imbalanced-dataset" class="nav-link" data-scroll-target="#addressing-imbalanced-dataset">Addressing imbalanced dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-sampling" id="toc-data-sampling" class="nav-link" data-scroll-target="#data-sampling">Data sampling</a></li>
+  <li><a href="#algorithmic-modification" id="toc-algorithmic-modification" class="nav-link" data-scroll-target="#algorithmic-modification">Algorithmic modification</a></li>
+  <li><a href="#cost-sensitive-learning" id="toc-cost-sensitive-learning" class="nav-link" data-scroll-target="#cost-sensitive-learning">Cost-sensitive learning</a></li>
+  </ul></li>
   <li><a href="#how-much-data" id="toc-how-much-data" class="nav-link" data-scroll-target="#how-much-data">How much data?</a></li>
-  <li><a href="#dealing-with-data" id="toc-dealing-with-data" class="nav-link" data-scroll-target="#dealing-with-data">Dealing with data</a></li>
+  <li><a href="#observed-and-test" id="toc-observed-and-test" class="nav-link" data-scroll-target="#observed-and-test">Observed and test</a>
+  <ul class="collapse">
+  <li><a href="#observation-1" id="toc-observation-1" class="nav-link" data-scroll-target="#observation-1">Observation 1:</a></li>
+  <li><a href="#observation-2" id="toc-observation-2" class="nav-link" data-scroll-target="#observation-2">Observation 2:</a></li>
+  <li><a href="#observation-3" id="toc-observation-3" class="nav-link" data-scroll-target="#observation-3">Observation 3:</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/knabenphysik/ai_note/edit/main/content/01_data_collection.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/knabenphysik/ai_note/blob/main/content/01_data_collection.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/knabenphysik/ai_note/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -222,10 +232,10 @@ div.csl-indent {
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>First we must differentiate between <strong>data at hand</strong> - which is the data that is available to us as data scientist, and <strong>data not in hand</strong>, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to <strong>data collecting</strong>.</p>
+<p>First we must differentiate between <strong>data at hand</strong> - which is the data that is available to us, and <strong>data not in hand</strong>, which are data not yet available or will come in the future whereby the model will be applied on. True reliability of the model will be when tested against data not in hand. To understand this, we need to go back to <strong>data collecting</strong>.</p>
 <section id="goodness-of-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="goodness-of-dataset">Goodness of dataset</h2>
-<p>Before collecting data for your machine learning problem, we first need to know <strong>“what makes a good dataset”</strong>?</p>
+<p>Before collecting data for your problem, we first need to know <strong>“what makes a good dataset”</strong>?</p>
 <ul>
 <li>quality (representative and high-quality of inputs data)</li>
 <li>quantity (consistent and accurate labels on target data/ground truth)</li>
@@ -234,12 +244,13 @@ div.csl-indent {
 </section>
 <section id="general-problem" class="level2">
 <h2 class="anchored" data-anchor-id="general-problem">General Problem</h2>
+<p>Nowadays, the availability of large volumes of data and the widespread use of tools for the proper extraction of knowledge information has become very frequent.</p>
 <p>Most learning systems usually assume (e.g.&nbsp;academic, kaggle data) that training datasets used for learning are balanced.</p>
 <p>However, in real-world applications, training samples( <strong>data at hand</strong> ) typically exhibit a long-tailed class distribution, where a small portion of classes have a massive number of sample points but the others are associated with only a few samples<span class="citation" data-cites="zhang2023deep"><sup><a href="#ref-zhang2023deep" role="doc-biblioref">1</a></sup></span>.</p>
 <div id="fig-longtail_normal" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-longtail_normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/long_tail_2.png" class="img-fluid figure-img">
+<img src="image/01/long_tail_2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-longtail_normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Long Tail Data Illustration
@@ -253,7 +264,7 @@ Figure&nbsp;1: Long Tail Data Illustration
 <div id="fig-tesla" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tesla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/car_sight.png" class="img-fluid figure-img">
+<img src="image/01/car_sight.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tesla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: long tail scenario
@@ -264,7 +275,7 @@ Figure&nbsp;2: long tail scenario
 <div id="fig-solve-long" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-solve-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/long_tail_1.png" class="img-fluid figure-img">
+<img src="image/01/long_tail_1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-solve-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: class imbalance problem
@@ -272,76 +283,141 @@ Figure&nbsp;3: class imbalance problem
 </figure>
 </div>
 </section>
-<section id="data-and-sampling" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-sampling">Data and sampling</h2>
-<p>Consider that you have big <strong>dataset at hand</strong>. Is there a way to pick a subset of the dataset and that can be a good representation of the entire dataset?</p>
-<p><strong>Answer</strong>: Yes! We have statistical approach which we called “Sampling”.</p>
+<section id="addressing-imbalanced-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="addressing-imbalanced-dataset">Addressing imbalanced dataset</h2>
+<ul>
+<li>Data sampling : in which the dataset instances are modified in such a way as to produce a more balanced class distribution.</li>
+<li>Algorithmic modification</li>
+<li>Cost-sensitive learning</li>
+</ul>
+<section id="data-sampling" class="level3">
+<h3 class="anchored" data-anchor-id="data-sampling">Data sampling</h3>
 <div id="fig-data-sampling" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/data_sampling.png" class="img-fluid figure-img">
+<img src="image/01/data_sampling.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Sampling from big data
+Figure&nbsp;4: Downsample and Upsample
 </figcaption>
 </figure>
 </div>
-<p>Type of sampling:</p>
 <ul>
-<li><strong><em>random sampling</em></strong> : every individual is chosen entirely by chance and each member of the population has an equal chance of being selected.</li>
-<li><strong><em>cluster sampling</em></strong>: we use the subgroups of the population as the sampling unit rather than individuals. The population is divided into subgroups and a whole subgroups is randomly selected</li>
-<li><strong><em>systematic sampling</em></strong>: chooses member from a target population by selecting a random starting point and selects sample members after a fixed ‘sampling interval.’</li>
-<li><strong><em>stratified random sampling</em></strong>: divide the population into subgroups (called strata) based on different traits like category, then we select the sample(s) from these subgroup.</li>
+<li><strong><em>Upsampling</em></strong> : process of <em><em>randomly</em></em> duplicating observations from the minority class to reinforce its signal.</li>
+<li><strong><em>Downsampling</em></strong>: sample the majority class <em><em>randomly</em></em> to make their frequencies closer to the rarest class.</li>
+<li><strong><em>hybrid</em></strong>: some methodologies do a little of both and possibly impute synthetic data for the minority class.</li>
 </ul>
 </section>
-<section id="how-much-data" class="level2">
-<h2 class="anchored" data-anchor-id="how-much-data">How much data?</h2>
-<p>To <strong>“learn”</strong> and achieve <strong>good generalization</strong>, how much data do we need?</p>
-<ul>
-<li>increasing the dataset sample size is a reduction in model over-fitting (avoid the model “memorize”)</li>
-<li>be careful of noise, outliers, and irrelevant information in additional data (recall “Goodness of dataset”)</li>
-</ul>
-<div id="fig-data-scale" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="image/data_scale.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Model performance of deep learning vs.&nbsp;other machine learning algorithms as a function of number of samples.<span class="citation" data-cites="Ng"><sup><a href="#ref-Ng" role="doc-biblioref">2</a></sup></span>
-</figcaption>
-</figure>
-</div>
-<blockquote class="blockquote">
-<p>relabel this <img src="image/cifar10_plot.png" id="fig-multi-cla" class="img-fluid" alt="Effect of training data size on accuracy on cifar-10 images"></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case.” — Maksym Tatariants</p>
-</blockquote>
-<p>We always prefer <strong>large amount</strong> of data, but how large is large, and how big is big? This is a problem of <strong>sufficiency</strong>, because even though the data may be large, but contains insufficient <strong>entropy</strong>, will render the data to be small, despite the large size in bytes.</p>
-<blockquote class="blockquote">
-<p><strong>Entropy</strong> quantifies how much information there is in a random variable, or more specifically its probability distribution.</p>
-</blockquote>
+<section id="algorithmic-modification" class="level3">
+<h3 class="anchored" data-anchor-id="algorithmic-modification">Algorithmic modification</h3>
+<p>Instead of focusing on modifying the training set in order to combat class skew, this approach aims at modifying the classifier learning procedure itself.</p>
 </section>
-<section id="dealing-with-data" class="level2">
-<h2 class="anchored" data-anchor-id="dealing-with-data">Dealing with data</h2>
-<p>Now, we already establish criteria of good data &amp; how much data to collect.</p>
-<p>Assume now you already collect data and still facing <strong>“imbalanced”</strong> where a small fraction of categories have a massive number of samples, and the rest of the categories are associated with only a few samples. What shall we do ?</p>
-<blockquote class="blockquote">
-<p>simplify image</p>
-</blockquote>
+<section id="cost-sensitive-learning" class="level3">
+<h3 class="anchored" data-anchor-id="cost-sensitive-learning">Cost-sensitive learning</h3>
+<p>Cost-sensitive learning for imbalanced classification is focused on first assigning different costs to the types of misclassification errors that can be made, then using specialized methods to take those costs into account.</p>
 <div id="fig-imbalanced" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="image/imbalanced.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-imbalanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right<span class="citation" data-cites="Johnson"><sup><a href="#ref-Johnson" role="doc-biblioref">3</a></sup></span>
+Figure&nbsp;5: Three main categories of approaches proposed and tested for tackling the class imbalance problem. Main categories of approaches on the left, followed by subcategories and some examples on the right<span class="citation" data-cites="Johnson"><sup><a href="#ref-Johnson" role="doc-biblioref">2</a></sup></span>
 </figcaption>
 </figure>
+</div>
+</section>
+</section>
+<section id="how-much-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-much-data">How much data?</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wisdom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“To answer the “how much data is enough” question, it’s absolutely true that no machine learning expert can predict how much data is needed. The only way to find out out is to set a hypothesis and to test it on a real case.” — Maksym Tatariants</p>
+<p>“no learner(classifier) can beat random guessing over all possible functions to be learned” - no free lunch theorem<span class="citation" data-cites="6795940"><sup><a href="#ref-6795940" role="doc-biblioref">3</a></sup></span></p>
+</div>
+</div>
+<p>The fundamental goal of machine learning is to generalize beyond the examples in the training set. This is because, no matter how much data we have, it is very unlikely that we will see those exact examples again at test time.</p>
+<p><strong>Question</strong> : To <strong>“learn”</strong> and achieve <strong>good generalization</strong>, how much data do we need?</p>
+</section>
+<section id="observed-and-test" class="level2">
+<h2 class="anchored" data-anchor-id="observed-and-test">Observed and test</h2>
+<ul>
+<li>increase the dataset sample size is a reduction in model over-fitting (avoid the model “memorize”)</li>
+<li>be careful of noise, outliers, and irrelevant information in additional data (recall “Goodness of dataset”)</li>
+</ul>
+<div id="fig-data-scale" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/01/data_scale.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Model performance of deep learning vs.&nbsp;other machine learning algorithms as a function of number of samples.<span class="citation" data-cites="Ng"><sup><a href="#ref-Ng" role="doc-biblioref">4</a></sup></span>
+</figcaption>
+</figure>
+</div>
+<section id="observation-1" class="level3">
+<h3 class="anchored" data-anchor-id="observation-1">Observation 1:</h3>
+<div id="fig-multi-cla" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/01/cifar10_plot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-cla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Effect of training data size on accuracy on cifar-10 images
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="observation-2" class="level3">
+<h3 class="anchored" data-anchor-id="observation-2">Observation 2:</h3>
+<div id="fig-medic" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-medic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/01/medical_plot2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-medic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Effect of training data size on accuracy on medical(CT scan image) classification
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="observation-3" class="level3">
+<h3 class="anchored" data-anchor-id="observation-3">Observation 3:</h3>
+<div id="fig-fraud" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fraud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="image/01/faud_plot1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fraud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Effect of training data size on accuracy on credit card fraud detection
+</figcaption>
+</figure>
+</div>
+<p>We always prefer <strong>large amount</strong> of data, but how large is large, and how big is big? This is a problem of <strong>sufficiency</strong>, because even though the data may be large, but contains insufficient <strong>entropy</strong>, will render the data to be small, despite the large size in bytes.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wisdom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Entropy</strong> quantifies how much information there is in a random variable (recall variability)</p>
+</div>
 </div>
 
 
 
+</section>
 </section>
 </section>
 
@@ -349,11 +425,14 @@ Figure&nbsp;6: Three main categories of approaches proposed and tested for tackl
 <div id="ref-zhang2023deep" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Zhang, Y., Kang, B., Hooi, B., Yan, S. &amp; Feng, J. <a href="https://arxiv.org/abs/2110.04596">Deep long-tailed learning: A survey</a>. (2023).</div>
 </div>
-<div id="ref-Ng" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ng, A. <a href="https://www.youtube.com/watch?v=LcfLo7YP8O4">How scale is enabling deep learning</a>. (2016).</div>
-</div>
 <div id="ref-Johnson" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Johnson, J. M. &amp; Khoshgoftaar, T. M. Survey on deep learning with class imbalance. <em>Journal of Big Data</em> (2019) doi:<a href="https://doi.org/10.1186/s40537-019-0192-5">10.1186/s40537-019-0192-5</a>.</div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Johnson, J. M. &amp; Khoshgoftaar, T. M. Survey on deep learning with class imbalance. <em>Journal of Big Data</em> (2019) doi:<a href="https://doi.org/10.1186/s40537-019-0192-5">10.1186/s40537-019-0192-5</a>.</div>
+</div>
+<div id="ref-6795940" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Wolpert, D. H. <a href="https://doi.org/10.1162/neco.1996.8.7.1341">The lack of a priori distinctions between learning algorithms</a>. <em>Neural Computation</em> <strong>8</strong>, 1341–1390 (1996).</div>
+</div>
+<div id="ref-Ng" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Ng, A. <a href="https://www.youtube.com/watch?v=LcfLo7YP8O4">How scale is enabling deep learning</a>. (2016).</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
