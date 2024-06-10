@@ -3,7 +3,7 @@ project:
 
 website: 
   page-navigation: true
-  title: "My Hitchhiker Guide to AI" 
+  title: "The Beauty of Learning: Pursuit of Knowing the Truth" 
   site-url: "https://knabenphysik.github.io/ai_note" 
   repo-url: "https://github.com/knabenphysik/ai_note"
   repo-actions: [edit, source, issue]
@@ -25,10 +25,8 @@ website:
     tools: 
       - icon: globe
         href: https://knabenphysik.github.io/ai_note
-        text: "Open Data Science"
-      - icon: github
-        href: https://github.com/knabenphysik/ai_note
-        text: "AI Note"
+        text: "Home"
+
 
     style: "docked"
     search: true
@@ -63,7 +61,25 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
-
+  # pdf:
+  #   keep-tex: true
+  #   documentclass: scrbook
+  #   classoption: [paper=6in:9in,pagesize=pdftex,headinclude=on,footinclude=on,12pt]
+  #   include-in-header:
+  #     text: |
+  #       \usepackage{fvextra}
+  #       \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+  #       \areaset[0.50in]{4.5in}{8in}
+  #   include-before-body:
+  #     text: |
+  #       \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+  #          showspaces = false,
+  #          showtabs = false,
+  #          breaksymbolleft={},
+  #          breaklines
+  #          % Note: setting commandchars=\\\{\} here will cause an error 
+  #       }  
+  #   fig-pos: 'H'
 
 filters:
   - include-files.lua

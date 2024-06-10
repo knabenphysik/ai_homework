@@ -33,6 +33,26 @@ The point of failure here is that the model has been trained on data that was re
 
 Thus, need to __*acquire*__ more of these rare cases in our training data!
 
+
+What we can say more? 
+
+Data sources are not perfect:
+
+- features can be missing (e.g. sensor data)
+- features can contain error (e.g. content scrapped from internet)
+- features can be from free-format sources and can be very sparse
+
+Label obtained are not perfect:
+
+- human labels might not be consistent
+- labels can be missing
+
+Data collection bias:
+
+- manual labels bias
+- random sampling bias
+- model serving bias
+
 ![class imbalance problem](image/01/long_tail_1.png){#fig-solve-long}
 
 ## Addressing imbalanced dataset
