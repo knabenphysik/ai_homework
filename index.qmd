@@ -9,22 +9,20 @@ These notes aim to gives a short introduction into the basic ideas and concepts 
 
 I hope that this notes will be useful for self-study and as a companion for more formal AI course offered elsewhere.
 
-
 # Overview {.unnumbered}
 
-AI is everywhere (overhyped)! 
+AI is everywhere (overhyped)!
 
-![AI is wonderful](content/image/intro/indah_ai.png){#fig-indah_meme width=40%}
+![AI is wonderful](content/image/intro/indah_ai.png){#fig-indah_meme width="40%"}
 
 Everybody is betting that AI will supercharge productivity, powering transformative products and services and consequently change to economy.
 
-
 ::: {#fig-meme layout="[[1,1], [1]]"}
-![Learning AI is easy!](content/image/intro/meme_1.jpg){#fig-meme1 width=70%}
+![Learning AI is easy!](content/image/intro/meme_1.jpg){#fig-meme1 width="70%"}
 
-![I am AI expert!](content/image/intro/meme_2.jpg){#fig-meme2 width=70%}
+![I am AI expert!](content/image/intro/meme_2.jpg){#fig-meme2 width="70%"}
 
-![Why Not](content/image/intro/digital-academy-banner.png){#fig-meme3 width=70%}
+![Why Not](content/image/intro/digital-academy-banner.png){#fig-meme3 width="70%"}
 
 Famous Memes
 :::
@@ -32,109 +30,99 @@ Famous Memes
 ::: {.callout-warning collapse="True"}
 ## Word of Wisdom
 
-“A big failure as an experimentalist is something very easy to achieve. The important thing is to understand why this [failure] happens and just try to fix the problem. That's the way I react at least. Most of the time you find two or three things which could have gone wrong, and you fix one after the other and usually that works.” - Pierre Agostini, Physics Nobel Laureate 2023
-
+“A big failure as an experimentalist is something very easy to achieve. The important thing is to understand why this \[failure\] happens and just try to fix the problem. That's the way I react at least. Most of the time you find two or three things which could have gone wrong, and you fix one after the other and usually that works.” - Pierre Agostini, Physics Nobel Laureate 2023
 :::
-
-
 
 Some notable examples:
 
--   Google  ([region proposal network](https://arxiv.org/abs/1506.01497v3))
--   Google  ([Transformer-based](https://arxiv.org/abs/2205.03983))
+-   Google ([region proposal network](https://arxiv.org/abs/1506.01497v3))
+-   Google ([Transformer-based](https://arxiv.org/abs/2205.03983))
 
-![Google Lens & Translate](content/image/intro/google_lens.png){#fig-ml-google-1 width=70%}
+![Google Lens & Translate](content/image/intro/google_lens.png){#fig-ml-google-1 width="70%"}
 
 -   YouTube automatic captioning ([automatic speech recognition](https://arxiv.org/abs/2005.08100))
 
-![Google Auto Captioning](content/image/intro/YouTube_Caption_Auto.jpg){#fig-ml-google-2 width=70%}
+![Google Auto Captioning](content/image/intro/YouTube_Caption_Auto.jpg){#fig-ml-google-2 width="70%"}
 
 -   G-mail spam filters (rule-based filters + Density clustering)
 -   Apple's face-ID ([deep convolutional networks](https://machinelearning.apple.com/research/face-detection))
 
-![Apple Face-ID](content/image/intro/face_ID.gif){#fig-ml-faceid width=70%}
-
+![Apple Face-ID](content/image/intro/face_ID.gif){#fig-ml-faceid width="70%"}
 
 -   Tesla autonomous car ([deep learning](https://www.youtube.com/watch?v=j0z4FweCy4M))
 
-![Tesla's AI](content/image/intro/Tesla-object-detection.png){#fig-ml-teslai width=70%}
-
+![Tesla's AI](content/image/intro/Tesla-object-detection.png){#fig-ml-teslai width="70%"}
 
 -   virtual assistant (Siri, Google Assistant)
 
-::: {#fig-assistant layout-ncol=2}
+::: {#fig-assistant layout-ncol="2"}
+![Google Assistant](content/image/intro/google-assistant.jpg){#fig-assist-1 width="70%"}
 
-![Google Assistant](content/image/intro/google-assistant.jpg){#fig-assist-1 width=70%}
-
-![Apple Siri](content/image/intro/siri-assistant.jpg){#fig-assist-2 width=70%}
+![Apple Siri](content/image/intro/siri-assistant.jpg){#fig-assist-2 width="70%"}
 
 Intelligence Chatbot Asssistant
 :::
 
-
 -   NVIDIA DLSS ([Deep learning supersampling](https://www.nvidia.com/en-my/geforce/technologies/dlss/))
 
-![NVIDIA DLSS](content/image/intro/nvidia-dlss.jpg){#fig-nvidia-dlss width=70%}
+![NVIDIA DLSS](content/image/intro/nvidia-dlss.jpg){#fig-nvidia-dlss width="70%"}
 
 -   Bloomberg ([NLP](https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/))
 
-![Bloomberg NLP](content/image/intro/bloomberg_nlp.png){#fig-bloomberg-ai width=70%}
+![Bloomberg NLP](content/image/intro/bloomberg_nlp.png){#fig-bloomberg-ai width="70%"}
 
 Some notable examples (science):
 
-- [Milky Way’s Black Hole](https://physics.aps.org/articles/v15/74)
+-   [Milky Way’s Black Hole](https://physics.aps.org/articles/v15/74)
 
-![First Image of the Milky Way’s Black Hole](content/image/intro/blackhole.png){#fig-BH width=40%}
+![First Image of the Milky Way’s Black Hole](content/image/intro/blackhole.png){#fig-BH width="40%"}
 
-- [Molecular Design](https://www.microsoft.com/en-us/research/blog/fs-mol-bringing-deep-learning-to-early-stage-drug-discovery/)
+-   [Molecular Design](https://www.microsoft.com/en-us/research/blog/fs-mol-bringing-deep-learning-to-early-stage-drug-discovery/)
 
-![Drug Discovery](content/image/intro/drug-desgn.png){#fig-drug width=40%}
+![Drug Discovery](content/image/intro/drug-desgn.png){#fig-drug width="40%"}
 
 my encounter:
 
-- geospatial intelligence: land use analysis
+-   geospatial intelligence: land use analysis
 
-![Land Clearing Detection (Urban Planning)](content/image/intro/geospatial.jpeg){#fig-geo width=70%}
+![Land Clearing Detection (Urban Planning)](content/image/intro/geospatial.jpeg){#fig-geo width="70%"}
 
-- oil & gas: corrosion detection in confined space
+-   oil & gas: corrosion detection in confined space
 
-![corrosion detection in pipeline](content/image/intro/corrosion_detection.jpg){#fig-karat width=70%}
+![corrosion detection in pipeline](content/image/intro/corrosion_detection.jpg){#fig-karat width="70%"}
 
-- automation: vehicle QC inspection (detect scratch, dent on body surface)
+-   automation: vehicle QC inspection (detect scratch, dent on body surface)
 
-- automation: vehicle QC inspection (detect missing screw in motorcycle assembly line)
+-   automation: vehicle QC inspection (detect missing screw in motorcycle assembly line)
 
-- safety: Personal protective equipment (PPE) detection for safety inspection
+-   safety: Personal protective equipment (PPE) detection for safety inspection
 
-![ppe detection](content/image/intro/ppe.png){#fig-karat width=40%}
+![ppe detection](content/image/intro/ppe.png){width="40%"}
 
-- finding oil: salt detection
+-   finding oil: salt detection
 
-![salt detection](content/image/intro/salt_detection.png){#fig-salt width=60%}
+![salt detection](content/image/intro/salt_detection.png){#fig-salt width="60%"}
 
 ::: {.callout-caution collapse="true"}
 ## So, why do we need AI?
 
-![General goal of AI[@Gugel]](content/image/intro/useful.png){#fig-ml-google width=70%}
+![General goal of AI[@Gugel]](content/image/intro/useful.png){#fig-ml-google width="70%"}
 
-- empower business by:
-    - enhanced operational efficiency (automation)
-    - data-driven decision making
-    - improved customer experience
-
+-   empower business by:
+    -   enhanced operational efficiency (automation)
+    -   data-driven decision making
+    -   improved customer experience
 :::
 
- 
 ## Artificial intelligence, Machine learning and Deep learning
 
-
-| ""   | AI | Machine Learning | Deep Learning |
-| -------- | ------- | ------- | ------- |
+| ""         | AI                                              | Machine Learning                                                         | Deep Learning                                                                                   |
+|-------------------|------------------|------------------|------------------|
 | Definition | field of study of creating intelligent machines | subset of AI that enable computers to learn from data and make decisions | subset of machine learning that use neural network to learn hierarchical representation of data |
 
 The central goal of AI is to provide a set of algorithms and techniques that can be used to solve problems that humans perform *intuitively* and near *automatically*. A great example of such a class of AI problems is interpreting and understanding the contents of an image -- this task is something that a human can do with little-to-no effort, but it has proven to be extremely difficult for machines to accomplish.
 
-::: {.callout-tip}
+::: callout-tip
 ## How do we relate it all?
 
 Deep learning is a subfield of machine learning, which is, in turn, a subfield of artificial intelligence (AI).
@@ -143,7 +131,6 @@ Deep learning is a subfield of machine learning, which is, in turn, a subfield o
 Machine learning tends to be specifically interested in ***pattern recognition*** and ***learning from data***. Artificial Neural Networks (ANNs) are a class of machine learning algorithms that learn from data and specialize in pattern recognition, inspired by the structure and function of the brain.
 
 Deep learning is an approach to AI. It is a type of machine learning, a technique that allows computer systems to improve with experience and data.
-
 
 ### Data Science vs Statistics
 
@@ -157,51 +144,45 @@ There are no real difference between the two, except that "Data Scientists" prow
 
 Today, there are no difference between the two.[@Donoho]
 
-![Everything everywhere all at once[@Ryan]](content/image/intro/venn_diagram.jpeg){#fig-semua width=70%}
-
+![Everything everywhere all at once[@Ryan]](content/image/intro/venn_diagram.jpeg){#fig-semua width="70%"}
 
 ## Data Scientist vs Machine Learning Engineer
 
-![What's the different?](content/image/intro/data_scientist_vs_machine_learning_engineer-f.png){#fig-ml-kaitan width=70%}
+![What's the different?](content/image/intro/data_scientist_vs_machine_learning_engineer-f.png){#fig-ml-kaitan width="70%"}
 
-DevOps/MLOps is the process of automating and _**productize**_ machine learning applications and workflows.
-
+DevOps/MLOps is the process of automating and ***productize*** machine learning applications and workflows.
 
 ## Reality: ML in production
 
-![Time spent as a data scienctist](content/image/intro/time_spend.jpg){#fig-time width=70%}
+![Time spent as a data scienctist](content/image/intro/time_spend.jpg){#fig-time width="70%"}
 
-Machine learning in production is very complicated! 
+Machine learning in production is very complicated!
 
-![Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.[@NIPS2015_86df7dcf]](content/image/intro/technical_debt.png){#fig-ml-kaitan width=70%}
+![Only a small fraction of real-world ML systems is composed of the ML code, as shown by the small black box in the middle. The required surrounding infrastructure is vast and complex.[@NIPS2015_86df7dcf]](content/image/intro/technical_debt.png){width="70%"}
 
-- Configuration debt: ML systems have numerous parameters for data, features, algorithms — these can be configured until we get the desired performance. Configurations are sensitive and the messiness of data can make modifying these configurations difficult and prone to errors. Incorrect configurations can prove costly in terms of loss of time, computing resources and worse — production issues.
+-   Configuration debt: ML systems have numerous parameters for data, features, algorithms — these can be configured until we get the desired performance. Configurations are sensitive and the messiness of data can make modifying these configurations difficult and prone to errors. Incorrect configurations can prove costly in terms of loss of time, computing resources and worse — production issues.
 
-- Data debt: The quality and quantity of data on which a machine-learning project depends may change over time (through changes at the data source or in different data processing steps)
+-   Data debt: The quality and quantity of data on which a machine-learning project depends may change over time (through changes at the data source or in different data processing steps)
 
-- Monitoring debt: Evaluating a model on a static dataset is easy, but building a monitoring infrastructure to evaluate model quality in production requires cost
+-   Monitoring debt: Evaluating a model on a static dataset is easy, but building a monitoring infrastructure to evaluate model quality in production requires cost
 
-- Low code quality, lack of pipeline automation: It is easy to develop models with powerful libraries on a snapshot of data in a notebook and to copy the resulting model into a production system. Not building a robust pipeline, e.g., automating all steps, removing dead code, monitoring all pipeline steps and not writing usable and maintainable code (e.g., using abstraction, documenting code, avoiding code clones) might save some effort initially but can significantly increase effort for future releases and debugging.
-
+-   Low code quality, lack of pipeline automation: It is easy to develop models with powerful libraries on a snapshot of data in a notebook and to copy the resulting model into a production system. Not building a robust pipeline, e.g., automating all steps, removing dead code, monitoring all pipeline steps and not writing usable and maintainable code (e.g., using abstraction, documenting code, avoiding code clones) might save some effort initially but can significantly increase effort for future releases and debugging.
 
 In a perfect world, data scientist will do ML modelling while ML Engineer will productize ML model from Data Scientist. In reality (especially in Small & Medium Enterprise), Data Scientist & ML Engineer job scope is intertwine (or even the same person!)
 
-![Categories of job titles related to AI](content/image/intro/work_list.png){#fig-work-list width=20%}
+![Categories of job titles related to AI](content/image/intro/work_list.png){#fig-work-list width="20%"}
 
+![Is this true?](content/image/intro/gaji.jpeg){#fig-meme3-gaji width="40%"}
 
-![Is this true?](content/image/intro/gaji.jpeg){#fig-meme3-gaji width=40%}
-
-So, knowing @fig-work-list,  is @fig-meme3-gaji true? From @fig-work-list, AI Scientist/Researcher have a place in Malaysian Market?
+So, knowing @fig-work-list, is @fig-meme3-gaji true? From @fig-work-list, AI Scientist/Researcher have a place in Malaysian Market?
 
 ::: {.callout-important collapse="true"}
 ## Exercises
 
-- Formulate your own definition of artificial intelligence. 
-- How do we test this intelligence empirically (testable and verifiable by observation)?
-- We are nowhere near human-level AI today. What are we missing?
-- Is AI a science, or is it engineering? Or neither or both? Explain.
-- Extra: AI-as-a-service? Define and discuss _key component_.
-- Extra: Does thinking and reasoning require language to work?
-
+-   Formulate your own definition of artificial intelligence.
+-   How do we test this intelligence empirically (testable and verifiable by observation)?
+-   We are nowhere near human-level AI today. What are we missing?
+-   Is AI a science, or is it engineering? Or neither or both? Explain.
+-   Extra: AI-as-a-service? Define and discuss *key component*.
+-   Extra: Does thinking and reasoning require language to work?
 :::
-
